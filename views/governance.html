@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>SEC Benchmark Tool - Governance</title>
+    <meta name="description" content="Introduction" />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/public/style.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  </head>
+
+  <body>
+    <div class="container-fluid">
+      <img src="../assets/Governance-Icon.png" alt="SEC logo" class="img-fluid" style="transform: scale(0.5)">
+      <h1 class="border center">Governance</h1>
+
+      <h5 id="scenario">Current Scenario: n/a</h5>
+
+      <form id="form-data">
+
+        <input id="scen_carry" name="scen_carry" value="" type="hidden">
+
+        <div class="table-responsive">
+          <table class="table table-bordered align-middle">
+            <thead>
+              <tr style="background-color: #00b3b3">
+                <th class="col-lg text-center align-middle" scope="col">Measures</th>
+                <th class="col-lg text-center align-middle" scope="col">Scoring Method</th>
+                <th class="col-lg-8 text-center align-middle" scope="col" colspan="6">Scoring</th>
+                <th class="col-lg text-center align-middle" scope="col">Community Score</th>
+                <th class="col-lg-2 text-center align-middle" scope="col">Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1.1.1. A community energy leadership team to co-govern community energy initiatives <a href="#" data-toggle="tooltip" data-placement="right" data-animation="true" title="A core leadership team of cross-sectoral community leaders is formed with the purpose of co-governance overseeing the planning and implementation of community energy initiatives. This can leverage existing groups or committees, and may include representatives from local government(s), Indigenous groups, utilities, real estate developers, non-governmental organizations, large energy users, public sector organizations, or organizations serving populations living in energy poverty."><i class="fas fa-info-circle"></i></a></th>
+                
+                <td>Checklist</td>
+                
+                <td><label for="comm_energy_leader_na">N/A for the community<br><input id="comm_energy_leader_na" class="form-check-input" type="checkbox" name="comm_energy_leader_na" value="0"></label></td>
+                
+                <td><label for="comm_energy_leader_0">There currently is no community energy leadership team.<br>[0 points]<br><input id="comm_energy_leader_0" class="form-check-input" type="checkbox" name="comm_energy_leader_0" value="0"></label></td>
+                
+                <td><label for="comm_energy_leader_1">A multi-sectoral entity of community leaders (community leadership team) is formed around a common agenda to promote and facilitate community energy goals/implementation, and foster partnerships.<br>[1 point]<br><input id="comm_energy_leader_1" class="form-check-input" type="checkbox" name="comm_energy_leader_1" value="1"></label></td>
+                
+                <td><label for="comm_energy_leader_2">The community leadership team members actively participate, and implement actions within their own organizations to promote SEC goals/implementation.<br>[1 point]<br><input id="comm_energy_leader_2" class="form-check-input" type="checkbox" name="comm_energy_leader_2" value="1"></label></td>
+                
+                <td><label for="comm_energy_leader_3">Regular meetings between the leadership team occur.<br>[0.5 point]<br><input id="comm_energy_leader_3" class="form-check-input" type="checkbox" name="comm_energy_leader_3" value="0.5"></label></td>
+                
+                <td><label for="comm_energy_leader_4">An organization and/or individual acts as secretariat for the leadership team, and lead and coordinate community engagement.<br>[1 point]<br><input id="comm_energy_leader_4" class="form-check-input" type="checkbox" name="comm_energy_leader_4" value="1"></label></td>
+                
+                <td>
+                  <input id="comm_energy_leader_pts" class="text-center" name="comm_energy_leader_pts" value="" hidden></input>
+                  <output>0 points</output>
+                </td>
+                
+                <td><textarea class="form-control" id="comm_energy_leader_notes" name="comm_energy_leader_notes" placeholder="Enter relevant notes, references, or links..." rows="8" style="font-size: 12px"></textarea></td>
+              </tr>
+
+              <tr>
+                <th scope="row">1.1.2a. Cross-departmental coordination within the local government <a href="#" data-toggle="tooltip" data-placement="right" data-animation="true" title="All relevant local government departments are involved in the planning and implementation of community energy initiatives. They understand their role in community energy initiatives, and are actively coordinating and collaborating, supported by a clear mandate that has been incorporated into cross-departmental plans and/or policies. This may include the following departments: Finance, Land Use/Planning, Building Inspection, Transportation, Economic Development, Environment/Sustainability, Communications, Facilities/Engineering, Public Health, Information Technology."><i class="fas fa-info-circle"></i></a></th>
+                
+                <td>Checklist</td>
+                
+                <td><label for="xdept_coord_local_na">N/A for the community<br><input id="xdept_coord_local_na" class="form-check-input" type="checkbox" name="xdept_coord_local_na" value="0"></label></td>
+                
+                <td><label for="xdept_coord_local_0">There currently is no cross-departmental coordination within this local government related to community energy initiatives.<br>[0 points]<br><input id="xdept_coord_local_0" class="form-check-input" type="checkbox" name="xdept_coord_local_0" value="0"></label></td>
+                
+                <td><label for="xdept_coord_local_1">Regular meetings occur, with relevant departments, within the local government.<br>[1 point]<br><input id="xdept_coord_local_1" class="form-check-input" type="checkbox" name="xdept_coord_local_1" value="1"></label></td>
+                
+                <td><label for="xdept_coord_local_2">A clear mandate exists for all relevant departments such as through a Official Community Plan or Strategic Plan.<br>[2 points]<br><input id="xdept_coord_local_2" class="form-check-input" type="checkbox" name="xdept_coord_local_2" value="1"></label></td>
+                
+                <td></td>
+                
+                <td></td>
+                
+                <td>
+                  <input id="xdept_coord_local_pts" class="text-center" name="xdept_coord_local_pts" value="" hidden></input>
+                  <output>0 points</output>
+                </td>
+                
+                <td><textarea class="form-control" id="xdept_coord_local_notes" name="xdept_coord_local_notes" placeholder="Enter relevant notes, references, or links..." rows="8" style="font-size: 12px"></textarea></td>
+              </tr>
+
+              <tr>
+                <th scope="row">1.1.2b. Strategic alignment within the local electric utility <a href="#" data-toggle="tooltip" data-placement="right" data-animation="true" title="The local electric utility sees participation in, and support for, community energy initiatives as a strategic priority for business development, with all relevant utility departments engaged in community energy initiatives. These initiatives may include alternative fuel vehicles or high performance demonstration projects, or participating in community energy governance or outreach. Relevant departments may include Business Development/Strategic Initiatives, Sustainability/Conservation and Demand Management, Stakeholder and/or Government Relations, Asset Management/Distribution Planning, Finance, or Communications. This may also include unregulated utility subsidiaries."><i class="fas fa-info-circle"></i></a></th>
+                
+                <td>Checklist</td>
+                
+                <td><label for="align_local_elec_na">N/A for the community<br><input id="align_local_elec_na" class="form-check-input" type="checkbox" name="align_local_elec_na" value="0"></label></td>
+                
+                <td><label for="align_local_elec_0">There currently is no strategic alignment within this local electric utility related to community energy initiatives.<br>[0 points]<br><input id="align_local_elec_0" class="form-check-input" type="checkbox" name="align_local_elec_0" value="0"></label></td>
+                
+                <td><label for="align_local_elec_1">Meetings between relevant departments occur within the electric utility on a project-to-project basis as they relate to community energy initiatives.<br>[1 point]<br><input id="align_local_elec_1" class="form-check-input" type="checkbox" name="align_local_elec_1" value="1"></label></td>
+                
+                <td><label for="align_local_elec_2">Participation in, and support for, community energy initiatives is seen as a strategic priority within the electric utility.<br>[2 point]<br><input id="align_local_elec_2" class="form-check-input" type="checkbox" name="align_local_elec_2" value="1"></label></td>
+                
+                <td></td>
+                
+                <td></td>
+                
+                <td>
+                  <input id="align_local_elec_pts" class="text-center" name="align_local_elec_pts" value="" hidden></input>
+                  <output>0 points</output>
+                </td>
+                
+                <td><textarea class="form-control" id="align_local_elec_notes" name="align_local_elec_notes" placeholder="Enter relevant notes, references, or links..." rows="8" style="font-size: 12px"></textarea></td>
+              </tr>
+
+              <tr>
+                <th scope="row">1.1.2c. Strategic alignment within the local natural gas utility <a href="#" data-toggle="tooltip" data-placement="right" data-animation="true" title="The local natural gas utility sees participation in, and support for, community energy initiatives as a strategic priority for business development, with all relevant utility departments engaged in community energy initiatives. These initiatives may include alternative fuel vehicles or high performance demonstration projects, or participating in community energy governance or outreach. Relevant departments may include Business Development/Strategic Initiatives, Sustainability/Conservation and Demand Management, Stakeholder and/or Government Relations, Asset Management/Distribution Planning, Finance, or Communications. This may also include unregulated utility subsidiaries."><i class="fas fa-info-circle"></i></a></th>
+                
+                <td>Checklist</td>
+                
+                <td><label for="align_local_gas_na">N/A for the community<br><input id="align_local_gas_na" class="form-check-input" type="checkbox" name="align_local_gas_na" value="0"></label></td>
+                
+                <td><label for="align_local_gas_0">There currently is no strategic alignment within the local natural gas utility related to community energy initiatives.<br>[0 points]<br><input id="align_local_gas_0" class="form-check-input" type="checkbox" name="align_local_gas_0" value="0"></label></td>
+                
+                <td><label for="align_local_gas_1">Meetings between relevant departments occur within the natural gas utility on a project-to-project basis as they relate to community energy initiatives.<br>[1 point]<br><input id="align_local_gas_1" class="form-check-input" type="checkbox" name="align_local_gas_1" value="1"></label></td>
+                
+                <td><label for="align_local_gas_2">Participation in, and support for, community energy initiatives is seen as a strategic priority within the natural gas utility.<br>[2 point]<br><input id="align_local_gas_2" class="form-check-input" type="checkbox" name="align_local_gas_2" value="1"></label></td>
+                
+                <td></td>
+                
+                <td></td>
+                
+                <td>
+                  <input id="align_local_gas_pts" class="text-center" name="align_local_gas_pts" value="" hidden></input>
+                  <output>0 points</output>
+                </td>
+                
+                <td><textarea class="form-control" id="align_local_gas_notes" name="align_local_gas_notes" placeholder="Enter relevant notes, references, or links..." rows="8" style="font-size: 12px"></textarea></td>
+              </tr>
+
+              <tr>
+                <th scope="row">1.1.3. Knowledge sharing with other communities <a href="#" data-toggle="tooltip" data-placement="right" data-animation="true" title="The local natural gas utility sees participation in, and support for, community energy initiatives as a strategic priority for business development, with all relevant utility departments engaged in community energy initiatives. These initiatives may include alternative fuel vehicles or high performance demonstration projects, or participating in community energy governance or outreach. Relevant departments may include Business Development/Strategic Initiatives, Sustainability/Conservation and Demand Management, Stakeholder and/or Government Relations, Asset Management/Distribution Planning, Finance, or Communications. This may also include unregulated utility subsidiaries."><i class="fas fa-info-circle"></i></a></th>
+                
+                <td>Scale</td>
+                
+                <td><label for="knowledge_share_na">N/A for the community<br><input id="knowledge_share_na" class="form-check-input" type="checkbox" name="knowledge_share_na" value="0"></label></td>
+                
+                <td><label for="knowledge_share_0">There currently is no knowledge sharing with other communities related to community energy initiatives.<br>[0 points]<br><input id="knowledge_share_0" class="form-check-input" type="radio" name="knowledge_share" value="0"></label></td>
+                
+                <td><label for="knowledge_share_1">Representative(s) from the community leadership team has attended or participated in events or knowledge sharing groups that involves members from outside of the community.<br>[1 point]<br><input id="knowledge_share_1" class="form-check-input" type="radio" name="knowledge_share" value="1"></label></td>
+                
+                <td><label for="knowledge_share_2">Representative(s) from the community leadership team has presented in events or led/facilitated knowledge sharing groups that involves members from outside of the community.<br>[2 point]<br><input id="knowledge_share_2" class="form-check-input" type="radio" name="knowledge_share" value="2"></label></td>
+                
+                <td></td>
+                
+                <td></td>
+                
+                <td>
+                  <input id="knowledge_share_pts" class="text-center" name="knowledge_share_pts" value="" hidden></input>
+                  <output>0 points</output>
+                </td>
+                
+                <td><textarea class="form-control" id="knowledge_share_notes" name="knowledge_share_notes" placeholder="Enter relevant notes, references, or links..." rows="8" style="font-size: 12px"></textarea></td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+        
+        <input id="form-submit" class="btn btn-primary" type="submit" value="Save">
+
+      </form><br>
+              
+      <div id="navigation">
+        <a href="/intro" id="previous" class="btn btn-primary" role="button">Previous (Intro)</a>
+        <a href="/logout" id="logout" class="btn btn-primary" role="button">Logout</a>
+        <a href="/staff" id="next" class="btn btn-primary" role="button">Next (Staff)</input></a>
+      </div><br>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/0f567e20d5.js" crossorigin="anonymous"></script>
+    <script src="../public/client.js" type="module"></script>
+  </body>
+</html>

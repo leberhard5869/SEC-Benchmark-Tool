@@ -1,0 +1,30 @@
+.border {
+  border-style: inset;
+  border-width: 1px;
+  margin: 10px;
+}
+
+.center {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.login {
+  border: solid 2px #777;
+  width: 50%;
+  background-color: aliceblue;
+}
+
+a.text {
+  text-decoration: none;
+  font-weight: 700;
+}
+
+th, td {
+  font-size: 12px;
+}
+
+textarea {
+  font-size: 12px;
+}

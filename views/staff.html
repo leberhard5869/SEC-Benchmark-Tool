@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>SEC Benchmark Tool - Staff</title>
+    <meta name="description" content="Introduction" />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/public/style.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  </head>
+
+  <body>
+    <div class="container-fluid">
+      <img src="../assets/Staff-Icon.png" alt="SEC logo" class="img-fluid" style="transform: scale(0.5)">
+      <h1 class="border center">Staff</h1>
+
+      <h5 id="scenario">Current Scenario: n/a</h5>
+
+      <form id="form-data">
+
+        <input id="scen_carry" name="scen_carry" value="" type="hidden">
+
+        <div class="table-responsive">
+          <table class="table table-bordered align-middle">
+            <thead>
+              <tr style="background-color: #00b3b3">
+                <th class="col-lg text-center align-middle" scope="col">Measures</th>
+                <th class="col-lg text-center align-middle" scope="col">Scoring Method</th>
+                <th class="col-lg-8 text-center align-middle" scope="col" colspan="6">Scoring</th>
+                <th class="col-lg text-center align-middle" scope="col">Community Score</th>
+                <th class="col-lg-2 text-center align-middle" scope="col">Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1.2.1a. Local government staff resources tasked with managing community energy initiatives <a href="#" data-toggle="tooltip" data-placement="right" data-animation="true" title="The local government has staff resources to manage community energy initiatives. Ideally the staff resource(s) should have expertise in community energy management and corporate energy management."><i class="fas fa-info-circle"></i></a></th>
+                
+                <td>Checklist</td>
+                
+                <td><label for="staff_manag_init_na">N/A for the community<br><input id="staff_manag_init_na" class="form-check-input" type="checkbox" name="staff_manag_init_na" value="0"></label></td>
+                
+                <td><label for="staff_manag_init_0">The local government currently does not have staff resources tasked with managing community energy initiatives.<br>[0 points]<br><input id="staff_manag_init_0" class="form-check-input" type="checkbox" name="staff_manag_init_0" value="0"></label></td>
+                
+                <td><label for="staff_manag_init_1">The local government has greater than 0.25, but less than 1, FTE staff tasked with applying an energy lens to community initiatives and overseeing specific community energy initiatives.<br>[1 point]<br><input id="staff_manag_init_1" class="form-check-input" type="checkbox" name="staff_manag_init_1" value="1"></label></td>
+                
+                <td><label for="staff_manag_init_2">The local government has 1-2 FTE staff  tasked with applying an energy lens to community initiatives and overseeing specific community and corporate energy initiatives.<br>[2 points]<br><input id="staff_manag_init_2" class="form-check-input" type="checkbox" name="staff_manag_init_2" value="2"></label></td>
+                
+                <td><label for="staff_manag_init_3">The local government has equal to or greater than 3 FTE staff  tasked with applying an energy lens to community initiatives and overseeing specific community and corporate energy initiatives.<br>[3 points]<br><input id="staff_manag_init_3" class="form-check-input" type="checkbox" name="staff_manag_init_3" value="3"></label></td>
+                
+                <td></td>
+                
+                <td>
+                  <input id="staff_manag_init_pts" class="text-center" name="staff_manag_init_pts" value="" hidden></input>
+                  <output>0 points</output>
+                </td>
+                
+                <td><textarea class="form-control" id="staff_manag_init_notes" name="staff_manag_init_notes" placeholder="Enter relevant notes, references, or links..." rows="8" style="font-size: 12px"></textarea></td>
+              </tr>
+
+              <tr>
+                <th scope="row">1.2.1b. Community energy staff position support <a href="#" data-toggle="tooltip" data-placement="right" data-animation="true" title="Local NGOs or utilities support the community's energy initiatives by providing localized staff capacity to support programs, events etc. This can be an onsite cost-shared resource from a utility or other organization who is embedded in the local government or other organizations to provide support, such as the BC Hydro Community Energy Manager or Efficiency Nova Scotia Onsite Energy Managers programs. This can also be an external resource such as an NGO staff member who is dedicated to helping local governments, such as the Arctic Energy Alliance regional coordinator positions."><i class="fas fa-info-circle"></i></a></th>
+                
+                <td>Checklist</td>
+                
+                <td><label for="staff_posit_supp_na">N/A for the community<br><input id="staff_posit_supp_na" class="form-check-input" type="checkbox" name="staff_posit_supp_na" value="0"></label></td>
+                
+                <td><label for="staff_posit_supp_0">There are currently no programs for community energy staff position support.<br>[0 points]<br><input id="staff_posit_supp_0" class="form-check-input" type="checkbox" name="staff_posit_supp_0" value="0"></label></td>
+                
+                <td><label for="staff_posit_supp_1">There is an external staffing resource within the community to support the coordination of community energy initiatives.<br>[1 point]<br><input id="staff_posit_supp_1" class="form-check-input" type="checkbox" name="staff_posit_supp_1" value="1"></label></td>
+                
+                <td><label for="staff_posit_supp_2">There is an embedded community energy manager program or cost-sharing agreement for staff person(s) with split-accountability dedicated to working on community energy initiatives.<br>[2 points]<br><input id="staff_posit_supp_2" class="form-check-input" type="checkbox" name="staff_posit_supp_2" value="2"></label></td>
+                
+                <td></td>
+                
+                <td></td>
+                
+                <td>
+                  <input id="staff_posit_supp_pts" class="text-center" name="staff_posit_supp_pts" value="" hidden></input>
+                  <output>0 points</output>
+                </td>
+                
+                <td><textarea class="form-control" id="staff_posit_supp_notes" name="staff_posit_supp_notes" placeholder="Enter relevant notes, references, or links..." rows="8" style="font-size: 12px"></textarea></td>
+              </tr>
+
+              <tr>
+                <th scope="row">1.2.1c. Electric utility has staff resources tasked with supporting and engaging with community energy initiatives <a href="#" data-toggle="tooltip" data-placement="right" data-animation="true" title="The electric utility has staff resources to support and engage with community energy initiatives. This may be staff specifically dedicated to community energy initiatives, or can include multiple staff people who have relevant aspects as a portion of their work. Relevant functions include participating in community energy planning process, data sharing, technical expertise related to project feasibility, and demand side management/conservation and demand management planning."><i class="fas fa-info-circle"></i></a></th>
+                
+                <td>Checklist</td>
+                
+                <td><label for="staff_resources_init_na">N/A for the community<br><input id="staff_resources_init_na" class="form-check-input" type="checkbox" name="staff_resources_init_na" value="0"></label></td>
+                
+                <td><label for="staff_resources_init_0">The electric utility currently does not have staff resources tasked with supporting and engaging with community energy initiatives.<br>[0 points]<br><input id="staff_resources_init_0" class="form-check-input" type="checkbox" name="staff_resources_init_0" value="0"></label></td>
+                
+                <td><label for="staff_resources_init_1">The electric utility has greater than 0.25, but less than 1, FTE staff tasked with supporting and engaging with community energy initiatives.<br>[1 point]<br><input id="staff_resources_init_1" class="form-check-input" type="checkbox" name="staff_resources_init_1" value="1"></label></td>
+                
+                <td><label for="staff_resources_init_2">The electric utility has equal to or greater than 1 FTE staff tasked with supporting and engaging with community energy initiatives.<br>[2 point]<br><input id="staff_resources_init_2" class="form-check-input" type="checkbox" name="staff_resources_init_2" value="2"></label></td>
+                
+                <td><label for="staff_resources_init_3">The electric utility has a dedicated single point of contact engaging directly with the municipality or other community leaders.<br>[3 point]<br><input id="staff_resources_init_3" class="form-check-input" type="checkbox" name="staff_resources_init_3" value="3"></label></td>
+                
+                <td></td>
+                
+                <td>
+                  <input id="staff_resources_init_pts" class="text-center" name="staff_resources_init_pts" value="" hidden></input>
+                  <output>0 points</output>
+                </td>
+                
+                <td><textarea class="form-control" id="staff_resources_init_notes" name="staff_resources_init_notes" placeholder="Enter relevant notes, references, or links..." rows="8" style="font-size: 12px"></textarea></td>
+              </tr>
+
+              <tr>
+                <th scope="row">1.2.1d. Natural gas utility staff resources tasked with supporting and engaging with community energy initiatives <a href="#" data-toggle="tooltip" data-placement="right" data-animation="true" title="The natural gas utility has staff resources to support and engage with community energy initiatives. This may be staff specifically dedicated to community energy initiatives, or can include multiple staff people who have relevant aspects as a portion of their work. Relevant functions include participating in community energy planning process, data sharing, technical expertise related to project feasibility, and demand side management/conservation and demand management planning."><i class="fas fa-info-circle"></i></a></th>
+                
+                <td>Checklist</td>
+                
+                <td><label for="staff_gas_tasked_init_na">N/A for the community<br><input id="staff_gas_tasked_init_na" class="form-check-input" type="checkbox" name="staff_gas_tasked_init_na" value="0"></label></td>
+                
+                <td><label for="staff_gas_tasked_init_0">The natural gas utility currently does not have staff resources tasked with supporting and engaging with community energy initiatives.<br>[0 points]<br><input id="staff_gas_tasked_init_0" class="form-check-input" type="checkbox" name="staff_gas_tasked_init_0" value="0"></label></td>
+                
+                <td><label for="staff_gas_tasked_init_1">The natural gas utility has greater than 0.25, but less than 1, FTE staff tasked with supporting and engaging with community energy initiatives.<br>[1 point]<br><input id="staff_gas_tasked_init_1" class="form-check-input" type="checkbox" name="staff_gas_tasked_init_1" value="1"></label></td>
+                
+                <td><label for="staff_gas_tasked_init_2">The natural gas utility has equal to or greater than 1 FTE staff tasked with supporting and engaging with community energy initiatives.<br>[2 point]<br><input id="staff_gas_tasked_init_2" class="form-check-input" type="checkbox" name="staff_gas_tasked_init_2" value="2"></label></td>
+                
+                <td><label for="staff_gas_tasked_init_3">The natural gas utility has a dedicated single point of contact engaging directly with the municipality or other community leaders.<br>[2 point]<br><input id="staff_gas_tasked_init_3" class="form-check-input" type="checkbox" name="staff_gas_tasked_init_3" value="3"></label></td>                
+                <td></td>
+                
+                <td>
+                  <input id="staff_gas_tasked_init_pts" class="text-center" name="staff_gas_tasked_init_pts" value="" hidden></input>
+                  <output>0 points</output>
+                </td>
+                
+                <td><textarea class="form-control" id="staff_gas_tasked_init_notes" name="staff_gas_tasked_init_notes" placeholder="Enter relevant notes, references, or links..." rows="8" style="font-size: 12px"></textarea></td>
+              </tr>
+
+              <tr>
+                <th scope="row">1.1.3. Knowledge sharing with other communities <a href="#" data-toggle="tooltip" data-placement="right" data-animation="true" title="The local natural gas utility sees participation in, and support for, community energy initiatives as a strategic priority for business development, with all relevant utility departments engaged in community energy initiatives. These initiatives may include alternative fuel vehicles or high performance demonstration projects, or participating in community energy governance or outreach. Relevant departments may include Business Development/Strategic Initiatives, Sustainability/Conservation and Demand Management, Stakeholder and/or Government Relations, Asset Management/Distribution Planning, Finance, or Communications. This may also include unregulated utility subsidiaries."><i class="fas fa-info-circle"></i></a></th>
+                
+                <td>Scale</td>
+                
+                <td><label for="knowledge_share_na">N/A for the community<br><input id="knowledge_share_na" class="form-check-input" type="checkbox" name="knowledge_share_na" value="0"></label></td>
+                
+                <td><label for="knowledge_share_0">There currently is no knowledge sharing with other communities related to community energy initiatives.<br>[0 points]<br><input id="knowledge_share_0" class="form-check-input" type="radio" name="knowledge_share" value="0"></label></td>
+                
+                <td><label for="knowledge_share_1">Representative(s) from the community leadership team has attended or participated in events or knowledge sharing groups that involves members from outside of the community.<br>[1 point]<br><input id="knowledge_share_1" class="form-check-input" type="radio" name="knowledge_share" value="1"></label></td>
+                
+                <td><label for="knowledge_share_2">Representative(s) from the community leadership team has presented in events or led/facilitated knowledge sharing groups that involves members from outside of the community.<br>[2 point]<br><input id="knowledge_share_2" class="form-check-input" type="radio" name="knowledge_share" value="2"></label></td>
+                
+                <td></td>
+                
+                <td></td>
+                
+                <td>
+                  <input id="knowledge_share_pts" class="text-center" name="knowledge_share_pts" value="" hidden></input>
+                  <output>0 points</output>
+                </td>
+                
+                <td><textarea class="form-control" id="knowledge_share_notes" name="knowledge_share_notes" placeholder="Enter relevant notes, references, or links..." rows="8" style="font-size: 12px"></textarea></td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+        
+        <input id="form-submit" class="btn btn-primary" type="submit" value="Save">
+
+      </form><br>
+              
+      <div id="navigation">
+        <a href="/governance" id="previous" class="btn btn-primary" role="button">Previous (Governance)</a>
+        <a href="/logout" id="logout" class="btn btn-primary" role="button">Logout</a>
+        <a href="/data" id="next" class="btn btn-primary" role="button">Next (Data)</input></a>
+      </div><br>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/0f567e20d5.js" crossorigin="anonymous"></script>
+    <script src="../public/client.js" type="module"></script>
+  </body>
+</html>

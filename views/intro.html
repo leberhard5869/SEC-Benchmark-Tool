@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>SEC Benchmark Tool - Introduction</title>
+    <meta name="description" content="Introduction" />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/public/style.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  </head>
+
+  <body>
+    <div class="container-fluid">
+      <img src="../assets/SEC-logo.png" alt="SEC logo" class="img-fluid">
+      <h1 class="border center">Introduction & Scenario Control</h1>
+      <p>Welcome to the Smart Energy Communities Benchmarking Tool!</p>
+      <p>Energy-smart communities benefit from new opportunities for local economic development, lower energy costs, a cleaner environment, and improved community resilience. This tool is intended to benchmark municipal and utility policies, plans, processes, and programs against best practices from across Canada to help communities identify strengths and opportunities on their energy-smart journey.</p>
+      <p>If you are interested in support with benchmarking your community, or have any questions or feedback on the tool, feel free to contact us at: <a href="mailto:info@questcanada.org">info@questcanada.org</a></p>
+
+      <h4>Instructions</h4>
+      <p>Lorem ipsum</p>
+        
+      <h4>Scenario Control</h4>
+      <p>Change the current scenario or define a new one:</p>
+      <form id="form-scen">
+        <div class="row">
+          <div class="col-lg-3"><select id="exist_scen_name" name="exist_scen_name" class="form-select"></select></div>
+          <!-- Turn into modal??? -->
+          <div class="col-lg-3"><input id="new_scen_name" type="text" name="new_scen_name" class="form-control" placeholder="Enter scenario name..." hidden></div>
+        </div><br>
+        <input id="form-scen-submit" class="btn btn-primary" type="submit" value="Select" disabled>
+      </form><br>
+
+      <h4 id="scenario">Current Scenario: n/a</h4>
+      
+      <form id="form-data">
+
+        <input id="scen_carry" name="scen_carry" value="" type="hidden">
+
+        <h5>Organization Type</h5>
+        <div id="org_type" class="form-check">
+          <label for="local-gov" class="form-check-label"><input id="local-gov" class="form-check-input" type="radio" name="org_type" value="local-gov"> Local Government</label><br>
+          <label for="nat-gas" class="form-check-label"><input id="nat-gas" class="form-check-input" type="radio" name="org_type" value="nat-gas"> Natural Gas Utilities</label><br>
+          <label for="elec-util" class="form-check-label"><input id="elec-util" class="form-check-input" type="radio" name="org_type" value="elec-util"> Electric Utilities</label><br>
+          <label for="other" class="form-check-label"><input id="other" class="form-check-input" type="radio" name="org_type" value="other"> Other</label>
+        </div><br>
+
+        <h5>Community Details</h5>
+        <div class="row">
+          <div class="col-lg-3">Details</div>
+          <div class="col-lg-3"><label for="comm_name" class="form-label">Community name</label></div>
+          <div class="col-lg-6"><input id="comm_name" type="text" name="comm_name" class="form-control" placeholder="Enter community name..."></div>
+        </div><br>
+
+        <div class="row">
+          <div class="col-lg-3">Demographics</div>
+          <div class="col-lg-3"><label for="pop_size" class="form-label">Population size</label></div>
+          <div class="col-lg-6">
+            <select id="pop_size" name="pop_size" class="form-select">
+              <option>Select...</option>
+              <option value=">100 000">Greater than 100,000</option>
+              <option value="30000 - 99999">30,000 to 99,999</option>
+              <option value="10000 - 29999">10,000 to 29,999</option>
+              <option value="1000 - 9999">1,000 to 9,999</option>
+              <option value="<1000">Less than 1,000</option>                    
+            </select>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-3"></div>
+          <div class="col-lg-3"><label for="pop_growth" class="form-label">Population growth</label></div>
+          <div class="col-lg-6">
+            <select id="pop_growth" name="pop_growth" class="form-select">
+              <option>Select...</option>
+              <option value="growing">Growing (>0% annual population change)</option>
+              <option value="stable/shrinking">Stable or Shrinking(less than 0% annual population change</option>
+            </select>
+          </div>
+        </div><br>
+
+        <div class="row">
+          <div class="col-lg-3">Geography</div>
+          <div class="col-lg-3"><label for="prov_terr" class="form-label">Province/Territory</label></div>
+          <div class="col-lg-6">
+            <select id="prov_terr" name="prov_terr" class="form-select">
+              <option>Select...</option>
+              <option value="ab">Alberta</option>
+              <option value="bc">British Columbia</option>
+              <option value="mb">Manitoba</option>
+              <option value="nb">New Brunswick</option>
+              <option value="ns">Nova Scotia</option>
+              <option value="nl">Newfoundland & Labrador</option>
+              <option value="nt">Northwest Territories</option>
+              <option value="nu">Nunavut</option>
+              <option value="on">Ontario</option>
+              <option value="pe">Prince Edward Island</option>
+              <option value="qc">Quebec</option>                    
+              <option value="sk">Saskatchewan</option>
+              <option value="yt">Yukon</option>                    
+            </select>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-3"></div>
+          <div class="col-lg-3"><label for="flood_prone" class="form-label">Flood prone</label></div>
+          <div class="col-lg-6">
+            <select id="flood_prone" name="flood_prone" class="form-select">
+              <option>Select...</option>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+          </div>
+        </div><br>
+
+        <div class="row">
+          <div class="col-lg-3">Infrastructure</div>
+          <div class="col-lg-3"><label for="gas_conx" class="form-label">Natural gas grid connection</label></div>
+          <div class="col-lg-6">
+            <select id="gas_conx" name="gas_conx" class="form-select">
+              <option>Select...</option>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-3"></div>
+          <div class="col-lg-3"><label for="waste_cont" class="form-label">Control over waste management</label></div>
+          <div class="col-lg-6">
+            <select id="waste_cont" name="waste_cont" class="form-select">
+              <option>Select...</option>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-3"></div>
+          <div class="col-lg-3"><label for="cent_water" class="form-label">Centralized water system</label></div>
+          <div class="col-lg-6">
+            <select id="cent_water" name="cent_water" class="form-select">
+              <option>Select...</option>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-3"></div>
+          <div class="col-lg-3"><label for="public_tran" class="form-label">Public transit system</label></div>
+          <div class="col-lg-6">
+            <select id="public_tran" name="public_tran" class="form-select">
+              <option>Select...</option>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+          </div>
+        </div><br>
+
+        <div class="row">
+          <div class="col-lg-3">Building Stock</div>
+          <div class="col-lg-3"><label for="sig_murb_stock" class="form-label">Significant multi-unit residential building stock <a href="#" data-toggle="tooltip" data-placement="right" data-animation="true" title="For guidance, use an approximation of >25% of dwelling types. Refer to the census for data on dwelling types."><i class="fas fa-info-circle"></i></a></label></div>
+          <div class="col-lg-6">
+            <select id="sig_murb_stock" name="sig_murb_stock" class="form-select">
+              <option>Select...</option>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-3"></div>
+          <div class="col-lg-3"><label for="sig_comm_stock" class="form-label">Significant commercial building stock <a href="#" data-toggle="tooltip" data-placement="right" data-animation="true" title="For guidance, use an approximation of >5% of buildings.  Refer to the census for data on building permits."><i class="fas fa-info-circle"></i></a></label></div>
+          <div class="col-lg-6">
+            <select id="sig_comm_stock" name="sig_comm_stock" class="form-select">
+              <option>Select...</option>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+          </div>
+        </div><br>
+
+        <div class="row">
+          <div class="col-lg-3">Prominent Stakeholders</div>
+          <div class="col-lg-3"><label for="pub_sect_orgs" class="form-label">Public sector organizations</label></div>
+          <div class="col-lg-6">
+            <select id="pub_sect_orgs" name="pub_sect_orgs" class="form-select">
+              <option>Select...</option>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-3"></div>
+          <div class="col-lg-3"><label for="priv_sect_oper" class="form-label">Private sector developers, building owners/operators</label></div>
+          <div class="col-lg-6">
+            <select id="priv_sect_oper" name="priv_sect_oper" class="form-select">
+              <option>Select...</option>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+          </div>
+        </div>
+        
+        <div>
+          <input id="form-data-submit" class="btn btn-primary" type="submit" value="Save Scenario" disabled>
+          <!-- Button trigger modal -->
+          <button id="scen-delete" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#deleteModal" disabled>Delete Scenario</button>
+          <br>
+        </div>
+      </form><br>
+
+      <!-- Modal -->
+      <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Confirm Delete</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div id="del-modal-body" class="modal-body">Are you sure you would like to delete scenario</div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <form id="form_scen_delete">
+                <input id="scen_delete" name="scen_delete" value="" hidden>
+                <input id="scen-del-submit" class="btn btn-danger" type="submit" value="Delete Scenario">
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="navigation">
+        <a href="/logout" id="logout" class="btn btn-primary" role="button">Logout</a>
+        <a href="/governance" id="next" class="btn btn-primary" role="button">Next (Governance)</a>
+      </div>
+    </div><br>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/0f567e20d5.js" crossorigin="anonymous"></script>
+    <script>
+      $(document).ready(function(){
+        /* Enable info circle hover document-wide */
+        $('[data-toggle="tooltip"]').tooltip();
+
+        /* Transfer current scenario name to delete modal */
+        $("#scen-delete").on("click", function() {
+          let scenText = "Are you sure you would like to delete scenario " + $("#scen_carry").val() +"?"; 
+          $("#del-modal-body").text(scenText);
+        });
+
+        /* Load existing scenario names (if any) on page load */
+        $.ajax({
+          type: "GET",
+          url: "/db/scenario",
+          success: function(scenArr) {
+            /* Insert existing scenario names into options list/Enable submit button/new scenario name input on selection */
+            insertScen(scenArr);
+          }
+        });
+
+        /* Save chosen scenario as current and return data to populate form */
+        $("#form-scen").on("submit", function(e) {
+          $.ajax({
+            type: "POST",
+            url: "/db/scenario",
+            data: $(this).serialize(),
+            success: function(data) {
+              /* Alert if new scenario name already exists */
+              if (typeof(data) === "string") {
+                alert(data);
+              } else { 
+                /* Reset form elements */
+                $("#form-scen-submit").prop("disabled", true).val("Select");
+                $("#new_scen_name").prop("hidden", true)
+
+                /* Insert scenario name as title/Enable delete button if current scenario is not n/a */
+                if (data.scenResult.scen_name) { 
+                  $("#scenario").text("Current Scenario:  " + data.scenResult.scen_name);
+                  $("#scen-delete").prop("disabled", false);
+                  $("#form-data-submit").prop("disabled", false);
+                };
+
+                /* Insert existing scenario names into options list/Enable submit button/new scenario name input on selection */
+                $("#exist_scen_name").empty();
+                insertScen(data.scenArr);
+
+                /* Insert scenario data into form */
+                $("#scen_carry").val(data.scenResult.scen_name);
+                $("#scen_delete").val(data.scenResult.scen_name);
+                
+                $("#org_type").find("input").prop("checked", false);                
+                if (data.scenResult.org_type) { $("#" + data.scenResult.org_type).prop("checked", true) };
+                data.scenResult.comm_name ? $("#comm_name").val(data.scenResult.comm_name) : $("#comm_name").val("");
+                data.scenResult.cent_water ? $("#cent_water").val(data.scenResult.cent_water) : $("#cent_water").children().first().prop("selected", true);
+                data.scenResult.flood_prone ? $("#flood_prone").val(data.scenResult.flood_prone) : $("#flood_prone").children().first().prop("selected", true);
+                data.scenResult.gas_conx ? $("#gas_conx").val(data.scenResult.gas_conx) : $("#gas_conx").children().first().prop("selected", true);
+                data.scenResult.pop_growth ? $("#pop_growth").val(data.scenResult.pop_growth) : $("#pop_growth").children().first().prop("selected", true);
+                data.scenResult.pop_size ? $("#pop_size").val(data.scenResult.pop_size) : $("#pop_size").children().first().prop("selected", true);
+                data.scenResult.priv_sect_oper ? $("#priv_sect_oper").val(data.scenResult.priv_sect_oper) : $("#priv_sect_oper").children().first().prop("selected", true);
+                data.scenResult.prov_terr ? $("#prov_terr").val(data.scenResult.prov_terr) : $("#prov_terr").children().first().prop("selected", true);
+                data.scenResult.pub_sect_orgs ? $("#pub_sect_orgs").val(data.scenResult.pub_sect_orgs) : $("#pub_sect_orgs").children().first().prop("selected", true);
+                data.scenResult.public_tran ? $("#public_tran").val(data.scenResult.public_tran) : $("#public_tran").children().first().prop("selected", true);
+                data.scenResult.sig_comm_stock ? $("#sig_comm_stock").val(data.scenResult.sig_comm_stock) : $("#sig_comm_stock").children().first().prop("selected", true);
+                data.scenResult.sig_murb_stock ? $("#sig_murb_stock").val(data.scenResult.sig_murb_stock) : $("#sig_murb_stock").children().first().prop("selected", true);
+                data.scenResult.waste_cont ? $("#waste_cont").val(data.scenResult.waste_cont) : $("#waste_cont").children().first().prop("selected", true);
+                
+                alert("Save/load succesful.");
+              };
+            }
+          });
+          e.preventDefault();
+        });
+
+        /* Delete current scenario and reload */
+        $("#form_scen_delete").on("submit", function(e) {
+          $.ajax({
+            type: "PUT",
+            url: "/db/scenario",
+            data: $(this).serialize(),
+            success: function(result) {
+              //alert(result);
+              window.location.reload(true);
+            }
+          });
+          e.preventDefault();
+        });
+
+        /* Load existing scenario data (if any) on page load */
+        $.ajax({
+          type: "GET",
+          url: "/db/data/intro",
+          success: function(data) {
+            /* Insert scenario name as title/Enable delete button if current scenario is not n/a */
+            if (data.scen_name) { 
+              $("#scenario").text("Current Scenario:  " + data.scen_name);
+              $("#scen-delete").prop("disabled", false);
+              $("#form-data-submit").prop("disabled", false);
+            };
+
+            /* Insert scenario data into form */
+            $("#scen_carry").val(data.scen_name);
+            $("#scen_delete").val(data.scen_name);
+            
+            $("#org_type").find("input").prop("checked", false);
+            if (data.org_type) { $("#" + data.org_type).prop("checked", true) };
+            data.comm_name ? $("#comm_name").val(data.comm_name) : $("#comm_name").val("");
+            data.cent_water ? $("#cent_water").val(data.cent_water) : $("#cent_water").children().first().prop("selected", true);
+            data.flood_prone ? $("#flood_prone").val(data.flood_prone) : $("#flood_prone").children().first().prop("selected", true);
+            data.gas_conx ? $("#gas_conx").val(data.gas_conx) : $("#gas_conx").children().first().prop("selected", true);
+            data.pop_growth ? $("#pop_growth").val(data.pop_growth) : $("#pop_growth").children().first().prop("selected", true);
+            data.pop_size ? $("#pop_size").val(data.pop_size) : $("#pop_size").children().first().prop("selected", true);
+            data.priv_sect_oper ? $("#priv_sect_oper").val(data.priv_sect_oper) : $("#priv_sect_oper").children().first().prop("selected", true);
+            data.prov_terr ? $("#prov_terr").val(data.prov_terr) : $("#prov_terr").children().first().prop("selected", true);
+            data.pub_sect_orgs ? $("#pub_sect_orgs").val(data.pub_sect_orgs) : $("#pub_sect_orgs").children().first().prop("selected", true);
+            data.public_tran ? $("#public_tran").val(data.public_tran) : $("#public_tran").children().first().prop("selected", true);
+            data.sig_comm_stock ? $("#sig_comm_stock").val(data.sig_comm_stock) : $("#sig_comm_stock").children().first().prop("selected", true);
+            data.sig_murb_stock ? $("#sig_murb_stock").val(data.sig_murb_stock) : $("#sig_murb_stock").children().first().prop("selected", true);
+            data.waste_cont ? $("#waste_cont").val(data.waste_cont) : $("#waste_cont").children().first().prop("selected", true);
+
+          }
+        });
+
+        /* Save scenario data */
+        $("#form-data").on("submit", function(e) {
+          $.ajax({
+            type: "POST",
+            url: "/db/data/intro",
+            data: $(this).serialize(),
+            success: function(result) {
+              alert(result);
+            }
+          });
+          e.preventDefault();
+        });
+
+        function insertScen(scenArr) {
+          let i, insert;
+          insert = '<option>Select...</option>';
+          for (i = 0; i < scenArr.length; i++) {
+            insert += '<option value="' + scenArr[i] + '">' + scenArr[i] + '</option>';
+          };
+          insert += '<option value="new">New scenario...</option>';
+          $("#exist_scen_name").append(insert);
+
+          $("#exist_scen_name").change(function() {
+            if (this.value !== "Select...") {
+              $(this).parents("form").find("input").eq(1).prop("disabled", false);
+            } else if (this.value === "Select...") {
+              $(this).parents("form").find("input").eq(1).prop("disabled", true);
+            };
+
+            if (this.value === "new") { 
+              $(this).parents("form").find("input").first().prop("hidden", false);
+              $("#form-scen-submit").val("Save Scenario Name");
+            } else if (this.value !== "new") {
+              $(this).parents("form").find("input").first().prop("hidden", true);
+              $(this).parents("form").find("input").first().val("");
+              $("#form-scen-submit").val("Select");
+            };
+          });
+        };
+
+      });
+    </script>
+  </body>
+</html>
