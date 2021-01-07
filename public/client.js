@@ -32,7 +32,7 @@ $(document).ready(function(){
       $(this).parents("td").css("background-color", "#ffcd05");
     };
 
-    /* Points addition */
+    /* Row points addition */
     arr = $(this).parents("tr").find(".form-check-input");
     for (i = 0; i < arr.length; i++) {
       if (arr[i].checked) { sum += Number(arr[i].value) };
@@ -40,28 +40,33 @@ $(document).ready(function(){
     $(this).parents("tr").find("input").last().val(sum);
     sum = sum.toString()  + " points";
     $(this).parents("tr").find("output").html(sum);
-    
+
+    /* Total points addition */
+    sum = 0;
+    arr = $(".row-points");
+    for (i = 0; i < arr.length; i++) { sum += Number(arr[i].value) };
+    $("#z_pts_total").val(sum);
+
     /* Re-grey out unused table cells */
     $("td:empty").css("background-color", "lightgrey");
     
   });
 
   /* Load scenario data (if any) */
-  let url = "/db/data" + window.location.pathname;
   $.ajax({
     type: "GET",
-    url: url,
+    url: "/db/data",
     success: function(result) {
       $("#scenario").text("Scenario:  " + result.scen_name);
       $("#scen_carry").val(result.scen_name);
       
       /* Insert scenario data into form */
-      let boundFormat;
-      for (let key in result) {
-        if (typeof(result[key]) === "string") { $("#" + key).val(result[key]) }
-        else if (typeof(result[key]) === "number") {
+      let subResult = result[window.location.pathname.substring(1)];
+      for (let key in subResult) {
+        if (typeof(subResult[key]) === "string") { $("#" + key).val(subResult[key]) }
+        else if (typeof(subResult[key]) === "number") {
           $("#" + key).prop("checked", true).trigger("formatting");
-          $("#" + key + "_" + result[key]).prop("checked", true).trigger("formatting");
+          $("#" + key + "_" + subResult[key]).prop("checked", true).trigger("formatting");
         };
       }
     }
@@ -71,7 +76,7 @@ $(document).ready(function(){
   $("#form-data").on("submit", function(e) {
     $.ajax({
       type: "POST",
-      url: url,
+      url: "/db/data" + window.location.pathname,
       data: $(this).serialize(),
       success: function(result) {
         alert(result);

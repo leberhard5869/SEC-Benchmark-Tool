@@ -21,6 +21,7 @@
       <form id="form-data">
 
         <input id="scen_carry" name="scen_carry" value="" type="hidden">
+        <input id="z_pts_total" name="z_pts_total" value="" type="hidden">
 
         <div class="table-responsive">
           <table class="table table-bordered align-middle">
@@ -50,7 +51,7 @@
                 <td><label for="local_task_manage_3">The local government has equal to or greater than 3 FTE staff  tasked with applying an energy lens to community initiatives and overseeing specific community and corporate energy initiatives.<br>[3 points]<br><input id="local_task_manage_3" class="form-check-input" type="radio" name="local_task_manage" value="3"></label></td>
                 
                 <td>
-                  <input id="local_task_manage_pts" class="text-center" name="local_task_manage_pts" value="" hidden></input>
+                  <input id="local_task_manage_pts" class="text-center row-points" name="local_task_manage_pts" value="" hidden></input>
                   <output>0 points</output>
                 </td>
                 
@@ -73,7 +74,7 @@
                 <td></td>
                 
                 <td>
-                  <input id="comm_posit_supp_pts" class="text-center" name="comm_posit_supp_pts" value="" hidden></input>
+                  <input id="comm_posit_supp_pts" class="text-center row-points" name="comm_posit_supp_pts" value="" hidden></input>
                   <output>0 points</output>
                 </td>
                 
@@ -96,7 +97,7 @@
                 <td><label for="elec_res_init_3">The electric utility has a dedicated single point of contact engaging directly with the municipality or other community leaders.<br>[3 points]<br><input id="elec_res_init_3" class="form-check-input" type="radio" name="elec_res_init" value="3"></label></td>
                 
                 <td>
-                  <input id="elec_res_init_pts" class="text-center" name="elec_res_init_pts" value="" hidden></input>
+                  <input id="elec_res_init_pts" class="text-center row-points" name="elec_res_init_pts" value="" hidden></input>
                   <output>0 points</output>
                 </td>
                 
@@ -119,7 +120,7 @@
                 <td><label for="gas_res_init_3">The natural gas utility has a dedicated single point of contact engaging directly with the municipality or other community leaders.<br>[3 points]<br><input id="gas_res_init_3" class="form-check-input" type="radio" name="gas_res_init" value="3"></label></td>                
                 
                 <td>
-                  <input id="gas_res_init_pts" class="text-center" name="gas_res_init_pts" value="" hidden></input>
+                  <input id="gas_res_init_pts" class="text-center row-points" name="gas_res_init_pts" value="" hidden></input>
                   <output>0 points</output>
                 </td>
                 
@@ -135,18 +136,110 @@
                 
                 <td><label for="local_supp_edu_0">Local government staff currently do not participate in education or training related to community energy initiatives.<br>[0 points]<br><input id="local_supp_edu_0" class="form-check-input" type="radio" name="local_supp_edu" value="0"></label></td>
                 
-                <td><label for="local_supp_edu_1">Staff involved in community energy initiatives participate in, on average, 1 educational or training sessions per staff personnel per year relating to aspects of community energy initiatives<br>[1 point]<br><input id="local_supp_edu_1" class="form-check-input" type="radio" name="local_supp_edu" value="1"></label></td>
+                <td><label for="local_supp_edu_1">Staff involved in community energy initiatives participate in, on average, 1 educational or training sessions per staff personnel per year relating to aspects of community energy initiatives.<br>[1 point]<br><input id="local_supp_edu_1" class="form-check-input" type="radio" name="local_supp_edu" value="1"></label></td>
                 
                 <td><label for="local_supp_edu_2">Staff involved in community energy initiatives participate in, on average, 1 to 4 educational or training sessions per staff personnel per year relating to aspects of community energy initiatives.<br>[2 points]<br><input id="local_supp_edu_2" class="form-check-input" type="radio" name="local_supp_edu" value="2"></label></td>
                 
                 <td><label for="local_supp_edu_3">Staff involved in community energy initiatives participate in more than 4 educational or training sessions per staff personnel per year relating to aspects of community energy initiatives.<br>[3 points]<br><input id="local_supp_edu_3" class="form-check-input" type="radio" name="local_supp_edu" value="3"></label></td>
                 
                 <td>
-                  <input id="local_supp_edu_pts" class="text-center" name="local_supp_edu_pts" value="" hidden></input>
+                  <input id="local_supp_edu_pts" class="text-center row-points" name="local_supp_edu_pts" value="" hidden></input>
                   <output>0 points</output>
                 </td>
                 
                 <td><textarea class="form-control" id="local_supp_edu_notes" name="local_supp_edu_notes" placeholder="Enter relevant notes, references, or links..." rows="8" style="font-size: 12px"></textarea></td>
+              </tr>
+
+              <tr>
+                <th scope="row">1.2.3b. Building inspector staff education <a href="#" data-toggle="tooltip" data-placement="right" data-animation="true" title="This also includes a process for education of building inspectors to ensure proper promotion and enforcement of building code and energy efficiency policies. Note that some jurisdictions, such as the Territories, are governed by land use permits and do not have building inspectors available."><i class="fas fa-info-circle"></i></a></th>
+                
+                <td>Checklist</td>
+                
+                <td><label for="bld_insp_edu_na">N/A for the community<br><input id="bld_insp_edu_na" class="form-check-input" type="checkbox" name="bld_insp_edu_na" value="0"></label></td>
+                
+                <td><label for="bld_insp_edu_0">There currently is no process for building inspector staff education.<br>[0 points]<br><input id="bld_insp_edu_0" class="form-check-input" type="checkbox" name="bld_insp_edu_0" value="0"></label></td>
+                
+                <td><label for="bld_insp_edu_1">The local government has a process for educating building inspectors on energy efficiency policies to ensure effective enforcement.<br>[2 points]<br><input id="bld_insp_edu_1" class="form-check-input" type="checkbox" name="bld_insp_edu_1" value="2"></label></td>
+                
+                <td></td>
+                
+                <td></td>
+                
+                <td>
+                  <input id="bld_insp_edu_pts" class="text-center row-points" name="bld_insp_edu_pts" value="" hidden></input>
+                  <output>0 points</output>
+                </td>
+                
+                <td><textarea class="form-control" id="bld_insp_edu_notes" name="bld_insp_edu_notes" placeholder="Enter relevant notes, references, or links..." rows="8" style="font-size: 12px"></textarea></td>
+              </tr>
+
+              <tr>
+                <th scope="row">1.2.3c. Electric utility support for staff education related to community energy <a href="#" data-toggle="tooltip" data-placement="right" data-animation="true" title="The electric utility is committed to professional development and continuous improvement of staff competencies. As such, staff education or training relating to aspects of community energy is both supported and encouraged organizationally. Formats can include workshops, webinars, conferences, lunch and learns, and courses. Topics could include community energy planning, corporate energy management (including ISO 50001), business models, life cycle assessment and costing, governance structures, district energy systems, traditional ecological knowledge, energy poverty, alternative fuel vehicles, distributed energy resources, communications and stakeholder engagement."><i class="fas fa-info-circle"></i></a></th>
+                
+                <td>Scale</td>
+                
+                <td><label for="elec_supp_edu_na">N/A for the community<br><input id="elec_supp_edu_na" class="form-check-input" type="checkbox" name="elec_supp_edu_na" value="0"></label></td>
+                
+                <td><label for="elec_supp_edu_0">Electric utility staff currently do not participate in education or training related to community energy.<br>[0 points]<br><input id="elec_supp_edu_0" class="form-check-input" type="radio" name="elec_supp_edu" value="0"></label></td>
+                
+                <td><label for="elec_supp_edu_1">Staff involved in community energy initiatives participate in, on average, 1 educational or training sessions per staff personnel per year relating to aspects of community energy initiatives.<br>[1 point]<br><input id="elec_supp_edu_1" class="form-check-input" type="radio" name="elec_supp_edu" value="1"></label></td>
+                
+                <td><label for="elec_supp_edu_2">Staff involved in community energy initiatives participate in, on average, 1 to 4 educational or training sessions per staff personnel per year relating to aspects of community energy initiatives.<br>[2 points]<br><input id="elec_supp_edu_2" class="form-check-input" type="radio" name="elec_supp_edu" value="2"></label></td>
+                
+                <td><label for="elec_supp_edu_3">Staff involved in community energy initiatives participate in more than 4 educational or training sessions per staff personnel per year relating to aspects of community energy initiatives.<br>[3 points]<br><input id="elec_supp_edu_3" class="form-check-input" type="radio" name="elec_supp_edu" value="3"></label></td>
+                
+                <td>
+                  <input id="elec_supp_edu_pts" class="text-center row-points" name="elec_supp_edu_pts" value="" hidden></input>
+                  <output>0 points</output>
+                </td>
+                
+                <td><textarea class="form-control" id="elec_supp_edu_notes" name="elec_supp_edu_notes" placeholder="Enter relevant notes, references, or links..." rows="8" style="font-size: 12px"></textarea></td>
+              </tr>
+
+              <tr>
+                <th scope="row">1.2.3d. Natural gas utility supports for staff education related to community energy <a href="#" data-toggle="tooltip" data-placement="right" data-animation="true" title="The natural gas utility is committed to professional development and continuous improvement of staff competencies. As such, staff education or training relating to aspects of community energy is both supported and encouraged organizationally. Formats can include workshops, webinars, conferences,  lunch and learns, and courses. Topics could include community energy planning, corporate energy management (including ISO 50001), business models, life cycle assessment and costing, governance structures, district energy systems, traditional ecological knowledge, energy poverty, alternative fuel vehicles, distributed energy resources, communications and stakeholder engagement."><i class="fas fa-info-circle"></i></a></th>
+                
+                <td>Scale</td>
+                
+                <td><label for="gas_supp_edu_na">N/A for the community<br><input id="gas_supp_edu_na" class="form-check-input" type="checkbox" name="gas_supp_edu_na" value="0"></label></td>
+                
+                <td><label for="gas_supp_edu_0">Natural gas utility staff currently do not participate in education or training related to community energy.<br>[0 points]<br><input id="gas_supp_edu_0" class="form-check-input" type="radio" name="gas_supp_edu" value="0"></label></td>
+                
+                <td><label for="gas_supp_edu_1">Staff involved in community energy initiatives participate in, on average, 1 educational or training sessions per staff personnel per year relating to aspects of community energy initiatives.<br>[1 point]<br><input id="gas_supp_edu_1" class="form-check-input" type="radio" name="gas_supp_edu" value="1"></label></td>
+                
+                <td><label for="gas_supp_edu_2">Staff involved in community energy initiatives participate in, on average, 1 to 4 educational or training sessions per staff personnel per year relating to aspects of community energy initiatives.<br>[2 points]<br><input id="gas_supp_edu_2" class="form-check-input" type="radio" name="gas_supp_edu" value="2"></label></td>
+                
+                <td><label for="gas_supp_edu_3">Staff involved in community energy initiatives participate in more than 4 educational or training sessions per staff personnel per year relating to aspects of community energy initiatives.<br>[3 points]<br><input id="gas_supp_edu_3" class="form-check-input" type="radio" name="gas_supp_edu" value="3"></label></td>
+                
+                <td>
+                  <input id="gas_supp_edu_pts" class="text-center row-points" name="gas_supp_edu_pts" value="" hidden></input>
+                  <output>0 points</output>
+                </td>
+                
+                <td><textarea class="form-control" id="gas_supp_edu_notes" name="gas_supp_edu_notes" placeholder="Enter relevant notes, references, or links..." rows="8" style="font-size: 12px"></textarea></td>
+              </tr>
+
+              <tr>
+                <th scope="row">1.2.4. Succession planning for staff roles managing and supporting community energy initiatives <a href="#" data-toggle="tooltip" data-placement="right" data-animation="true" title="There is a program or strategy in place to facilitate succession of key staff roles involved in managing and supporting community energy initiatives in the local government and utilities."><i class="fas fa-info-circle"></i></a></th>
+                
+                <td>Checklist</td>
+                
+                <td><label for="succ_plan_init_na">N/A for the community<br><input id="succ_plan_init_na" class="form-check-input" type="checkbox" name="succ_plan_init_na" value="0"></label></td>
+                
+                <td><label for="succ_plan_init_0">There currently is no succession planning for staff roles managing and supporting community energy initiatives.<br>[0 points]<br><input id="succ_plan_init_0" class="form-check-input" type="checkbox" name="succ_plan_init_0" value="0"></label></td>
+                
+                <td><label for="succ_plan_init_1">There is a program or strategy in place to facilitate succession of local government staff managing community energy initiatives.<br>[1 point]<br><input id="succ_plan_init_1" class="form-check-input" type="checkbox" name="succ_plan_init_1" value="1"></label></td>
+                
+                <td><label for="succ_plan_init_2">There is a program or strategy in place to facilitate succession of electric utility staff supporting and engaging with community energy initiatives.<br>[1 point]<br><input id="succ_plan_init_2" class="form-check-input" type="checkbox" name="succ_plan_init_2" value="1"></label></td>
+                
+                <td><label for="succ_plan_init_3">There is a program or strategy in place to facilitate succession of natural gas utility staff supporting and engaging with community energy initiatives.<br>[1 point]<br><input id="succ_plan_init_3" class="form-check-input" type="checkbox" name="succ_plan_init_3" value="1"></label></td>
+                
+                <td>
+                  <input id="succ_plan_init_pts" class="text-center row-points" name="succ_plan_init_pts" value="" hidden></input>
+                  <output>0 points</output>
+                </td>
+                
+                <td><textarea class="form-control" id="succ_plan_init_notes" name="succ_plan_init_notes" placeholder="Enter relevant notes, references, or links..." rows="8" style="font-size: 12px"></textarea></td>
               </tr>
 
             </tbody>

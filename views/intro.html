@@ -340,7 +340,7 @@
         /* Load existing scenario data (if any) on page load */
         $.ajax({
           type: "GET",
-          url: "/db/data/intro",
+          url: "/db/data",
           success: function(data) {
             /* Insert scenario name as title/Enable delete button if current scenario is not n/a */
             if (data.scen_name) { 

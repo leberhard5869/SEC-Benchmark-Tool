@@ -121,7 +121,6 @@ module.exports = function(app, myDataBase) {
       }
     })
     .put((req, res, next) => {
-      console.log("hello", req.body.scen_delete);
       myDataBase.findOneAndUpdate(
         { username: req.user.username },
         { 
@@ -141,15 +140,18 @@ module.exports = function(app, myDataBase) {
       );
     });
 
-  app.route("/db/data/intro")
+  app.route("/db/data")
     .get((req, res, next) => {
-      let result = getData(
-        req.user.username, 
-        function(err, result) {
-          if (err) console.log(err);
-          else res.json(result);
-        });
-      }) 
+      myDataBase.findOne({ username: req.user.username }, function(err, doc) {
+        if (err) { console.log(err) }
+        else {
+          let result = doc.scenarios.find((elm) => elm.scen_name === doc.currentScen);
+          res.json(result);
+        };
+      });
+    });
+    
+  app.route("/db/data/intro")    
     .post((req, res, next) => {
       myDataBase.findOneAndUpdate(
         { username: req.user.username },
@@ -189,14 +191,6 @@ module.exports = function(app, myDataBase) {
     });
 
   app.route("/db/data/governance")
-    .get((req, res, next) => {
-      let result = getData(
-        req.user.username, 
-        function(err, result) {
-          if (err) console.log(err);
-          else res.json(result);
-        });
-    })  
     .post((req, res, next) => {
       myDataBase.findOneAndUpdate(
         { username: req.user.username },
@@ -204,40 +198,42 @@ module.exports = function(app, myDataBase) {
           $set: {
             "scenarios.$[element].last_update": new Date(),
 
-            "scenarios.$[element].comm_energy_leader_na": Number(req.body.comm_energy_leader_na),
-            "scenarios.$[element].comm_energy_leader_0": Number(req.body.comm_energy_leader_0),
-            "scenarios.$[element].comm_energy_leader_1": Number(req.body.comm_energy_leader_1),
-            "scenarios.$[element].comm_energy_leader_2": Number(req.body.comm_energy_leader_2),
-            "scenarios.$[element].comm_energy_leader_3": Number(req.body.comm_energy_leader_3),
-            "scenarios.$[element].comm_energy_leader_4": Number(req.body.comm_energy_leader_4),
-            "scenarios.$[element].comm_energy_leader_pts": Number(req.body.comm_energy_leader_pts),
-            "scenarios.$[element].comm_energy_leader_notes": req.body.comm_energy_leader_notes,
+            "scenarios.$[element].governance.comm_energy_leader_na": Number(req.body.comm_energy_leader_na),
+            "scenarios.$[element].governance.comm_energy_leader_0": Number(req.body.comm_energy_leader_0),
+            "scenarios.$[element].governance.comm_energy_leader_1": Number(req.body.comm_energy_leader_1),
+            "scenarios.$[element].governance.comm_energy_leader_2": Number(req.body.comm_energy_leader_2),
+            "scenarios.$[element].governance.comm_energy_leader_3": Number(req.body.comm_energy_leader_3),
+            "scenarios.$[element].governance.comm_energy_leader_4": Number(req.body.comm_energy_leader_4),
+            "scenarios.$[element].governance.comm_energy_leader_pts": Number(req.body.comm_energy_leader_pts),
+            "scenarios.$[element].governance.comm_energy_leader_notes": req.body.comm_energy_leader_notes,
 
-            "scenarios.$[element].xdept_coord_local_na": Number(req.body.xdept_coord_local_na),
-            "scenarios.$[element].xdept_coord_local_0": Number(req.body.xdept_coord_local_0),
-            "scenarios.$[element].xdept_coord_local_1": Number(req.body.xdept_coord_local_1),
-            "scenarios.$[element].xdept_coord_local_2": Number(req.body.xdept_coord_local_2),
-            "scenarios.$[element].xdept_coord_local_pts": Number(req.body.xdept_coord_local_pts),
-            "scenarios.$[element].xdept_coord_local_notes": req.body.xdept_coord_local_notes,
+            "scenarios.$[element].governance.xdept_coord_local_na": Number(req.body.xdept_coord_local_na),
+            "scenarios.$[element].governance.xdept_coord_local_0": Number(req.body.xdept_coord_local_0),
+            "scenarios.$[element].governance.xdept_coord_local_1": Number(req.body.xdept_coord_local_1),
+            "scenarios.$[element].governance.xdept_coord_local_2": Number(req.body.xdept_coord_local_2),
+            "scenarios.$[element].governance.xdept_coord_local_pts": Number(req.body.xdept_coord_local_pts),
+            "scenarios.$[element].governance.xdept_coord_local_notes": req.body.xdept_coord_local_notes,
 
-            "scenarios.$[element].align_local_elec_na": Number(req.body.align_local_elec_na),
-            "scenarios.$[element].align_local_elec_0": Number(req.body.align_local_elec_0),
-            "scenarios.$[element].align_local_elec_1": Number(req.body.align_local_elec_1),
-            "scenarios.$[element].align_local_elec_2": Number(req.body.align_local_elec_2),
-            "scenarios.$[element].align_local_elec_pts": Number(req.body.align_local_elec_pts),
-            "scenarios.$[element].align_local_elec_notes": req.body.align_local_elec_notes,
+            "scenarios.$[element].governance.align_local_elec_na": Number(req.body.align_local_elec_na),
+            "scenarios.$[element].governance.align_local_elec_0": Number(req.body.align_local_elec_0),
+            "scenarios.$[element].governance.align_local_elec_1": Number(req.body.align_local_elec_1),
+            "scenarios.$[element].governance.align_local_elec_2": Number(req.body.align_local_elec_2),
+            "scenarios.$[element].governance.align_local_elec_pts": Number(req.body.align_local_elec_pts),
+            "scenarios.$[element].governance.align_local_elec_notes": req.body.align_local_elec_notes,
 
-            "scenarios.$[element].align_local_gas_na": Number(req.body.align_local_gas_na),
-            "scenarios.$[element].align_local_gas_0": Number(req.body.align_local_gas_0),
-            "scenarios.$[element].align_local_gas_1": Number(req.body.align_local_gas_1),
-            "scenarios.$[element].align_local_gas_2": Number(req.body.align_local_gas_2),
-            "scenarios.$[element].align_local_gas_pts": Number(req.body.align_local_gas_pts),
-            "scenarios.$[element].align_local_gas_notes": req.body.align_local_gas_notes,
+            "scenarios.$[element].governance.align_local_gas_na": Number(req.body.align_local_gas_na),
+            "scenarios.$[element].governance.align_local_gas_0": Number(req.body.align_local_gas_0),
+            "scenarios.$[element].governance.align_local_gas_1": Number(req.body.align_local_gas_1),
+            "scenarios.$[element].governance.align_local_gas_2": Number(req.body.align_local_gas_2),
+            "scenarios.$[element].governance.align_local_gas_pts": Number(req.body.align_local_gas_pts),
+            "scenarios.$[element].governance.align_local_gas_notes": req.body.align_local_gas_notes,
              
-            "scenarios.$[element].knowledge_share_na": Number(req.body.knowledge_share_na),
-            "scenarios.$[element].knowledge_share": Number(req.body.knowledge_share),
-            "scenarios.$[element].knowledge_share_pts": Number(req.body.knowledge_share_pts),
-            "scenarios.$[element].knowledge_share_notes": req.body.knowledge_share_notes,
+            "scenarios.$[element].governance.knowledge_share_na": Number(req.body.knowledge_share_na),
+            "scenarios.$[element].governance.knowledge_share": Number(req.body.knowledge_share),
+            "scenarios.$[element].governance.knowledge_share_pts": Number(req.body.knowledge_share_pts),
+            "scenarios.$[element].governance.knowledge_share_notes": req.body.knowledge_share_notes,
+
+            "scenarios.$[element].governance.z_pts_total": Number(req.body.z_pts_total),
           },
         },
         { arrayFilters: [ { "element.scen_name": { $eq: req.body.scen_carry } } ],
@@ -257,14 +253,6 @@ module.exports = function(app, myDataBase) {
     });
 
   app.route("/db/data/staff")
-    .get((req, res, next) => {
-      let result = getData(
-        req.user.username, 
-        function(err, result) {
-          if (err) console.log(err);
-          else res.json(result);
-        });
-    })  
     .post((req, res, next) => {
       myDataBase.findOneAndUpdate(
         { username: req.user.username },
@@ -272,30 +260,51 @@ module.exports = function(app, myDataBase) {
           $set: {
             "scenarios.$[element].last_update": new Date(),
 
-            "scenarios.$[element].local_task_manage_na": Number(req.body.local_task_manage_na),
-            "scenarios.$[element].local_task_manage": Number(req.body.local_task_manage),
-            "scenarios.$[element].local_task_manage_pts": Number(req.body.local_task_manage_pts),
-            "scenarios.$[element].local_task_manage_notes": req.body.local_task_manage_notes,
+            "scenarios.$[element].staff.local_task_manage_na": Number(req.body.local_task_manage_na),
+            "scenarios.$[element].staff.local_task_manage": Number(req.body.local_task_manage),
+            "scenarios.$[element].staff.local_task_manage_pts": Number(req.body.local_task_manage_pts),
+            "scenarios.$[element].staff.local_task_manage_notes": req.body.local_task_manage_notes,
 
-            "scenarios.$[element].comm_posit_supp_na": Number(req.body.comm_posit_supp_na),
-            "scenarios.$[element].comm_posit_supp": Number(req.body.comm_posit_supp),
-            "scenarios.$[element].comm_posit_supp_pts": Number(req.body.comm_posit_supp_pts),
-            "scenarios.$[element].comm_posit_supp_notes": req.body.comm_posit_supp_notes,
+            "scenarios.$[element].staff.comm_posit_supp_na": Number(req.body.comm_posit_supp_na),
+            "scenarios.$[element].staff.comm_posit_supp": Number(req.body.comm_posit_supp),
+            "scenarios.$[element].staff.comm_posit_supp_pts": Number(req.body.comm_posit_supp_pts),
+            "scenarios.$[element].staff.comm_posit_supp_notes": req.body.comm_posit_supp_notes,
 
-            "scenarios.$[element].elec_res_init_na": Number(req.body.elec_res_init_na),
-            "scenarios.$[element].elec_res_init": Number(req.body.elec_res_init),
-            "scenarios.$[element].elec_res_init_pts": Number(req.body.elec_res_init_pts),
-            "scenarios.$[element].elec_res_init_notes": req.body.elec_res_init_notes,
+            "scenarios.$[element].staff.elec_res_init_na": Number(req.body.elec_res_init_na),
+            "scenarios.$[element].staff.elec_res_init": Number(req.body.elec_res_init),
+            "scenarios.$[element].staff.elec_res_init_pts": Number(req.body.elec_res_init_pts),
+            "scenarios.$[element].staff.elec_res_init_notes": req.body.elec_res_init_notes,
 
-            "scenarios.$[element].gas_res_init_na": Number(req.body.gas_res_init_na),
-            "scenarios.$[element].gas_res_init": Number(req.body.gas_res_init),
-            "scenarios.$[element].gas_res_init_pts": Number(req.body.gas_res_init_pts),
-            "scenarios.$[element].gas_res_init_notes": req.body.gas_res_init_notes,
-             
-            "scenarios.$[element].local_supp_edu_na": Number(req.body.local_supp_edu_na),
-            "scenarios.$[element].local_supp_edu": Number(req.body.local_supp_edu),
-            "scenarios.$[element].local_supp_edu_pts": Number(req.body.local_supp_edu_pts),
-            "scenarios.$[element].local_supp_edu_notes": req.body.local_supp_edu_notes,
+            "scenarios.$[element].staff.gas_res_init_na": Number(req.body.gas_res_init_na),
+            "scenarios.$[element].staff.gas_res_init": Number(req.body.gas_res_init),
+            "scenarios.$[element].staff.gas_res_init_pts": Number(req.body.gas_res_init_pts),
+            "scenarios.$[element].staff.gas_res_init_notes": req.body.gas_res_init_notes,
+
+            "scenarios.$[element].staff.bld_insp_edu_na": Number(req.body.bld_insp_edu_na),
+            "scenarios.$[element].staff.bld_insp_edu_0": Number(req.body.bld_insp_edu_0),
+            "scenarios.$[element].staff.bld_insp_edu_1": Number(req.body.bld_insp_edu_1),
+            "scenarios.$[element].staff.bld_insp_edu_pts": Number(req.body.bld_insp_edu_pts),
+            "scenarios.$[element].staff.bld_insp_edu_notes": req.body.bld_insp_edu_notes,
+              
+            "scenarios.$[element].staff.elec_supp_edu_na": Number(req.body.elec_supp_edu_na),
+            "scenarios.$[element].staff.elec_supp_edu": Number(req.body.elec_supp_edu),
+            "scenarios.$[element].staff.elec_supp_edu_pts": Number(req.body.elec_supp_edu_pts),
+            "scenarios.$[element].staff.elec_supp_edu_notes": req.body.elec_supp_edu_notes,
+            
+            "scenarios.$[element].staff.gas_supp_edu_na": Number(req.body.gas_supp_edu_na),
+            "scenarios.$[element].staff.gas_supp_edu": Number(req.body.gas_supp_edu),
+            "scenarios.$[element].staff.gas_supp_edu_pts": Number(req.body.gas_supp_edu_pts),
+            "scenarios.$[element].staff.gas_supp_edu_notes": req.body.gas_supp_edu_notes,
+
+            "scenarios.$[element].staff.succ_plan_init_na": Number(req.body.succ_plan_init_na),
+            "scenarios.$[element].staff.succ_plan_init_0": Number(req.body.succ_plan_init_0),
+            "scenarios.$[element].staff.succ_plan_init_1": Number(req.body.succ_plan_init_1),
+            "scenarios.$[element].staff.succ_plan_init_2": Number(req.body.succ_plan_init_2),
+            "scenarios.$[element].staff.succ_plan_init_3": Number(req.body.succ_plan_init_3),
+            "scenarios.$[element].staff.succ_plan_init_pts": Number(req.body.succ_plan_init_pts),
+            "scenarios.$[element].staff.succ_plan_init_notes": req.body.succ_plan_init_notes,
+
+            "scenarios.$[element].staff.z_pts_total": Number(req.body.z_pts_total),
           },
         },
         { arrayFilters: [ { "element.scen_name": { $eq: req.body.scen_carry } } ],
@@ -385,14 +394,6 @@ module.exports = function(app, myDataBase) {
       return next();
     }
     res.redirect('/');
-  };
-
-  function getData(username, done) {
-    myDataBase.findOne({ username: username }, function(err, doc) {
-      if (err) return done(err);
-      let result = doc.scenarios.find((elm) => elm.scen_name === doc.currentScen);
-      done(null, result);
-    });
   };
 
 };
