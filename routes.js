@@ -256,6 +256,64 @@ module.exports = function(app, myDataBase) {
       );
     });
 
+  app.route("/db/data/staff")
+    .get((req, res, next) => {
+      let result = getData(
+        req.user.username, 
+        function(err, result) {
+          if (err) console.log(err);
+          else res.json(result);
+        });
+    })  
+    .post((req, res, next) => {
+      myDataBase.findOneAndUpdate(
+        { username: req.user.username },
+        {
+          $set: {
+            "scenarios.$[element].last_update": new Date(),
+
+            "scenarios.$[element].local_task_manage_na": Number(req.body.local_task_manage_na),
+            "scenarios.$[element].local_task_manage": Number(req.body.local_task_manage),
+            "scenarios.$[element].local_task_manage_pts": Number(req.body.local_task_manage_pts),
+            "scenarios.$[element].local_task_manage_notes": req.body.local_task_manage_notes,
+
+            "scenarios.$[element].comm_posit_supp_na": Number(req.body.comm_posit_supp_na),
+            "scenarios.$[element].comm_posit_supp": Number(req.body.comm_posit_supp),
+            "scenarios.$[element].comm_posit_supp_pts": Number(req.body.comm_posit_supp_pts),
+            "scenarios.$[element].comm_posit_supp_notes": req.body.comm_posit_supp_notes,
+
+            "scenarios.$[element].elec_res_init_na": Number(req.body.elec_res_init_na),
+            "scenarios.$[element].elec_res_init": Number(req.body.elec_res_init),
+            "scenarios.$[element].elec_res_init_pts": Number(req.body.elec_res_init_pts),
+            "scenarios.$[element].elec_res_init_notes": req.body.elec_res_init_notes,
+
+            "scenarios.$[element].gas_res_init_na": Number(req.body.gas_res_init_na),
+            "scenarios.$[element].gas_res_init": Number(req.body.gas_res_init),
+            "scenarios.$[element].gas_res_init_pts": Number(req.body.gas_res_init_pts),
+            "scenarios.$[element].gas_res_init_notes": req.body.gas_res_init_notes,
+             
+            "scenarios.$[element].local_supp_edu_na": Number(req.body.local_supp_edu_na),
+            "scenarios.$[element].local_supp_edu": Number(req.body.local_supp_edu),
+            "scenarios.$[element].local_supp_edu_pts": Number(req.body.local_supp_edu_pts),
+            "scenarios.$[element].local_supp_edu_notes": req.body.local_supp_edu_notes,
+          },
+        },
+        { arrayFilters: [ { "element.scen_name": { $eq: req.body.scen_carry } } ],
+          returnOriginal: false
+        },
+        (err, doc) => {
+          if (err) {
+            console.log(err);
+            res.send("Save error.");
+          } else {
+            let result = doc.value.scenarios.find((elm) => elm.scen_name === doc.value.currentScen);
+            console.log(result);
+            res.send('Save successful.');
+          }
+        }
+      );
+    });
+
   app.route('/intro')
     .get(ensureAuthenticated, (req, res, next) => {
       res.sendFile(process.cwd() + '/views/intro.html');
