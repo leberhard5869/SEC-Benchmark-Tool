@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>SEC Benchmark Tool - Data</title>
+    <meta name="description" content="Introduction" />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/public/style.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  </head>
+
+  <body>
+    <div class="container-fluid">
+      <img src="../assets/Data-Icon.png" alt="Data logo" class="img-fluid" style="transform: scale(0.5)">
+      <h1 class="border center">Data</h1>
+
+      <h5 id="scenario">Current Scenario: n/a</h5>
+
+      <form id="form-data">
+
+        <input id="scen_carry" name="scen_carry" value="" type="hidden">
+        <input id="z_pts_total" name="z_pts_total" value="" type="hidden">
+
+        <div class="table-responsive">
+          <table class="table table-bordered align-middle">
+            <thead>
+              <tr style="background-color: #00b3b3">
+                <th class="col-lg text-center align-middle" scope="col">Measures</th>
+                <th class="col-lg text-center align-middle" scope="col">Scoring Method</th>
+                <th class="col-lg-8 text-center align-middle" scope="col" colspan="8">Scoring</th>
+                <th class="col-lg text-center align-middle" scope="col">Community Score</th>
+                <th class="col-lg-2 text-center align-middle" scope="col">Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1.3.1a. Electric utility commitment to sharing data <a href="#" data-toggle="tooltip" data-placement="right" data-animation="true" title="The electric utility has adopted a standard format and process for sharing community-wide data and information with local governments and natural gas utilities to inform planning and implementation activities. Relevant data may include electricity use as well as potentially capacity-constrained areas. Standardized formats may include five- or six-digit postal code aggregation (respecting privacy considerations such as excluding large contracts/users), community-wide aggregation, building typology categorization, NAICS categorization, and/or Green Button formatting."><i class="fas fa-info-circle"></i></a></th>
+                
+                <td>Scale</td>
+                
+                <td><label for="elec_commit_share_na">N/A for the community<br><input id="elec_commit_share_na" class="form-check-input" type="checkbox" name="elec_commit_share_na" value="0"></label></td>
+                
+                <td><label for="elec_commit_share_0">The electric utility currently does not share community-wide data.<br>[0 points]<br><input id="elec_commit_share_0" class="form-check-input" type="radio" name="elec_commit_share_0" value="0"></label></td>
+                
+                <td><label for="elec_commit_share_1">Requests for data and information are addressed in an ad-hoc fashion.<br>[1 point]<br><input id="elec_commit_share_1" class="form-check-input" type="radio" name="elec_commit_share" value="1"></label></td>
+
+                <td><label for="elec_commit_share_2">A standardized format for community energy data has been established for sharing data.<br>[2 points]<br><input id="elec_commit_share_2" class="form-check-input" type="radio" name="elec_commit_share" value="2"></label></td>
+
+                <td><label for="elec_commit_share_3">A standardized process is in place for requesting and sharing data, including appropriate contact persons, application and release documents and estimated timelines.<br>[3 points]<br><input id="elec_commit_share_3" class="form-check-input" type="radio" name="elec_commit_share" value="3"></label></td>
+
+                <td></td>
+
+                <td></td>
+
+                <td></td>
+                                                
+                <td>
+                  <input id="elec_commit_share_pts" class="text-center row-points" name="elec_commit_share_pts" value="" hidden></input>
+                  <output>0 points</output>
+                </td>
+                
+                <td><textarea class="form-control" id="elec_commit_share_notes" name="elec_commit_share_notes" placeholder="Enter relevant notes, references, or links..." rows="8" style="font-size: 12px"></textarea></td>
+              </tr>
+
+              <tr>
+                <th scope="row">1.3.1b. Natural gas utility commitment to sharing data <a href="#" data-toggle="tooltip" data-placement="right" data-animation="true" title="The natural gas utility has adopted a standard format and process for sharing community-wide data and information with local governments and electric utilities to inform planning and implementation activities.Relevant data may include natural gas use, as well as potentially capacity-constrained areas. Standardized formats may include five- or six-digit postal code aggregation (respecting privacy considerations such as excluding large contracts/users), community-wide aggregation, building typology categorization, NAICS categorization, and/or Green Button formatting."><i class="fas fa-info-circle"></i></a></th>
+                
+                <td>Scale</td>
+                
+                <td><label for="gas_commit_share_na">N/A for the community<br><input id="gas_commit_share_na" class="form-check-input" type="checkbox" name="gas_commit_share_na" value="0"></label></td>
+                
+                <td><label for="gas_commit_share_0">The natural gas utility currently does not share community-wide data.<br>[0 points]<br><input id="gas_commit_share_0" class="form-check-input" type="radio" name="gas_commit_share" value="0"></label></td>
+                
+                <td><label for="gas_commit_share_1">Requests for data and information are addressed in an ad-hoc fashion.<br>[1 point]<br><input id="gas_commit_share_1" class="form-check-input" type="radio" name="gas_commit_share" value="1"></label></td>
+                
+                <td><label for="gas_commit_share_2">A standardized format for community energy data has been established for sharing data.<br>[2 points]<br><input id="gas_commit_share_2" class="form-check-input" type="radio" name="gas_commit_share" value="2"></label></td>
+
+                <td><label for="gas_commit_share_3">A standardized process is in place for requesting and sharing data, including appropriate contact persons, application and release documents and estimated timelines.<br>[3 points]<br><input id="gas_commit_share_3" class="form-check-input" type="radio" name="gas_commit_share" value="3"></label></td>
+                <td></td>
+
+                <td></td>
+
+                <td></td>
+                
+                <td>
+                  <input id="gas_commit_share_pts" class="text-center row-points" name="gas_commit_share_pts" value="" hidden></input>
+                  <output>0 points</output>
+                </td>
+                
+                <td><textarea class="form-control" id="gas_commit_share_notes" name="gas_commit_share_notes" placeholder="Enter relevant notes, references, or links..." rows="8" style="font-size: 12px"></textarea></td>
+              </tr>
+
+              <tr>
+                <th scope="row">1.3.2a. Community energy inventory and reporting <a href="#" data-toggle="tooltip" data-placement="right" data-animation="true" title="There is a community wide inventory of energy use or spending, or emissions are being regularly inventoried and organized into categories such as buildings categories, personal, active and public transportation, waste, water and wastewater. The inventory is updated at regular intervals and there is a process in place for reporting progress to council and externally. Reporting includes both quantitative and qualitative information on progress and lessons learned."><i class="fas fa-info-circle"></i></a></th>
+                
+                <td>Checklist</td>
+                
+                <td><label for="comm_inv_rep_na">N/A for the community<br><input id="comm_inv_rep_na" class="form-check-input" type="checkbox" name="comm_inv_rep_na" value="0"></label></td>
+                
+                <td><label for="comm_inv_rep_0">There is currently no community energy inventory and reporting.<br>[0 points]<br><input id="comm_inv_rep_0" class="form-check-input" type="checkbox" name="comm_inv_rep_0" value="0"></label></td>
+                
+                <td><label for="comm_inv_rep_1">A basic community energy or GHG inventory has been completed that includes energy use or emissions from residential, institutional, commercial, industrial, transportation, and solid waste sectors.<br>[1 point]<br><input id="comm_inv_rep_1" class="form-check-input" type="checkbox" name="comm_inv_rep_1" value="1"></label></td>
+                
+                <td><label for="comm_inv_rep_2">The community inventory includes a high level of detail, such as organization by building typology, transportation type, waste streams, and other uses as applicable (such as agriculture, land use change, or industrial processes). This may also include organization by energy spending.<br>[1 point]<br><input id="comm_inv_rep_2" class="form-check-input" type="checkbox" name="comm_inv_rep_2" value="1"></label></td>
+                
+                <td><label for="comm_inv_rep_3">A community energy or GHG target has been established and approved.<br>[1 point]<br><input id="comm_inv_rep_3" class="form-check-input" type="checkbox" name="comm_inv_rep_3" value="1"></label></td>
+                
+                <td><label for="comm_inv_rep_4">Realistic evidence-based (as opposed to aspirational), sector-specific community targets have been established and approved.<br>[1 point]<br><input id="comm_inv_rep_4" class="form-check-input" type="checkbox" name="comm_inv_rep_4" value="1"></label></td>
+
+                <td><label for="comm_inv_rep_5">A timeline for inventory renewal is clear.<br>[1 point]<br><input id="comm_inv_rep_5" class="form-check-input" type="checkbox" name="comm_inv_rep_5" value="1"></label></td>
+
+                <td><label for="comm_inv_rep_6">Inventory methodology and results are transparent and publicly available, such as through methodology documents, inventory reports and/or lessons learned documented.<br>[1 point]<br><input id="comm_inv_rep_6" class="form-check-input" type="checkbox" name="comm_inv_rep_6" value="1"></label></td>
+                
+                <td>
+                  <input id="comm_inv_rep_pts" class="text-center row-points" name="comm_inv_rep_pts" value="" hidden></input>
+                  <output>0 points</output>
+                </td>
+                
+                <td><textarea class="form-control" id="comm_inv_rep_notes" name="comm_inv_rep_notes" placeholder="Enter relevant notes, references, or links..." rows="8" style="font-size: 12px"></textarea></td>
+              </tr>
+
+              <tr>
+                <th scope="row">1.3.2b. Local government corporate energy inventory and reporting <a href="#" data-toggle="tooltip" data-placement="right" data-animation="true" title="Energy use, energy spending and/or emissions from the local government's corporate operations are being regularly inventoried and organized into categories such as buildings, street lighting, water and wastewater treatment, municipal fleet, and corporate and/or community solid waste. There is a process in place for reporting progress to council and externally. Reporting includes both quantitative and qualitative information on progress and lessons learned."><i class="fas fa-info-circle"></i></a></th>
+                
+                <td>Checklist</td>
+                
+                <td><label for="local_inv_rep_na">N/A for the community<br><input id="local_inv_rep_na" class="form-check-input" type="checkbox" name="local_inv_rep_na" value="0"></label></td>
+                
+                <td><label for="local_inv_rep_0">There is currently no local government corporate energy inventory and reporting.<br>[0 points]<br><input id="local_inv_rep_0" class="form-check-input" type="checkbox" name="local_inv_rep_0" value="0"></label></td>
+                
+                <td><label for="local_inv_rep_1">A basic corporate energy or GHG inventory has been completed that includes energy use or emissions from corporate owned buildings, street lighting, water and wastewater treatment, municipal fleet, and corporate and/or community solid waste.<br>[1 point]<br><input id="local_inv_rep_1" class="form-check-input" type="checkbox" name="local_inv_rep_1" value="1"></label></td>
+                
+                <td><label for="local_inv_rep_2">A corporate energy or GHG target has been established and approved.<br>[1 point]<br><input id="local_inv_rep_2" class="form-check-input" type="checkbox" name="local_inv_rep_2" value="1"></label></td>
+                
+                <td><label for="local_inv_rep_3">Realistic, evidence-based (as opposed to aspirational) corporate target(s) have been established and approved.<br>[1 point]<br><input id="local_inv_rep_3" class="form-check-input" type="checkbox" name="local_inv_rep_3" value="1"></label></td>
+                
+                <td><label for="local_inv_rep_4">A timeline for inventory renewal is clear.<br>[1 point]<br><input id="local_inv_rep_4" class="form-check-input" type="checkbox" name="local_inv_rep_4" value="1"></label></td>
+
+                <td><label for="local_inv_rep_5">Inventory methodology and results are transparent and publicly available, such as through methodology documents, inventory reports and/or lessons learned documented.<br>[1 point]<br><input id="local_inv_rep_5" class="form-check-input" type="checkbox" name="local_inv_rep_5" value="1"></label></td>
+
+                <td></td>
+                
+                <td>
+                  <input id="local_inv_rep_pts" class="text-center row-points" name="local_inv_rep_pts" value="" hidden></input>
+                  <output>0 points</output>
+                </td>
+                
+                <td><textarea class="form-control" id="local_inv_rep_notes" name="local_inv_rep_notes" placeholder="Enter relevant notes, references, or links..." rows="8" style="font-size: 12px"></textarea></td>
+              </tr>
+
+              <tr>
+                <th scope="row">1.3.2c. Electric utility corporate inventory and reporting <a href="#" data-toggle="tooltip" data-placement="right" data-animation="true" title="The electric utility regularly evaluates, sets targets for, and reports on their energy or sustainability performance from corporate operations."><i class="fas fa-info-circle"></i></a></th>
+                
+                <td>Checklist</td>
+                
+                <td><label for="elec_inv_rep_na">N/A for the community<br><input id="elec_inv_rep_na" class="form-check-input" type="checkbox" name="elec_inv_rep_na" value="0"></label></td>
+                
+                <td><label for="elec_inv_rep_0">There is currently no electric utility corporate energy or sustainability inventory and reporting.<br>[0 points]<br><input id="elec_inv_rep_0" class="form-check-input" type="checkbox" name="elec_inv_rep_0" value="0"></label></td>
+                
+                <td><label for="elec_inv_rep_1">Corporate energy or sustainability inventory/report has been completed that includes energy use or GHG emissions from utility operations.<br>[1 point]<br><input id="elec_inv_rep_1" class="form-check-input" type="checkbox" name="elec_inv_rep_1" value="1"></label></td>
+                
+                <td><label for="elec_inv_rep_2">The corporate inventory/report includes a high level of detail, such as organization by community boundaries or facilities, and/or other aspects of environmental management (such as water and waste).<br>[1 point]<br><input id="elec_inv_rep_2" class="form-check-input" type="checkbox" name="elec_inv_rep_2" value="1"></label></td>
+                
+                <td><label for="elec_inv_rep_3">Corporate energy or sustainability targets have been established.<br>[1 point]<br><input id="elec_inv_rep_3" class="form-check-input" type="checkbox" name="elec_inv_rep_3" value="1"></label></td>
+                
+                <td><label for="elec_inv_rep_4">Timeline for inventory/report renewal is clear.<br>[1 point]<br><input id="elec_inv_rep_4" class="form-check-input" type="checkbox" name="elec_inv_rep_4" value="1"></label></td>
+
+                <td><label for="elec_inv_rep_5">Report methodology are transparent and publicly available, and/or are aligned with existing reporting initiatives such as Global Reporting Initiative (GRI), Canadian Electricity Association (CEA) Sustainable Electricity Program, Carbon Disclosure Program (CDP) etc.<br>[1 point]<br><input id="elec_inv_rep_5" class="form-check-input" type="checkbox" name="elec_inv_rep_5" value="1"></label></td>
+
+                <td></td>
+                
+                <td>
+                  <input id="elec_inv_rep_pts" class="text-center row-points" name="elec_inv_rep_pts" value="" hidden></input>
+                  <output>0 points</output>
+                </td>
+                
+                <td><textarea class="form-control" id="elec_inv_rep_notes" name="elec_inv_rep_notes" placeholder="Enter relevant notes, references, or links..." rows="8" style="font-size: 12px"></textarea></td>
+              </tr>
+
+              <tr>
+                <th scope="row">1.3.2d. Natural gas utility corporate inventory and reporting <a href="#" data-toggle="tooltip" data-placement="right" data-animation="true" title="The natural gas utility regularly evaluates, sets targets for, and reports on their energy or sustainability performance from corporate operations."><i class="fas fa-info-circle"></i></a></th>
+                
+                <td>Checklist</td>
+                
+                <td><label for="gas_inv_rep_na">N/A for the community<br><input id="gas_inv_rep_na" class="form-check-input" type="checkbox" name="gas_inv_rep_na" value="0"></label></td>
+                
+                <td><label for="gas_inv_rep_0">There is currently no natural gas utility corporate energy or sustainability inventory and reporting.<br>[0 points]<br><input id="gas_inv_rep_0" class="form-check-input" type="checkbox" name="gas_inv_rep_0" value="0"></label></td>
+                
+                <td><label for="gas_inv_rep_1">Corporate energy or sustainability inventory/report has been completed that includes energy use or GHG emissions from utility operations.<br>[1 point]<br><input id="gas_inv_rep_1" class="form-check-input" type="checkbox" name="gas_inv_rep_1" value="1"></label></td>
+                
+                <td><label for="gas_inv_rep_2">The corporate inventory/report includes a high level of detail, such as organization by community boundaries or facilities, and/or other aspects of environmental management (such as water and waste).<br>[1 point]<br><input id="gas_inv_rep_2" class="form-check-input" type="checkbox" name="gas_inv_rep_2" value="1"></label></td>
+                
+                <td><label for="gas_inv_rep_3">Corporate energy or sustainability targets have been established.<br>[1 point]<br><input id="gas_inv_rep_3" class="form-check-input" type="checkbox" name="gas_inv_rep_3" value="1"></label></td>
+                
+                <td><label for="gas_inv_rep_4">Timeline for inventory/report renewal is clear.<br>[1 point]<br><input id="gas_inv_rep_4" class="form-check-input" type="checkbox" name="gas_inv_rep_4" value="1"></label></td>
+
+                <td><label for="gas_inv_rep_5">Report methodology are transparent and publicly available, and/or are aligned with existing reporting initiatives such as Global Reporting Initiative (GRI), International Petroleum Industry Environmental Conservation Association (IPIECA), Carbon Disclosure Program (CDP) etc.<br>[1 point]<br><input id="gas_inv_rep_5" class="form-check-input" type="checkbox" name="gas_inv_rep_5" value="1"></label></td>
+
+                <td></td>
+                
+                <td>
+                  <input id="gas_inv_rep_pts" class="text-center row-points" name="gas_inv_rep_pts" value="" hidden></input>
+                  <output>0 points</output>
+                </td>
+                
+                <td><textarea class="form-control" id="gas_inv_rep_notes" name="gas_inv_rep_notes" placeholder="Enter relevant notes, references, or links..." rows="8" style="font-size: 12px"></textarea></td>
+              </tr>
+
+              <tr>
+                <th scope="row">1.3.3. Climate hazard assessments <a href="#" data-toggle="tooltip" data-placement="right" data-animation="true" title="An assessment of climate hazards specific to the community (e.g. coastal erosion, permafrost thaw, wildfires, flooding, etc.) has been completed, that incorporates Indigenous Knowledge Systems (aka Traditional Ecological Knowledge) and/or scientific information related to climate change. This also includes an ongoing process established to monitor and report on climate hazards in the community, as well as actions or opportunities to increase adaptive capacity within the community."><i class="fas fa-info-circle"></i></a></th>
+                
+                <td>Checklist</td>
+                
+                <td><label for="clim_haz_success_na">N/A for the community<br><input id="clim_haz_success_na" class="form-check-input" type="checkbox" name="clim_haz_success_na" value="0"></label></td>
+                
+                <td><label for="clim_haz_success_0">Climate hazards have not been assessed.<br>[0 points]<br><input id="clim_haz_success_0" class="form-check-input" type="checkbox" name="clim_haz_success_0" value="0"></label></td>
+                
+                <td><label for="clim_haz_success_1">The community has an assessment of climate-related hazards and risks that exist, and are predicted into the future, within the community. This includes Traditional Ecological Knowledge and/or scientific information related to climate change.<br>[1 point]<br><input id="clim_haz_success_1" class="form-check-input" type="checkbox" name="clim_haz_success_1" value="1"></label></td>
+                
+                <td><label for="clim_haz_success_2">The community has ongoing environmental monitoring programs in place to report on climate hazards.<br>[0.5 points]<br><input id="clim_haz_success_2" class="form-check-input" type="checkbox" name="clim_haz_success_2" value="0.5"></label></td>
+                
+                <td><label for="clim_haz_success_3">The community has identified opportunities and actions to adapt and improve resilience to climate risks, such as through a climate resilience plan or strategy.<br>[0.5 points]<br><input id="clim_haz_success_3" class="form-check-input" type="checkbox" name="clim_haz_success_3" value="0.5"></label></td>
+
+                <td></td>
+
+                <td></td>
+
+                <td></td>
+                
+                <td>
+                  <input id="clim_haz_success_pts" class="text-center row-points" name="clim_haz_success_pts" value="" hidden></input>
+                  <output>0 points</output>
+                </td>
+                
+                <td><textarea class="form-control" id="clim_haz_success_notes" name="clim_haz_success_notes" placeholder="Enter relevant notes, references, or links..." rows="8" style="font-size: 12px"></textarea></td>
+              </tr>
+
+              <tr>
+                <th scope="row">1.3.4. Energy mapping <a href="#" data-toggle="tooltip" data-placement="right" data-animation="true" title="The community has conducted (an) integrated energy mapping exercise(s) wherein energy demand and/or supply data is combined with spatial information, such as zoning, buildings, transportation features, climate hazards, and/or energy infrastructure."><i class="fas fa-info-circle"></i></a></th>
+                
+                <td>Checklist</td>
+                
+                <td><label for="energy_mapping_na">N/A for the community<br><input id="energy_mapping_na" class="form-check-input" type="checkbox" name="energy_mapping_na" value="0"></label></td>
+                
+                <td><label for="energy_mapping_0">Energy mapping has not been conducted.<br>[0 points]<br><input id="energy_mapping_0" class="form-check-input" type="checkbox" name="energy_mapping_0" value="0"></label></td>
+                
+                <td><label for="energy_mapping_1">Community undertakes an energy mapping exercise to identify local energy priorities and opportunities.<br>[1 point]<br><input id="energy_mapping_1" class="form-check-input" type="checkbox" name="energy_mapping_1" value="1"></label></td>
+                
+                <td><label for="energy_mapping_2">A climate hazard map layer has been integrated into the energy mapping process. [N/A if energy map has not been completed and/or for communities with population below 10,000]<br>[0.5 points]<br><input id="energy_mapping_2" class="form-check-input" type="checkbox" name="energy_mapping_2" value="0.5"></label></td>
+                
+                <td><label for="energy_mapping_3">Municipal and/or utility infrastructure and asset management planning has been integrated into the energy mapping process. [N/A if energy map has not been completed and/or for communities with population below 10,000]<br>[0.5 points]<br><input id="energy_mapping_3" class="form-check-input" type="checkbox" name="energy_mapping_3" value="0.5"></label></td>
+
+                <td><label for="energy_mapping_4">A community-informed map layer of social acceptance for community energy initiatives has been integrated into the energy mapping process. [N/A if energy map has not been completed and/or for communities with population below 10,000]<br>[0.5 points]<br><input id="energy_mapping_4" class="form-check-input" type="checkbox" name="energy_mapping_4" value="0.5"></label></td>
+
+                <td></td>
+
+                <td></td>
+                
+                <td>
+                  <input id="energy_mapping_pts" class="text-center row-points" name="energy_mapping_pts" value="" hidden></input>
+                  <output>0 points</output>
+                </td>
+                
+                <td><textarea class="form-control" id="energy_mapping_notes" name="energy_mapping_notes" placeholder="Enter relevant notes, references, or links..." rows="8" style="font-size: 12px"></textarea></td>
+              </tr>
+
+              <tr>
+                <th scope="row">1.3.5 Energy scenario modelling <a href="#" data-toggle="tooltip" data-placement="right" data-animation="true" title="The community has developed an energy model that considers various scenarios for energy supply and consumption across the community (as well as community context considerations such as supply constraints, climatic, demographic, economic, cost of living and levels of energy poverty) over a defined period of time. As part of this, the appropriate technical experts have been engaged and the right questions have been asked to inform modelling from the outset.The primary objective of the energy model is to act as a focal point for dialogue, and tool to enhance communication with decision-makers and the community."><i class="fas fa-info-circle"></i></a></th>
+                
+                <td>Checklist</td>
+                
+                <td><label for="scenario_model_na">N/A for the community<br><input id="scenario_model_na" class="form-check-input" type="checkbox" name="scenario_model_na" value="0"></label></td>
+                
+                <td><label for="scenario_model_0">Energy scenario modelling has not been developed.<br>[0 points]<br><input id="scenario_model_0" class="form-check-input" type="checkbox" name="scenario_model_0" value="0"></label></td>
+                
+                <td><label for="scenario_model_1">An energy model has been complete, which incorporates scenarios for both supply and demand of energy.<br>[1 point]<br><input id="scenario_model_1" class="form-check-input" type="checkbox" name="scenario_model_1" value="1"></label></td>
+                
+                <td><label for="scenario_model_2">Energy modelling includes multi-stakeholder considerations such as major energy users and suppliers, energy distribution infrastructure constraints, and/or how costs and benefits are distributed throughout the community. [N/A if energy model has not been completed and/or for communities with population below 10,000]<br>[0.5 points]<br><input id="scenario_model_2" class="form-check-input" type="checkbox" name="scenario_model_2" value="0.5"></label></td>
+                
+                <td><label for="scenario_model_3">Assumptions and methodologies in energy modelling are transparent and readily accessible. [N/A if energy model has not been completed and/or for communities with population below 10,000]<br>[0.5 points]<br><input id="scenario_model_3" class="form-check-input" type="checkbox" name="scenario_model_3" value="0.5"></label></td>
+
+                <td><label for="scenario_model_4">Outputs from energy modelling are presented in a digestible way, such as through infographics or one-pagers. [N/A if energy model has not been completed and/or for communities with population below 10,000]<br>[0.5 points]<br><input id="scenario_model_4" class="form-check-input" type="checkbox" name="scenario_model_4" value="0.5"></label></td>
+
+                <td></td>
+
+                <td></td>
+                
+                <td>
+                  <input id="scenario_model_pts" class="text-center row-points" name="scenario_model_pts" value="" hidden></input>
+                  <output>0 points</output>
+                </td>
+                
+                <td><textarea class="form-control" id="scenario_model_notes" name="scenario_model_notes" placeholder="Enter relevant notes, references, or links..." rows="8" style="font-size: 12px"></textarea></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        
+        <input id="form-submit" class="btn btn-primary" type="submit" value="Save">
+
+      </form><br>
+              
+      <div id="navigation">
+        <a href="/governance" id="previous" class="btn btn-primary" role="button">Previous (Governance)</a>
+        <a href="/logout" id="logout" class="btn btn-primary" role="button">Logout</a>
+        <a href="/data" id="next" class="btn btn-primary" role="button">Next (Data)</input></a>
+      </div><br>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/0f567e20d5.js" crossorigin="anonymous"></script>
+    <script src="../public/client.js" type="module"></script>
+  </body>
+</html>

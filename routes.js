@@ -323,6 +323,110 @@ module.exports = function(app, myDataBase) {
       );
     });
 
+  app.route("/db/data/data")
+    .post((req, res, next) => {
+      myDataBase.findOneAndUpdate(
+        { username: req.user.username },
+        {
+          $set: {
+            "scenarios.$[element].last_update": new Date(),
+
+            "scenarios.$[element].data.elec_commit_share_na": Number(req.body.elec_commit_share_na),
+            "scenarios.$[element].data.elec_commit_share": Number(req.body.elec_commit_share),
+            "scenarios.$[element].data.elec_commit_share_pts": Number(req.body.elec_commit_share_pts),
+            "scenarios.$[element].data.elec_commit_share_notes": req.body.elec_commit_share_notes,
+
+            "scenarios.$[element].data.gas_commit_share_na": Number(req.body.gas_commit_share_na),
+            "scenarios.$[element].data.gas_commit_share": Number(req.body.gas_commit_share),
+            "scenarios.$[element].data.gas_commit_share_pts": Number(req.body.gas_commit_share_pts),
+            "scenarios.$[element].data.gas_commit_share_notes": req.body.gas_commit_share_notes,
+
+            "scenarios.$[element].data.comm_inv_rep_na": Number(req.body.comm_inv_rep_na),
+            "scenarios.$[element].data.comm_inv_rep_0": Number(req.body.comm_inv_rep_0),
+            "scenarios.$[element].data.comm_inv_rep_1": Number(req.body.comm_inv_rep_1),
+            "scenarios.$[element].data.comm_inv_rep_2": Number(req.body.comm_inv_rep_2),
+            "scenarios.$[element].data.comm_inv_rep_3": Number(req.body.comm_inv_rep_3),
+            "scenarios.$[element].data.comm_inv_rep_4": Number(req.body.comm_inv_rep_4),
+            "scenarios.$[element].data.comm_inv_rep_5": Number(req.body.comm_inv_rep_5),
+            "scenarios.$[element].data.comm_inv_rep_6": Number(req.body.comm_inv_rep_6),
+            "scenarios.$[element].data.comm_inv_rep_pts": Number(req.body.comm_inv_rep_pts),
+            "scenarios.$[element].data.comm_inv_rep_notes": req.body.comm_inv_rep_notes,
+
+            "scenarios.$[element].data.local_inv_rep_na": Number(req.body.local_inv_rep_na),
+            "scenarios.$[element].data.local_inv_rep_0": Number(req.body.local_inv_rep_0),
+            "scenarios.$[element].data.local_inv_rep_1": Number(req.body.local_inv_rep_1),
+            "scenarios.$[element].data.local_inv_rep_2": Number(req.body.local_inv_rep_2),
+            "scenarios.$[element].data.local_inv_rep_3": Number(req.body.local_inv_rep_3),
+            "scenarios.$[element].data.local_inv_rep_4": Number(req.body.local_inv_rep_4),
+            "scenarios.$[element].data.local_inv_rep_5": Number(req.body.local_inv_rep_5),
+            "scenarios.$[element].data.local_inv_rep_pts": Number(req.body.local_inv_rep_pts),
+            "scenarios.$[element].data.local_inv_rep_notes": req.body.local_inv_rep_notes,
+
+            "scenarios.$[element].data.elec_inv_rep_na": Number(req.body.elec_inv_rep_na),
+            "scenarios.$[element].data.elec_inv_rep_0": Number(req.body.elec_inv_rep_0),
+            "scenarios.$[element].data.elec_inv_rep_1": Number(req.body.elec_inv_rep_1),
+            "scenarios.$[element].data.elec_inv_rep_2": Number(req.body.elec_inv_rep_2),
+            "scenarios.$[element].data.elec_inv_rep_3": Number(req.body.elec_inv_rep_3),
+            "scenarios.$[element].data.elec_inv_rep_4": Number(req.body.elec_inv_rep_4),
+            "scenarios.$[element].data.elec_inv_rep_5": Number(req.body.elec_inv_rep_5),
+            "scenarios.$[element].data.elec_inv_rep_pts": Number(req.body.elec_inv_rep_pts),
+            "scenarios.$[element].data.elec_inv_rep_notes": req.body.elec_inv_rep_notes,
+
+            "scenarios.$[element].data.gas_inv_rep_na": Number(req.body.gas_inv_rep_na),
+            "scenarios.$[element].data.gas_inv_rep_0": Number(req.body.gas_inv_rep_0),
+            "scenarios.$[element].data.gas_inv_rep_1": Number(req.body.gas_inv_rep_1),
+            "scenarios.$[element].data.gas_inv_rep_2": Number(req.body.gas_inv_rep_2),
+            "scenarios.$[element].data.gas_inv_rep_3": Number(req.body.gas_inv_rep_3),
+            "scenarios.$[element].data.gas_inv_rep_4": Number(req.body.gas_inv_rep_4),
+            "scenarios.$[element].data.gas_inv_rep_5": Number(req.body.gas_inv_rep_5),
+            "scenarios.$[element].data.gas_inv_rep_pts": Number(req.body.gas_inv_rep_pts),
+            "scenarios.$[element].data.gas_inv_rep_notes": req.body.gas_inv_rep_notes,
+
+            "scenarios.$[element].data.clim_haz_success_na": Number(req.body.clim_haz_success_na),
+            "scenarios.$[element].data.clim_haz_success_0": Number(req.body.clim_haz_success_0),
+            "scenarios.$[element].data.clim_haz_success_1": Number(req.body.clim_haz_success_1),
+            "scenarios.$[element].data.clim_haz_success_2": Number(req.body.clim_haz_success_2),
+            "scenarios.$[element].data.clim_haz_success_3": Number(req.body.clim_haz_success_3),
+            "scenarios.$[element].data.clim_haz_success_pts": Number(req.body.clim_haz_success_pts),
+            "scenarios.$[element].data.clim_haz_success_notes": req.body.clim_haz_success_notes,
+
+            "scenarios.$[element].data.energy_mapping_na": Number(req.body.energy_mapping_na),
+            "scenarios.$[element].data.energy_mapping_0": Number(req.body.energy_mapping_0),
+            "scenarios.$[element].data.energy_mapping_1": Number(req.body.energy_mapping_1),
+            "scenarios.$[element].data.energy_mapping_2": Number(req.body.energy_mapping_2),
+            "scenarios.$[element].data.energy_mapping_3": Number(req.body.energy_mapping_3),
+            "scenarios.$[element].data.energy_mapping_4": Number(req.body.energy_mapping_4),
+            "scenarios.$[element].data.energy_mapping_pts": Number(req.body.energy_mapping_pts),
+            "scenarios.$[element].data.energy_mapping_notes": req.body.energy_mapping_notes,
+
+            "scenarios.$[element].data.scenario_model_na": Number(req.body.scenario_model_na),
+            "scenarios.$[element].data.scenario_model_0": Number(req.body.scenario_model_0),
+            "scenarios.$[element].data.scenario_model_1": Number(req.body.scenario_model_1),
+            "scenarios.$[element].data.scenario_model_2": Number(req.body.scenario_model_2),
+            "scenarios.$[element].data.scenario_model_3": Number(req.body.scenario_model_3),
+            "scenarios.$[element].data.scenario_model_4": Number(req.body.scenario_model_4),
+            "scenarios.$[element].data.scenario_model_pts": Number(req.body.scenario_model_pts),
+            "scenarios.$[element].data.scenario_model_notes": req.body.scenario_model_notes,
+
+            "scenarios.$[element].data.z_pts_total": Number(req.body.z_pts_total),
+          },
+        },
+        { arrayFilters: [ { "element.scen_name": { $eq: req.body.scen_carry } } ],
+          returnOriginal: false
+        },
+        (err, doc) => {
+          if (err) {
+            console.log(err);
+            res.send("Save error.");
+          } else {
+            let result = doc.value.scenarios.find((elm) => elm.scen_name === doc.value.currentScen);
+            console.log(result);
+            res.send('Save successful.');
+          }
+        }
+      );
+    });
+
   app.route('/intro')
     .get(ensureAuthenticated, (req, res, next) => {
       res.sendFile(process.cwd() + '/views/intro.html');
