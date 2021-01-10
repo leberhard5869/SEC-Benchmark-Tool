@@ -13,8 +13,40 @@
 
   <body>
     <div class="container-fluid">
-      <img src="../assets/SEC-logo.png" alt="SEC logo" class="img-fluid">
-      <h1 class="border center">Introduction & Scenario Control</h1>
+      <img src="../assets/SEC-logo.png" style="width: 150px" alt="SEC logo" class="img-fluid">
+
+      <div class="row">
+        <div class="col-lg-10"><h1 class="">Introduction & Scenario Control</h1></div>
+        <div class="col-lg-2">
+          <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Navigation</a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="/intro">Intro & Scenario Control</a></li>
+                    <li><a class="dropdown-item" href="/governance">Governance</a></li>
+                    <li><a class="dropdown-item" href="/staff">Staff</a></li>
+                    <li><a class="dropdown-item" href="/data">Data</a></li>
+                    <li><a class="dropdown-item" href="/financials">Financials</a></li>
+                    <li><a class="dropdown-item" href="/strategy">Strategy</a></li>
+                    <li><a class="dropdown-item" href="/land_use">Land Use</a></li>
+                    <li><a class="dropdown-item" href="/energy_net">Energy Networks</a></li>
+                    <li><a class="dropdown-item" href="/waste_water">Waste & Water</a></li>
+                    <li><a class="dropdown-item" href="/transport">Transportation</a></li>
+                    <li><a class="dropdown-item" href="/buildings">Buildings</a></li>
+                    <li><a class="dropdown-item" href="/outputs">Outputs</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </div>
+
       <p>Welcome to the Smart Energy Communities Benchmarking Tool!</p>
       <p>Energy-smart communities benefit from new opportunities for local economic development, lower energy costs, a cleaner environment, and improved community resilience. This tool is intended to benchmark municipal and utility policies, plans, processes, and programs against best practices from across Canada to help communities identify strengths and opportunities on their energy-smart journey.</p>
       <p>If you are interested in support with benchmarking your community, or have any questions or feedback on the tool, feel free to contact us at: <a href="mailto:info@questcanada.org">info@questcanada.org</a></p>
@@ -33,7 +65,7 @@
         <input id="form-scen-submit" class="btn btn-primary" type="submit" value="Select" disabled>
       </form><br>
 
-      <h4 id="scenario">Current Scenario: n/a</h4>
+      <h4 id="scenario">Current Scenario:</h4>
       
       <form id="form-data">
 
@@ -76,7 +108,7 @@
             <select id="pop_growth" name="pop_growth" class="form-select">
               <option>Select...</option>
               <option value="growing">Growing (>0% annual population change)</option>
-              <option value="stable/shrinking">Stable or Shrinking(less than 0% annual population change</option>
+              <option value="stable/shrinking">Stable or Shrinking (less than 0% annual population change)</option>
             </select>
           </div>
         </div><br>

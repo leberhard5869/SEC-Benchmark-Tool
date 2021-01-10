@@ -13,15 +13,48 @@
 
   <body>
     <div class="container-fluid">
-      <img src="../assets/Governance-Icon.png" alt="Governance logo" class="img-fluid" style="transform: scale(0.5)">
-      <h1 class="border center">Governance</h1>
+      <img src="../assets/Governance-Icon.png" alt="Governance logo" class="img-fluid" style="width: 100px">
 
-      <h5 id="scenario">Current Scenario: n/a</h5>
+      <div class="row">
+        <div class="col-lg-10"><h1 class="">Governance</h1></div>
+        <div class="col-lg-2">
+          <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Navigation</a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="/intro">Intro & Scenario Control</a></li>
+                    <li><a class="dropdown-item" href="/governance">Governance</a></li>
+                    <li><a class="dropdown-item" href="/staff">Staff</a></li>
+                    <li><a class="dropdown-item" href="/data">Data</a></li>
+                    <li><a class="dropdown-item" href="/financials">Financials</a></li>
+                    <li><a class="dropdown-item" href="/strategy">Strategy</a></li>
+                    <li><a class="dropdown-item" href="/land_use">Land Use</a></li>
+                    <li><a class="dropdown-item" href="/energy_net">Energy Networks</a></li>
+                    <li><a class="dropdown-item" href="/waste_water">Waste & Water</a></li>
+                    <li><a class="dropdown-item" href="/transport">Transportation</a></li>
+                    <li><a class="dropdown-item" href="/buildings">Buildings</a></li>
+                    <li><a class="dropdown-item" href="/outputs">Outputs</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </div>
+
+      <h4 id="scenario">Current Scenario:</h4>
 
       <form id="form-data">
 
         <input id="scen_carry" name="scen_carry" value="" type="hidden">
-        <input id="z_pts_total" name="z_pts_total" value="" type="hidden">
+        <input id="z_app_pts_total" name="z_app_pts_total" value="" type="hidden">
+        <input id="z_na_pts_total" name="z_na_pts_total" value="" type="hidden">
+        <input id="z_sect_complete" name="z_sect_complete" value="false" type="hidden">
 
         <div class="table-responsive">
           <table class="table table-bordered align-middle">
@@ -40,17 +73,17 @@
                 
                 <td>Checklist</td>
                 
-                <td><label for="comm_energy_leader_na">N/A for the community<br><input id="comm_energy_leader_na" class="form-check-input" type="checkbox" name="comm_energy_leader_na" value="0"></label></td>
+                <td><label for="comm_energy_leader_na">N/A for the community<br><input id="comm_energy_leader_na" class="form-check-input na" type="checkbox" name="comm_energy_leader_na" value="3.5"></label></td>
                 
-                <td><label for="comm_energy_leader_0">There currently is no community energy leadership team.<br>[0 points]<br><input id="comm_energy_leader_0" class="form-check-input" type="checkbox" name="comm_energy_leader_0" value="0"></label></td>
+                <td><label for="comm_energy_leader_0">There currently is no community energy leadership team.<br>[0 points]<br><input id="comm_energy_leader_0" class="form-check-input app" type="checkbox" name="comm_energy_leader_0" value="0"></label></td>
                 
-                <td><label for="comm_energy_leader_1">A multi-sectoral entity of community leaders (community leadership team) is formed around a common agenda to promote and facilitate community energy goals/implementation, and foster partnerships.<br>[1 point]<br><input id="comm_energy_leader_1" class="form-check-input" type="checkbox" name="comm_energy_leader_1" value="1"></label></td>
+                <td><label for="comm_energy_leader_1">A multi-sectoral entity of community leaders (community leadership team) is formed around a common agenda to promote and facilitate community energy goals/implementation, and foster partnerships.<br>[1 point]<br><input id="comm_energy_leader_1" class="form-check-input app" type="checkbox" name="comm_energy_leader_1" value="1"></label></td>
                 
-                <td><label for="comm_energy_leader_2">The community leadership team members actively participate, and implement actions within their own organizations to promote SEC goals/implementation.<br>[1 point]<br><input id="comm_energy_leader_2" class="form-check-input" type="checkbox" name="comm_energy_leader_2" value="1"></label></td>
+                <td><label for="comm_energy_leader_2">The community leadership team members actively participate, and implement actions within their own organizations to promote SEC goals/implementation.<br>[1 point]<br><input id="comm_energy_leader_2" class="form-check-input app" type="checkbox" name="comm_energy_leader_2" value="1"></label></td>
                 
-                <td><label for="comm_energy_leader_3">Regular meetings between the leadership team occur.<br>[0.5 point]<br><input id="comm_energy_leader_3" class="form-check-input" type="checkbox" name="comm_energy_leader_3" value="0.5"></label></td>
+                <td><label for="comm_energy_leader_3">Regular meetings between the leadership team occur.<br>[0.5 point]<br><input id="comm_energy_leader_3" class="form-check-input app" type="checkbox" name="comm_energy_leader_3" value="0.5"></label></td>
                 
-                <td><label for="comm_energy_leader_4">An organization and/or individual acts as secretariat for the leadership team, and lead and coordinate community engagement.<br>[1 point]<br><input id="comm_energy_leader_4" class="form-check-input" type="checkbox" name="comm_energy_leader_4" value="1"></label></td>
+                <td><label for="comm_energy_leader_4">An organization and/or individual acts as secretariat for the leadership team, and lead and coordinate community engagement.<br>[1 point]<br><input id="comm_energy_leader_4" class="form-check-input app" type="checkbox" name="comm_energy_leader_4" value="1"></label></td>
                 
                 <td>
                   <input id="comm_energy_leader_pts" class="text-center row-points" name="comm_energy_leader_pts" value="" hidden></input>
@@ -58,6 +91,8 @@
                 </td>
                 
                 <td><textarea class="form-control" id="comm_energy_leader_notes" name="comm_energy_leader_notes" placeholder="Enter relevant notes, references, or links..." rows="8" style="font-size: 12px"></textarea></td>
+
+                <input class="row-complete" value="false" type="hidden">
               </tr>
 
               <tr>
@@ -65,13 +100,13 @@
                 
                 <td>Checklist</td>
                 
-                <td><label for="xdept_coord_local_na">N/A for the community<br><input id="xdept_coord_local_na" class="form-check-input" type="checkbox" name="xdept_coord_local_na" value="0"></label></td>
+                <td><label for="xdept_coord_local_na">N/A for the community<br><input id="xdept_coord_local_na" class="form-check-input na" type="checkbox" name="xdept_coord_local_na" value="3"></label></td>
                 
-                <td><label for="xdept_coord_local_0">There currently is no cross-departmental coordination within this local government related to community energy initiatives.<br>[0 points]<br><input id="xdept_coord_local_0" class="form-check-input" type="checkbox" name="xdept_coord_local_0" value="0"></label></td>
+                <td><label for="xdept_coord_local_0">There currently is no cross-departmental coordination within this local government related to community energy initiatives.<br>[0 points]<br><input id="xdept_coord_local_0" class="form-check-input app" type="checkbox" name="xdept_coord_local_0" value="0"></label></td>
                 
-                <td><label for="xdept_coord_local_1">Regular meetings occur, with relevant departments, within the local government.<br>[1 point]<br><input id="xdept_coord_local_1" class="form-check-input" type="checkbox" name="xdept_coord_local_1" value="1"></label></td>
+                <td><label for="xdept_coord_local_1">Regular meetings occur, with relevant departments, within the local government.<br>[1 point]<br><input id="xdept_coord_local_1" class="form-check-input app" type="checkbox" name="xdept_coord_local_1" value="1"></label></td>
                 
-                <td><label for="xdept_coord_local_2">A clear mandate exists for all relevant departments such as through a Official Community Plan or Strategic Plan.<br>[2 points]<br><input id="xdept_coord_local_2" class="form-check-input" type="checkbox" name="xdept_coord_local_2" value="2"></label></td>
+                <td><label for="xdept_coord_local_2">A clear mandate exists for all relevant departments such as through a Official Community Plan or Strategic Plan.<br>[2 points]<br><input id="xdept_coord_local_2" class="form-check-input app" type="checkbox" name="xdept_coord_local_2" value="2"></label></td>
                 
                 <td></td>
                 
@@ -83,6 +118,8 @@
                 </td>
                 
                 <td><textarea class="form-control" id="xdept_coord_local_notes" name="xdept_coord_local_notes" placeholder="Enter relevant notes, references, or links..." rows="8" style="font-size: 12px"></textarea></td>
+
+                <input class="row-complete" value="false" type="hidden">                
               </tr>
 
               <tr>
@@ -90,13 +127,13 @@
                 
                 <td>Checklist</td>
                 
-                <td><label for="align_local_elec_na">N/A for the community<br><input id="align_local_elec_na" class="form-check-input" type="checkbox" name="align_local_elec_na" value="0"></label></td>
+                <td><label for="align_local_elec_na">N/A for the community<br><input id="align_local_elec_na" class="form-check-input na" type="checkbox" name="align_local_elec_na" value="3"></label></td>
                 
-                <td><label for="align_local_elec_0">There currently is no strategic alignment within this local electric utility related to community energy initiatives.<br>[0 points]<br><input id="align_local_elec_0" class="form-check-input" type="checkbox" name="align_local_elec_0" value="0"></label></td>
+                <td><label for="align_local_elec_0">There currently is no strategic alignment within this local electric utility related to community energy initiatives.<br>[0 points]<br><input id="align_local_elec_0" class="form-check-input app" type="checkbox" name="align_local_elec_0" value="0"></label></td>
                 
-                <td><label for="align_local_elec_1">Meetings between relevant departments occur within the electric utility on a project-to-project basis as they relate to community energy initiatives.<br>[1 point]<br><input id="align_local_elec_1" class="form-check-input" type="checkbox" name="align_local_elec_1" value="1"></label></td>
+                <td><label for="align_local_elec_1">Meetings between relevant departments occur within the electric utility on a project-to-project basis as they relate to community energy initiatives.<br>[1 point]<br><input id="align_local_elec_1" class="form-check-input app" type="checkbox" name="align_local_elec_1" value="1"></label></td>
                 
-                <td><label for="align_local_elec_2">Participation in, and support for, community energy initiatives is seen as a strategic priority within the electric utility.<br>[2 points]<br><input id="align_local_elec_2" class="form-check-input" type="checkbox" name="align_local_elec_2" value="2"></label></td>
+                <td><label for="align_local_elec_2">Participation in, and support for, community energy initiatives is seen as a strategic priority within the electric utility.<br>[2 points]<br><input id="align_local_elec_2" class="form-check-input app" type="checkbox" name="align_local_elec_2" value="2"></label></td>
                 
                 <td></td>
                 
@@ -108,6 +145,8 @@
                 </td>
                 
                 <td><textarea class="form-control" id="align_local_elec_notes" name="align_local_elec_notes" placeholder="Enter relevant notes, references, or links..." rows="8" style="font-size: 12px"></textarea></td>
+
+                <input class="row-complete" value="false" type="hidden">
               </tr>
 
               <tr>
@@ -115,13 +154,13 @@
                 
                 <td>Checklist</td>
                 
-                <td><label for="align_local_gas_na">N/A for the community<br><input id="align_local_gas_na" class="form-check-input" type="checkbox" name="align_local_gas_na" value="0"></label></td>
+                <td><label for="align_local_gas_na">N/A for the community<br><input id="align_local_gas_na" class="form-check-input na" type="checkbox" name="align_local_gas_na" value="3"></label></td>
                 
-                <td><label for="align_local_gas_0">There currently is no strategic alignment within the local natural gas utility related to community energy initiatives.<br>[0 points]<br><input id="align_local_gas_0" class="form-check-input" type="checkbox" name="align_local_gas_0" value="0"></label></td>
+                <td><label for="align_local_gas_0">There currently is no strategic alignment within the local natural gas utility related to community energy initiatives.<br>[0 points]<br><input id="align_local_gas_0" class="form-check-input app" type="checkbox" name="align_local_gas_0" value="0"></label></td>
                 
-                <td><label for="align_local_gas_1">Meetings between relevant departments occur within the natural gas utility on a project-to-project basis as they relate to community energy initiatives.<br>[1 point]<br><input id="align_local_gas_1" class="form-check-input" type="checkbox" name="align_local_gas_1" value="1"></label></td>
+                <td><label for="align_local_gas_1">Meetings between relevant departments occur within the natural gas utility on a project-to-project basis as they relate to community energy initiatives.<br>[1 point]<br><input id="align_local_gas_1" class="form-check-input app" type="checkbox" name="align_local_gas_1" value="1"></label></td>
                 
-                <td><label for="align_local_gas_2">Participation in, and support for, community energy initiatives is seen as a strategic priority within the natural gas utility.<br>[2 points]<br><input id="align_local_gas_2" class="form-check-input" type="checkbox" name="align_local_gas_2" value="2"></label></td>
+                <td><label for="align_local_gas_2">Participation in, and support for, community energy initiatives is seen as a strategic priority within the natural gas utility.<br>[2 points]<br><input id="align_local_gas_2" class="form-check-input app" type="checkbox" name="align_local_gas_2" value="2"></label></td>
                 
                 <td></td>
                 
@@ -133,6 +172,8 @@
                 </td>
                 
                 <td><textarea class="form-control" id="align_local_gas_notes" name="align_local_gas_notes" placeholder="Enter relevant notes, references, or links..." rows="8" style="font-size: 12px"></textarea></td>
+
+                <input class="row-complete" value="false" type="hidden">
               </tr>
 
               <tr>
@@ -140,13 +181,13 @@
                 
                 <td>Scale</td>
                 
-                <td><label for="knowledge_share_na">N/A for the community<br><input id="knowledge_share_na" class="form-check-input" type="checkbox" name="knowledge_share_na" value="0"></label></td>
+                <td><label for="knowledge_share_na">N/A for the community<br><input id="knowledge_share_na" class="form-check-input na" type="checkbox" name="knowledge_share_na" value="2"></label></td>
                 
-                <td><label for="knowledge_share_0">There currently is no knowledge sharing with other communities related to community energy initiatives.<br>[0 points]<br><input id="knowledge_share_0" class="form-check-input" type="radio" name="knowledge_share" value="0"></label></td>
+                <td><label for="knowledge_share_0">There currently is no knowledge sharing with other communities related to community energy initiatives.<br>[0 points]<br><input id="knowledge_share_0" class="form-check-input app" type="radio" name="knowledge_share" value="0"></label></td>
                 
-                <td><label for="knowledge_share_1">Representative(s) from the community leadership team has attended or participated in events or knowledge sharing groups that involves members from outside of the community.<br>[1 point]<br><input id="knowledge_share_1" class="form-check-input" type="radio" name="knowledge_share" value="1"></label></td>
+                <td><label for="knowledge_share_1">Representative(s) from the community leadership team has attended or participated in events or knowledge sharing groups that involves members from outside of the community.<br>[1 point]<br><input id="knowledge_share_1" class="form-check-input app" type="radio" name="knowledge_share" value="1"></label></td>
                 
-                <td><label for="knowledge_share_2">Representative(s) from the community leadership team has presented in events or led/facilitated knowledge sharing groups that involves members from outside of the community.<br>[2 points]<br><input id="knowledge_share_2" class="form-check-input" type="radio" name="knowledge_share" value="2"></label></td>
+                <td><label for="knowledge_share_2">Representative(s) from the community leadership team has presented in events or led/facilitated knowledge sharing groups that involves members from outside of the community.<br>[2 points]<br><input id="knowledge_share_2" class="form-check-input app" type="radio" name="knowledge_share" value="2"></label></td>
                 
                 <td></td>
                 
@@ -158,6 +199,8 @@
                 </td>
                 
                 <td><textarea class="form-control" id="knowledge_share_notes" name="knowledge_share_notes" placeholder="Enter relevant notes, references, or links..." rows="8" style="font-size: 12px"></textarea></td>
+
+                <input class="row-complete" value="false" type="hidden">
               </tr>
 
             </tbody>

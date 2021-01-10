@@ -233,7 +233,9 @@ module.exports = function(app, myDataBase) {
             "scenarios.$[element].governance.knowledge_share_pts": Number(req.body.knowledge_share_pts),
             "scenarios.$[element].governance.knowledge_share_notes": req.body.knowledge_share_notes,
 
-            "scenarios.$[element].governance.z_pts_total": Number(req.body.z_pts_total),
+            "scenarios.$[element].governance.z_app_pts_total": Number(req.body.z_app_pts_total),
+            "scenarios.$[element].governance.z_na_pts_total": Number(req.body.z_na_pts_total),
+            "scenarios.$[element].governance.z_sect_complete": req.body.z_sect_complete,
           },
         },
         { arrayFilters: [ { "element.scen_name": { $eq: req.body.scen_carry } } ],
@@ -245,7 +247,7 @@ module.exports = function(app, myDataBase) {
             res.send("Save error.");
           } else {
             let result = doc.value.scenarios.find((elm) => elm.scen_name === doc.value.currentScen);
-            console.log(result);
+            console.log(result.governance);
             res.send('Save successful.');
           }
         }
@@ -304,7 +306,9 @@ module.exports = function(app, myDataBase) {
             "scenarios.$[element].staff.succ_plan_init_pts": Number(req.body.succ_plan_init_pts),
             "scenarios.$[element].staff.succ_plan_init_notes": req.body.succ_plan_init_notes,
 
-            "scenarios.$[element].staff.z_pts_total": Number(req.body.z_pts_total),
+            "scenarios.$[element].staff.z_app_pts_total": Number(req.body.z_app_pts_total),
+            "scenarios.$[element].staff.z_na_pts_total": Number(req.body.z_na_pts_total),
+            "scenarios.$[element].staff.z_sect_complete": req.body.z_sect_complete,
           },
         },
         { arrayFilters: [ { "element.scen_name": { $eq: req.body.scen_carry } } ],
@@ -316,7 +320,7 @@ module.exports = function(app, myDataBase) {
             res.send("Save error.");
           } else {
             let result = doc.value.scenarios.find((elm) => elm.scen_name === doc.value.currentScen);
-            console.log(result);
+            console.log(result.staff);
             res.send('Save successful.');
           }
         }
@@ -408,7 +412,9 @@ module.exports = function(app, myDataBase) {
             "scenarios.$[element].data.scenario_model_pts": Number(req.body.scenario_model_pts),
             "scenarios.$[element].data.scenario_model_notes": req.body.scenario_model_notes,
 
-            "scenarios.$[element].data.z_pts_total": Number(req.body.z_pts_total),
+            "scenarios.$[element].data.z_app_pts_total": Number(req.body.z_app_pts_total),
+            "scenarios.$[element].data.z_na_pts_total": Number(req.body.z_na_pts_total),
+            "scenarios.$[element].data.z_sect_complete": req.body.z_sect_complete,
           },
         },
         { arrayFilters: [ { "element.scen_name": { $eq: req.body.scen_carry } } ],
@@ -420,7 +426,7 @@ module.exports = function(app, myDataBase) {
             res.send("Save error.");
           } else {
             let result = doc.value.scenarios.find((elm) => elm.scen_name === doc.value.currentScen);
-            console.log(result);
+            console.log(result.data);
             res.send('Save successful.');
           }
         }
@@ -480,6 +486,11 @@ module.exports = function(app, myDataBase) {
   app.route('/buildings')
     .get(ensureAuthenticated, (req, res) => {
       res.sendFile(process.cwd() + '/views/buildings.html');
+    });
+
+  app.route('/outputs')
+    .get(ensureAuthenticated, (req, res) => {
+      res.sendFile(process.cwd() + '/views/outputs.html');
     });
 
   app.route('/logout')
