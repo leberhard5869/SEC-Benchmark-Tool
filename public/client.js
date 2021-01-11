@@ -62,19 +62,20 @@ $(document).ready(function(){
   $(".form-check-input").on("handleChange", function(event) {
     let arr = [], i = 0, sum = 0;
 
-    /* Highligthing & disabling */
+    /* General highligthing & disabling */
     if (this.checked && this.classList.contains("na")) {
       $(this).parents("tr").find(".app").parents("td").css("background-color", "lightgrey");
       $(this).parents("tr").find(".app").prop("checked", false);
       $(this).parents("tr").find(".app").prop("disabled", true);
     } else if (!this.checked && this.classList.contains('na')) {
       $(this).parents("tr").find(".app,.na").parents("td").css("background-color", "#ffffff");
-      $(this).parents("tr").find(".app").prop("disabled", false);
+      $(this).parents("tr").find(".app:not(.on-off-sub)").prop("disabled", false);
     } else if (!this.checked && this.type === "checkbox") {
       $(this).parents("td").css("background-color", "#ffffff");
     } else if (this.type === "radio") {
       $(this).parents("tr").children("td").css("background-color", "#ffffff");
     };
+    
     if (this.checked) {
       $(this).parents("td").css("background-color", "#ffcd05");
     };
@@ -85,14 +86,14 @@ $(document).ready(function(){
     /* Handle local energy mapping & model not applicables */
     if (this.id === "energy_mapping_0" || this.id === "scenario_model_0") {
       if (this.checked) {
-        $(this).parents("tr").find("input:eq(3), input:eq(4), input:eq(5)").addClass("pot-na-local-true").prop("checked", false).prop("disabled", true).parents("td").css("background-color", "lightgrey");
+        $(this).parents("tr").find("input:eq(3),input:eq(4),input:eq(5)").addClass("pot-na-local-true").prop("checked", false).prop("disabled", true).parents("td").css("background-color", "lightgrey");
       } else if (!this.checked) {
-        $(this).parents("tr").find("input:eq(3):not(.pot-na-true), input:eq(4):not(.pot-na-true), input:eq(5):not(.pot-na-true)").removeClass("pot-na-local-true").prop("disabled", false).parents("td").css("background-color", "#ffffff");
+        $(this).parents("tr").find("input:eq(3):not(.pot-na-true),input:eq(4):not(.pot-na-true),input:eq(5):not(.pot-na-true)").removeClass("pot-na-local-true").prop("disabled", false).parents("td").css("background-color", "#ffffff");
       };
     };
 
-    /* Handle local radio button on/off */
-    if (this.id === "retro_exist_single_2_on" || this.id === "retro_exist_murb_2_on" || this.id === "retro_exist_comm_2_on" ) {
+    /* Handle sub radio button on/off */
+    if (this.classList.contains("on-off")) {
       if (this.checked) { $(this).siblings().children().prop("disabled", false) }
       else if (!this.checked) { $(this).siblings().children().prop("disabled", true).prop("checked", false) };
     };
