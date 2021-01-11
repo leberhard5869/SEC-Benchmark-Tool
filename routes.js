@@ -433,6 +433,103 @@ module.exports = function(app, myDataBase) {
       );
     });
 
+  app.route("/db/data/financials")
+    .post((req, res, next) => {
+      myDataBase.findOneAndUpdate(
+        { username: req.user.username },
+        {
+          $set: {
+            "scenarios.$[element].last_update": new Date(),
+
+            "scenarios.$[element].financials.assess_mech_fund_na": Number(req.body.assess_mech_fund_na),
+            "scenarios.$[element].financials.assess_mech_fund_0": Number(req.body.assess_mech_fund_0),
+            "scenarios.$[element].financials.assess_mech_fund_1": Number(req.body.assess_mech_fund_1),
+            "scenarios.$[element].financials.assess_mech_fund_2": Number(req.body.assess_mech_fund_2),
+            "scenarios.$[element].financials.assess_mech_fund_3": Number(req.body.assess_mech_fund_3),
+            "scenarios.$[element].financials.assess_mech_fund_pts": Number(req.body.assess_mech_fund_pts),
+            "scenarios.$[element].financials.assess_mech_fund_notes": req.body.assess_mech_fund_notes,
+
+            "scenarios.$[element].financials.mech_corp_init_na": Number(req.body.mech_corp_init_na),
+            "scenarios.$[element].financials.mech_corp_init": Number(req.body.mech_corp_init),
+            "scenarios.$[element].financials.mech_corp_init_pts": Number(req.body.mech_corp_init_pts),
+            "scenarios.$[element].financials.mech_corp_init_notes": req.body.mech_corp_init_notes,
+
+            "scenarios.$[element].financials.fees_auto_cong_na": Number(req.body.fees_auto_cong_na),
+            "scenarios.$[element].financials.fees_auto_cong_0": Number(req.body.fees_auto_cong_0),
+            "scenarios.$[element].financials.fees_auto_cong_1": Number(req.body.fees_auto_cong_1),
+            "scenarios.$[element].financials.fees_auto_cong_2": Number(req.body.fees_auto_cong_2),
+            "scenarios.$[element].financials.fees_auto_cong_pts": Number(req.body.fees_auto_cong_pts),
+            "scenarios.$[element].financials.fees_auto_cong_notes": req.body.fees_auto_cong_notes,
+
+            "scenarios.$[element].financials.fund_act_transp_na": Number(req.body.fund_act_transp_na),
+            "scenarios.$[element].financials.fund_act_transp": Number(req.body.fund_act_transp),
+            "scenarios.$[element].financials.fund_act_transp_pts": Number(req.body.fund_act_transp_pts),
+            "scenarios.$[element].financials.fund_act_transp_notes": req.body.fund_act_transp_notes,
+
+            "scenarios.$[element].financials.fin_levers_dens_na": Number(req.body.fin_levers_dens_na),
+            "scenarios.$[element].financials.fin_levers_dens": Number(req.body.fin_levers_dens),
+            "scenarios.$[element].financials.fin_levers_dens_pts": Number(req.body.fin_levers_dens_pts),
+            "scenarios.$[element].financials.fin_levers_dens_notes": req.body.fin_levers_dens_notes,
+
+            "scenarios.$[element].financials.incent_init_bldgs_na": Number(req.body.incent_init_bldgs_na),
+            "scenarios.$[element].financials.incent_init_bldgs_0": Number(req.body.incent_init_bldgs_0),
+            "scenarios.$[element].financials.incent_init_bldgs_1": Number(req.body.incent_init_bldgs_1),
+            "scenarios.$[element].financials.incent_init_bldgs_2": Number(req.body.incent_init_bldgs_2),
+            "scenarios.$[element].financials.incent_init_bldgs_pts": Number(req.body.incent_init_bldgs_pts),
+            "scenarios.$[element].financials.incent_init_bldgs_notes": req.body.incent_init_bldgs_notes,
+
+            "scenarios.$[element].financials.retro_exist_single_na": Number(req.body.retro_exist_single_na),
+            "scenarios.$[element].financials.retro_exist_single_0": Number(req.body.retro_exist_single_0),
+            "scenarios.$[element].financials.retro_exist_single_1": Number(req.body.retro_exist_single_1),
+            "scenarios.$[element].financials.retro_exist_single_2": Number(req.body.retro_exist_single_2),
+            "scenarios.$[element].financials.retro_exist_single_3": Number(req.body.retro_exist_single_3),
+            "scenarios.$[element].financials.retro_exist_single_4": Number(req.body.retro_exist_single_4),
+            "scenarios.$[element].financials.retro_exist_single_pts": Number(req.body.retro_exist_single_pts),
+            "scenarios.$[element].financials.retro_exist_single_notes": req.body.retro_exist_single_notes,
+
+            "scenarios.$[element].financials.retro_exist_murb_na": Number(req.body.retro_exist_murb_na),
+            "scenarios.$[element].financials.retro_exist_murb_0": Number(req.body.retro_exist_murb_0),
+            "scenarios.$[element].financials.retro_exist_murb_1": Number(req.body.retro_exist_murb_1),
+            "scenarios.$[element].financials.retro_exist_murb_2": Number(req.body.retro_exist_murb_2),
+            "scenarios.$[element].financials.retro_exist_murb_3": Number(req.body.retro_exist_murb_3),
+            "scenarios.$[element].financials.retro_exist_murb_4": Number(req.body.retro_exist_murb_4),
+            "scenarios.$[element].financials.retro_exist_murb_pts": Number(req.body.retro_exist_murb_pts),
+            "scenarios.$[element].financials.retro_exist_murb_notes": req.body.retro_exist_murb_notes,
+
+            "scenarios.$[element].financials.retro_exist_comm_na": Number(req.body.retro_exist_comm_na),
+            "scenarios.$[element].financials.retro_exist_comm_0": Number(req.body.retro_exist_comm_0),
+            "scenarios.$[element].financials.retro_exist_comm_1": Number(req.body.retro_exist_comm_1),
+            "scenarios.$[element].financials.retro_exist_comm_2": Number(req.body.retro_exist_comm_2),
+            "scenarios.$[element].financials.retro_exist_comm_3": Number(req.body.retro_exist_comm_3),
+            "scenarios.$[element].financials.retro_exist_comm_4": Number(req.body.retro_exist_comm_4),
+            "scenarios.$[element].financials.retro_exist_comm_pts": Number(req.body.retro_exist_comm_pts),
+            "scenarios.$[element].financials.retro_exist_comm_notes": req.body.retro_exist_comm_notes,
+
+            "scenarios.$[element].financials.prog_pov_lowinc_na": Number(req.body.prog_pov_lowinc_na),
+            "scenarios.$[element].financials.prog_pov_lowinc": Number(req.body.prog_pov_lowinc),
+            "scenarios.$[element].financials.prog_pov_lowinc_pts": Number(req.body.prog_pov_lowinc_pts),
+            "scenarios.$[element].financials.prog_pov_lowinc_notes": req.body.prog_pov_lowinc_notes,
+
+            "scenarios.$[element].financials.z_app_pts_total": Number(req.body.z_app_pts_total),
+            "scenarios.$[element].financials.z_na_pts_total": Number(req.body.z_na_pts_total),
+            "scenarios.$[element].financials.z_sect_complete": req.body.z_sect_complete,          },
+        },
+        { arrayFilters: [ { "element.scen_name": { $eq: req.body.scen_carry } } ],
+          returnOriginal: false
+        },
+        (err, doc) => {
+          if (err) {
+            console.log(err);
+            res.send("Save error.");
+          } else {
+            let result = doc.value.scenarios.find((elm) => elm.scen_name === doc.value.currentScen);
+            console.log(result.financials);
+            res.send('Save successful.');
+          }
+        }
+      );
+    });
+
   app.route('/intro')
     .get(ensureAuthenticated, (req, res, next) => {
       res.sendFile(process.cwd() + '/views/intro.html');

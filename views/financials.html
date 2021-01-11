@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>SEC Benchmark Tool - Financials</title>
+    <meta name="description" content="Introduction" />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/public/style.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  </head>
+
+  <body>
+    <div class="container-fluid">
+      <img src="../assets/Financials-Icon.png" alt="Financials logo" class="img-fluid" style="width: 100px">
+
+      <div class="row">
+        <div class="col-lg-10"><h1 class="">Financials</h1></div>
+        <div class="col-lg-2">
+          <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Navigation</a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="/intro">Intro & Scenario Control</a></li>
+                    <li><a class="dropdown-item" href="/governance">Governance</a></li>
+                    <li><a class="dropdown-item" href="/staff">Staff</a></li>
+                    <li><a class="dropdown-item" href="/data">Data</a></li>
+                    <li><a class="dropdown-item" href="/financials">Financials</a></li>
+                    <li><a class="dropdown-item" href="/strategy">Strategy</a></li>
+                    <li><a class="dropdown-item" href="/land_use">Land Use</a></li>
+                    <li><a class="dropdown-item" href="/energy_net">Energy Networks</a></li>
+                    <li><a class="dropdown-item" href="/waste_water">Waste & Water</a></li>
+                    <li><a class="dropdown-item" href="/transport">Transportation</a></li>
+                    <li><a class="dropdown-item" href="/buildings">Buildings</a></li>
+                    <li><a class="dropdown-item" href="/outputs">Outputs</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </div>
+
+      <h4 id="scenario">Current Scenario:</h4>
+
+      <form id="form-data">
+
+        <input id="scen_carry" name="scen_carry" value="" type="hidden">
+        <input id="z_app_pts_total" name="z_app_pts_total" value="" type="hidden">
+        <input id="z_na_pts_total" name="z_na_pts_total" value="" type="hidden">
+        <input id="z_sect_complete" name="z_sect_complete" value="false" type="hidden">
+
+        <div class="table-responsive">
+          <table class="table table-bordered align-middle">
+            <thead>
+              <tr style="background-color: #00b3b3">
+                <th class="col-lg text-center align-middle" scope="col">Measures</th>
+                <th class="col-lg text-center align-middle" scope="col">Scoring Method</th>
+                <th class="col-lg-8 text-center align-middle" scope="col" colspan="6">Scoring</th>
+                <th class="col-lg text-center align-middle" scope="col">Community Score</th>
+                <th class="col-lg-2 text-center align-middle" scope="col">Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1.4.1. Assessment of financial mechanisms and funding <a href="#" data-toggle="tooltip" data-placement="right" data-animation="true" title="A wide variety of financing options for energy initiatives throughout the community have been assessed, beyond incentive funding from higher levels of government. Where possible, access by financially underserved populations in the community should be considered. This may include financing mechanisms such as leases, loans, equity, debentures, on-bill financing, local improvement charges (LIC) or property assessed clean energy (PACE) programs, soft loans, savings-backed agreements, or energy purchase agreements. This should also be expanded to a variety of ownership models beyond public ownership, such as private ownership, public private partnerships, or cooperative or non profit models."><i class="fas fa-info-circle"></i></a></th>
+                
+                <td>Checklist</td>
+                
+                <td><label for="assess_mech_fund_na">N/A for the community.<br><input id="assess_mech_fund_na" class="form-check-input na" type="checkbox" name="assess_mech_fund_na" value="3"></label></td>
+                
+                <td><label for="assess_mech_fund_0">There currently is no assessment of financial mechanisms and funding.<br>[0 points]<br><input id="assess_mech_fund_0" class="form-check-input app" type="checkbox" name="assess_mech_fund_0" value="0"></label></td>
+                
+                <td><label for="assess_mech_fund_1">A transparent and publicly available assessment of financing mechanisms (to offer or to take advantage of) has been completed.<br>[1 point]<br><input id="assess_mech_fund_1" class="form-check-input app" type="checkbox" name="assess_mech_fund_1" value="1"></label></td>
+                
+                <td><label for="assess_mech_fund_2">Assessment of financial mechanisms includes considerations of a variety of ownership models.<br>[1 point]<br><input id="assess_mech_fund_2" class="form-check-input app" type="checkbox" name="assess_mech_fund_2" value="1"></label></td>
+                
+                <td><label for="assess_mech_fund_3">Assessments of financial mechanisms includes considerations of social equity, such as access by financially underserved populations.<br>[1 point]<br><input id="assess_mech_fund_3" class="form-check-input app" type="checkbox" name="assess_mech_fund_3" value="1"></label></td>
+                
+                <td></td>
+                
+                <td>
+                  <input id="assess_mech_fund_pts" class="text-center row-points" name="assess_mech_fund_pts" value="" hidden></input>
+                  <output>0 points</output>
+                </td>
+                
+                <td><textarea class="form-control" id="assess_mech_fund_notes" name="assess_mech_fund_notes" placeholder="Enter relevant notes, references, or links..." rows="8" style="font-size: 12px"></textarea></td>
+
+                <input class="row-complete" value="false" type="hidden">
+              </tr>
+
+              <tr>
+                <th scope="row">1.4.2. Financial mechanisms for local government corporate energy initiatives <a href="#" data-toggle="tooltip" data-placement="right" data-animation="true" title="The local government funds corporate energy initiatives, such as energy efficiency measures in new and existing corporate-owned buildings, and fleet vehicles. This may be from grants from upper-levels of government or utility incentives, ad-hoc capital budget allocation, or financial vehicles such as municipal debt, revolving funds or energy performance contracts."><i class="fas fa-info-circle"></i></a></th>
+                
+                <td>Scale</td>
+                
+                <td><label for="mech_corp_init_na">N/A for the community.<br><input id="mech_corp_init_na" class="form-check-input na" type="checkbox" name="mech_corp_init_na" value="3"></label></td>
+                
+                <td><label for="mech_corp_init_0">There currently are no financial mechanisms for local government corporate energy initiatives.<br>[0 points]<br><input id="mech_corp_init_0" class="form-check-input app" type="radio" name="mech_corp_init_0" value="0"></label></td>
+                
+                <td><label for="mech_corp_init_1">The local government has funded corporate energy initiatives through grants from upper-levels of government or utility incentives.<br>[1 point]<br><input id="mech_corp_init_1" class="form-check-input app" type="radio" name="mech_corp_init" value="1"></label></td>
+
+                <td><label for="mech_corp_init_2">The local government has funded corporate energy initiatives through ad-hoc capital budget allocation(s).<br>[2 points]<br><input id="mech_corp_init_2" class="form-check-input app" type="radio" name="mech_corp_init" value="2"></label></td>
+
+                <td><label for="mech_corp_init_3">The local government is committed to funding corporate energy initiatives through financial vehicles such as long-term budget allocation, revolving funds, or energy performance contracts.<br>[3 points]<br><input id="mech_corp_init_3" class="form-check-input app" type="radio" name="mech_corp_init" value="3"></label></td>
+
+                <td></td>
+                                                
+                <td>
+                  <input id="mech_corp_init_pts" class="text-center row-points" name="mech_corp_init_pts" value="" hidden></input>
+                  <output>0 points</output>
+                </td>
+                
+                <td><textarea class="form-control" id="mech_corp_init_notes" name="mech_corp_init_notes" placeholder="Enter relevant notes, references, or links..." rows="8" style="font-size: 12px"></textarea></td>
+
+                <input class="row-complete" value="false" type="hidden">
+              </tr>
+
+              <tr>
+                <th scope="row">1.4.3. Fees to address automobile congestion <a href="#" data-toggle="tooltip" data-placement="right" data-animation="true" title="The local government has implemented automobile user fees to address congestion. These may include parking charges, or road tolls / congestion charges."><i class="fas fa-info-circle"></i></a></th>
+                
+                <td>Checklist</td>
+                
+                <td><label for="fees_auto_cong_na">N/A for the community.<br><input id="fees_auto_cong_na" class="form-check-input na" type="checkbox" name="fees_auto_cong_na" value="2"></label></td>
+                
+                <td><label for="fees_auto_cong_0">There currently are no fees to address automobile congestion.<br>[0 points]<br><input id="fees_auto_cong_0" class="form-check-input app" type="checkbox" name="fees_auto_cong_0" value="0"></label></td>
+                
+                <td><label for="fees_auto_cong_1">The local government implements parking charges.<br>[1 point]<br><input id="fees_auto_cong_1" class="form-check-input app" type="checkbox" name="fees_auto_cong_1" value="1"></label></td>
+                
+                <td><label for="fees_auto_cong_2">The local government (or regional government) implements road tolls/congestion charges. [N/A for communities with population below 10,000]<br>[1 point]<br><input id="fees_auto_cong_2" class="form-check-input app pot-na-pop" type="checkbox" name="fees_auto_cong_2" value="1"></label></td>
+                
+                <td></td>
+                
+                <td></td>
+                
+                <td>
+                  <input id="fees_auto_cong_pts" class="text-center row-points" name="fees_auto_cong_pts" value="" hidden></input>
+                  <output>0 points</output>
+                </td>
+                
+                <td><textarea class="form-control" id="fees_auto_cong_notes" name="fees_auto_cong_notes" placeholder="Enter relevant notes, references, or links..." rows="8" style="font-size: 12px"></textarea></td>
+
+                <input class="row-complete" value="false" type="hidden">
+              </tr>
+
+              <tr>
+                <th scope="row">1.4.4. Funding for active transportation infrastructure <a href="#" data-toggle="tooltip" data-placement="right" data-animation="true" title="The local government funds infrastructure to support active transportation, such as bike lanes or parking, or multi-use trails. This may be from grants from upper-levels of government, ad-hoc capital budget allocations, or ongoing operational budget commitments."><i class="fas fa-info-circle"></i></a></th>
+                
+                <td>Scale</td>
+                
+                <td><label for="fund_act_transp_na">N/A for the community.<br><input id="fund_act_transp_na" class="form-check-input na" type="checkbox" name="fund_act_transp_na" value="3"></label></td>
+                
+                <td><label for="fund_act_transp_0">There is currently no funding for active transportation infrastructure.<br>[0 points]<br><input id="fund_act_transp_0" class="form-check-input app" type="radio" name="fund_act_transp" value="0"></label></td>
+                
+                <td><label for="fund_act_transp_1">The local government funds active transportation infrastructure through grants from upper-levels of government or utility incentives.<br>[1 point]<br><input id="fund_act_transp_1" class="form-check-input app" type="radio" name="fund_act_transp" value="1"></label></td>
+                
+                <td><label for="fund_act_transp_2">The local government funds active transportation infrastructure through ad-hoc capital budget allocation(s).<br>[2 points]<br><input id="fund_act_transp_2" class="form-check-input app" type="radio" name="fund_act_transp" value="2"></label></td>
+                
+                <td><label for="fund_act_transp_3">The local government is committed to funding active transportation infrastructure through operating budget allocation.<br>[3 points]<br><input id="fund_act_transp_3" class="form-check-input app" type="radio" name="fund_act_transp" value="3"></label></td>
+                
+                <td></td>
+                
+                <td>
+                  <input id="fund_act_transp_pts" class="text-center row-points" name="fund_act_transp_pts" value="" hidden></input>
+                  <output>0 points</output>
+                </td>
+                
+                <td><textarea class="form-control" id="fund_act_transp_notes" name="fund_act_transp_notes" placeholder="Enter relevant notes, references, or links..." rows="8" style="font-size: 12px"></textarea></td>
+
+                <input class="row-complete" value="false" type="hidden">
+              </tr>            
+
+              <tr>
+                <th scope="row">1.4.5. Financial levers for densification <a href="#" data-toggle="tooltip" data-placement="right" data-animation="true" title="The local government has aligned financial levers to support densification. This may include property tax adjustments, deferrals (increment financing) or assistance, development charges adjustments or deferrals, density bonusing."><i class="fas fa-info-circle"></i></a></th>
+                
+                <td>Scale</td>
+                
+                <td><label for="fin_levers_dens_na">N/A for the community.<br><input id="fin_levers_dens_na" class="form-check-input na" type="checkbox" name="fin_levers_dens_na" value="2"></label></td>
+                
+                <td><label for="fin_levers_dens_0">There are currently no financial levers for used for densification.<br>[0 points]<br><input id="fin_levers_dens_0" class="form-check-input app" type="radio" name="fin_levers_dens" value="0"></label></td>
+                
+                <td><label for="fin_levers_dens_1">The local government has aligned or incorporated at least 1 financial lever to support densification. [N/A for communities with population below 10,000 and/or growth below 0% annual change]<br>[1 point]<br><input id="fin_levers_dens_1" class="form-check-input app pot-na-pop pot-na-growth" type="radio" name="fin_levers_dens" value="1"></label></td>
+                
+                <td><label for="fin_levers_dens_2">Incentives exist for energy initiatives in new multi-unit residential, commercial, and/or mixed-use buildings. [N/A for communities with population below 10,000 and/or growth below 0% annual change]<br>[2 points]<br><input id="fin_levers_dens_2" class="form-check-input app pot-na-pop pot-na-growth" type="radio" name="fin_levers_dens" value="2"></label></td>
+                
+                <td></td>
+                
+                <td></td>
+                
+                <td>
+                  <input id="fin_levers_dens_pts" class="text-center row-points" name="fin_levers_dens_pts" value="" hidden></input>
+                  <output>0 points</output>
+                </td>
+                
+                <td><textarea class="form-control" id="fin_levers_dens_notes" name="fin_levers_dens_notes" placeholder="Enter relevant notes, references, or links..." rows="8" style="font-size: 12px"></textarea></td>
+
+                <input class="row-complete" value="false" type="hidden">
+              </tr> 
+
+              <tr>
+                <th scope="row">1.4.6a. Incentives for energy initiatives in new buildings <a href="#" data-toggle="tooltip" data-placement="right" data-animation="true" title="The community has incentives for energy initiatives (such as enhanced building envelopes and building-scale energy systems) in new buildings. This should include incentives covering initiatives in the variety of building typologies, such as various residential or commercial buildings. Incentives can be grants/rebates delivered by utility(ies), energy efficiency agencies, or upper levels of government, or property tax and/or development charges adjustments or deferrals from the local government. For information on commercial assessment phase in property tax adjustments, refer to https://beta.novascotia.ca/sites/default/files/documents/1-305/commercial-assessment-phase-tool-best-practice-guide-en.pdf"><i class="fas fa-info-circle"></i></a></th>
+                
+                <td>Checklist</td>
+                
+                <td><label for="incent_init_bldgs_na">N/A for the community.<br><input id="incent_init_bldgs_na" class="form-check-input na" type="checkbox" name="incent_init_bldgs_na" value="2"></label></td>
+                
+                <td><label for="incent_init_bldgs_0">There are currently no incentives for energy initiatives in new buildings.<br>[0 points]<br><input id="incent_init_bldgs_0" class="form-check-input app" type="checkbox" name="incent_init_bldgs_0" value="0"></label></td>
+                
+                <td><label for="incent_init_bldgs_1">Incentives exist for energy initiatives in new single family residential units. [N/A for communities with population below 10,000 and/or growth below 0% annual change]<br>[1 point]<br><input id="incent_init_bldgs_1" class="form-check-input app pot-na-pop pot-na-growth" type="checkbox" name="incent_init_bldgs_1" value="1"></label></td>
+                
+                <td><label for="incent_init_bldgs_2">Incentives exist for energy initiatives in new multi-unit residential, commercial, and/or mixed-use buildings. [N/A for communities with population below 10,000 and/or growth below 0% annual change and/or no significant multi-unit residential or commercial / mixed-use building stock]<br>[1 point]<br><input id="incent_init_bldgs_2" class="form-check-input app pot-na-pop pot-na-growth pot-na-comm" type="checkbox" name="incent_init_bldgs_2" value="1"></label></td>
+                
+                <td></td>
+                
+                <td></td>
+                
+                <td>
+                  <input id="incent_init_bldgs_pts" class="text-center row-points" name="incent_init_bldgs_pts" value="" hidden></input>
+                  <output>0 points</output>
+                </td>
+                
+                <td><textarea class="form-control" id="incent_init_bldgs_notes" name="incent_init_bldgs_notes" placeholder="Enter relevant notes, references, or links..." rows="8" style="font-size: 12px"></textarea></td>
+
+                <input class="row-complete" value="false" type="hidden">
+              </tr>
+
+              <tr>
+                <th scope="row">1.4.6b. Retrofit program for existing single family residential building stock <a href="#" data-toggle="tooltip" data-placement="right" data-animation="true" title="The community has a streamlined program or programs encouraging homeowners to improve energy efficiency of the existing single family residential building stock. Examples include programs to conduct audits or energy efficiency feasibility studies, incentives to convert to high efficiency lighting or HVAC equipment, or conduct building envelope upgrades or deep energy retrofits, as well as repayment mechanisms to provide upfront capital for retrofits. Repayment mechanisms may include local improvement charges (LIC) or property assessed clean energy (PACE) programs, utility on-bill financing, soft loans, energy performance contracting, or energy service agreements. Programs and repayment mechanisms can be run by utility(ies), energy efficiency agency, the local or provincial government, NGOs, Indigenous groups, chambers of commerce, energy service provider, etc., or ideally any combination of actors working together."><i class="fas fa-info-circle"></i></a></th>
+                
+                <td>Checklist</td>
+                
+                <td><label for="retro_exist_single_na">N/A for the community.<br><input id="retro_exist_single_na" class="form-check-input na" type="checkbox" name="retro_exist_single_na" value="5"></label></td>
+                
+                <td><label for="retro_exist_single_0">There is currently no retrofit program for the existing single family residential building stock.<br>[0 points]<br><input id="retro_exist_single_0" class="form-check-input app" type="checkbox" name="retro_exist_single_0" value="0"></label></td>
+                
+                <td><label for="retro_exist_single_1">Community program exists to help homeowners conduct energy audits or evaluate feasibility of energy efficiency retrofits of existing single family residential units.<br>[1 point]<br><input id="retro_exist_single_1" class="form-check-input app" type="checkbox" name="retro_exist_single_1" value="1"></label></td>
+                
+                <td><label for="retro_exist_single_2">Incentives exist for energy efficiency retrofits of existing single family residential units.<br>
+                  <input id="retro_exist_single_2_on" class="form-check-input app" type="checkbox" value="0"><br><br>
+                  <label for="retro_exist_single_2_simple"><input id="retro_exist_single_2_simple" class="form-check-input app" type="radio" name="retro_exist_single_2" value="1" disabled> Simple Retrofits [1 point]</label><br>
+                  <label for="retro_exist_single_2_deep"><input id="retro_exist_single_2_deep" class="form-check-input app" type="radio" name="retro_exist_single_2" value="2" disabled> Deep Retrofits [2 points]</label><br>
+                </label></td>
+                
+                <td><label for="retro_exist_single_3">Repayment mechanisms exist for energy efficiency retrofits of existing single family residential units.<br>[1 point]<br><input id="retro_exist_single_3" class="form-check-input app" type="checkbox" name="retro_exist_single_3" value="1"></label></td>
+
+                <td><label for="retro_exist_single_4">Community retrofit programs (audits, simple and deep energy retrofits) are delivered in a streamlined system to support building owners and tenants with retrofit programs, including financial incentives, technical support and behaviour modification.<br>[1 point]<br><input id="retro_exist_single_4" class="form-check-input app" type="checkbox" name="retro_exist_single_4" value="1"></label></td>
+
+                <td>
+                  <input id="retro_exist_single_pts" class="text-center row-points" name="retro_exist_single_pts" value="" hidden></input>
+                  <output>0 points</output>
+                </td>
+                
+                <td><textarea class="form-control" id="retro_exist_single_notes" name="retro_exist_single_notes" placeholder="Enter relevant notes, references, or links..." rows="8" style="font-size: 12px"></textarea></td>
+
+                <input class="row-complete" value="false" type="hidden">
+              </tr>
+
+              <tr>
+                <th scope="row">1.4.6c. Retrofit program for existing multi-unit residential building stock <a href="#" data-toggle="tooltip" data-placement="right" data-animation="true" title="The community has a streamlined program or programs encouraging building owners to improve the energy efficiency of the existing multi-unit residential building stock. Examples include programs to conduct audits or energy efficiency feasibility studies, incentives to convert to high efficiency lighting or HVAC equipment, or conduct building envelope upgrades or deep energy retrofits, as well as repayment mechanisms to provide upfront capital for retrofits. Repayment mechanisms may include local improvement charges (LIC) or property assessed clean energy (PACE) programs, utility on-bill financing, soft loans, energy performance contracting, or energy service agreements. Programs and repayment mechanisms can be run by utility(ies), energy efficiency agency, the local or provincial government, NGOs, Indigenous groups, chambers of commerce, energy service provider, etc., or ideally any combination of actors working together."><i class="fas fa-info-circle"></i></a></th>
+                
+                <td>Checklist</td>
+                
+                <td><label for="retro_exist_murb_na">N/A for the community. [N/A for communities with no significant multi-unit residential building stock]<br><input id="retro_exist_murb_na" class="form-check-input na pot-na-murb" type="checkbox" name="retro_exist_murb_na" value="5"></label></td>
+                
+                <td><label for="retro_exist_murb_0">There is currently no retrofit program for the existing multi-unit residential building stock.<br>[0 points]<br><input id="retro_exist_murb_0" class="form-check-input app pot-na-murb" type="checkbox" name="retro_exist_murb_0" value="0"></label></td>
+                
+                <td><label for="retro_exist_murb_1">Community program exists to help building owners and operators conduct energy audits or evaluate the feasibility of energy efficiency retrofits for existing multi-unit residential buildings.<br>[1 point]<br><input id="retro_exist_murb_1" class="form-check-input app pot-na-murb" type="checkbox" name="retro_exist_murb_1" value="1"></label></td>
+                
+                <td><label for="retro_exist_murb_2">Incentives exist for energy efficiency retrofits of existing multi-unit residential buildings. <br>
+                  <input id="retro_exist_murb_2_on" class="form-check-input app pot-na-murb" type="checkbox" value="0"><br><br>
+                  <label for="retro_exist_murb_2_simple"><input id="retro_exist_murb_2_simple" class="form-check-input app pot-na-murb" type="radio" name="retro_exist_murb_2" value="1" disabled> Simple Retrofits [1 point]</label><br>
+                  <label for="retro_exist_murb_2_deep"><input id="retro_exist_murb_2_deep" class="form-check-input app pot-na-murb" type="radio" name="retro_exist_murb_2" value="2" disabled> Deep Retrofits [2 points]</label><br>
+                </label></td>
+                
+                <td><label for="retro_exist_murb_3">Repayment mechanisms exist for energy efficiency retrofits of existing multi-unit residential buildings.<br>[1 point]<br><input id="retro_exist_murb_3" class="form-check-input app pot-na-murb" type="checkbox" name="retro_exist_murb_3" value="1"></label></td>
+
+                <td><label for="retro_exist_murb_4">Community retrofit programs (audits, simple and deep energy retrofits) are delivered in a streamlined system to support building owners and tenants with retrofit programs, including financial incentives, technical support and behaviour modification.<br>[1 point]<br><input id="retro_exist_murb_4" class="form-check-input app pot-na-murb" type="checkbox" name="retro_exist_murb_4" value="1"></label></td>
+
+                <td>
+                  <input id="retro_exist_murb_pts" class="text-center row-points" name="retro_exist_murb_pts" value="" hidden></input>
+                  <output>0 points</output>
+                </td>
+                
+                <td><textarea class="form-control" id="retro_exist_murb_notes" name="retro_exist_murb_notes" placeholder="Enter relevant notes, references, or links..." rows="8" style="font-size: 12px"></textarea></td>
+
+                <input class="row-complete" value="false" type="hidden">
+              </tr>
+
+              <tr>
+                <th scope="row">1.4.6d. Retrofit program for existing commercial / mixed-use building stock <a href="#" data-toggle="tooltip" data-placement="right" data-animation="true" title="The community has a streamlined program or programs encouraging building owners to improve the energy efficiency of the existing stock of commercial (not including multi-unit residential) and mixed-use buildings. Examples include programs to conduct audits or energy efficiency feasibility studies, incentives to convert to high efficiency lighting or HVAC equipment, or conduct building envelope upgrades or deep energy retrofits, as well as repayment mechanisms to provide upfront capital for retrofits. Repayment mechanisms may include local improvement charges (LIC) or property assessed clean energy (PACE) programs, utility on-bill financing, soft loans, energy performance contracting, or energy service agreements. Programs and repayment mechanisms can be run by utility(ies), energy efficiency agency, the local or provincial government, NGOs, Indigenous groups, chambers of commerce, energy service provider, etc., or ideally any combination of actors working together. (Excludes multi-unit residential buildings)"><i class="fas fa-info-circle"></i></a></th>
+                
+                <td>Checklist</td>
+                
+                <td><label for="retro_exist_comm_na">N/A for the community. [N/A for communities with no significant commercial / mixed-use building stock]<br><input id="retro_exist_comm_na" class="form-check-input na pot-na-comm" type="checkbox" name="retro_exist_comm_na" value="5"></label></td>
+                
+                <td><label for="retro_exist_comm_0">There is currently no retrofit program for the existing commercial / mixed-use building stock.<br>[0 points]<br><input id="retro_exist_comm_0" class="form-check-input app pot-na-comm" type="checkbox" name="retro_exist_comm_0" value="0"></label></td>
+                
+                <td><label for="retro_exist_comm_1">Community program exists to help building owners and operators conduct energy audits or evaluate the feasibility of energy efficiency retrofits for existing commercial and mixed-use buildings.<br>[1 point]<br><input id="retro_exist_comm_1" class="form-check-input app pot-na-comm" type="checkbox" name="retro_exist_comm_1" value="1"></label></td>
+                
+                <td><label for="retro_exist_comm_2">Incentives exist for simple energy efficiency retrofits of existing commercial and mixed-use buildings.<br>
+                  <input id="retro_exist_comm_2_on" class="form-check-input app pot-na-comm" type="checkbox" value="0"><br><br>
+                  <label for="retro_exist_comm_2_simple"><input id="retro_exist_comm_2_simple" class="form-check-input app pot-na-comm" type="radio" name="retro_exist_comm_2" value="1" disabled> Simple Retrofits [1 point]</label><br>
+                  <label for="retro_exist_comm_2_deep"><input id="retro_exist_comm_2_deep" class="form-check-input app pot-na-comm" type="radio" name="retro_exist_comm_2" value="2" disabled> Deep Retrofits [2 points]</label><br>
+                </label></td>
+                
+                <td><label for="retro_exist_comm_3">Repayment mechanisms exist for energy efficiency retrofits of existing multi-unit residential buildings.<br>[1 point]<br><input id="retro_exist_comm_3" class="form-check-input app pot-na-comm" type="checkbox" name="retro_exist_comm_3" value="1"></label></td>
+
+                <td><label for="retro_exist_comm_4">Community retrofit programs (audits, simple and deep energy retrofits) are delivered in a streamlined system to support building owners and tenants with retrofit programs, including financial incentives, technical support and behaviour modification.<br>[1 point]<br><input id="retro_exist_comm_4" class="form-check-input app pot-na-comm" type="checkbox" name="retro_exist_comm_4" value="1"></label></td>
+
+                <td>
+                  <input id="retro_exist_comm_pts" class="text-center row-points" name="retro_exist_comm_pts" value="" hidden></input>
+                  <output>0 points</output>
+                </td>
+                
+                <td><textarea class="form-control" id="retro_exist_comm_notes" name="retro_exist_comm_notes" placeholder="Enter relevant notes, references, or links..." rows="8" style="font-size: 12px"></textarea></td>
+
+                <input class="row-complete" value="false" type="hidden">
+              </tr>
+
+              <tr>
+                <th scope="row">1.4.7. Energy programs targeting energy poverty and/or low-income households <a href="#" data-toggle="tooltip" data-placement="right" data-animation="true" title="Collaboration between the municipality and utilities to provide programs (ex. energy efficiency retrofits, DSM, DERs, or allocation of energy dividends etc.) specifically targeting low/fixed-income community members and/or households living in energy poverty (defined as spending more than 10% of their income on energy)."><i class="fas fa-info-circle"></i></a></th>
+                
+                <td>Scale</td>
+                
+                <td><label for="prog_pov_lowinc_na">N/A for the community.<br><input id="prog_pov_lowinc_na" class="form-check-input na" type="checkbox" name="prog_pov_lowinc_na" value="2"></label></td>
+                
+                <td><label for="prog_pov_lowinc_0">There is currently no energy programs targeting energy poverty and/or low-income households.<br>[0 points]<br><input id="prog_pov_lowinc_0" class="form-check-input app" type="radio" name="prog_pov_lowinc" value="0"></label></td>
+                
+                <td><label for="prog_pov_lowinc_1">Energy poverty and/or low income household programs are being piloted.<br>[1 point]<br><input id="prog_pov_lowinc_1" class="form-check-input app" type="radio" name="prog_pov_lowinc" value="1"></label></td>
+                
+                <td><label for="prog_pov_lowinc_2">Energy poverty and/or low income household programs are in place.<br>[2 points]<br><input id="prog_pov_lowinc_2" class="form-check-input app" type="radio" name="prog_pov_lowinc" value="2"></label></td>
+                
+                <td></td>
+                
+                <td></td>
+                
+                <td>
+                  <input id="prog_pov_lowinc_pts" class="text-center row-points" name="prog_pov_lowinc_pts" value="" hidden></input>
+                  <output>0 points</output>
+                </td>
+                
+                <td><textarea class="form-control" id="prog_pov_lowinc_notes" name="prog_pov_lowinc_notes" placeholder="Enter relevant notes, references, or links..." rows="8" style="font-size: 12px"></textarea></td>
+
+                <input class="row-complete" value="false" type="hidden">
+              </tr> 
+            </tbody>
+          </table>
+        </div>
+        
+        <input id="form-submit" class="btn btn-primary" type="submit" value="Save">
+
+      </form><br>
+              
+      <div id="navigation">
+        <a href="/data" id="previous" class="btn btn-primary" role="button">Previous (Data)</a>
+        <a href="/logout" id="logout" class="btn btn-primary" role="button">Logout</a>
+        <a href="/strategy" id="next" class="btn btn-primary" role="button">Next (Strategy)</input></a>
+      </div><br>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/0f567e20d5.js" crossorigin="anonymous"></script>
+    <script src="../public/client.js" type="module"></script>
+  </body>
+</html>
