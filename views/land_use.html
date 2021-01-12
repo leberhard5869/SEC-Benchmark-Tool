@@ -3,7 +3,7 @@
 
   <head>
     <title>SEC Benchmark Tool - Land Use</title>
-    <meta name="description" content="Introduction" />
+    <meta name="description" content="Land Use" />
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -17,34 +17,7 @@
 
       <div class="row">
         <div class="col-lg-10"><h1 class="">Land Use</h1></div>
-        <div class="col-lg-2">
-          <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Navigation</a>
-                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" href="/intro">Intro & Scenario Control</a></li>
-                    <li><a class="dropdown-item" href="/governance">Governance</a></li>
-                    <li><a class="dropdown-item" href="/staff">Staff</a></li>
-                    <li><a class="dropdown-item" href="/data">Data</a></li>
-                    <li><a class="dropdown-item" href="/financials">Financials</a></li>
-                    <li><a class="dropdown-item" href="/strategy">Strategy</a></li>
-                    <li><a class="dropdown-item" href="/land_use">Land Use</a></li>
-                    <li><a class="dropdown-item" href="/energy_net">Energy Networks</a></li>
-                    <li><a class="dropdown-item" href="/waste_water">Waste & Water</a></li>
-                    <li><a class="dropdown-item" href="/transport">Transportation</a></li>
-                    <li><a class="dropdown-item" href="/buildings">Buildings</a></li>
-                    <li><a class="dropdown-item" href="/outputs">Outputs</a></li>
-                  </ul>
-                </li>
-              </ul>
-            </div>
-          </nav>
-        </div>
+        <div id="navbar" class="col-lg-2"></div>
       </div>
 
       <h4 id="scenario">Current Scenario:</h4>
@@ -75,7 +48,7 @@
                 
                 <td><label for="public_eng_edu_na">N/A for the community.<br><input id="public_eng_edu_na" class="form-check-input na" type="checkbox" name="public_eng_edu_na" value="1.5"></label></td>
                 
-                <td><label for="public_eng_edu_0">There is currently no public engagement and education on energy and land use.<br>[0 points]<br><input id="public_eng_edu_0" class="form-check-input app" type="checkbox" name="public_eng_edu_0" value="0"></label></td>
+                <td><label for="public_eng_edu_0">There is currently no public engagement and education on energy and land use.<br>[0 points]<br><input id="public_eng_edu_0" class="form-check-input app zero" type="checkbox" name="public_eng_edu_0" value="0"></label></td>
                 
                 <td><label for="public_eng_edu_1">Members of the public are informed of initiatives and educated on land use-energy impacts through basic methods, such as:<br>-Website updates<br>-Newsletters<br>-Print materials (such as brochures, fact sheets, information packages)<br>-Social media updates<br>-Webinars or conference calls<br>-Open houses<br>[0.5 point]<br><input id="public_eng_edu_1" class="form-check-input app" type="checkbox" name="public_eng_edu_1" value="0.5"></label></td>
                 
@@ -102,7 +75,7 @@
                 
                 <td><label for="comp_mu_tod_na">N/A for the community.<br><input id="comp_mu_tod_na" class="form-check-input na" type="checkbox" name="comp_mu_tod_na" value="3"></label></td>
                 
-                <td><label for="comp_mu_tod_0">There is currently no compact, mixed use, transit-oriented development policies.<br>[0 points]<br><input id="comp_mu_tod_0" class="form-check-input app" type="checkbox" name="comp_mu_tod_0" value="0"></label></td>
+                <td><label for="comp_mu_tod_0">There is currently no compact, mixed use, transit-oriented development policies.<br>[0 points]<br><input id="comp_mu_tod_0" class="form-check-input app zero" type="checkbox" name="comp_mu_tod_0" value="0"></label></td>
                 
                 <td><label for="comp_mu_tod_1">Compact, mixed use and transit-oriented development is encouraged in the community's Official Community Plan (and Secondary Plans where applicable).<br>[1 point]<br><input id="comp_mu_tod_1" class="form-check-input app" type="checkbox" name="comp_mu_tod_1" value="1"></label></td>
 
@@ -129,7 +102,7 @@
                 
                 <td><label for="eff_perf_newdev_na">N/A for the community.<br><input id="eff_perf_newdev_na" class="form-check-input na" type="checkbox" name="eff_perf_newdev_na" value="8"></label></td>
                 
-                <td><label for="eff_perf_newdev_0">There is currently no energy efficiency and performance in planning policies and processes for new developments.<br>[0 points]<br><input id="eff_perf_newdev_0" class="form-check-input app" type="checkbox" name="eff_perf_newdev_0" value="0"></label></td>
+                <td><label for="eff_perf_newdev_0">There is currently no energy efficiency and performance in planning policies and processes for new developments.<br>[0 points]<br><input id="eff_perf_newdev_0" class="form-check-input app zero" type="checkbox" name="eff_perf_newdev_0" value="0"></label></td>
                 
                 <td><label for="eff_perf_newdev_1">The local government has policies or processes that support building-level energy performance in new developments.<br>[N/A for communities with population below 10,000 and/or growth below 0% annual change]<br>
                   <input id="eff_perf_newdev_1_on" class="form-check-input app on-off pot-na-pop pot-na-growth" type="checkbox" value="0"><br><br>
@@ -222,7 +195,7 @@
                 
                 <td><label for="prog_enhance_mitigate_na">N/A for the community.<br><input id="prog_enhance_mitigate_na" class="form-check-input na" type="checkbox" name="prog_enhance_mitigate_na" value="3"></label></td>
                                 
-                <td><label for="prog_enhance_mitigate_0">There is currently no programs to expand and enhance green space, and mitigate urban heat island effect.<br>[0 points]<br><input id="prog_enhance_mitigate_0" class="form-check-input app" type="checkbox" name="prog_enhance_mitigate_0" value="0"></label></td>
+                <td><label for="prog_enhance_mitigate_0">There is currently no programs to expand and enhance green space, and mitigate urban heat island effect.<br>[0 points]<br><input id="prog_enhance_mitigate_0" class="form-check-input app zero" type="checkbox" name="prog_enhance_mitigate_0" value="0"></label></td>
                 
                 <td><label for="prog_enhance_mitigate_1">Checklist up to a maximum for initiatives (plans, policies, programs) by the local government or other community organization(s) that target:<br>[2 points maximum]<br><br>
                   <input id="prog_enhance_mitigate_1_max" class="form-check-input app sub-check-max"  type="checkbox" value="2" hidden>

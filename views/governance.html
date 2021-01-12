@@ -3,7 +3,7 @@
 
   <head>
     <title>SEC Benchmark Tool - Governance</title>
-    <meta name="description" content="Introduction" />
+    <meta name="description" content="Governance" />
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -17,34 +17,7 @@
 
       <div class="row">
         <div class="col-lg-10"><h1 class="">Governance</h1></div>
-        <div class="col-lg-2">
-          <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Navigation</a>
-                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" href="/intro">Intro & Scenario Control</a></li>
-                    <li><a class="dropdown-item" href="/governance">Governance</a></li>
-                    <li><a class="dropdown-item" href="/staff">Staff</a></li>
-                    <li><a class="dropdown-item" href="/data">Data</a></li>
-                    <li><a class="dropdown-item" href="/financials">Financials</a></li>
-                    <li><a class="dropdown-item" href="/strategy">Strategy</a></li>
-                    <li><a class="dropdown-item" href="/land_use">Land Use</a></li>
-                    <li><a class="dropdown-item" href="/energy_net">Energy Networks</a></li>
-                    <li><a class="dropdown-item" href="/waste_water">Waste & Water</a></li>
-                    <li><a class="dropdown-item" href="/transport">Transportation</a></li>
-                    <li><a class="dropdown-item" href="/buildings">Buildings</a></li>
-                    <li><a class="dropdown-item" href="/outputs">Outputs</a></li>
-                  </ul>
-                </li>
-              </ul>
-            </div>
-          </nav>
-        </div>
+        <div id="navbar" class="col-lg-2"></div>
       </div>
 
       <h4 id="scenario">Current Scenario:</h4>
@@ -75,7 +48,7 @@
                 
                 <td><label for="comm_energy_leader_na">N/A for the community.<br><input id="comm_energy_leader_na" class="form-check-input na" type="checkbox" name="comm_energy_leader_na" value="3.5"></label></td>
                 
-                <td><label for="comm_energy_leader_0">There currently is no community energy leadership team.<br>[0 points]<br><input id="comm_energy_leader_0" class="form-check-input app" type="checkbox" name="comm_energy_leader_0" value="0"></label></td>
+                <td><label for="comm_energy_leader_0">There currently is no community energy leadership team.<br>[0 points]<br><input id="comm_energy_leader_0" class="form-check-input app zero" type="checkbox" name="comm_energy_leader_0" value="0"></label></td>
                 
                 <td><label for="comm_energy_leader_1">A multi-sectoral entity of community leaders (community leadership team) is formed around a common agenda to promote and facilitate community energy goals/implementation, and foster partnerships.<br>[1 point]<br><input id="comm_energy_leader_1" class="form-check-input app" type="checkbox" name="comm_energy_leader_1" value="1"></label></td>
                 
@@ -102,7 +75,7 @@
                 
                 <td><label for="xdept_coord_local_na">N/A for the community.<br><input id="xdept_coord_local_na" class="form-check-input na" type="checkbox" name="xdept_coord_local_na" value="3"></label></td>
                 
-                <td><label for="xdept_coord_local_0">There currently is no cross-departmental coordination within this local government related to community energy initiatives.<br>[0 points]<br><input id="xdept_coord_local_0" class="form-check-input app" type="checkbox" name="xdept_coord_local_0" value="0"></label></td>
+                <td><label for="xdept_coord_local_0">There currently is no cross-departmental coordination within this local government related to community energy initiatives.<br>[0 points]<br><input id="xdept_coord_local_0" class="form-check-input app zero" type="checkbox" name="xdept_coord_local_0" value="0"></label></td>
                 
                 <td><label for="xdept_coord_local_1">Regular meetings occur, with relevant departments, within the local government.<br>[1 point]<br><input id="xdept_coord_local_1" class="form-check-input app" type="checkbox" name="xdept_coord_local_1" value="1"></label></td>
                 
@@ -129,7 +102,7 @@
                 
                 <td><label for="align_local_elec_na">N/A for the community.<br><input id="align_local_elec_na" class="form-check-input na" type="checkbox" name="align_local_elec_na" value="3"></label></td>
                 
-                <td><label for="align_local_elec_0">There currently is no strategic alignment within this local electric utility related to community energy initiatives.<br>[0 points]<br><input id="align_local_elec_0" class="form-check-input app" type="checkbox" name="align_local_elec_0" value="0"></label></td>
+                <td><label for="align_local_elec_0">There currently is no strategic alignment within this local electric utility related to community energy initiatives.<br>[0 points]<br><input id="align_local_elec_0" class="form-check-input app zero" type="checkbox" name="align_local_elec_0" value="0"></label></td>
                 
                 <td><label for="align_local_elec_1">Meetings between relevant departments occur within the electric utility on a project-to-project basis as they relate to community energy initiatives.<br>[1 point]<br><input id="align_local_elec_1" class="form-check-input app" type="checkbox" name="align_local_elec_1" value="1"></label></td>
                 
@@ -156,7 +129,7 @@
                 
                 <td><label for="align_local_gas_na">N/A for the community.<br><input id="align_local_gas_na" class="form-check-input na" type="checkbox" name="align_local_gas_na" value="3"></label></td>
                 
-                <td><label for="align_local_gas_0">There currently is no strategic alignment within the local natural gas utility related to community energy initiatives.<br>[0 points]<br><input id="align_local_gas_0" class="form-check-input app" type="checkbox" name="align_local_gas_0" value="0"></label></td>
+                <td><label for="align_local_gas_0">There currently is no strategic alignment within the local natural gas utility related to community energy initiatives.<br>[0 points]<br><input id="align_local_gas_0" class="form-check-input app zero" type="checkbox" name="align_local_gas_0" value="0"></label></td>
                 
                 <td><label for="align_local_gas_1">Meetings between relevant departments occur within the natural gas utility on a project-to-project basis as they relate to community energy initiatives.<br>[1 point]<br><input id="align_local_gas_1" class="form-check-input app" type="checkbox" name="align_local_gas_1" value="1"></label></td>
                 

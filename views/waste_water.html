@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>SEC Benchmark Tool - Waste & Water</title>
+    <meta name="description" content="Waste & Water" />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/public/style.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  </head>
+
+  <body>
+    <div class="container-fluid">
+      <img src="../assets/Water-Waste-Icon.png" alt="Waste & Water logo" class="img-fluid" style="width: 100px">
+
+      <div class="row">
+        <div class="col-lg-10"><h1 class="">Waste & Water</h1></div>
+        <div id="navbar" class="col-lg-2"></div>
+      </div>
+
+      <h4 id="scenario">Current Scenario:</h4>
+
+      <form id="form-data">
+
+        <input id="scen_carry" name="scen_carry" value="" type="hidden">
+        <input id="z_app_pts_total" name="z_app_pts_total" value="" type="hidden">
+        <input id="z_na_pts_total" name="z_na_pts_total" value="" type="hidden">
+        <input id="z_sect_complete" name="z_sect_complete" value="false" type="hidden">
+
+        <div class="table-responsive">
+          <table class="table table-bordered align-middle">
+            <thead>
+              <tr style="background-color: #00b3b3">
+                <th class="col-lg text-center align-middle" scope="col">Measures</th>
+                <th class="col-lg text-center align-middle" scope="col">Scoring Method</th>
+                <th class="col-lg-8 text-center align-middle" scope="col" colspan="6">Scoring</th>
+                <th class="col-lg text-center align-middle" scope="col">Community Score</th>
+                <th class="col-lg-2 text-center align-middle" scope="col">Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">2.1.1. Public engagement and education on energy and land use <a href="#" data-toggle="tooltip" data-placement="right" data-animation="true" title="The community has informational resources and activities to engage and educate the public on the impacts on energy from various land use patterns. This may range from basic methods such as website or newsletter updates, to innovative methods such as interactive web-based tools or workshops, and may be integrated with broader community energy engagement and education activities. Engagement and education activities on land use should go beyond any that are required through legislation. These activities may come from any actors, including the the local government, non governmental organizations, institutions, Indigenous groups, or other local organizations, or ideally any combination of actors working together."><i class="fas fa-info-circle"></i></a></th>
+                
+                <td>Checklist</td>
+                
+                <td><label for="public_eng_edu_na">N/A for the community.<br><input id="public_eng_edu_na" class="form-check-input na" type="checkbox" name="public_eng_edu_na" value="1.5"></label></td>
+                
+                <td><label for="public_eng_edu_0">There is currently no public engagement and education on energy and land use.<br>[0 points]<br><input id="public_eng_edu_0" class="form-check-input app zero" type="checkbox" name="public_eng_edu_0" value="0"></label></td>
+                
+                <td><label for="public_eng_edu_1">Members of the public are informed of initiatives and educated on land use-energy impacts through basic methods, such as:<br>-Website updates<br>-Newsletters<br>-Print materials (such as brochures, fact sheets, information packages)<br>-Social media updates<br>-Webinars or conference calls<br>-Open houses<br>[0.5 point]<br><input id="public_eng_edu_1" class="form-check-input app" type="checkbox" name="public_eng_edu_1" value="0.5"></label></td>
+                
+                <td><label for="public_eng_edu_2">Members of the public are engaged on land use-energy impacts through innovative methods, such as:<br>- Highly creative or interactive web-based reporting<br>- Highly creative or interactive open houses or participation at community events<br>- Advanced social media/networking<br>- Embedded videos<br>- Innovative stakeholder feedback mechanisms<br>- Interactive workshops<br>-Tables/participation at community events<br>-School promotion<br>[1 point]<br><input id="public_eng_edu_2" class="form-check-input app" type="checkbox" name="public_eng_edu_2" value="1"></label></td>
+                
+                <td></td>
+                
+                <td></td>
+                
+                <td>
+                  <input id="public_eng_edu_pts" class="text-center row-points" name="public_eng_edu_pts" value="" hidden></input>
+                  <output>0 points</output>
+                </td>
+                
+                <td><textarea class="form-control" id="public_eng_edu_notes" name="public_eng_edu_notes" placeholder="Enter relevant notes, references, or links..." rows="8" style="font-size: 12px"></textarea></td>
+
+                <input class="row-complete" value="false" type="hidden">
+              </tr>
+
+              <tr>
+                <th scope="row">2.1.2. Compact, mixed use, transit-oriented development policies <a href="#" data-toggle="tooltip" data-placement="right" data-animation="true" title="The local government optimizes opportunities for energy supply infrastructure and community mobility by creating policies to encourage compact, mixed use and transit-oriented developments with a diversity of building types. This may include defining and enforcing an urban boundary, putting clear policy in place to concentrate development in built up areas, identifying transit corridors and nodes during development, incentivizing the use of brownfields/infill and having policy and incentives to diversify land use mix in already built up, single use areas. Examples of policy tools may include Community Improvement Plans, Development Permit Systems (https://www.toolkit.bc.ca/dpa), secondary suite bylaws, or amendments to reduce parking requirements."><i class="fas fa-info-circle"></i></a></th>
+                
+                <td>Checklist</td>
+                
+                <td><label for="comp_mu_tod_na">N/A for the community.<br><input id="comp_mu_tod_na" class="form-check-input na" type="checkbox" name="comp_mu_tod_na" value="3"></label></td>
+                
+                <td><label for="comp_mu_tod_0">There is currently no compact, mixed use, transit-oriented development policies.<br>[0 points]<br><input id="comp_mu_tod_0" class="form-check-input app zero" type="checkbox" name="comp_mu_tod_0" value="0"></label></td>
+                
+                <td><label for="comp_mu_tod_1">Compact, mixed use and transit-oriented development is encouraged in the community's Official Community Plan (and Secondary Plans where applicable).<br>[1 point]<br><input id="comp_mu_tod_1" class="form-check-input app" type="checkbox" name="comp_mu_tod_1" value="1"></label></td>
+
+                <td><label for="comp_mu_tod_2">The community's zoning bylaw identifies built up areas for intensification, with consideration to transit nodes and corridors, zoned for mixed-uses and with increased height and density, as well as settlement area boundaries for undeveloped areas to be protected if applicable.<br>[1 point]<br><input id="comp_mu_tod_2" class="form-check-input app" type="checkbox" name="comp_mu_tod_2" value="1"></label></td>
+
+                <td><label for="comp_mu_tod_3">Compact, mixed use and transit-oriented developments are promoted through the use of at least one of the following:<br>- Community Improvement Plans (for brownfield or greyfield redevelopment, and/or infill)<br>- Secondary suite bylaws<br>- Reducing/eliminating Parking minimums<br>[N/A for communities with population below 10,000 and/or growth below 0% annual change]<br>[1 point]<br><input id="comp_mu_tod_3" class="form-check-input app pot-na-pop pot-na-growth" type="checkbox" name="comp_mu_tod_3" value="1"></label></td>
+
+                <td></td>
+                                                
+                <td>
+                  <input id="comp_mu_tod_pts" class="text-center row-points" name="comp_mu_tod_pts" value="" hidden></input>
+                  <output>0 points</output>
+                </td>
+                
+                <td><textarea class="form-control" id="comp_mu_tod_notes" name="comp_mu_tod_notes" placeholder="Enter relevant notes, references, or links..." rows="8" style="font-size: 12px"></textarea></td>
+
+                <input class="row-complete" value="false" type="hidden">
+              </tr>
+
+              <tr>
+                <th scope="row">2.1.3. Energy efficiency and performance in planning policies and processes for new developments <a href="#" data-toggle="tooltip" data-placement="right" data-animation="true" title="The local government has policies or processes in place to support energy efficiency in new developments across the community. This may include: Expedited building/development permitting process for energy efficient/high performance developments; Energy efficiency design guidelines (including promotion of guidelines created by upper levels of government or third parties); Climate risk adaptation design guidelines (including promotion of guidelines created by upper levels of government or third parties); Development standards, or codes in applicable jurisdictions; Development permit system areas that include energy efficiency or performance requirements; Requirements for developers to submit an analysis of energy efficiency/performance opportunities at the development application stage; Requirements for developers to submit how energy efficiency/performance has been considered at the site plan control stage; or, Requirements for developers to submit how energy efficiency/performance has been considered at the plan of subdivision stage."><i class="fas fa-info-circle"></i></a></th>
+                
+                <td>Checklist</td>
+                
+                <td><label for="eff_perf_newdev_na">N/A for the community.<br><input id="eff_perf_newdev_na" class="form-check-input na" type="checkbox" name="eff_perf_newdev_na" value="8"></label></td>
+                
+                <td><label for="eff_perf_newdev_0">There is currently no energy efficiency and performance in planning policies and processes for new developments.<br>[0 points]<br><input id="eff_perf_newdev_0" class="form-check-input app zero" type="checkbox" name="eff_perf_newdev_0" value="0"></label></td>
+                
+                <td><label for="eff_perf_newdev_1">The local government has policies or processes that support building-level energy performance in new developments.<br>[N/A for communities with population below 10,000 and/or growth below 0% annual change]<br>
+                  <input id="eff_perf_newdev_1_on" class="form-check-input app on-off pot-na-pop pot-na-growth" type="checkbox" value="0"><br><br>
+                  <label for="eff_perf_newdev_1"><input id="eff_perf_newdev_1" class="form-check-input app on-off-sub pot-na-pop pot-na-growth" type="radio" name="eff_perf_newdev_1" value="1" disabled> One policy or process [1 point]</label><br>
+                  <label for="eff_perf_newdev_1"><input id="eff_perf_newdev_1" class="form-check-input app on-off-sub pot-na-pop pot-na-growth" type="radio" name="eff_perf_newdev_1" value="2" disabled> Two policies or processess [2 points]</label><br>
+                  <label for="eff_perf_newdev_1"><input id="eff_perf_newdev_1" class="form-check-input app on-off-sub pot-na-pop pot-na-growth" type="radio" name="eff_perf_newdev_1" value="3" disabled> Three policies or processess [3 points]</label><br>
+                  <label for="eff_perf_newdev_1"><input id="eff_perf_newdev_1" class="form-check-input app on-off-sub pot-na-pop pot-na-growth" type="radio" name="eff_perf_newdev_1" value="4" disabled> Four or more policies or processess [4 points]</label><br>
+                </label></td>
+                
+                <td><label for="eff_perf_newdev_2">The local government has policies or processes that support neighbourhood-level energy performance in new developments.<br>[N/A for communities with population below 10,000 and/or growth below 0% annual change]<br>
+                  <input id="eff_perf_newdev_2_on" class="form-check-input app on-off pot-na-pop pot-na-growth" type="checkbox" value="0"><br><br>
+                  <label for="eff_perf_newdev_2"><input id="eff_perf_newdev_2" class="form-check-input app on-off-sub pot-na-pop pot-na-growth" type="radio" name="eff_perf_newdev_2" value="1" disabled> One policy or process [1 point]</label><br>
+                  <label for="eff_perf_newdev_2"><input id="eff_perf_newdev_2" class="form-check-input app on-off-sub pot-na-pop pot-na-growth" type="radio" name="eff_perf_newdev_2" value="2" disabled> Two policies or processess [2 points]</label><br>
+                  <label for="eff_perf_newdev_2"><input id="eff_perf_newdev_2" class="form-check-input app on-off-sub pot-na-pop pot-na-growth" type="radio" name="eff_perf_newdev_2" value="3" disabled> Three policies or processess [3 points]</label><br>
+                  <label for="eff_perf_newdev_2"><input id="eff_perf_newdev_2" class="form-check-input app on-off-sub pot-na-pop pot-na-growth" type="radio" name="eff_perf_newdev_2" value="4" disabled> Four or more policies or processess [4 points]</label><br>            
+                </label></td>
+                
+                <td></td>
+                
+                <td></td>
+                
+                <td>
+                  <input id="eff_perf_newdev_pts" class="text-center row-points" name="eff_perf_newdev_pts" value="" hidden></input>
+                  <output>0 points</output>
+                </td>
+                
+                <td><textarea class="form-control" id="eff_perf_newdev_notes" name="eff_perf_newdev_notes" placeholder="Enter relevant notes, references, or links..." rows="8" style="font-size: 12px"></textarea></td>
+
+                <input class="row-complete" value="false" type="hidden">
+              </tr>
+
+              <tr>
+                <th scope="row">2.1.4. Embedding of local energy supply options into land-use plans, policies, tools and processes <a href="#" data-toggle="tooltip" data-placement="right" data-animation="true" title="Local energy supply land-uses (such as for renewables, DE, CHP, storage) are considered in land use plans policies, tools, and processes. These could include Official Plans, or zoning bylaw, secondary plans, community improvement plans, local improvement charges, density bonusing, site plan or plans of subdivision approvals, development/building/land use permitting, etc."><i class="fas fa-info-circle"></i></a></th>
+                
+                <td>Scale</td>
+                
+                <td><label for="embed_opt_plans_na">N/A for the community.<br><input id="embed_opt_plans_na" class="form-check-input na" type="checkbox" name="embed_opt_plans_na" value="4"></label></td>
+                
+                <td><label for="embed_opt_plans_0">There is currently no embedding of local energy supply options into land-use plans, policies, tools and processes.<br>[0 points]<br><input id="embed_opt_plans_0" class="form-check-input app" type="radio" name="embed_opt_plans" value="0"></label></td>
+                
+                <td><label for="embed_opt_plans_1">Development of local and/or renewable energy options and energy efficiency are mentioned and encouraged in the community's Official Community Plan (and Secondary Plans where applicable).<br>[1 point]<br><input id="embed_opt_plans_1" class="form-check-input app" type="radio" name="embed_opt_plans" value="1"></label></td>
+                
+                <td><label for="embed_opt_plans_2">Energy supply options are listed as permitted land uses in the community's zoning bylaws where applicable (ideally informed by energy mapping).<br>[2 points]<br><input id="embed_opt_plans_2" class="form-check-input app" type="radio" name="embed_opt_plans" value="2"></label></td>
+                
+                <td><label for="embed_opt_plans_3">The use of local energy supply options or energy efficiency are promoted through the use of at least one of the following:<br>- Community Improvement Plans<br>- Site Plan Control or Plans of Subdivision requirements<br>- Expedited processing for development permits (including Development Permit Systems)<br>- By-law or policy to permit right-of-ways for district energy infrastructure<br>[N/A for communities with population below 10,000]<br>[3 points]<br><input id="embed_opt_plans_3" class="form-check-input app pot-na-pop" type="radio" name="embed_opt_plans" value="3"></label></td>
+                
+                <td><label for="embed_opt_plans_4">The use of local energy supply options or energy efficiency are promoted through the use of more than one of the following:<br>- Community Improvement Plans<br>- Site Plan Control or Plans of Subdivision requirements<br>- Expedited processing for development permits (including Development Permit Systems)<br>- By-law or policy to permit right-of-ways for district energy infrastructure<br>[N/A for communities with population below 10,000]<br>[4 points]<br><input id="embed_opt_plans_4" class="form-check-input app pot-na-pop" type="radio" name="embed_opt_plans" value="4"></label></td>
+                
+                <td>
+                  <input id="embed_opt_plans_pts" class="text-center row-points" name="embed_opt_plans_pts" value="" hidden></input>
+                  <output>0 points</output>
+                </td>
+                
+                <td><textarea class="form-control" id="embed_opt_plans_notes" name="embed_opt_plans_notes" placeholder="Enter relevant notes, references, or links..." rows="8" style="font-size: 12px"></textarea></td>
+
+                <input class="row-complete" value="false" type="hidden">
+              </tr>            
+
+              <tr>
+                <th scope="row">2.1.5. Preservation of natural lands in land use practices <a href="#" data-toggle="tooltip" data-placement="right" data-animation="true" title="The local government addresses climate resilience, with the inclusion of traditional ecological knowledge, and preserves ecosystem services through protection of natural assets. This could include policies that ensure building and energy developments preserve ecologically significant or sensitive areas, watersheds, and/or permafrost."><i class="fas fa-info-circle"></i></a></th>
+                
+                <td>Scale</td>
+                
+                <td><label for="preserv_nat_lu_na">N/A for the community.<br><input id="preserv_nat_lu_na" class="form-check-input na" type="checkbox" name="preserv_nat_lu_na" value="3"></label></td>
+                
+                <td><label for="preserv_nat_lu_0">There is currently no preservation of natural lands in land use practices.<br>[0 points]<br><input id="preserv_nat_lu_0" class="form-check-input app" type="radio" name="preserv_nat_lu" value="0"></label></td>
+                
+                <td><label for="preserv_nat_lu_1">Natural assets, such as ecologically significant or sensitive areas, watersheds and/or permafrost, are identified for preservation in the community's Official Plan.<br>[1 point]<br><input id="preserv_nat_lu_1" class="form-check-input app" type="radio" name="preserv_nat_lu" value="1"></label></td>
+                
+                <td><label for="preserv_nat_lu_2">Natural assets are identified and preserved through the community's zoning bylaw, and Site Plan Control and Plans of Subdivision where applicable.<br>[2 points]<br><input id="preserv_nat_lu_2" class="form-check-input app" type="radio" name="preserv_nat_lu" value="2"></label></td>
+                
+                <td><label for="preserv_nat_lu_3">Preservation of natural assets is enhanced through at least one of: conservation easements, land acquisition, and/or incentives.<br>[N/A for communities with population below 10,000]<br>[3 points]<br><input id="preserv_nat_lu_3" class="form-check-input app pot-na-pop" type="radio" name="preserv_nat_lu" value="3"></label></td>
+                
+                <td></td>
+                
+                <td>
+                  <input id="preserv_nat_lu_pts" class="text-center row-points" name="preserv_nat_lu_pts" value="" hidden></input>
+                  <output>0 points</output>
+                </td>
+                
+                <td><textarea class="form-control" id="preserv_nat_lu_notes" name="preserv_nat_lu_notes" placeholder="Enter relevant notes, references, or links..." rows="8" style="font-size: 12px"></textarea></td>
+
+                <input class="row-complete" value="false" type="hidden">
+              </tr> 
+
+              <tr>
+                <th scope="row">2.1.6. Programs to expand and enhance green space, and mitigate urban heat island effect <a href="#" data-toggle="tooltip" data-placement="right" data-animation="true" title="The community has programs for shade tree-planting, parkland, green roofs, urban gardens and farming, other planting of vegetation (ie. urban forests, street-scaping), that can enhance social benefits, build social capital, biodiversity, ecosystem services, etc. Large urban communities should also consider cool (reflective) roofs (suitable to building type, i.e. cooling-load dominant), cool pavement, or urban heat island educational initiatives to additionally mitigate heat island effects."><i class="fas fa-info-circle"></i></a></th>
+                
+                <td>Checklist</td>
+                
+                <td><label for="prog_enhance_mitigate_na">N/A for the community.<br><input id="prog_enhance_mitigate_na" class="form-check-input na" type="checkbox" name="prog_enhance_mitigate_na" value="3"></label></td>
+                                
+                <td><label for="prog_enhance_mitigate_0">There is currently no programs to expand and enhance green space, and mitigate urban heat island effect.<br>[0 points]<br><input id="prog_enhance_mitigate_0" class="form-check-input app zero" type="checkbox" name="prog_enhance_mitigate_0" value="0"></label></td>
+                
+                <td><label for="prog_enhance_mitigate_1">Checklist up to a maximum for initiatives (plans, policies, programs) by the local government or other community organization(s) that target:<br>[2 points maximum]<br><br>
+                  <input id="prog_enhance_mitigate_1_max" class="form-check-input app sub-check-max"  type="checkbox" value="2" hidden>
+                  <label for="prog_enhance_mitigate_1_1"><input id="prog_enhance_mitigate_1_1" class="form-check-input app sub-check" type="checkbox" name="prog_enhance_mitigate_1_1" value="1"> Expanding parkland [1 point]</label><br>
+                  <label for="prog_enhance_mitigate_1_2"><input id="prog_enhance_mitigate_1_2" class="form-check-input app sub-check" type="checkbox" name="prog_enhance_mitigate_1_2" value="1"> Promoting of green roofs [1 point]</label><br>
+                  <label for="prog_enhance_mitigate_1_3"><input id="prog_enhance_mitigate_1_3" class="form-check-input app sub-check" type="checkbox" name="prog_enhance_mitigate_1_3" value="1"> Creating urban gardens or vegetation into streetscaping [1 point]</label><br>
+                  <label for="prog_enhance_mitigate_1_4"><input id="prog_enhance_mitigate_1_4" class="form-check-input app sub-check" type="checkbox" name="prog_enhance_mitigate_1_4" value="1"> Creating urban farming [1 point]</label><br>
+                  <label for="prog_enhance_mitigate_1_5"><input id="prog_enhance_mitigate_1_5" class="form-check-input app sub-check" type="checkbox" name="prog_enhance_mitigate_1_5" value="1"> Shade tree-planting or Expanding urban forest (in coordination with utility) [1 point]</label><br>
+                </label></td>
+                
+                <td><label for="prog_enhance_mitigate_2">Checklist up to a maximum for the local government or other community organizations(s):<br>[N/A for northern communities and/or with population below 10,000]<br>[1 point maximum]<br><br>
+                  <input id="prog_enhance_mitigate_2_max" class="form-check-input app pot-na-pop sub-check-max" type="checkbox" value="1" hidden>
+                  <label for="prog_enhance_mitigate_2_1"><input id="prog_enhance_mitigate_2_1" class="form-check-input app pot-na-pop sub-check" type="checkbox" name="prog_enhance_mitigate_2_1" value="1"> Cool roofs or pavement policies [1 point]</label><br>
+                  <label for="prog_enhance_mitigate_2_2"><input id="prog_enhance_mitigate_2_2" class="form-check-input app pot-na-pop sub-check" type="checkbox" name="prog_enhance_mitigate_2_2" value="1"> Education programs of urban heat island effects [1 point]</label><br>
+                  <label for="prog_enhance_mitigate_2_3"><input id="prog_enhance_mitigate_2_3" class="form-check-input app pot-na-pop sub-check" type="checkbox" name="prog_enhance_mitigate_2_3" value="1"> Urban heat island effect-specific goal (temp., permeable surfaces, green space) [1 point]</label><br>
+                  <label for="prog_enhance_mitigate_2_4"><input id="prog_enhance_mitigate_2_4" class="form-check-input app pot-na-pop sub-check" type="checkbox" name="prog_enhance_mitigate_2_4" value="1"> Any of the initiatives listed to expand / enhance green space [1 point]</label><br>
+                </label></td>
+                
+                <td></td>
+
+                <td></td>
+
+                <td>
+                  <input id="prog_enhance_mitigate_pts" class="text-center row-points" name="prog_enhance_mitigate_pts" value="" hidden></input>
+                  <output>0 points</output>
+                </td>
+                
+                <td><textarea class="form-control" id="prog_enhance_mitigate_notes" name="prog_enhance_mitigate_notes" placeholder="Enter relevant notes, references, or links..." rows="8" style="font-size: 12px"></textarea></td>
+
+                <input class="row-complete" value="false" type="hidden">
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        
+        <input id="form-submit" class="btn btn-primary" type="submit" value="Save">
+
+      </form><br>
+              
+      <div id="navigation">
+        <a href="/energy_net" id="previous" class="btn btn-primary" role="button">Previous (Energy Networks)</a>
+        <a href="/logout" id="logout" class="btn btn-primary" role="button">Logout</a>
+        <a href="/transport" id="next" class="btn btn-primary" role="button">Next (Transportation)</input></a>
+      </div><br>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/0f567e20d5.js" crossorigin="anonymous"></script>
+    <script src="../public/client.js" type="module"></script>
+  </body>
+</html>

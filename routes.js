@@ -727,10 +727,6 @@ module.exports = function(app, myDataBase) {
             "scenarios.$[element].energy_net.thermal_local_res_pts": Number(req.body.thermal_local_res_pts),
             "scenarios.$[element].energy_net.thermal_local_res_notes": req.body.thermal_local_res_notes,
 
-            "scenarios.$[element].energy_net.z_app_pts_total": Number(req.body.z_app_pts_total),
-            "scenarios.$[element].energy_net.z_na_pts_total": Number(req.body.z_na_pts_total),
-            "scenarios.$[element].energy_net.z_sect_complete": req.body.z_sect_complete,
-
             "scenarios.$[element].energy_net.infra_alt_veh_na": Number(req.body.infra_alt_veh_na),
             "scenarios.$[element].energy_net.infra_alt_veh_0": Number(req.body.infra_alt_veh_0),
             "scenarios.$[element].energy_net.infra_alt_veh_1": Number(req.body.infra_alt_veh_1),
@@ -749,6 +745,10 @@ module.exports = function(app, myDataBase) {
             "scenarios.$[element].energy_net.smart_tech_distinf_2_3": Number(req.body.smart_tech_distinf_2_3),
             "scenarios.$[element].energy_net.smart_tech_distinf_pts": Number(req.body.smart_tech_distinf_pts),
             "scenarios.$[element].energy_net.smart_tech_distinf_notes": req.body.smart_tech_distinf_notes,          
+
+            "scenarios.$[element].energy_net.z_app_pts_total": Number(req.body.z_app_pts_total),
+            "scenarios.$[element].energy_net.z_na_pts_total": Number(req.body.z_na_pts_total),
+            "scenarios.$[element].energy_net.z_sect_complete": req.body.z_sect_complete,
           },
         },
         { arrayFilters: [ { "element.scen_name": { $eq: req.body.scen_carry } } ],
@@ -761,6 +761,49 @@ module.exports = function(app, myDataBase) {
           } else {
             let result = doc.value.scenarios.find((elm) => elm.scen_name === doc.value.currentScen);
             console.log(result.energy_net);
+            res.send('Save successful.');
+          }
+        }
+      );
+    });
+
+  app.route("/db/data/waste_water")
+    .post((req, res, next) => {
+      myDataBase.findOneAndUpdate(
+        { username: req.user.username },
+        {
+          $set: {
+            "scenarios.$[element].last_update": new Date(),
+
+            "scenarios.$[element].waste_water.public_eng_edu_na": Number(req.body.public_eng_edu_na),
+            "scenarios.$[element].waste_water.public_eng_edu_0": Number(req.body.public_eng_edu_0),
+            "scenarios.$[element].waste_water.public_eng_edu_1": Number(req.body.public_eng_edu_1),
+            "scenarios.$[element].waste_water.public_eng_edu_2": Number(req.body.public_eng_edu_2),
+            "scenarios.$[element].waste_water.public_eng_edu_3": Number(req.body.public_eng_edu_3),
+            "scenarios.$[element].waste_water.public_eng_edu_pts": Number(req.body.public_eng_edu_pts),
+            "scenarios.$[element].waste_water.public_eng_edu_notes": req.body.public_eng_edu_notes,
+
+            "scenarios.$[element].waste_water.elec_load_mgmt_na": Number(req.body.elec_load_mgmt_na),
+            "scenarios.$[element].waste_water.elec_load_mgmt": Number(req.body.elec_load_mgmt),
+            "scenarios.$[element].waste_water.elec_load_mgmt_pts": Number(req.body.elec_load_mgmt_pts),
+            "scenarios.$[element].waste_water.elec_load_mgmt_notes": req.body.elec_load_mgmt_notes,
+
+
+            "scenarios.$[element].waste_water.z_app_pts_total": Number(req.body.z_app_pts_total),
+            "scenarios.$[element].waste_water.z_na_pts_total": Number(req.body.z_na_pts_total),
+            "scenarios.$[element].waste_water.z_sect_complete": req.body.z_sect_complete,       
+          },
+        },
+        { arrayFilters: [ { "element.scen_name": { $eq: req.body.scen_carry } } ],
+          returnOriginal: false
+        },
+        (err, doc) => {
+          if (err) {
+            console.log(err);
+            res.send("Save error.");
+          } else {
+            let result = doc.value.scenarios.find((elm) => elm.scen_name === doc.value.currentScen);
+            console.log(result.waste_water);
             res.send('Save successful.');
           }
         }

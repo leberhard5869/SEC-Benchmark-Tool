@@ -3,7 +3,7 @@
 
   <head>
     <title>SEC Benchmark Tool - Data</title>
-    <meta name="description" content="Introduction" />
+    <meta name="description" content="Data" />
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -17,34 +17,7 @@
 
       <div class="row">
         <div class="col-lg-10"><h1 class="">Data</h1></div>
-        <div class="col-lg-2">
-          <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Navigation</a>
-                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" href="/intro">Intro & Scenario Control</a></li>
-                    <li><a class="dropdown-item" href="/governance">Governance</a></li>
-                    <li><a class="dropdown-item" href="/staff">Staff</a></li>
-                    <li><a class="dropdown-item" href="/data">Data</a></li>
-                    <li><a class="dropdown-item" href="/financials">Financials</a></li>
-                    <li><a class="dropdown-item" href="/strategy">Strategy</a></li>
-                    <li><a class="dropdown-item" href="/land_use">Land Use</a></li>
-                    <li><a class="dropdown-item" href="/energy_net">Energy Networks</a></li>
-                    <li><a class="dropdown-item" href="/waste_water">Waste & Water</a></li>
-                    <li><a class="dropdown-item" href="/transport">Transportation</a></li>
-                    <li><a class="dropdown-item" href="/buildings">Buildings</a></li>
-                    <li><a class="dropdown-item" href="/outputs">Outputs</a></li>
-                  </ul>
-                </li>
-              </ul>
-            </div>
-          </nav>
-        </div>
+        <div id="navbar" class="col-lg-2"></div>
       </div>
 
       <h4 id="scenario">Current Scenario:</h4>
@@ -136,7 +109,7 @@
                 
                 <td><label for="comm_inv_rep_na">N/A for the community.<br><input id="comm_inv_rep_na" class="form-check-input na" type="checkbox" name="comm_inv_rep_na" value="6"></label></td>
                 
-                <td><label for="comm_inv_rep_0">There is currently no community energy inventory and reporting.<br>[0 points]<br><input id="comm_inv_rep_0" class="form-check-input app" type="checkbox" name="comm_inv_rep_0" value="0"></label></td>
+                <td><label for="comm_inv_rep_0">There is currently no community energy inventory and reporting.<br>[0 points]<br><input id="comm_inv_rep_0" class="form-check-input app zero" type="checkbox" name="comm_inv_rep_0" value="0"></label></td>
                 
                 <td><label for="comm_inv_rep_1">A basic community energy or GHG inventory has been completed that includes energy use or emissions from residential, institutional, commercial, industrial, transportation, and solid waste sectors.<br>[1 point]<br><input id="comm_inv_rep_1" class="form-check-input app" type="checkbox" name="comm_inv_rep_1" value="1"></label></td>
                 
@@ -167,7 +140,7 @@
                 
                 <td><label for="local_inv_rep_na">N/A for the community.<br><input id="local_inv_rep_na" class="form-check-input na" type="checkbox" name="local_inv_rep_na" value="5"></label></td>
                 
-                <td><label for="local_inv_rep_0">There is currently no local government corporate energy inventory and reporting.<br>[0 points]<br><input id="local_inv_rep_0" class="form-check-input app" type="checkbox" name="local_inv_rep_0" value="0"></label></td>
+                <td><label for="local_inv_rep_0">There is currently no local government corporate energy inventory and reporting.<br>[0 points]<br><input id="local_inv_rep_0" class="form-check-input app zero" type="checkbox" name="local_inv_rep_0" value="0"></label></td>
                 
                 <td><label for="local_inv_rep_1">A basic corporate energy or GHG inventory has been completed that includes energy use or emissions from corporate owned buildings, street lighting, water and wastewater treatment, municipal fleet, and corporate and/or community solid waste.<br>[1 point]<br><input id="local_inv_rep_1" class="form-check-input app" type="checkbox" name="local_inv_rep_1" value="1"></label></td>
                 
@@ -198,7 +171,7 @@
                 
                 <td><label for="elec_inv_rep_na">N/A for the community.<br><input id="elec_inv_rep_na" class="form-check-input na" type="checkbox" name="elec_inv_rep_na" value="5"></label></td>
                 
-                <td><label for="elec_inv_rep_0">There is currently no electric utility corporate energy or sustainability inventory and reporting.<br>[0 points]<br><input id="elec_inv_rep_0" class="form-check-input app" type="checkbox" name="elec_inv_rep_0" value="0"></label></td>
+                <td><label for="elec_inv_rep_0">There is currently no electric utility corporate energy or sustainability inventory and reporting.<br>[0 points]<br><input id="elec_inv_rep_0" class="form-check-input app zero" type="checkbox" name="elec_inv_rep_0" value="0"></label></td>
                 
                 <td><label for="elec_inv_rep_1">Corporate energy or sustainability inventory/report has been completed that includes energy use or GHG emissions from utility operations.<br>[1 point]<br><input id="elec_inv_rep_1" class="form-check-input app" type="checkbox" name="elec_inv_rep_1" value="1"></label></td>
                 
@@ -229,7 +202,7 @@
                 
                 <td><label for="gas_inv_rep_na">N/A for the community.<br><input id="gas_inv_rep_na" class="form-check-input na" type="checkbox" name="gas_inv_rep_na" value="5"></label></td>
                 
-                <td><label for="gas_inv_rep_0">There is currently no natural gas utility corporate energy or sustainability inventory and reporting.<br>[0 points]<br><input id="gas_inv_rep_0" class="form-check-input app" type="checkbox" name="gas_inv_rep_0" value="0"></label></td>
+                <td><label for="gas_inv_rep_0">There is currently no natural gas utility corporate energy or sustainability inventory and reporting.<br>[0 points]<br><input id="gas_inv_rep_0" class="form-check-input app zero" type="checkbox" name="gas_inv_rep_0" value="0"></label></td>
                 
                 <td><label for="gas_inv_rep_1">Corporate energy or sustainability inventory/report has been completed that includes energy use or GHG emissions from utility operations.<br>[1 point]<br><input id="gas_inv_rep_1" class="form-check-input app" type="checkbox" name="gas_inv_rep_1" value="1"></label></td>
                 
@@ -260,7 +233,7 @@
                 
                 <td><label for="clim_haz_success_na">N/A for the community.<br><input id="clim_haz_success_na" class="form-check-input na" type="checkbox" name="clim_haz_success_na" value="2"></label></td>
                 
-                <td><label for="clim_haz_success_0">Climate hazards have not been assessed.<br>[0 points]<br><input id="clim_haz_success_0" class="form-check-input app" type="checkbox" name="clim_haz_success_0" value="0"></label></td>
+                <td><label for="clim_haz_success_0">Climate hazards have not been assessed.<br>[0 points]<br><input id="clim_haz_success_0" class="form-check-input app zero" type="checkbox" name="clim_haz_success_0" value="0"></label></td>
                 
                 <td><label for="clim_haz_success_1">The community has an assessment of climate-related hazards and risks that exist, and are predicted into the future, within the community. This includes Traditional Ecological Knowledge and/or scientific information related to climate change.<br>[1 point]<br><input id="clim_haz_success_1" class="form-check-input app" type="checkbox" name="clim_haz_success_1" value="1"></label></td>
                 
@@ -291,7 +264,7 @@
                 
                 <td><label for="energy_mapping_na">N/A for the community.<br><input id="energy_mapping_na" class="form-check-input na" type="checkbox" name="energy_mapping_na" value="2.5"></label></td>
                 
-                <td><label for="energy_mapping_0">Energy mapping has not been conducted.<br>[0 points]<br><input id="energy_mapping_0" class="form-check-input app" type="checkbox" name="energy_mapping_0" value="0"></label></td>
+                <td><label for="energy_mapping_0">Energy mapping has not been conducted.<br>[0 points]<br><input id="energy_mapping_0" class="form-check-input app zero" type="checkbox" name="energy_mapping_0" value="0"></label></td>
                 
                 <td><label for="energy_mapping_1">Community undertakes an energy mapping exercise to identify local energy priorities and opportunities.<br>[1 point]<br><input id="energy_mapping_1" class="form-check-input app" type="checkbox" name="energy_mapping_1" value="1"></label></td>
                 
@@ -322,7 +295,7 @@
                 
                 <td><label for="scenario_model_na">N/A for the community.<br><input id="scenario_model_na" class="form-check-input na" type="checkbox" name="scenario_model_na" value="2.5"></label></td>
                 
-                <td><label for="scenario_model_0">Energy scenario modelling has not been developed.<br>[0 points]<br><input id="scenario_model_0" class="form-check-input app" type="checkbox" name="scenario_model_0" value="0"></label></td>
+                <td><label for="scenario_model_0">Energy scenario modelling has not been developed.<br>[0 points]<br><input id="scenario_model_0" class="form-check-input app zero" type="checkbox" name="scenario_model_0" value="0"></label></td>
                 
                 <td><label for="scenario_model_1">An energy model has been complete, which incorporates scenarios for both supply and demand of energy.<br>[1 point]<br><input id="scenario_model_1" class="form-check-input app" type="checkbox" name="scenario_model_1" value="1"></label></td>
                 

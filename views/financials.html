@@ -3,7 +3,7 @@
 
   <head>
     <title>SEC Benchmark Tool - Financials</title>
-    <meta name="description" content="Introduction" />
+    <meta name="description" content="Financials" />
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -17,34 +17,7 @@
 
       <div class="row">
         <div class="col-lg-10"><h1 class="">Financials</h1></div>
-        <div class="col-lg-2">
-          <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Navigation</a>
-                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" href="/intro">Intro & Scenario Control</a></li>
-                    <li><a class="dropdown-item" href="/governance">Governance</a></li>
-                    <li><a class="dropdown-item" href="/staff">Staff</a></li>
-                    <li><a class="dropdown-item" href="/data">Data</a></li>
-                    <li><a class="dropdown-item" href="/financials">Financials</a></li>
-                    <li><a class="dropdown-item" href="/strategy">Strategy</a></li>
-                    <li><a class="dropdown-item" href="/land_use">Land Use</a></li>
-                    <li><a class="dropdown-item" href="/energy_net">Energy Networks</a></li>
-                    <li><a class="dropdown-item" href="/waste_water">Waste & Water</a></li>
-                    <li><a class="dropdown-item" href="/transport">Transportation</a></li>
-                    <li><a class="dropdown-item" href="/buildings">Buildings</a></li>
-                    <li><a class="dropdown-item" href="/outputs">Outputs</a></li>
-                  </ul>
-                </li>
-              </ul>
-            </div>
-          </nav>
-        </div>
+        <div id="navbar" class="col-lg-2"></div>
       </div>
 
       <h4 id="scenario">Current Scenario:</h4>
@@ -75,7 +48,7 @@
                 
                 <td><label for="assess_mech_fund_na">N/A for the community.<br><input id="assess_mech_fund_na" class="form-check-input na" type="checkbox" name="assess_mech_fund_na" value="3"></label></td>
                 
-                <td><label for="assess_mech_fund_0">There currently is no assessment of financial mechanisms and funding.<br>[0 points]<br><input id="assess_mech_fund_0" class="form-check-input app" type="checkbox" name="assess_mech_fund_0" value="0"></label></td>
+                <td><label for="assess_mech_fund_0">There currently is no assessment of financial mechanisms and funding.<br>[0 points]<br><input id="assess_mech_fund_0" class="form-check-input app zero" type="checkbox" name="assess_mech_fund_0" value="0"></label></td>
                 
                 <td><label for="assess_mech_fund_1">A transparent and publicly available assessment of financing mechanisms (to offer or to take advantage of) has been completed.<br>[1 point]<br><input id="assess_mech_fund_1" class="form-check-input app" type="checkbox" name="assess_mech_fund_1" value="1"></label></td>
                 
@@ -129,7 +102,7 @@
                 
                 <td><label for="fees_auto_cong_na">N/A for the community.<br><input id="fees_auto_cong_na" class="form-check-input na" type="checkbox" name="fees_auto_cong_na" value="2"></label></td>
                 
-                <td><label for="fees_auto_cong_0">There currently are no fees to address automobile congestion.<br>[0 points]<br><input id="fees_auto_cong_0" class="form-check-input app" type="checkbox" name="fees_auto_cong_0" value="0"></label></td>
+                <td><label for="fees_auto_cong_0">There currently are no fees to address automobile congestion.<br>[0 points]<br><input id="fees_auto_cong_0" class="form-check-input app zero" type="checkbox" name="fees_auto_cong_0" value="0"></label></td>
                 
                 <td><label for="fees_auto_cong_1">The local government implements parking charges.<br>[1 point]<br><input id="fees_auto_cong_1" class="form-check-input app" type="checkbox" name="fees_auto_cong_1" value="1"></label></td>
                 
@@ -210,7 +183,7 @@
                 
                 <td><label for="incent_init_bldgs_na">N/A for the community.<br><input id="incent_init_bldgs_na" class="form-check-input na" type="checkbox" name="incent_init_bldgs_na" value="2"></label></td>
                 
-                <td><label for="incent_init_bldgs_0">There are currently no incentives for energy initiatives in new buildings.<br>[0 points]<br><input id="incent_init_bldgs_0" class="form-check-input app" type="checkbox" name="incent_init_bldgs_0" value="0"></label></td>
+                <td><label for="incent_init_bldgs_0">There are currently no incentives for energy initiatives in new buildings.<br>[0 points]<br><input id="incent_init_bldgs_0" class="form-check-input app zero" type="checkbox" name="incent_init_bldgs_0" value="0"></label></td>
                 
                 <td><label for="incent_init_bldgs_1">Incentives exist for energy initiatives in new single family residential units.<br>[N/A for communities with population below 10,000 and/or growth below 0% annual change]<br>[1 point]<br><input id="incent_init_bldgs_1" class="form-check-input app pot-na-pop pot-na-growth" type="checkbox" name="incent_init_bldgs_1" value="1"></label></td>
                 
@@ -237,7 +210,7 @@
                 
                 <td><label for="retro_exist_single_na">N/A for the community.<br><input id="retro_exist_single_na" class="form-check-input na" type="checkbox" name="retro_exist_single_na" value="5"></label></td>
                 
-                <td><label for="retro_exist_single_0">There is currently no retrofit program for the existing single family residential building stock.<br>[0 points]<br><input id="retro_exist_single_0" class="form-check-input app" type="checkbox" name="retro_exist_single_0" value="0"></label></td>
+                <td><label for="retro_exist_single_0">There is currently no retrofit program for the existing single family residential building stock.<br>[0 points]<br><input id="retro_exist_single_0" class="form-check-input app zero" type="checkbox" name="retro_exist_single_0" value="0"></label></td>
                 
                 <td><label for="retro_exist_single_1">Community program exists to help homeowners conduct energy audits or evaluate feasibility of energy efficiency retrofits of existing single family residential units.<br>[1 point]<br><input id="retro_exist_single_1" class="form-check-input app" type="checkbox" name="retro_exist_single_1" value="1"></label></td>
                 
@@ -268,7 +241,7 @@
                 
                 <td><label for="retro_exist_murb_na">N/A for the community.<br>[N/A for communities with no significant multi-unit residential building stock]<br><input id="retro_exist_murb_na" class="form-check-input na pot-na-murb" type="checkbox" name="retro_exist_murb_na" value="5"></label></td>
                 
-                <td><label for="retro_exist_murb_0">There is currently no retrofit program for the existing multi-unit residential building stock.<br>[0 points]<br><input id="retro_exist_murb_0" class="form-check-input app pot-na-murb" type="checkbox" name="retro_exist_murb_0" value="0"></label></td>
+                <td><label for="retro_exist_murb_0">There is currently no retrofit program for the existing multi-unit residential building stock.<br>[0 points]<br><input id="retro_exist_murb_0" class="form-check-input app zero pot-na-murb" type="checkbox" name="retro_exist_murb_0" value="0"></label></td>
                 
                 <td><label for="retro_exist_murb_1">Community program exists to help building owners and operators conduct energy audits or evaluate the feasibility of energy efficiency retrofits for existing multi-unit residential buildings.<br>[1 point]<br><input id="retro_exist_murb_1" class="form-check-input app pot-na-murb" type="checkbox" name="retro_exist_murb_1" value="1"></label></td>
                 
@@ -299,7 +272,7 @@
                 
                 <td><label for="retro_exist_comm_na">N/A for the community.<br>[N/A for communities with no significant commercial / mixed-use building stock]<br><input id="retro_exist_comm_na" class="form-check-input na pot-na-comm" type="checkbox" name="retro_exist_comm_na" value="5"></label></td>
                 
-                <td><label for="retro_exist_comm_0">There is currently no retrofit program for the existing commercial / mixed-use building stock.<br>[0 points]<br><input id="retro_exist_comm_0" class="form-check-input app pot-na-comm" type="checkbox" name="retro_exist_comm_0" value="0"></label></td>
+                <td><label for="retro_exist_comm_0">There is currently no retrofit program for the existing commercial / mixed-use building stock.<br>[0 points]<br><input id="retro_exist_comm_0" class="form-check-input app zero pot-na-comm" type="checkbox" name="retro_exist_comm_0" value="0"></label></td>
                 
                 <td><label for="retro_exist_comm_1">Community program exists to help building owners and operators conduct energy audits or evaluate the feasibility of energy efficiency retrofits for existing commercial and mixed-use buildings.<br>[1 point]<br><input id="retro_exist_comm_1" class="form-check-input app pot-na-comm" type="checkbox" name="retro_exist_comm_1" value="1"></label></td>
                 

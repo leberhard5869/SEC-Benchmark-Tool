@@ -1,4 +1,34 @@
 $(document).ready(function(){
+  /* Insert navbar */
+  let navbar = `
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Navigation</a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="/intro">Intro & Scenario Control</a></li>
+              <li><a class="dropdown-item" href="/governance">Governance</a></li>
+              <li><a class="dropdown-item" href="/staff">Staff</a></li>
+              <li><a class="dropdown-item" href="/data">Data</a></li>
+              <li><a class="dropdown-item" href="/financials">Financials</a></li>
+              <li><a class="dropdown-item" href="/strategy">Strategy</a></li>
+              <li><a class="dropdown-item" href="/land_use">Land Use</a></li>
+              <li><a class="dropdown-item" href="/energy_net">Energy Networks</a></li>
+              <li><a class="dropdown-item" href="/waste_water">Waste & Water</a></li>
+              <li><a class="dropdown-item" href="/transport">Transportation</a></li>
+              <li><a class="dropdown-item" href="/buildings">Buildings</a></li>
+              <li><a class="dropdown-item" href="/outputs">Outputs</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </nav>`
+  $("#navbar").append(navbar);
+
   /* Enable info circle hover document-wide */
   $('[data-toggle="tooltip"]').tooltip();
 
@@ -62,12 +92,15 @@ $(document).ready(function(){
   $(".form-check-input").on("handleChange", function(event) {
     /* General highligthing & disabling */
     if (this.checked && this.classList.contains("na")) {
-      $(this).parents("tr").find(".app").parents("td").css("background-color", "lightgrey");
-      $(this).parents("tr").find(".app").prop("checked", false);
-      $(this).parents("tr").find(".app").prop("disabled", true);
+      $(this).parents("tr").find(".app").prop("checked", false).prop("disabled", true).parents("td").css("background-color", "lightgrey");
     } else if (!this.checked && this.classList.contains("na")) {
       $(this).parents("tr").find(".app,.na").parents("td").css("background-color", "#ffffff");
       $(this).parents("tr").find(".app:not(.on-off-sub)").prop("disabled", false);
+    } else if (this.checked && this.classList.contains("zero")) {
+      $(this).parents("tr").find(".app:not(.zero)").prop("checked", false).prop("disabled", true).parents("td").css("background-color", "lightgrey");
+    } else if (!this.checked && this.classList.contains("zero")) {
+      $(this).parents("tr").find(".app").parents("td").css("background-color", "#ffffff");
+      $(this).parents("tr").find(".app:not(.on-off-sub)").prop("disabled", false);      
     } else if (!this.checked && this.type === "checkbox" && !this.classList.contains("sub-check")) {
       $(this).parents("td").css("background-color", "#ffffff");
     } else if (this.type === "radio") {

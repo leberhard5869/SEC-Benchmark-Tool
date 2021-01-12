@@ -3,7 +3,7 @@
 
   <head>
     <title>SEC Benchmark Tool - Energy Networks</title>
-    <meta name="description" content="Introduction" />
+    <meta name="description" content="Energy Networks" />
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -17,34 +17,7 @@
 
       <div class="row">
         <div class="col-lg-10"><h1 class="">Energy Networks</h1></div>
-        <div class="col-lg-2">
-          <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Navigation</a>
-                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" href="/intro">Intro & Scenario Control</a></li>
-                    <li><a class="dropdown-item" href="/governance">Governance</a></li>
-                    <li><a class="dropdown-item" href="/staff">Staff</a></li>
-                    <li><a class="dropdown-item" href="/data">Data</a></li>
-                    <li><a class="dropdown-item" href="/financials">Financials</a></li>
-                    <li><a class="dropdown-item" href="/strategy">Strategy</a></li>
-                    <li><a class="dropdown-item" href="/land_use">Land Use</a></li>
-                    <li><a class="dropdown-item" href="/energy_net">Energy Networks</a></li>
-                    <li><a class="dropdown-item" href="/waste_water">Waste & Water</a></li>
-                    <li><a class="dropdown-item" href="/transport">Transportation</a></li>
-                    <li><a class="dropdown-item" href="/buildings">Buildings</a></li>
-                    <li><a class="dropdown-item" href="/outputs">Outputs</a></li>
-                  </ul>
-                </li>
-              </ul>
-            </div>
-          </nav>
-        </div>
+        <div id="navbar" class="col-lg-2"></div>
       </div>
 
       <h4 id="scenario">Current Scenario:</h4>
@@ -75,7 +48,7 @@
                 
                 <td><label for="public_eng_edu_na">N/A for the community.<br><input id="public_eng_edu_na" class="form-check-input na" type="checkbox" name="public_eng_edu_na" value="2"></label></td>
                 
-                <td><label for="public_eng_edu_0">There is currently no public engagement and education on energy delivery systems.<br>[0 points]<br><input id="public_eng_edu_0" class="form-check-input app" type="checkbox" name="public_eng_edu_0" value="0"></label></td>
+                <td><label for="public_eng_edu_0">There is currently no public engagement and education on energy delivery systems.<br>[0 points]<br><input id="public_eng_edu_0" class="form-check-input app zero" type="checkbox" name="public_eng_edu_0" value="0"></label></td>
                 
                 <td><label for="public_eng_edu_1">Members of the public are informed of initiatives and educated on energy networks through basic methods, such as:<br>-Website updates<br>-Newsletters<br>-Print materials (such as brochures, fact sheets, information packages)<br>-Social media updates<br>-Webinars or conference calls<br>-Open houses<br>[0.5 point]<br><input id="public_eng_edu_1" class="form-check-input app" type="checkbox" name="public_eng_edu_1" value="0.5"></label></td>
                 
@@ -273,7 +246,7 @@
                 
                 <td><label for="infra_alt_veh_na">N/A for the community.<br><input id="infra_alt_veh_na" class="form-check-input na" type="checkbox" name="infra_alt_veh_na" value="5"></label></td>
                                 
-                <td><label for="infra_alt_veh_0">There is currently no infrastructure to support alternative fuel vehicles.<br>[0 points]<br><input id="infra_alt_veh_0" class="form-check-input app" type="checkbox" name="infra_alt_veh_0" value="0"></label></td>
+                <td><label for="infra_alt_veh_0">There is currently no infrastructure to support alternative fuel vehicles.<br>[0 points]<br><input id="infra_alt_veh_0" class="form-check-input app zero" type="checkbox" name="infra_alt_veh_0" value="0"></label></td>
                 
                 <td><label for="infra_alt_veh_1">An assessment/study of alternative fuel opportunities (based on location, CEP, impact to electric and/or gas grids, costs, etc.) has been completed in the past three years.<br>[N/A for communities with population below 10,000]<br>
                   <input id="infra_alt_veh_1_on" class="form-check-input app on-off pot-na-pop" type="checkbox" value="0"><br><br>
@@ -313,7 +286,7 @@
                 
                 <td><label for="smart_tech_distinf_na">N/A for the community.<br><input id="smart_tech_distinf_na" class="form-check-input na" type="checkbox" name="smart_tech_distinf_na" value="5"></label></td>
                                 
-                <td><label for="smart_tech_distinf_0">Smart grid technologies are currently not used in electricity distribution infrastructure.<br>[0 points]<br><input id="smart_tech_distinf_0" class="form-check-input app" type="checkbox" name="smart_tech_distinf_0" value="0"></label></td>
+                <td><label for="smart_tech_distinf_0">Smart grid technologies are currently not used in electricity distribution infrastructure.<br>[0 points]<br><input id="smart_tech_distinf_0" class="form-check-input app zero" type="checkbox" name="smart_tech_distinf_0" value="0"></label></td>
                 
                 <td><label for="smart_tech_distinf_1">The electric utility has plans/processes/programs in place, within the community, to integrate and promote:<br><br>
                   <input id="smart_tech_distinf_1_max" class="form-check-input app sub-check-max"  type="checkbox" value="2" hidden>

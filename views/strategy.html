@@ -3,7 +3,7 @@
 
   <head>
     <title>SEC Benchmark Tool - Strategy</title>
-    <meta name="description" content="Introduction" />
+    <meta name="description" content="Strategy" />
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -17,34 +17,7 @@
 
       <div class="row">
         <div class="col-lg-10"><h1 class="">Strategy</h1></div>
-        <div class="col-lg-2">
-          <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Navigation</a>
-                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" href="/intro">Intro & Scenario Control</a></li>
-                    <li><a class="dropdown-item" href="/governance">Governance</a></li>
-                    <li><a class="dropdown-item" href="/staff">Staff</a></li>
-                    <li><a class="dropdown-item" href="/data">Data</a></li>
-                    <li><a class="dropdown-item" href="/financials">Financials</a></li>
-                    <li><a class="dropdown-item" href="/strategy">Strategy</a></li>
-                    <li><a class="dropdown-item" href="/land_use">Land Use</a></li>
-                    <li><a class="dropdown-item" href="/energy_net">Energy Networks</a></li>
-                    <li><a class="dropdown-item" href="/waste_water">Waste & Water</a></li>
-                    <li><a class="dropdown-item" href="/transport">Transportation</a></li>
-                    <li><a class="dropdown-item" href="/buildings">Buildings</a></li>
-                    <li><a class="dropdown-item" href="/outputs">Outputs</a></li>
-                  </ul>
-                </li>
-              </ul>
-            </div>
-          </nav>
-        </div>
+        <div id="navbar" class="col-lg-2"></div>
       </div>
 
       <h4 id="scenario">Current Scenario:</h4>
@@ -75,7 +48,7 @@
                 
                 <td><label for="comm_eng_vgp_na">N/A for the community.<br><input id="comm_eng_vgp_na" class="form-check-input na" type="checkbox" name="comm_eng_vgp_na" value="4"></label></td>
                 
-                <td><label for="comm_eng_vgp_0">The community is currently not engaged for visioning, goal-setting and prioritization.<br>[0 points]<br><input id="comm_eng_vgp_0" class="form-check-input app" type="checkbox" name="comm_eng_vgp_0" value="0"></label></td>
+                <td><label for="comm_eng_vgp_0">The community is currently not engaged for visioning, goal-setting and prioritization.<br>[0 points]<br><input id="comm_eng_vgp_0" class="form-check-input app zero" type="checkbox" name="comm_eng_vgp_0" value="0"></label></td>
                 
                 <td><label for="comm_eng_vgp_1">A stakeholder engagement framework has been documented, which may include:<br>- Who stakeholder groups are (and individual contacts within them),<br>- Why they are important and/or what issues are important to the stakeholder group; and,<br>- How key stakeholders are engaged (engagement methods).<br>[N/A for communities with population below 10,000]<br>[1 point]<br><input id="comm_eng_vgp_1" class="form-check-input app pot-na-pop" type="checkbox" name="comm_eng_vgp_1" value="1"></label></td>
                 
@@ -104,7 +77,7 @@
                 
                 <td><label for="comm_econ_anal_na">N/A for the community.<br><input id="comm_econ_anal_na" class="form-check-input na" type="checkbox" name="comm_econ_anal_na" value="1"></label></td>
                 
-                <td><label for="comm_econ_anal_0">There have currently been no community-wide economic analyses completed.<br>[0 points]<br><input id="comm_econ_anal_0" class="form-check-input app" type="checkbox" name="comm_econ_anal_0" value="0"></label></td>
+                <td><label for="comm_econ_anal_0">There have currently been no community-wide economic analyses completed.<br>[0 points]<br><input id="comm_econ_anal_0" class="form-check-input app zero" type="checkbox" name="comm_econ_anal_0" value="0"></label></td>
                 
                 <td><label for="comm_econ_anal_1">An economic analysis that covers a wide diversity of community energy initiatives has been completed for the community within the past three years. This may include one or more of the following considerations or tools:<br>-Financial feasibility<br>-Levelized unit energy cost<br>-Marginal abatement cost curve<br>-Community socio-economic benefits<br>-Cost benefit analysis<br>[1 point]<br><input id="comm_econ_anal_1" class="form-check-input app" type="checkbox" name="comm_econ_anal_1" value="1"></label></td>
                 
@@ -133,7 +106,7 @@
                 
                 <td><label for="plan_manage_init_na">N/A for the community.<br><input id="plan_manage_init_na" class="form-check-input na" type="checkbox" name="plan_manage_init_na" value="3"></label></td>
                 
-                <td><label for="plan_manage_init_0">There is currently no plan or strategy to manage community energy initiatives and transition.<br>[0 points]<br><input id="plan_manage_init_0" class="form-check-input app" type="checkbox" name="plan_manage_init_0" value="0"></label></td>
+                <td><label for="plan_manage_init_0">There is currently no plan or strategy to manage community energy initiatives and transition.<br>[0 points]<br><input id="plan_manage_init_0" class="form-check-input app zero" type="checkbox" name="plan_manage_init_0" value="0"></label></td>
                 
                 <td><label for="plan_manage_init_1">A community energy plan or strategy has been adopted by council.<br>[1 point]<br><input id="plan_manage_init_1" class="form-check-input app" type="checkbox" name="plan_manage_init_1" value="1"></label></td>
                 
@@ -162,7 +135,7 @@
                 
                 <td><label for="holist_integ_appr_na">N/A for the community.<br><input id="holist_integ_appr_na" class="form-check-input na" type="checkbox" name="holist_integ_appr_na" value="2"></label></td>
                 
-                <td><label for="holist_integ_appr_0">Energy initiatives currently do not address land use, transportation and waste and water, and do not consider socioeconomic considerations.<br>[0 points]<br><input id="holist_integ_appr_0" class="form-check-input app" type="checkbox" name="holist_integ_appr_0" value="0"></label></td>
+                <td><label for="holist_integ_appr_0">Energy initiatives currently do not address land use, transportation and waste and water, and do not consider socioeconomic considerations.<br>[0 points]<br><input id="holist_integ_appr_0" class="form-check-input app zero" type="checkbox" name="holist_integ_appr_0" value="0"></label></td>
                 
                 <td><label for="holist_integ_appr_1">Community energy initiatives address land use, transportation, and waste and water.<br>[1 point]<br><input id="holist_integ_appr_1" class="form-check-input app" type="checkbox" name="holist_integ_appr_1" value="1"></label></td>
                 
@@ -191,7 +164,7 @@
                 
                 <td><label for="smart_comm_init_na">N/A for the community.<br><input id="smart_comm_init_na" class="form-check-input na" type="checkbox" name="smart_comm_init_na" value="5"></label></td>
                 
-                <td><label for="smart_comm_init_0">Community energy initiatives currently do not have any components of being SMART.<br>[0 points]<br><input id="smart_comm_init_0" class="form-check-input app" type="checkbox" name="smart_comm_init_0" value="0"></label></td>
+                <td><label for="smart_comm_init_0">Community energy initiatives currently do not have any components of being SMART.<br>[0 points]<br><input id="smart_comm_init_0" class="form-check-input app zero" type="checkbox" name="smart_comm_init_0" value="0"></label></td>
                 
                 <td><label for="smart_comm_init_1">Specific community energy initiatives have been identified.<br>[1 point]<br><input id="smart_comm_init_1" class="form-check-input app" type="checkbox" name="smart_comm_init_1" value="1"></label></td>
                 
@@ -220,7 +193,7 @@
                 
                 <td><label for="est_plan_ongoing_na">N/A for the community.<br><input id="est_plan_ongoing_na" class="form-check-input na" type="checkbox" name="est_plan_ongoing_na" value="2"></label></td>
                 
-                <td><label for="est_plan_ongoing_0">Community energy planning is currently not established as an ongoing process.<br>[0 points]<br><input id="est_plan_ongoing_0" class="form-check-input app" type="checkbox" name="est_plan_ongoing_0" value="0"></label></td>
+                <td><label for="est_plan_ongoing_0">Community energy planning is currently not established as an ongoing process.<br>[0 points]<br><input id="est_plan_ongoing_0" class="form-check-input app zero" type="checkbox" name="est_plan_ongoing_0" value="0"></label></td>
                 
                 <td><label for="est_plan_ongoing_1">There is an established schedule for review of progress on community energy initiatives.<br>[1 point]<br><input id="est_plan_ongoing_1" class="form-check-input app" type="checkbox" name="est_plan_ongoing_1" value="1"></label></td>
                 
