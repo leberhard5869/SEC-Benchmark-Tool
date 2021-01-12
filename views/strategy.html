@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>SEC Benchmark Tool - Strategy</title>
+    <meta name="description" content="Introduction" />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/public/style.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  </head>
+
+  <body>
+    <div class="container-fluid">
+      <img src="../assets/Strategy-Icon.png" alt="Strategy logo" class="img-fluid" style="width: 100px">
+
+      <div class="row">
+        <div class="col-lg-10"><h1 class="">Strategy</h1></div>
+        <div class="col-lg-2">
+          <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Navigation</a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="/intro">Intro & Scenario Control</a></li>
+                    <li><a class="dropdown-item" href="/governance">Governance</a></li>
+                    <li><a class="dropdown-item" href="/staff">Staff</a></li>
+                    <li><a class="dropdown-item" href="/data">Data</a></li>
+                    <li><a class="dropdown-item" href="/financials">Financials</a></li>
+                    <li><a class="dropdown-item" href="/strategy">Strategy</a></li>
+                    <li><a class="dropdown-item" href="/land_use">Land Use</a></li>
+                    <li><a class="dropdown-item" href="/energy_net">Energy Networks</a></li>
+                    <li><a class="dropdown-item" href="/waste_water">Waste & Water</a></li>
+                    <li><a class="dropdown-item" href="/transport">Transportation</a></li>
+                    <li><a class="dropdown-item" href="/buildings">Buildings</a></li>
+                    <li><a class="dropdown-item" href="/outputs">Outputs</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </div>
+
+      <h4 id="scenario">Current Scenario:</h4>
+
+      <form id="form-data">
+
+        <input id="scen_carry" name="scen_carry" value="" type="hidden">
+        <input id="z_app_pts_total" name="z_app_pts_total" value="" type="hidden">
+        <input id="z_na_pts_total" name="z_na_pts_total" value="" type="hidden">
+        <input id="z_sect_complete" name="z_sect_complete" value="false" type="hidden">
+
+        <div class="table-responsive">
+          <table class="table table-bordered align-middle">
+            <thead>
+              <tr style="background-color: #00b3b3">
+                <th class="col-lg text-center align-middle" scope="col">Measures</th>
+                <th class="col-lg text-center align-middle" scope="col">Scoring Method</th>
+                <th class="col-lg-8 text-center align-middle" scope="col" colspan="7">Scoring</th>
+                <th class="col-lg text-center align-middle" scope="col">Community Score</th>
+                <th class="col-lg-2 text-center align-middle" scope="col">Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1.5.1. Community engagement for visioning, goal-setting and prioritization <a href="#" data-toggle="tooltip" data-placement="right" data-animation="true" title="The leadership team has engaged the community - including organizations that control or influence energy use, delivery or supply (such as local government(s), Indigenous groups, utilities, real estate developers, non-governmental organizations, large energy users, public sector organizations, organizations serving populations living in energy poverty), as well as the broader public - in planning discussions and decisions about the community's vision, goals and priorities for community energy initiatives, and has developed a strategy for ongoing engagement."><i class="fas fa-info-circle"></i></a></th>
+                
+                <td>Checklist</td>
+                
+                <td><label for="comm_eng_vgp_na">N/A for the community.<br><input id="comm_eng_vgp_na" class="form-check-input na" type="checkbox" name="comm_eng_vgp_na" value="4"></label></td>
+                
+                <td><label for="comm_eng_vgp_0">The community is currently not engaged for visioning, goal-setting and prioritization.<br>[0 points]<br><input id="comm_eng_vgp_0" class="form-check-input app" type="checkbox" name="comm_eng_vgp_0" value="0"></label></td>
+                
+                <td><label for="comm_eng_vgp_1">A stakeholder engagement framework has been documented, which may include:<br>- Who stakeholder groups are (and individual contacts within them),<br>- Why they are important and/or what issues are important to the stakeholder group; and,<br>- How key stakeholders are engaged (engagement methods).<br>[N/A for communities with population below 10,000]<br>[1 point]<br><input id="comm_eng_vgp_1" class="form-check-input app pot-na-pop" type="checkbox" name="comm_eng_vgp_1" value="1"></label></td>
+                
+                <td><label for="comm_eng_vgp_2">Organizations within the community have been engaged, with engagement(s) documented in meeting minutes and/or a list of participants.<br>[1 point]<br><input id="comm_eng_vgp_2" class="form-check-input app" type="checkbox" name="comm_eng_vgp_2" value="1"></label></td>
+                
+                <td><label for="comm_eng_vgp_3">The general public been engaged, with lessons learned documented.<br>[1 point]<br><input id="comm_eng_vgp_3" class="form-check-input app" type="checkbox" name="comm_eng_vgp_3" value="1"></label></td>
+                
+                <td><label for="comm_eng_vgp_4">A schedule has been established for updating/conducting regular public engagement and education initiatives, and outreach to new participants.<br>[1 point]<br><input id="comm_eng_vgp_4" class="form-check-input app" type="checkbox" name="comm_eng_vgp_4" value="1"></label></td>
+
+                <td></td>
+                
+                <td>
+                  <input id="comm_eng_vgp_pts" class="text-center row-points" name="comm_eng_vgp_pts" value="" hidden></input>
+                  <output>0 points</output>
+                </td>
+                
+                <td><textarea class="form-control" id="comm_eng_vgp_notes" name="comm_eng_vgp_notes" placeholder="Enter relevant notes, references, or links..." rows="8" style="font-size: 12px"></textarea></td>
+
+                <input class="row-complete" value="false" type="hidden">
+              </tr>
+
+              <tr>
+                <th scope="row">1.5.2. Community-wide economic analyses <a href="#" data-toggle="tooltip" data-placement="right" data-animation="true" title="Economic analyses, such cost-benefit, triple bottom line and life cycle costing assessments, have been undertaken to determine the total and relative costs of potential community energy initiatives within the community. Economic analyses can be used to demonstrate the long term business case for community energy initiatives and inform the prioritization of projects."><i class="fas fa-info-circle"></i></a></th>
+                
+                <td>Checklist</td>
+                
+                <td><label for="comm_econ_anal_na">N/A for the community.<br><input id="comm_econ_anal_na" class="form-check-input na" type="checkbox" name="comm_econ_anal_na" value="1"></label></td>
+                
+                <td><label for="comm_econ_anal_0">There have currently been no community-wide economic analyses completed.<br>[0 points]<br><input id="comm_econ_anal_0" class="form-check-input app" type="checkbox" name="comm_econ_anal_0" value="0"></label></td>
+                
+                <td><label for="comm_econ_anal_1">An economic analysis that covers a wide diversity of community energy initiatives has been completed for the community within the past three years. This may include one or more of the following considerations or tools:<br>-Financial feasibility<br>-Levelized unit energy cost<br>-Marginal abatement cost curve<br>-Community socio-economic benefits<br>-Cost benefit analysis<br>[1 point]<br><input id="comm_econ_anal_1" class="form-check-input app" type="checkbox" name="comm_econ_anal_1" value="1"></label></td>
+                
+                <td></td>
+                
+                <td></td>
+                
+                <td></td>
+
+                <td></td>
+                
+                <td>
+                  <input id="comm_econ_anal_pts" class="text-center row-points" name="comm_econ_anal_pts" value="" hidden></input>
+                  <output>0 points</output>
+                </td>
+                
+                <td><textarea class="form-control" id="comm_econ_anal_notes" name="comm_econ_anal_notes" placeholder="Enter relevant notes, references, or links..." rows="8" style="font-size: 12px"></textarea></td>
+
+                <input class="row-complete" value="false" type="hidden">
+              </tr>
+
+              <tr>
+                <th scope="row">1.5.3. A plan or strategy to manage community energy initiatives and transition <a href="#" data-toggle="tooltip" data-placement="right" data-animation="true" title="The community has an overarching plan or strategy (e.g. a Community Energy Plan) with clear goals, priorities, indicators and an implementation plan (including actions, roles and responsibilities and an implementation schedule) for community energy initiatives. The community energy vision and benefits are clear and able to inspire local leaders, local government staff and community stakeholders to act, including identifying the risks of inaction."><i class="fas fa-info-circle"></i></a></th>
+                
+                <td>Checklist</td>
+                
+                <td><label for="plan_manage_init_na">N/A for the community.<br><input id="plan_manage_init_na" class="form-check-input na" type="checkbox" name="plan_manage_init_na" value="3"></label></td>
+                
+                <td><label for="plan_manage_init_0">There is currently no plan or strategy to manage community energy initiatives and transition.<br>[0 points]<br><input id="plan_manage_init_0" class="form-check-input app" type="checkbox" name="plan_manage_init_0" value="0"></label></td>
+                
+                <td><label for="plan_manage_init_1">A community energy plan or strategy has been adopted by council.<br>[1 point]<br><input id="plan_manage_init_1" class="form-check-input app" type="checkbox" name="plan_manage_init_1" value="1"></label></td>
+                
+                <td><label for="plan_manage_init_2">There are clearly defined benefits and advantages, and risks associated with inaction, from community energy initiatives.<br>[1 point]<br><input id="plan_manage_init_2" class="form-check-input app" type="checkbox" name="plan_manage_init_2" value="1"></label></td>
+                
+                <td><label for="plan_manage_init_3">A plan or strategy clearly defines who in the community need to be involved, when and what actions they need to undertake for implementation.<br>[1 point]<br><input id="plan_manage_init_3" class="form-check-input app" type="checkbox" name="plan_manage_init_3" value="1"></label></td>
+                
+                <td></td>
+
+                <td></td>
+                
+                <td>
+                  <input id="plan_manage_init_pts" class="text-center row-points" name="plan_manage_init_pts" value="" hidden></input>
+                  <output>0 points</output>
+                </td>
+                
+                <td><textarea class="form-control" id="plan_manage_init_notes" name="plan_manage_init_notes" placeholder="Enter relevant notes, references, or links..." rows="8" style="font-size: 12px"></textarea></td>
+
+                <input class="row-complete" value="false" type="hidden">
+              </tr>
+
+              <tr>
+                <th scope="row">1.5.4. A holistic and integrated approach to community energy <a href="#" data-toggle="tooltip" data-placement="right" data-animation="true" title="Community energy initiatives are cover the whole diversity of energy uses (beyond just buildings, such as land use, transportation, and waste and water considerations) and incorporates other broader socioeconomic considerations (such as social housing and poverty)."><i class="fas fa-info-circle"></i></a></th>
+                
+                <td>Checklist</td>
+                
+                <td><label for="holist_integ_appr_na">N/A for the community.<br><input id="holist_integ_appr_na" class="form-check-input na" type="checkbox" name="holist_integ_appr_na" value="2"></label></td>
+                
+                <td><label for="holist_integ_appr_0">Energy initiatives currently do not address land use, transportation and waste and water, and do not consider socioeconomic considerations.<br>[0 points]<br><input id="holist_integ_appr_0" class="form-check-input app" type="checkbox" name="holist_integ_appr_0" value="0"></label></td>
+                
+                <td><label for="holist_integ_appr_1">Community energy initiatives address land use, transportation, and waste and water.<br>[1 point]<br><input id="holist_integ_appr_1" class="form-check-input app" type="checkbox" name="holist_integ_appr_1" value="1"></label></td>
+                
+                <td><label for="holist_integ_appr_2">Community energy initiatives consider socioeconomic considerations (such as social housing or poverty).<br>[1 point]<br><input id="holist_integ_appr_2" class="form-check-input app" type="checkbox" name="holist_integ_appr_2" value="1"></label></td>
+                
+                <td></td>
+                
+                <td></td>
+
+                <td></td>
+                
+                <td>
+                  <input id="holist_integ_appr_pts" class="text-center row-points" name="holist_integ_appr_pts" value="" hidden></input>
+                  <output>0 points</output>
+                </td>
+                
+                <td><textarea class="form-control" id="holist_integ_appr_notes" name="holist_integ_appr_notes" placeholder="Enter relevant notes, references, or links..." rows="8" style="font-size: 12px"></textarea></td>
+
+                <input class="row-complete" value="false" type="hidden">
+              </tr>
+
+              <tr>
+                <th scope="row">1.5.5. SMART community energy initiatives <a href="#" data-toggle="tooltip" data-placement="right" data-animation="true" title="Community energy initiatives or actions within a community's plan or strategy are specific, measureable, attainable, relevant and time-bound (SMART)."><i class="fas fa-info-circle"></i></a></th>
+                
+                <td>Checklist</td>
+                
+                <td><label for="smart_comm_init_na">N/A for the community.<br><input id="smart_comm_init_na" class="form-check-input na" type="checkbox" name="smart_comm_init_na" value="5"></label></td>
+                
+                <td><label for="smart_comm_init_0">Community energy initiatives currently do not have any components of being SMART.<br>[0 points]<br><input id="smart_comm_init_0" class="form-check-input app" type="checkbox" name="smart_comm_init_0" value="0"></label></td>
+                
+                <td><label for="smart_comm_init_1">Specific community energy initiatives have been identified.<br>[1 point]<br><input id="smart_comm_init_1" class="form-check-input app" type="checkbox" name="smart_comm_init_1" value="1"></label></td>
+                
+                <td><label for="smart_comm_init_2">Community energy initiatives have quantitative (or qualitative) measures associated with their implementation and success.<br>[1 point]<br><input id="smart_comm_init_2" class="form-check-input app" type="checkbox" name="smart_comm_init_2" value="1"></label></td>
+                
+                <td><label for="smart_comm_init_3">Community energy initiatives are considered attainable (costed/financially viable).<br>[1 point]<br><input id="smart_comm_init_3" class="form-check-input app" type="checkbox" name="smart_comm_init_3" value="1"></label></td>
+                
+                <td><label for="smart_comm_init_4">Community energy initiatives are clearly aligned with community priorities/objectives.<br>[1 point]<br><input id="smart_comm_init_4" class="form-check-input app" type="checkbox" name="smart_comm_init_4" value="1"></label></td>
+
+                <td><label for="smart_comm_init_5">Community energy initiatives are assigned timelines (short-, medium, or long-term) for action and completion.<br>[1 point]<br><input id="smart_comm_init_5" class="form-check-input app" type="checkbox" name="smart_comm_init_5" value="1"></label></td>
+                
+                <td>
+                  <input id="smart_comm_init_pts" class="text-center row-points" name="smart_comm_init_pts" value="" hidden></input>
+                  <output>0 points</output>
+                </td>
+                
+                <td><textarea class="form-control" id="smart_comm_init_notes" name="smart_comm_init_notes" placeholder="Enter relevant notes, references, or links..." rows="8" style="font-size: 12px"></textarea></td>
+
+                <input class="row-complete" value="false" type="hidden">
+              </tr>
+
+              <tr>
+                <th scope="row">1.5.6. Establishment of community energy planning as an ongoing process <a href="#" data-toggle="tooltip" data-placement="right" data-animation="true" title="Community energy planning is recognized as an ongoing and evolutionary process in the community. As such, community energy initiatives are established under the premise of regular review for progress (ex. annually or biennially) and renewal of the community's energy vision, goals, priorities, and actions (ex. every 5-10 years)."><i class="fas fa-info-circle"></i></a></th>
+                
+                <td>Checklist</td>
+                
+                <td><label for="est_plan_ongoing_na">N/A for the community.<br><input id="est_plan_ongoing_na" class="form-check-input na" type="checkbox" name="est_plan_ongoing_na" value="2"></label></td>
+                
+                <td><label for="est_plan_ongoing_0">Community energy planning is currently not established as an ongoing process.<br>[0 points]<br><input id="est_plan_ongoing_0" class="form-check-input app" type="checkbox" name="est_plan_ongoing_0" value="0"></label></td>
+                
+                <td><label for="est_plan_ongoing_1">There is an established schedule for review of progress on community energy initiatives.<br>[1 point]<br><input id="est_plan_ongoing_1" class="form-check-input app" type="checkbox" name="est_plan_ongoing_1" value="1"></label></td>
+                
+                <td><label for="est_plan_ongoing_2">There is an established schedule for renewal of community energy initiatives and the broader community energy plan or strategy.<br>[1 point]<br><input id="est_plan_ongoing_2" class="form-check-input app" type="checkbox" name="est_plan_ongoing_2" value="1"></label></td>
+                
+                <td></td>
+                
+                <td></td>
+
+                <td></td>
+                
+                <td>
+                  <input id="est_plan_ongoing_pts" class="text-center row-points" name="est_plan_ongoing_pts" value="" hidden></input>
+                  <output>0 points</output>
+                </td>
+                
+                <td><textarea class="form-control" id="est_plan_ongoing_notes" name="est_plan_ongoing_notes" placeholder="Enter relevant notes, references, or links..." rows="8" style="font-size: 12px"></textarea></td>
+
+                <input class="row-complete" value="false" type="hidden">
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        
+        <input id="form-submit" class="btn btn-primary" type="submit" value="Save">
+
+      </form><br>
+              
+      <div id="navigation">
+        <a href="/financials" id="previous" class="btn btn-primary" role="button">Previous (Financials)</a>
+        <a href="/logout" id="logout" class="btn btn-primary" role="button">Logout</a>
+        <a href="/land_use" id="next" class="btn btn-primary" role="button">Next (Land Use)</input></a>
+      </div><br>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/0f567e20d5.js" crossorigin="anonymous"></script>
+    <script src="../public/client.js" type="module"></script>
+  </body>
+</html>

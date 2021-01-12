@@ -530,6 +530,157 @@ module.exports = function(app, myDataBase) {
       );
     });
 
+  app.route("/db/data/strategy")
+    .post((req, res, next) => {
+      myDataBase.findOneAndUpdate(
+        { username: req.user.username },
+        {
+          $set: {
+            "scenarios.$[element].last_update": new Date(),
+
+            "scenarios.$[element].strategy.comm_eng_vgp_na": Number(req.body.comm_eng_vgp_na),
+            "scenarios.$[element].strategy.comm_eng_vgp_0": Number(req.body.comm_eng_vgp_0),
+            "scenarios.$[element].strategy.comm_eng_vgp_1": Number(req.body.comm_eng_vgp_1),
+            "scenarios.$[element].strategy.comm_eng_vgp_2": Number(req.body.comm_eng_vgp_2),
+            "scenarios.$[element].strategy.comm_eng_vgp_3": Number(req.body.comm_eng_vgp_3),
+            "scenarios.$[element].strategy.comm_eng_vgp_4": Number(req.body.comm_eng_vgp_4),
+            "scenarios.$[element].strategy.comm_eng_vgp_pts": Number(req.body.comm_eng_vgp_pts),
+            "scenarios.$[element].strategy.comm_eng_vgp_notes": req.body.comm_eng_vgp_notes,
+
+            "scenarios.$[element].strategy.comm_econ_anal_na": Number(req.body.comm_econ_anal_na),
+            "scenarios.$[element].strategy.comm_econ_anal_0": Number(req.body.comm_econ_anal_0),
+            "scenarios.$[element].strategy.comm_econ_anal_1": Number(req.body.comm_econ_anal_1),
+            "scenarios.$[element].strategy.comm_econ_anal_pts": Number(req.body.comm_econ_anal_pts),
+            "scenarios.$[element].strategy.comm_econ_anal_notes": req.body.comm_econ_anal_notes,
+
+            "scenarios.$[element].strategy.plan_manage_init_na": Number(req.body.plan_manage_init_na),
+            "scenarios.$[element].strategy.plan_manage_init_0": Number(req.body.plan_manage_init_0),
+            "scenarios.$[element].strategy.plan_manage_init_1": Number(req.body.plan_manage_init_1),
+            "scenarios.$[element].strategy.plan_manage_init_2": Number(req.body.plan_manage_init_2),
+            "scenarios.$[element].strategy.plan_manage_init_3": Number(req.body.plan_manage_init_3),
+            "scenarios.$[element].strategy.plan_manage_init_pts": Number(req.body.plan_manage_init_pts),
+            "scenarios.$[element].strategy.plan_manage_init_notes": req.body.plan_manage_init_notes,
+
+            "scenarios.$[element].strategy.holist_integ_appr_na": Number(req.body.holist_integ_appr_na),
+            "scenarios.$[element].strategy.holist_integ_appr_0": Number(req.body.holist_integ_appr_0),
+            "scenarios.$[element].strategy.holist_integ_appr_1": Number(req.body.holist_integ_appr_1),
+            "scenarios.$[element].strategy.holist_integ_appr_2": Number(req.body.holist_integ_appr_2),
+            "scenarios.$[element].strategy.holist_integ_appr_pts": Number(req.body.holist_integ_appr_pts),
+            "scenarios.$[element].strategy.holist_integ_appr_notes": req.body.holist_integ_appr_notes,
+
+            "scenarios.$[element].strategy.smart_comm_init_na": Number(req.body.smart_comm_init_na),
+            "scenarios.$[element].strategy.smart_comm_init_0": Number(req.body.smart_comm_init_0),
+            "scenarios.$[element].strategy.smart_comm_init_1": Number(req.body.smart_comm_init_1),
+            "scenarios.$[element].strategy.smart_comm_init_2": Number(req.body.smart_comm_init_2),
+            "scenarios.$[element].strategy.smart_comm_init_3": Number(req.body.smart_comm_init_3),
+            "scenarios.$[element].strategy.smart_comm_init_4": Number(req.body.smart_comm_init_4),
+            "scenarios.$[element].strategy.smart_comm_init_5": Number(req.body.smart_comm_init_5),
+            "scenarios.$[element].strategy.smart_comm_init_pts": Number(req.body.smart_comm_init_pts),
+            "scenarios.$[element].strategy.smart_comm_init_notes": req.body.smart_comm_init_notes,
+
+            "scenarios.$[element].strategy.est_plan_ongoing_na": Number(req.body.est_plan_ongoing_na),
+            "scenarios.$[element].strategy.est_plan_ongoing_0": Number(req.body.est_plan_ongoing_0),
+            "scenarios.$[element].strategy.est_plan_ongoing_1": Number(req.body.est_plan_ongoing_1),
+            "scenarios.$[element].strategy.est_plan_ongoing_2": Number(req.body.est_plan_ongoing_2),
+            "scenarios.$[element].strategy.est_plan_ongoing_pts": Number(req.body.est_plan_ongoing_pts),
+            "scenarios.$[element].strategy.est_plan_ongoing_notes": req.body.est_plan_ongoing_notes,
+
+            "scenarios.$[element].strategy.z_app_pts_total": Number(req.body.z_app_pts_total),
+            "scenarios.$[element].strategy.z_na_pts_total": Number(req.body.z_na_pts_total),
+            "scenarios.$[element].strategy.z_sect_complete": req.body.z_sect_complete,
+          },
+        },
+        { arrayFilters: [ { "element.scen_name": { $eq: req.body.scen_carry } } ],
+          returnOriginal: false
+        },
+        (err, doc) => {
+          if (err) {
+            console.log(err);
+            res.send("Save error.");
+          } else {
+            let result = doc.value.scenarios.find((elm) => elm.scen_name === doc.value.currentScen);
+            console.log(result.strategy);
+            res.send('Save successful.');
+          }
+        }
+      );
+    });
+
+  app.route("/db/data/land_use")
+    .post((req, res, next) => {
+      myDataBase.findOneAndUpdate(
+        { username: req.user.username },
+        {
+          $set: {
+            "scenarios.$[element].last_update": new Date(),
+
+            "scenarios.$[element].land_use.public_eng_edu_na": Number(req.body.public_eng_edu_na),
+            "scenarios.$[element].land_use.public_eng_edu_0": Number(req.body.public_eng_edu_0),
+            "scenarios.$[element].land_use.public_eng_edu_1": Number(req.body.public_eng_edu_1),
+            "scenarios.$[element].land_use.public_eng_edu_2": Number(req.body.public_eng_edu_2),
+            "scenarios.$[element].land_use.public_eng_edu_pts": Number(req.body.public_eng_edu_pts),
+            "scenarios.$[element].land_use.public_eng_edu_notes": req.body.public_eng_edu_notes,
+
+            "scenarios.$[element].land_use.comp_mu_tod_na": Number(req.body.comp_mu_tod_na),
+            "scenarios.$[element].land_use.comp_mu_tod_0": Number(req.body.comp_mu_tod_0),
+            "scenarios.$[element].land_use.comp_mu_tod_1": Number(req.body.comp_mu_tod_1),
+            "scenarios.$[element].land_use.comp_mu_tod_2": Number(req.body.comp_mu_tod_2),
+            "scenarios.$[element].land_use.comp_mu_tod_3": Number(req.body.comp_mu_tod_3),
+            "scenarios.$[element].land_use.comp_mu_tod_pts": Number(req.body.comp_mu_tod_pts),
+            "scenarios.$[element].land_use.comp_mu_tod_notes": req.body.comp_mu_tod_notes,
+
+            "scenarios.$[element].land_use.eff_perf_newdev_na": Number(req.body.eff_perf_newdev_na),
+            "scenarios.$[element].land_use.eff_perf_newdev_0": Number(req.body.eff_perf_newdev_0),
+            "scenarios.$[element].land_use.eff_perf_newdev_1": Number(req.body.eff_perf_newdev_1),
+            "scenarios.$[element].land_use.eff_perf_newdev_2": Number(req.body.eff_perf_newdev_1),
+            "scenarios.$[element].land_use.eff_perf_newdev_pts": Number(req.body.eff_perf_newdev_pts),
+            "scenarios.$[element].land_use.eff_perf_newdev_notes": req.body.eff_perf_newdev_notes,
+
+            "scenarios.$[element].land_use.embed_opt_plans_na": Number(req.body.embed_opt_plans_na),
+            "scenarios.$[element].land_use.embed_opt_plans": Number(req.body.embed_opt_plans),
+            "scenarios.$[element].land_use.embed_opt_plans_pts": Number(req.body.embed_opt_plans_pts),
+            "scenarios.$[element].land_use.embed_opt_plans_notes": req.body.embed_opt_plans_notes,
+
+            "scenarios.$[element].land_use.preserv_nat_lu_na": Number(req.body.preserv_nat_lu_na),
+            "scenarios.$[element].land_use.preserv_nat_lu": Number(req.body.preserv_nat_lu),
+            "scenarios.$[element].land_use.preserv_nat_lu_pts": Number(req.body.preserv_nat_lu_pts),
+            "scenarios.$[element].land_use.preserv_nat_lu_notes": req.body.preserv_nat_lu_notes,
+
+            "scenarios.$[element].land_use.prog_enhance_mitigate_na": Number(req.body.prog_enhance_mitigate_na),
+            "scenarios.$[element].land_use.prog_enhance_mitigate_0": Number(req.body.prog_enhance_mitigate_0),
+            "scenarios.$[element].land_use.prog_enhance_mitigate_1_1": Number(req.body.prog_enhance_mitigate_1_1),
+            "scenarios.$[element].land_use.prog_enhance_mitigate_1_2": Number(req.body.prog_enhance_mitigate_1_2),
+            "scenarios.$[element].land_use.prog_enhance_mitigate_1_3": Number(req.body.prog_enhance_mitigate_1_3),
+            "scenarios.$[element].land_use.prog_enhance_mitigate_1_4": Number(req.body.prog_enhance_mitigate_1_4),
+            "scenarios.$[element].land_use.prog_enhance_mitigate_1_5": Number(req.body.prog_enhance_mitigate_1_5),
+            "scenarios.$[element].land_use.prog_enhance_mitigate_2_1": Number(req.body.prog_enhance_mitigate_2_1),
+            "scenarios.$[element].land_use.prog_enhance_mitigate_2_2": Number(req.body.prog_enhance_mitigate_2_2),
+            "scenarios.$[element].land_use.prog_enhance_mitigate_2_3": Number(req.body.prog_enhance_mitigate_2_3),
+            "scenarios.$[element].land_use.prog_enhance_mitigate_2_4": Number(req.body.prog_enhance_mitigate_2_4),
+            "scenarios.$[element].land_use.prog_enhance_mitigate_pts": Number(req.body.prog_enhance_mitigate_pts),
+            "scenarios.$[element].land_use.prog_enhance_mitigate_notes": req.body.prog_enhance_mitigate_notes,
+
+            "scenarios.$[element].land_use.z_app_pts_total": Number(req.body.z_app_pts_total),
+            "scenarios.$[element].land_use.z_na_pts_total": Number(req.body.z_na_pts_total),
+            "scenarios.$[element].land_use.z_sect_complete": req.body.z_sect_complete,
+          },
+        },
+        { arrayFilters: [ { "element.scen_name": { $eq: req.body.scen_carry } } ],
+          returnOriginal: false
+        },
+        (err, doc) => {
+          if (err) {
+            console.log(err);
+            res.send("Save error.");
+          } else {
+            let result = doc.value.scenarios.find((elm) => elm.scen_name === doc.value.currentScen);
+            console.log(result.land_use);
+            res.send('Save successful.');
+          }
+        }
+      );
+    });
+
   app.route('/intro')
     .get(ensureAuthenticated, (req, res, next) => {
       res.sendFile(process.cwd() + '/views/intro.html');

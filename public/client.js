@@ -41,7 +41,7 @@ $(document).ready(function(){
       $(".na.pot-na-true").prop("checked", true).trigger("handleChange");
 
       /* Alert if global not applicables (from Intro) have changed results requiring a save */
-      if (subResult.z_app_pts_total.toString() != $("#z_app_pts_total").val() || subResult.z_na_pts_total.toString() != $("#z_na_pts_total").val() || subResult.z_sect_complete != $("#z_sect_complete").val()) { alert("Changes to the base scenario information in the Introduction have changed results here, requiring that you perform a Save.") };
+      if (subResult) { if (subResult.z_app_pts_total.toString() != $("#z_app_pts_total").val() || subResult.z_na_pts_total.toString() != $("#z_na_pts_total").val() || subResult.z_sect_complete != $("#z_sect_complete").val()) { alert("Changes to the base scenario information in the Introduction have changed results here, requiring that you perform a Save.") } };
     }
   });
   
@@ -67,10 +67,10 @@ $(document).ready(function(){
       $(this).parents("tr").find(".app").parents("td").css("background-color", "lightgrey");
       $(this).parents("tr").find(".app").prop("checked", false);
       $(this).parents("tr").find(".app").prop("disabled", true);
-    } else if (!this.checked && this.classList.contains('na')) {
+    } else if (!this.checked && this.classList.contains("na")) {
       $(this).parents("tr").find(".app,.na").parents("td").css("background-color", "#ffffff");
       $(this).parents("tr").find(".app:not(.on-off-sub)").prop("disabled", false);
-    } else if (!this.checked && this.type === "checkbox") {
+    } else if (!this.checked && this.type === "checkbox" && !this.classList.contains("sub-check")) {
       $(this).parents("td").css("background-color", "#ffffff");
     } else if (this.type === "radio") {
       $(this).parents("tr").children("td").css("background-color", "#ffffff");
@@ -79,10 +79,7 @@ $(document).ready(function(){
     if (this.checked) {
       $(this).parents("td").css("background-color", "#ffcd05");
     };
-    
-    /* Disable global not applicables */
-    $(".pot-na-true").prop("disabled", true).parents("td").css("background-color", "lightgrey");
-    
+
     /* Handle local energy mapping & model not applicables */
     if (this.id === "energy_mapping_0" || this.id === "scenario_model_0") {
       if (this.checked) {
@@ -98,6 +95,18 @@ $(document).ready(function(){
       else if (!this.checked) { $(this).siblings().children().prop("disabled", true).prop("checked", false) };
     };
 
+    /* Handle sub checkbox maximums and de-highlighting */
+    if (this.classList.contains("sub-check")) {
+      if($(this).parents("td").find(".sub-check:checked").length > $(this).parents("td").find(".sub-check-max").val()) { this.checked = false };
+      if($(this).parents("td").find(".sub-check:checked").length === 0) { $(this).parents("td").css("background-color", "#ffffff") };
+    };
+
+    /* Re-grey out unused table cells */
+    $("td:empty").css("background-color", "lightgrey");
+    
+    /* Disable global not applicables */
+    $(".pot-na-true").prop("disabled", true).parents("td").css("background-color", "lightgrey");
+    
     /* Row applicable points addition */
     arr = $(this).parents("tr").find(".app");
     for (i = 0; i < arr.length; i++) {
@@ -119,7 +128,7 @@ $(document).ready(function(){
     sum = 0;
     arr = $(".na:checked");
     for (i = 0; i < arr.length; i++) { sum += Number(arr[i].value) };
-    arr = $(".na:not(:checked)").parents("tr").find(".pot-na-true,.pot-na-local-true");
+    arr = $(".na:not(:checked)").parents("tr").find(".pot-na-true:not(.sub-check),.pot-na-local-true:not(.sub-check)");
     for (i = 0; i < arr.length; i++) {
       if (arr[i].type === "checkbox") { sum += Number(arr[i].value) }
       else if (arr[i].type === "radio") { sum++ };
@@ -138,9 +147,6 @@ $(document).ready(function(){
     for (i = 0; i < arr.length; i++) {
       if (arr[i].value === "false") { $("#z_sect_complete").val("false") };
     };
-
-    /* Re-grey out unused table cells */
-    $("td:empty").css("background-color", "lightgrey");
 
   });
 
