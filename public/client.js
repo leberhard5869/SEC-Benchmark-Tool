@@ -29,16 +29,16 @@ $(document).ready(function(){
       }
 
       /*  Add pot-na-true class to global not applicables */
-      if (result.pop_size === "1000 - 9999" || result.pop_size === "<1000") { $(".pot-na-pop").addClass("pot-na-true").prop("checked", false).trigger("handleChange") };
-      if (result.pop_growth === "stable/shrinking") { $(".pot-na-growth").addClass("pot-na-true").prop("checked", false).trigger("handleChange") };
-      if (result.sig_murb_stock === "no") { $(".pot-na-murb").addClass("pot-na-true").prop("checked", false).trigger("handleChange") };
-      if (result.sig_comm_stock === "no") { $(".pot-na-comm").addClass("pot-na-true").prop("checked", false).trigger("handleChange") };
-      if (result.cent_water === "no") { $(".pot-na-water").addClass("pot-na-true").prop("checked", false).trigger("handleChange") };
-      if (result.public_tran === "no") { $(".pot-na-transit").addClass("pot-na-true").prop("checked", false).trigger("handleChange") };
-      if (result.gas_conx === "no") { $(".pot-na-gas").addClass("pot-na-true").prop("checked", false).trigger("handleChange") };
+      if (result.pop_size === "1000 - 9999" || result.pop_size === "<1000") { $(".pot-na-pop").addClass("pot-na-true").prop("checked", false).trigger("handleNa") };
+      if (result.pop_growth === "stable/shrinking") { $(".pot-na-growth").addClass("pot-na-true").prop("checked", false).trigger("handleNa") };
+      if (result.sig_murb_stock === "no") { $(".pot-na-murb").addClass("pot-na-true").prop("checked", false).trigger("handleNa") };
+      if (result.sig_comm_stock === "no") { $(".pot-na-comm").addClass("pot-na-true").prop("checked", false).trigger("handleNa") };
+      if (result.cent_water === "no") { $(".pot-na-water").addClass("pot-na-true").prop("checked", false).trigger("handleNa") };
+      if (result.public_tran === "no") { $(".pot-na-transit").addClass("pot-na-true").prop("checked", false).trigger("handleNa") };
+      if (result.gas_conx === "no") { $(".pot-na-gas").addClass("pot-na-true").prop("checked", false).trigger("handleNa") };
 
       /* Check N/As where global applicables apply to entire row */
-      $(".na.pot-na-true").prop("checked", true).trigger("handleChange");
+      $(".na.pot-na-true").prop("checked", true).trigger("handleNa");
 
       /* Alert if global not applicables (from Intro) have changed results requiring a save */
       if (subResult) { if (subResult.z_app_pts_total.toString() != $("#z_app_pts_total").val() || subResult.z_na_pts_total.toString() != $("#z_na_pts_total").val() || subResult.z_sect_complete != $("#z_sect_complete").val()) { alert("Changes to the base scenario information in the Introduction have changed results here, requiring that you perform a Save.") } };
@@ -60,8 +60,6 @@ $(document).ready(function(){
 
   /* handleChange function */
   $(".form-check-input").on("handleChange", function(event) {
-    let arr = [], i = 0, sum = 0;
-
     /* General highligthing & disabling */
     if (this.checked && this.classList.contains("na")) {
       $(this).parents("tr").find(".app").parents("td").css("background-color", "lightgrey");
@@ -101,12 +99,38 @@ $(document).ready(function(){
       if($(this).parents("td").find(".sub-check:checked").length === 0) { $(this).parents("td").css("background-color", "#ffffff") };
     };
 
+    /* Handle infeasible options */
+    if (this.classList.contains("infeas")) {
+      if (this.checked) {
+        $(this).parents("td").css("background-color", "lightgrey").find("input:first").addClass("pot-na-local-true").prop("checked", false).prop("disabled", true);
+    } else if (!this.checked) {
+        $(this).parents("td").css("background-color", "#ffffff").find("input:first").removeClass("pot-na-local-true").prop("disabled", false);
+      };
+    };
+
     /* Re-grey out unused table cells */
     $("td:empty").css("background-color", "lightgrey");
-    
+
+    /* Re-disable global and local not applicables */
+    $(".pot-na-true,.pot-na-local-true").prop("disabled", true).parents("td").css("background-color", "lightgrey");
+
+    /* Trigger handlePoints */
+    $(this).trigger("handlePoints");
+  });
+
+  /* handleNa function (handles global (i.e. from Intro) not applicables only */
+  $(".form-check-input").on("handleNa", function(event) {    
     /* Disable global not applicables */
     $(".pot-na-true").prop("disabled", true).parents("td").css("background-color", "lightgrey");
-    
+
+    /* Trigger handlePoints */
+    $(this).trigger("handlePoints");
+  });
+
+  /* handlePoints function */
+  $(".form-check-input").on("handlePoints", function(event) {    
+    let arr = [], i = 0, sum = 0;
+
     /* Row applicable points addition */
     arr = $(this).parents("tr").find(".app");
     for (i = 0; i < arr.length; i++) {
@@ -147,7 +171,6 @@ $(document).ready(function(){
     for (i = 0; i < arr.length; i++) {
       if (arr[i].value === "false") { $("#z_sect_complete").val("false") };
     };
-
   });
 
 });

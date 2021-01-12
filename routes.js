@@ -681,6 +681,92 @@ module.exports = function(app, myDataBase) {
       );
     });
 
+  app.route("/db/data/energy_net")
+    .post((req, res, next) => {
+      myDataBase.findOneAndUpdate(
+        { username: req.user.username },
+        {
+          $set: {
+            "scenarios.$[element].last_update": new Date(),
+
+            "scenarios.$[element].energy_net.public_eng_edu_na": Number(req.body.public_eng_edu_na),
+            "scenarios.$[element].energy_net.public_eng_edu_0": Number(req.body.public_eng_edu_0),
+            "scenarios.$[element].energy_net.public_eng_edu_1": Number(req.body.public_eng_edu_1),
+            "scenarios.$[element].energy_net.public_eng_edu_2": Number(req.body.public_eng_edu_2),
+            "scenarios.$[element].energy_net.public_eng_edu_3": Number(req.body.public_eng_edu_3),
+            "scenarios.$[element].energy_net.public_eng_edu_pts": Number(req.body.public_eng_edu_pts),
+            "scenarios.$[element].energy_net.public_eng_edu_notes": req.body.public_eng_edu_notes,
+
+            "scenarios.$[element].energy_net.elec_load_mgmt_na": Number(req.body.elec_load_mgmt_na),
+            "scenarios.$[element].energy_net.elec_load_mgmt": Number(req.body.elec_load_mgmt),
+            "scenarios.$[element].energy_net.elec_load_mgmt_pts": Number(req.body.elec_load_mgmt_pts),
+            "scenarios.$[element].energy_net.elec_load_mgmt_notes": req.body.elec_load_mgmt_notes,
+
+            "scenarios.$[element].energy_net.gas_load_mgmt_na": Number(req.body.gas_load_mgmt_na),
+            "scenarios.$[element].energy_net.gas_load_mgmt": Number(req.body.gas_load_mgmt),
+            "scenarios.$[element].energy_net.gas_load_mgmt_pts": Number(req.body.gas_load_mgmt_pts),
+            "scenarios.$[element].energy_net.gas_load_mgmt_notes": req.body.gas_load_mgmt_notes,
+
+            "scenarios.$[element].energy_net.climate_risk_elec_na": Number(req.body.climate_risk_elec_na),
+            "scenarios.$[element].energy_net.climate_risk_elec": Number(req.body.climate_risk_elec),
+            "scenarios.$[element].energy_net.climate_risk_elec_pts": Number(req.body.climate_risk_elec_pts),
+            "scenarios.$[element].energy_net.climate_risk_elec_notes": req.body.climate_risk_elec_notes,
+
+            "scenarios.$[element].energy_net.climate_risk_gas_na": Number(req.body.climate_risk_gas_na),
+            "scenarios.$[element].energy_net.climate_risk_gas": Number(req.body.climate_risk_gas),
+            "scenarios.$[element].energy_net.climate_risk_gas_pts": Number(req.body.climate_risk_gas_pts),
+            "scenarios.$[element].energy_net.climate_risk_gas_notes": req.body.climate_risk_gas_notes,
+
+            "scenarios.$[element].energy_net.gas_infra_stor_na": Number(req.body.gas_infra_stor_na),
+            "scenarios.$[element].energy_net.gas_infra_stor": Number(req.body.gas_infra_stor),
+            "scenarios.$[element].energy_net.gas_infra_stor_pts": Number(req.body.gas_infra_stor_pts),
+            "scenarios.$[element].energy_net.gas_infra_stor_notes": req.body.gas_infra_stor_notes,
+
+            "scenarios.$[element].energy_net.thermal_local_res_na": Number(req.body.thermal_local_res_na),
+            "scenarios.$[element].energy_net.thermal_local_res": Number(req.body.thermal_local_res),
+            "scenarios.$[element].energy_net.thermal_local_res_pts": Number(req.body.thermal_local_res_pts),
+            "scenarios.$[element].energy_net.thermal_local_res_notes": req.body.thermal_local_res_notes,
+
+            "scenarios.$[element].energy_net.z_app_pts_total": Number(req.body.z_app_pts_total),
+            "scenarios.$[element].energy_net.z_na_pts_total": Number(req.body.z_na_pts_total),
+            "scenarios.$[element].energy_net.z_sect_complete": req.body.z_sect_complete,
+
+            "scenarios.$[element].energy_net.infra_alt_veh_na": Number(req.body.infra_alt_veh_na),
+            "scenarios.$[element].energy_net.infra_alt_veh_0": Number(req.body.infra_alt_veh_0),
+            "scenarios.$[element].energy_net.infra_alt_veh_1": Number(req.body.infra_alt_veh_1),
+            "scenarios.$[element].energy_net.infra_alt_veh_2": Number(req.body.infra_alt_veh_2),
+            "scenarios.$[element].energy_net.infra_alt_veh_3": Number(req.body.infra_alt_veh_3),
+            "scenarios.$[element].energy_net.infra_alt_veh_4": Number(req.body.infra_alt_veh_4),
+            "scenarios.$[element].energy_net.infra_alt_veh_pts": Number(req.body.infra_alt_veh_pts),
+            "scenarios.$[element].energy_net.infra_alt_veh_notes": req.body.infra_alt_veh_notes,
+
+            "scenarios.$[element].energy_net.smart_tech_distinf_na": Number(req.body.smart_tech_distinf_na),
+            "scenarios.$[element].energy_net.smart_tech_distinf_0": Number(req.body.smart_tech_distinf_0),
+            "scenarios.$[element].energy_net.smart_tech_distinf_1_1": Number(req.body.smart_tech_distinf_1_1),
+            "scenarios.$[element].energy_net.smart_tech_distinf_1_2": Number(req.body.smart_tech_distinf_1_2),
+            "scenarios.$[element].energy_net.smart_tech_distinf_2_1": Number(req.body.smart_tech_distinf_2_1),
+            "scenarios.$[element].energy_net.smart_tech_distinf_2_2": Number(req.body.smart_tech_distinf_2_2),
+            "scenarios.$[element].energy_net.smart_tech_distinf_2_3": Number(req.body.smart_tech_distinf_2_3),
+            "scenarios.$[element].energy_net.smart_tech_distinf_pts": Number(req.body.smart_tech_distinf_pts),
+            "scenarios.$[element].energy_net.smart_tech_distinf_notes": req.body.smart_tech_distinf_notes,          
+          },
+        },
+        { arrayFilters: [ { "element.scen_name": { $eq: req.body.scen_carry } } ],
+          returnOriginal: false
+        },
+        (err, doc) => {
+          if (err) {
+            console.log(err);
+            res.send("Save error.");
+          } else {
+            let result = doc.value.scenarios.find((elm) => elm.scen_name === doc.value.currentScen);
+            console.log(result.energy_net);
+            res.send('Save successful.');
+          }
+        }
+      );
+    });
+
   app.route('/intro')
     .get(ensureAuthenticated, (req, res, next) => {
       res.sendFile(process.cwd() + '/views/intro.html');

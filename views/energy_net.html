@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>SEC Benchmark Tool - Energy Networks</title>
+    <meta name="description" content="Introduction" />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/public/style.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  </head>
+
+  <body>
+    <div class="container-fluid">
+      <img src="../assets/Energy-Networks-Icon.png" alt="Energy Networks logo" class="img-fluid" style="width: 100px">
+
+      <div class="row">
+        <div class="col-lg-10"><h1 class="">Energy Networks</h1></div>
+        <div class="col-lg-2">
+          <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Navigation</a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="/intro">Intro & Scenario Control</a></li>
+                    <li><a class="dropdown-item" href="/governance">Governance</a></li>
+                    <li><a class="dropdown-item" href="/staff">Staff</a></li>
+                    <li><a class="dropdown-item" href="/data">Data</a></li>
+                    <li><a class="dropdown-item" href="/financials">Financials</a></li>
+                    <li><a class="dropdown-item" href="/strategy">Strategy</a></li>
+                    <li><a class="dropdown-item" href="/land_use">Land Use</a></li>
+                    <li><a class="dropdown-item" href="/energy_net">Energy Networks</a></li>
+                    <li><a class="dropdown-item" href="/waste_water">Waste & Water</a></li>
+                    <li><a class="dropdown-item" href="/transport">Transportation</a></li>
+                    <li><a class="dropdown-item" href="/buildings">Buildings</a></li>
+                    <li><a class="dropdown-item" href="/outputs">Outputs</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </div>
+
+      <h4 id="scenario">Current Scenario:</h4>
+
+      <form id="form-data">
+
+        <input id="scen_carry" name="scen_carry" value="" type="hidden">
+        <input id="z_app_pts_total" name="z_app_pts_total" value="" type="hidden">
+        <input id="z_na_pts_total" name="z_na_pts_total" value="" type="hidden">
+        <input id="z_sect_complete" name="z_sect_complete" value="false" type="hidden">
+
+        <div class="table-responsive">
+          <table class="table table-bordered align-middle">
+            <thead>
+              <tr style="background-color: #00b3b3">
+                <th class="col-lg text-center align-middle" scope="col">Measures</th>
+                <th class="col-lg text-center align-middle" scope="col">Scoring Method</th>
+                <th class="col-lg-8 text-center align-middle" scope="col" colspan="6">Scoring</th>
+                <th class="col-lg text-center align-middle" scope="col">Community Score</th>
+                <th class="col-lg-2 text-center align-middle" scope="col">Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">2.2.1. Public engagement and education on energy delivery systems <a href="#" data-toggle="tooltip" data-placement="right" data-animation="true" title="The community has informational resources and activities to improve understandings about energy delivery systems. This should include clarity on charges on energy bills for customers, education about distributed energy resource integration, and communication related to extended/widespread outages. These activities may come from any actors, including the utilities, local government, non governmental organizations, institutions, Indigenous groups, or other local organizations, or ideally any combination of actors working together."><i class="fas fa-info-circle"></i></a></th>
+                
+                <td>Checklist</td>
+                
+                <td><label for="public_eng_edu_na">N/A for the community.<br><input id="public_eng_edu_na" class="form-check-input na" type="checkbox" name="public_eng_edu_na" value="2"></label></td>
+                
+                <td><label for="public_eng_edu_0">There is currently no public engagement and education on energy delivery systems.<br>[0 points]<br><input id="public_eng_edu_0" class="form-check-input app" type="checkbox" name="public_eng_edu_0" value="0"></label></td>
+                
+                <td><label for="public_eng_edu_1">Members of the public are informed of initiatives and educated on energy networks through basic methods, such as:<br>-Website updates<br>-Newsletters<br>-Print materials (such as brochures, fact sheets, information packages)<br>-Social media updates<br>-Webinars or conference calls<br>-Open houses<br>[0.5 point]<br><input id="public_eng_edu_1" class="form-check-input app" type="checkbox" name="public_eng_edu_1" value="0.5"></label></td>
+                
+                <td><label for="public_eng_edu_2">Members of the public are engaged on energy networks through innovative methods, such as:<br>- Highly creative or interactive web-based reporting<br>- Highly creative or interactive open houses or participation at community events<br>- Advanced social media/networking<br>- Embedded videos<br>- Innovative stakeholder feedback mechanisms<br>- Interactive workshops<br>-Tables/participation at community events<br>-School promotion<br>[1 point]<br><input id="public_eng_edu_2" class="form-check-input app" type="checkbox" name="public_eng_edu_2" value="1"></label></td>
+                
+                <td><label for="public_eng_edu_3">Public engagement and educational activities are developed/delivered collaboratively between multiple stakeholders.<br>[0.5 points]<br><input id="public_eng_edu_3" class="form-check-input app" type="checkbox" name="public_eng_edu_3" value="0.5"></label></td>
+                
+                <td></td>
+                
+                <td>
+                  <input id="public_eng_edu_pts" class="text-center row-points" name="public_eng_edu_pts" value="" hidden></input>
+                  <output>0 points</output>
+                </td>
+                
+                <td><textarea class="form-control" id="public_eng_edu_notes" name="public_eng_edu_notes" placeholder="Enter relevant notes, references, or links..." rows="8" style="font-size: 12px"></textarea></td>
+
+                <input class="row-complete" value="false" type="hidden">
+              </tr>
+
+              <tr>
+                <th scope="row">2.2.2a. Electrical load management <a href="#" data-toggle="tooltip" data-placement="right" data-animation="true" title="Demand-side management or peak shaving measures are in place to optimize the use of existing energy supply infrastructure assets, and defer or reduce the need for future infrastructure upgrade investments. This may include use of community-scale energy sources and/or storage technologies during peak times of day, or demand response or conservation demand management programs. This can also include actions of energy efficiency agencies."><i class="fas fa-info-circle"></i></a></th>
+                
+                <td>Scale</td>
+                
+                <td><label for="elec_load_mgmt_na">N/A for the community.<br><input id="elec_load_mgmt_na" class="form-check-input na" type="checkbox" name="elec_load_mgmt_na" value="3"></label></td>
+                
+                <td><label for="elec_load_mgmt_0">There is currently no peak shaving measures for electrical load management.<br>[0 points]<br><input id="elec_load_mgmt_0" class="form-check-input app" type="radio" name="elec_load_mgmt" value="0"></label></td>
+                
+                <td><label for="elec_load_mgmt_1">Peak shaving measures considered in planning processes.<br>[1 point]<br><input id="elec_load_mgmt_1" class="form-check-input app" type="radio" name="elec_load_mgmt" value="1"></label></td>
+                
+                <td><label for="elec_load_mgmt_2">Peak shaving measure in place and being tracked.<br>[2 points]<br><input id="elec_load_mgmt_2" class="form-check-input app" type="radio" name="elec_load_mgmt" value="2"></label></td>
+                
+                <td><label for="elec_load_mgmt_3">Peak shaving results are shared to relevant stakeholders, lessons learned identified and documented.<br>[3 points]<br><input id="elec_load_mgmt_3" class="form-check-input app" type="radio" name="elec_load_mgmt" value="3"></label></td>
+                
+                <td></td>
+                
+                <td>
+                  <input id="elec_load_mgmt_pts" class="text-center row-points" name="elec_load_mgmt_pts" value="" hidden></input>
+                  <output>0 points</output>
+                </td>
+                
+                <td><textarea class="form-control" id="elec_load_mgmt_notes" name="elec_load_mgmt_notes" placeholder="Enter relevant notes, references, or links..." rows="8" style="font-size: 12px"></textarea></td>
+
+                <input class="row-complete" value="false" type="hidden">
+              </tr>            
+
+              <tr>
+                <th scope="row">2.2.2b. Natural gas load management <a href="#" data-toggle="tooltip" data-placement="right" data-animation="true" title="Demand-side management or peak shaving measures are in place to optimize the use of existing energy supply infrastructure assets, and defer or reduce the need for future infrastructure upgrade investments. This may include use of storage technologies for peak times of the year, or conservation programs to reduce peak natural gas demand. This can also include actions of energy efficiency agencies."><i class="fas fa-info-circle"></i></a></th>
+                
+                <td>Scale</td>
+                
+                <td><label for="gas_load_mgmt_na">N/A for the community.<br><input id="gas_load_mgmt_na" class="form-check-input na" type="checkbox" name="gas_load_mgmt_na" value="3"></label></td>
+                
+                <td><label for="gas_load_mgmt_0">There is currently no peak shaing measures for natural gas load management.<br>[0 points]<br><input id="gas_load_mgmt_0" class="form-check-input app" type="radio" name="gas_load_mgmt" value="0"></label></td>
+                
+                <td><label for="gas_load_mgmt_1">Peak shaving measures considered in planning processes.<br>[1 point]<br><input id="gas_load_mgmt_1" class="form-check-input app" type="radio" name="gas_load_mgmt" value="1"></label></td>
+                
+                <td><label for="gas_load_mgmt_2">Peak shaving measure in place and being tracked.<br>[2 points]<br><input id="gas_load_mgmt_2" class="form-check-input app" type="radio" name="gas_load_mgmt" value="2"></label></td>
+                
+                <td><label for="gas_load_mgmt_3">Peak shaving results are shared to relevant stakeholders, lessons learned identified and documented.<br>[3 points]<br><input id="gas_load_mgmt_3" class="form-check-input app" type="radio" name="gas_load_mgmt" value="3"></label></td>
+                
+                <td></td>
+                
+                <td>
+                  <input id="gas_load_mgmt_pts" class="text-center row-points" name="gas_load_mgmt_pts" value="" hidden></input>
+                  <output>0 points</output>
+                </td>
+                
+                <td><textarea class="form-control" id="gas_load_mgmt_notes" name="gas_load_mgmt_notes" placeholder="Enter relevant notes, references, or links..." rows="8" style="font-size: 12px"></textarea></td>
+
+                <input class="row-complete" value="false" type="hidden">
+              </tr> 
+
+              <tr>
+                <th scope="row">2.2.3a. Climate risk management in electric utility asset management and operations <a href="#" data-toggle="tooltip" data-placement="right" data-animation="true" title="The electric utility has considered future vulnerabilities and interdependencies, and other risks, in its asset management and operations. Risks may be slow on-set risks, such as permafrost thawing or sea level rise, and rapid onset such as flooding, extreme heat and forest fires. The electric utility has also taken action to address risks, such as development and redevelopment ‘build back better’ control policies, bylaws and regulatory tools for climate-related hazards, as well as lessons learned following past outages/events, that are culturally appropriate and include Indigenous Knowledge Systems where appropriate. Actions should also include a clear definition of staff roles for before, during, and following extreme/extended outages. Similarly, a process to engage with interdependent stakeholders (i.e. other utilities, telecommunications/information technology, etc.) to minimize impacts of extended/widespread outages should be included."><i class="fas fa-info-circle"></i></a></th>
+                
+                <td>Scale</td>
+                
+                <td><label for="climate_risk_elec_na">N/A for the community.<br><input id="climate_risk_elec_na" class="form-check-input na" type="checkbox" name="climate_risk_elec_na" value="4"></label></td>
+                
+                <td><label for="climate_risk_elec_0">There is currently no climate risk management in electric utility asset management and operations.<br>[0 points]<br><input id="climate_risk_elec_0" class="form-check-input app" type="radio" name="climate_risk_elec" value="0"></label></td>
+                
+                <td><label for="climate_risk_elec_1">Risks have been identified in asset management plans, resilience plans, or risk assessments. This should include slow on-set risks, such as permafrost thawing or sea level rise, and rapid onset such as flooding, extreme heat and forest fires.<br>[1 point]<br><input id="climate_risk_elec_1" class="form-check-input app" type="radio" name="climate_risk_elec" value="1"></label></td>
+                
+                <td><label for="climate_risk_elec_2">Actions have been identified that can be taken to address risks and avoid or mitigate impacts.<br>[2 points]<br><input id="climate_risk_elec_2" class="form-check-input app" type="radio" name="climate_risk_elec" value="2"></label></td>
+                
+                <td><label for="climate_risk_elec_3">Action has been implemented to address risks and/or avoid or mitigate impacts.<br>[3 points]<br><input id="climate_risk_elec_3" class="form-check-input app" type="radio" name="climate_risk_elec" value="3"></label></td>
+                
+                <td><label for="climate_risk_elec_4">Action has been implemented to address risks and/or avoid or mitigate impacts.<br>[4 points]<br><input id="climate_risk_elec_4" class="form-check-input app" type="radio" name="climate_risk_elec" value="4"></label></td>
+                
+                <td>
+                  <input id="climate_risk_elec_pts" class="text-center row-points" name="climate_risk_elec_pts" value="" hidden></input>
+                  <output>0 points</output>
+                </td>
+                
+                <td><textarea class="form-control" id="climate_risk_elec_notes" name="climate_risk_elec_notes" placeholder="Enter relevant notes, references, or links..." rows="8" style="font-size: 12px"></textarea></td>
+
+                <input class="row-complete" value="false" type="hidden">
+              </tr> 
+
+              <tr>
+                <th scope="row">2.2.3b. Climate risk management in natural gas utility asset management and operations <a href="#" data-toggle="tooltip" data-placement="right" data-animation="true" title="The natural gas utility has considered future vulnerabilities and interdependencies, and other risks, in its asset management and operations. Risks may be slow on-set risks, such as permafrost thawing or sea level rise, and rapid onset such as flooding, extreme heat and forest fires. The natural gas utility has also taken action to address risks, such as development and redevelopment ‘build back better’ control policies, bylaws and regulatory tools for climate-related hazards, as well as lessons learned following past outages/events, that are culturally appropriate and include Indigenous Knowledge Systems where appropriate. Actions should also include a clear definition of staff roles for before, during, and following extreme/extended outages. Similarly, a process to engage with interdependent stakeholders (i.e. other utilities, telecommunications/information technology, etc.) to minimize impacts of extended/widespread outages should be included."><i class="fas fa-info-circle"></i></a></th>
+                
+                <td>Scale</td>
+                
+                <td><label for="climate_risk_gas_na">N/A for the community.<br><input id="climate_risk_gas_na" class="form-check-input na" type="checkbox" name="climate_risk_gas_na" value="4"></label></td>
+                
+                <td><label for="climate_risk_gas_0">There is currently no climate risk management in natural gas utility asset management and operations.<br>[0 points]<br><input id="climate_risk_gas_0" class="form-check-input app" type="radio" name="climate_risk_gas" value="0"></label></td>
+                
+                <td><label for="climate_risk_gas_1">Risks have been identified in asset management plans, resilience plans, or risk assessments. This should include slow on-set risks, such as permafrost thawing or sea level rise, and rapid onset such as flooding, extreme heat and forest fires.<br>[1 point]<br><input id="climate_risk_gas_1" class="form-check-input app" type="radio" name="climate_risk_gas" value="1"></label></td>
+                
+                <td><label for="climate_risk_gas_2">Actions have been identified that can be taken to address risks and avoid or mitigate impacts.<br>[2 points]<br><input id="climate_risk_gas_2" class="form-check-input app" type="radio" name="climate_risk_gas" value="2"></label></td>
+                
+                <td><label for="climate_risk_gas_3">Action has been implemented to address risks and/or avoid or mitigate impacts.<br>[3 points]<br><input id="climate_risk_gas_3" class="form-check-input app" type="radio" name="climate_risk_gas" value="3"></label></td>
+                
+                <td><label for="climate_risk_gas_4">Action has been implemented to address risks and/or avoid or mitigate impacts.<br>[4 points]<br><input id="climate_risk_gas_4" class="form-check-input app" type="radio" name="climate_risk_gas" value="4"></label></td>
+                
+                <td>
+                  <input id="climate_risk_gas_pts" class="text-center row-points" name="climate_risk_gas_pts" value="" hidden></input>
+                  <output>0 points</output>
+                </td>
+                
+                <td><textarea class="form-control" id="climate_risk_gas_notes" name="climate_risk_gas_notes" placeholder="Enter relevant notes, references, or links..." rows="8" style="font-size: 12px"></textarea></td>
+
+                <input class="row-complete" value="false" type="hidden">
+              </tr> 
+
+              <tr>
+                <th scope="row">2.2.4. Natural gas infrastructure is used for electric storage <a href="#" data-toggle="tooltip" data-placement="right" data-animation="true" title="The natural gas grid incorporates power-to-gas technologies to store electricity and balance load profiles, such as hydrogen or methane production using surplus electricity."><i class="fas fa-info-circle"></i></a></th>
+                
+                <td>Scale</td>
+                
+                <td><label for="gas_infra_stor_na">N/A for the community.<br><input id="gas_infra_stor_na" class="form-check-input na" type="checkbox" name="gas_infra_stor_na" value="2"></label></td>
+                
+                <td><label for="gas_infra_stor_0">Natural gas infrastructure is currently not used for electric storage.<br>[0 points]<br><input id="gas_infra_stor_0" class="form-check-input app" type="radio" name="gas_infra_stor" value="0"></label></td>
+                
+                <td><label for="gas_infra_stor_1">An assessment/study of power-to-gas opportunities has been completed within the past three years.<br>[1 point]<br><input id="gas_infra_stor_1" class="form-check-input app" type="radio" name="gas_infra_stor" value="1"></label></td>
+                
+                <td><label for="gas_infra_stor_2">A power-to-gas project has been developed.<br>[2 points]<br>
+                  <input id="gas_infra_stor_2" class="form-check-input app" type="radio" name="gas_infra_stor" value="2"><br><br>
+                  <label for="gas_infra_stor_infeas"><input id="gas_infra_stor_infeas" class="form-check-input app infeas" type="checkbox" value="0"> N/A since infeasible.</label>
+                </label></td>
+                
+                <td></td>
+                
+                <td></td>
+                
+                <td>
+                  <input id="gas_infra_stor_pts" class="text-center row-points" name="gas_infra_stor_pts" value="" hidden></input>
+                  <output>0 points</output>
+                </td>
+                
+                <td><textarea class="form-control" id="gas_infra_stor_notes" name="gas_infra_stor_notes" placeholder="Enter relevant notes, references, or links..." rows="8" style="font-size: 12px"></textarea></td>
+
+                <input class="row-complete" value="false" type="hidden">
+              </tr>
+
+              <tr>
+                <th scope="row">2.2.5. Thermal grids that utilize local and/or renewable thermal energy resources <a href="#" data-toggle="tooltip" data-placement="right" data-animation="true" title="Thermal grids (a.k.a. "district energy systems") are established where applicable, and moving to increase efficiency and incorporate local and/or renewable thermal energy sources such as waste heat, geothermal, biomass, CHP, and solar. Refer to Plan4DE, IDEA's Community Energy Planning Guide, 4th Generation DE information"><i class="fas fa-info-circle"></i></a></th>
+                
+                <td>Scale</td>
+                
+                <td><label for="thermal_local_res_na">N/A for the community.<br><input id="thermal_local_res_na" class="form-check-input na" type="checkbox" name="thermal_local_res_na" value="3"></label></td>
+                
+                <td><label for="thermal_local_res_0">There are currently no thermal grids established, or feasibility studies completed.<br>[0 points]<br><input id="thermal_local_res_0" class="form-check-input app" type="radio" name="thermal_local_res" value="0"></label></td>
+                
+                <td><label for="thermal_local_res_1">A feasibility assessment/study for thermal grids has been completed within the past three years. This may include heat/cooling load densities [demand], available thermal energy sources [supply]), and economic feasibilities.<br>[1 point]<br><input id="thermal_local_res_1" class="form-check-input app" type="radio" name="thermal_local_res" value="1"></label></td>
+                
+                <td><label for="thermal_local_res_2">A thermal grid(s) are established.<br>[2 points]<br>
+                  <input id="thermal_local_res_2" class="form-check-input app" type="radio" name="thermal_local_res" value="2"><br><br>
+                  <label for="thermal_local_res_infeas"><input id="thermal_local_res_infeas" class="form-check-input app infeas" type="checkbox" value="0"> N/A since infeasible.</label>
+                </label></td>
+                
+                <td><label for="thermal_local_res_3">There is a plan or project in place to integrate local/renewable thermal sources, thermal energy storage, and/or lower temperature distribution piping, into thermal grids.<br>[3 points]<br>
+                  <input id="thermal_local_res_3" class="form-check-input app" type="radio" name="thermal_local_res" value="3"><br><br>
+                  <label for="thermal_local_res_infeas"><input id="thermal_local_res_infeas" class="form-check-input app infeas" type="checkbox" value="0"> N/A since infeasible.</label>
+                </label></td>
+
+                <td></td>
+                
+                <td>
+                  <input id="thermal_local_res_pts" class="text-center row-points" name="thermal_local_res_pts" value="" hidden></input>
+                  <output>0 points</output>
+                </td>
+                
+                <td><textarea class="form-control" id="thermal_local_res_notes" name="thermal_local_res_notes" placeholder="Enter relevant notes, references, or links..." rows="8" style="font-size: 12px"></textarea></td>
+
+                <input class="row-complete" value="false" type="hidden">
+              </tr> 
+
+              <tr>
+                <th scope="row">2.2.6. Infrastructure to support alternative fuel vehicles <a href="#" data-toggle="tooltip" data-placement="right" data-animation="true" title="Infrastructure such as EV chargers, or refuelling stations for compressed natural gas (CNG), renewable natural gas (RNG), solid or liquid biofuels, or other alternative fuels, has been developed. Alternative fuel vehicle types will be dependent on supply opportunities (ex. grid connection or biofuel availability) and community demands (ex. large commuting population or freight traffic)."><i class="fas fa-info-circle"></i></a></th>
+                
+                <td>Checklist</td>
+                
+                <td><label for="infra_alt_veh_na">N/A for the community.<br><input id="infra_alt_veh_na" class="form-check-input na" type="checkbox" name="infra_alt_veh_na" value="5"></label></td>
+                                
+                <td><label for="infra_alt_veh_0">There is currently no infrastructure to support alternative fuel vehicles.<br>[0 points]<br><input id="infra_alt_veh_0" class="form-check-input app" type="checkbox" name="infra_alt_veh_0" value="0"></label></td>
+                
+                <td><label for="infra_alt_veh_1">An assessment/study of alternative fuel opportunities (based on location, CEP, impact to electric and/or gas grids, costs, etc.) has been completed in the past three years.<br>[N/A for communities with population below 10,000]<br>
+                  <input id="infra_alt_veh_1_on" class="form-check-input app on-off pot-na-pop" type="checkbox" value="0"><br><br>
+                  <label for="infra_alt_veh_1"><input id="infra_alt_veh_1" class="form-check-input app on-off-sub pot-na-pop" type="radio" name="infra_alt_veh_1" value="1" disabled> Single alternative fuel assessed [1 point]</label><br>
+                  <label for="infra_alt_veh_1"><input id="infra_alt_veh_1" class="form-check-input app on-off-sub pot-na-pop" type="radio" name="infra_alt_veh_1" value="2" disabled> Multiple alternative fuels assessed [2 points]</label>
+                </label></td>
+                
+                <td><label for="infra_alt_veh_2">Alternative fuel infrastructure project(s) have been developed in the community.<br>[1 point]<br>
+                  <input id="infra_alt_veh_2" class="form-check-input app" type="checkbox" name="infra_alt_veh_2" value="1"><br><br>
+                  <label for="infra_alt_veh_infeas"><input id="infra_alt_veh_infeas" class="form-check-input app infeas" type="checkbox" value="0"> N/A since infeasible.</label>
+                </label></td>
+                
+                <td><label for="infra_alt_veh_3">Utility(ies) have (and follow) plans/processes/programs in place to integrate alternative fuelling infrastructure into their grid(s).<br>[1 point]<br>
+                  <input id="infra_alt_veh_3" class="form-check-input app" type="checkbox" name="infra_alt_veh_3" value="1"><br><br>
+                  <label for="infra_alt_veh_infeas"><input id="infra_alt_veh_infeas" class="form-check-input app infeas" type="checkbox" value="0"> N/A since infeasible.</label>
+                </label></td>
+                
+                <td><label for="infra_alt_veh_4">Results of projects have been shared across community, with lessons learned identified and documented.<br>[1 point]<br>
+                  <input id="infra_alt_veh_4" class="form-check-input app" type="checkbox" name="infra_alt_veh_4" value="1"><br><br>
+                  <label for="infra_alt_veh_infeas"><input id="infra_alt_veh_infeas" class="form-check-input app infeas" type="checkbox" value="0"> N/A since infeasible.</label>
+                </label></td>
+
+                <td>
+                  <input id="infra_alt_veh_pts" class="text-center row-points" name="infra_alt_veh_pts" value="" hidden></input>
+                  <output>0 points</output>
+                </td>
+                
+                <td><textarea class="form-control" id="infra_alt_veh_notes" name="infra_alt_veh_notes" placeholder="Enter relevant notes, references, or links..." rows="8" style="font-size: 12px"></textarea></td>
+
+                <input class="row-complete" value="false" type="hidden">
+              </tr>
+
+              <tr>
+                <th scope="row">2.2.7. Smart grid technologies used in electricity distribution infrastructure <a href="#" data-toggle="tooltip" data-placement="right" data-animation="true" title="The electrical grid incorporates smart grid technologies at multiple scales (including advanced outage management and distribution automation systems, as well as household/small business level technology like smart meters etc), while considering cybersecurity implications and any limitations of abilities to implement technologies behind-the-meter."><i class="fas fa-info-circle"></i></a></th>
+                
+                <td>Checklist</td>
+                
+                <td><label for="smart_tech_distinf_na">N/A for the community.<br><input id="smart_tech_distinf_na" class="form-check-input na" type="checkbox" name="smart_tech_distinf_na" value="5"></label></td>
+                                
+                <td><label for="smart_tech_distinf_0">Smart grid technologies are currently not used in electricity distribution infrastructure.<br>[0 points]<br><input id="smart_tech_distinf_0" class="form-check-input app" type="checkbox" name="smart_tech_distinf_0" value="0"></label></td>
+                
+                <td><label for="smart_tech_distinf_1">The electric utility has plans/processes/programs in place, within the community, to integrate and promote:<br><br>
+                  <input id="smart_tech_distinf_1_max" class="form-check-input app sub-check-max"  type="checkbox" value="2" hidden>
+                  <label for="smart_tech_distinf_1_1"><input id="smart_tech_distinf_1_1" class="form-check-input app sub-check" type="checkbox" name="smart_tech_distinf_1_1" value="1"> Grid level smart technologies [1 point]</label><br>
+                  <label for="smart_tech_distinf_1_2"><input id="smart_tech_distinf_1_2" class="form-check-input app sub-check" type="checkbox" name="smart_tech_distinf_1_2" value="1"> Home level smart technologies [1 point]</label>
+                </label></td>
+                
+                <td><label for="smart_tech_distinf_2">When integrating smart grid technologies, the electric utility considers:<br><br>
+                  <input id="smart_tech_distinf_2_max" class="form-check-input app sub-check-max" type="checkbox" value="3" hidden>
+                  <label for="smart_tech_distinf_2_1"><input id="smart_tech_distinf_2_1" class="form-check-input app sub-check" type="checkbox" name="smart_tech_distinf_2_1" value="1"> Cybersecurity considerations in plan or implementation of projects [1 point]</label><br>
+                  <label for="smart_tech_distinf_2_2"><input id="smart_tech_distinf_2_2" class="form-check-input app sub-check" type="checkbox" name="smart_tech_distinf_2_2" value="1"> Data sharing policy [1 point]</label><br>
+                  <label for="smart_tech_distinf_2_3"><input id="smart_tech_distinf_2_3" class="form-check-input app sub-check" type="checkbox" name="smart_tech_distinf_2_3" value="1"> Partnerships with builder/real estate developer [1 point]</label>
+                </label></td>
+                
+                <td></td>
+
+                <td></td>
+
+                <td>
+                  <input id="smart_tech_distinf_pts" class="text-center row-points" name="smart_tech_distinf_pts" value="" hidden></input>
+                  <output>0 points</output>
+                </td>
+                
+                <td><textarea class="form-control" id="smart_tech_distinf_notes" name="smart_tech_distinf_notes" placeholder="Enter relevant notes, references, or links..." rows="8" style="font-size: 12px"></textarea></td>
+
+                <input class="row-complete" value="false" type="hidden">
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        
+        <input id="form-submit" class="btn btn-primary" type="submit" value="Save">
+
+      </form><br>
+              
+      <div id="navigation">
+        <a href="/land_use" id="previous" class="btn btn-primary" role="button">Previous (Land Use)</a>
+        <a href="/logout" id="logout" class="btn btn-primary" role="button">Logout</a>
+        <a href="/waste_water" id="next" class="btn btn-primary" role="button">Next (Waste & Water)</input></a>
+      </div><br>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/0f567e20d5.js" crossorigin="anonymous"></script>
+    <script src="../public/client.js" type="module"></script>
+  </body>
+</html>
