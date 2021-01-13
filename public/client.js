@@ -2,9 +2,7 @@ $(document).ready(function(){
   /* Insert navbar */
   let navbar = `
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item dropdown">
@@ -66,6 +64,7 @@ $(document).ready(function(){
       if (result.cent_water === "no") { $(".pot-na-water").addClass("pot-na-true").prop("checked", false).trigger("handleNa") };
       if (result.public_tran === "no") { $(".pot-na-transit").addClass("pot-na-true").prop("checked", false).trigger("handleNa") };
       if (result.gas_conx === "no") { $(".pot-na-gas").addClass("pot-na-true").prop("checked", false).trigger("handleNa") };
+      if (result.waste_cont === "no") { $(".pot-na-waste").addClass("pot-na-true").prop("checked", false).trigger("handleNa") };
 
       /* Check N/As where global applicables apply to entire row */
       $(".na.pot-na-true").prop("checked", true).trigger("handleNa");
@@ -127,9 +126,14 @@ $(document).ready(function(){
     };
 
     /* Handle sub checkbox maximums and de-highlighting */
+    let arr = [], i = 0, sum = 0;
     if (this.classList.contains("sub-check")) {
-      if($(this).parents("td").find(".sub-check:checked").length > $(this).parents("td").find(".sub-check-max").val()) { this.checked = false };
-      if($(this).parents("td").find(".sub-check:checked").length === 0) { $(this).parents("td").css("background-color", "#ffffff") };
+      arr = $(this).parents("td").find(".sub-check:checked");
+      for (i = 0; i < arr.length; i++) {
+        if (arr[i].checked) { sum += Number(arr[i].value) };
+      };
+        if (sum > $(this).parents("td").find(".sub-check-max").val()) { this.checked = false }
+        else if (sum === 0) { $(this).parents("td").css("background-color", "#ffffff") };
     };
 
     /* Handle infeasible options */
