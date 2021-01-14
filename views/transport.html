@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>SEC Benchmark Tool - Transportation</title>
+    <meta name="description" content="Transportation" />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/public/style.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  </head>
+
+  <body>
+    <div class="container-fluid">
+      <img src="../assets/Transportation-Icon.png" alt="Transportation logo" class="img-fluid" style="width: 100px">
+
+      <div class="row">
+        <div class="col-lg-10"><h1 class="">Transportation</h1></div>
+        <div id="navbar" class="col-lg-2"></div>
+      </div>
+
+      <h4 id="scenario">Current Scenario:</h4>
+
+      <form id="form-data">
+
+        <input id="scen_carry" name="scen_carry" value="" type="hidden">
+        <input id="z_app_pts_total" name="z_app_pts_total" value="" type="hidden">
+        <input id="z_na_pts_total" name="z_na_pts_total" value="" type="hidden">
+        <input id="z_sect_complete" name="z_sect_complete" value="false" type="hidden">
+
+        <div class="table-responsive">
+          <table class="table table-bordered align-middle">
+            <thead>
+              <tr style="background-color: #00b3b3">
+                <th class="col-lg text-center align-middle" scope="col">Measures</th>
+                <th class="col-lg text-center align-middle" scope="col">Scoring Method</th>
+                <th class="col-lg-8 text-center align-middle" scope="col" colspan="7">Scoring</th>
+                <th class="col-lg text-center align-middle" scope="col">Community Score</th>
+                <th class="col-lg-2 text-center align-middle" scope="col">Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">2.4.1. Public engagement and education on mobility networks <a href="#" data-toggle="tooltip" data-placement="right" data-animation="true" title="The community has informational resources and activities to engage and educate the public on mobility network initiatives and transportation demand management practices (such as active transportation, carpooling, energy efficient driving etc.). Efforts may also target educating employers on ways to manage employee transportation demands. This may range from basic methods such as website or newsletter updates, to innovative methods such as interactive web-based tools or workshops, and may be integrated with broader community energy engagement and education activities. These activities may come from any actors, including the the local government, non governmental organizations, institutions, Indigenous groups, or other local organizations, or ideally any combination of actors working together."><i class="fas fa-info-circle"></i></a></th>
+                
+                <td>Checklist</td>
+                
+                <td><label for="public_eng_edu_na">N/A for the community.<br><input id="public_eng_edu_na" class="form-check-input na" type="checkbox" name="public_eng_edu_na" value="2"></label></td>
+                
+                <td><label for="public_eng_edu_0">There currently is no public engagement and education on mobility networks.<br>[0 points]<br><input id="public_eng_edu_0" class="form-check-input app zero" type="checkbox" name="public_eng_edu_0" value="0"></label></td>
+                
+                <td><label for="public_eng_edu_1">Members of the public are informed of initiatives and educated on mobility networks through basic methods, such as:<br>-Website updates<br>-Newsletters<br>-Print materials (such as brochures, fact sheets, information packages)<br>-Social media updates<br>-Webinars or conference calls<br>-Open houses<br>[0.5 point]<br><input id="public_eng_edu_1" class="form-check-input app" type="checkbox" name="public_eng_edu_1" value="0.5"></label></td>
+                
+                <td><label for="public_eng_edu_2">Members of the public are engaged on mobility networks through innovative methods, such as:<br>- Highly creative or interactive web-based reporting<br>- Highly creative or interactive open houses or participation at community events<br>- Advanced social media/networking<br>- Embedded videos<br>- Innovative stakeholder feedback mechanisms<br>- Interactive workshops<br>-Tables/participation at community events<br>-School promotion<br>[1 point]<br><input id="public_eng_edu_2" class="form-check-input app" type="checkbox" name="public_eng_edu_2" value="1"></label></td>
+                
+                <td><label for="public_eng_edu_3">Public engagement and educational activities are developed/delivered collaboratively between multiple stakeholders.<br>[0.5 point]<br><input id="public_eng_edu_3" class="form-check-input app" type="checkbox" name="public_eng_edu_3" value="0.5"></label></td>
+                
+                <td></td>
+                                
+                <td></td>
+
+                <td>
+                  <input id="public_edu_water_pts" class="text-center row-points" name="public_edu_water_pts" value="" hidden></input>
+                  <output>0 points</output>
+                </td>
+                
+                <td><textarea class="form-control" id="public_edu_water_notes" name="public_edu_water_notes" placeholder="Enter relevant notes, references, or links..." rows="8" style="font-size: 12px"></textarea></td>
+
+                <input class="row-complete" value="false" type="hidden">
+              </tr>
+
+              <tr>
+                <th scope="row">2.4.2. Active transportation integrated into a Transportation Master Plan <a href="#" data-toggle="tooltip" data-placement="right" data-animation="true" title="Active transportation, and the interconnectivity of mobility options, is integrated into transportation planning in an Active Transportation Master Plan or Transportation Master Plan. Active transportation refers to human powered transportation such as cycling, walking, skateboarding, skiing and rollerblading on important commuting routes."><i class="fas fa-info-circle"></i></a></th>
+                
+                <td>Checklist</td>
+                
+                <td><label for="act_trans_tmp_na">N/A for the community.<br><input id="act_trans_tmp_na" class="form-check-input na" type="checkbox" name="act_trans_tmp_na" value="2"></label></td>
+                
+                <td><label for="act_trans_tmp_0">Active transportation currently is not integrated into a Transportation Master Plan.<br>[0 points]<br><input id="act_trans_tmp_0" class="form-check-input app zero" type="checkbox" name="act_trans_tmp_0" value="0"></label></td>
+                
+                <td><label for="act_trans_tmp_1">Transportation Master Plan includes active transportation or there is an Active Transportation Master Plan.<br>[1 point]<br><input id="act_trans_tmp_1" class="form-check-input app" type="checkbox" name="act_trans_tmp_1" value="1"></label></td>
+                
+                <td><label for="act_trans_tmp_2">Community has mapped its active transportation network and its relation to other mobility options.<br>[1 point]<br><input id="act_trans_tmp_2" class="form-check-input app" type="checkbox" name="act_trans_tmp_2" value="1"></label></td>
+                
+                <td></td>
+                
+                <td></td>
+                                
+                <td></td>
+
+                <td>
+                  <input id="act_trans_tmp_pts" class="text-center row-points" name="act_trans_tmp_pts" value="" hidden></input>
+                  <output>0 points</output>
+                </td>
+                
+                <td><textarea class="form-control" id="act_trans_tmp_notes" name="act_trans_tmp_notes" placeholder="Enter relevant notes, references, or links..." rows="8" style="font-size: 12px"></textarea></td>
+
+                <input class="row-complete" value="false" type="hidden">
+              </tr>
+
+              <tr>
+                <th scope="row">2.4.3. Transportation demand management <a href="#" data-toggle="tooltip" data-placement="right" data-animation="true" title="A comprehensive suite of transportation demand management actions are being undertaken in the community. This could include supporting a diversity of active transportation options (to the degree that fits local context; ex. cycling networks, bike share programs, pathways, and pedestrian-friendly sidewalks). This could also include supporting/providing public transit options with considerations for equitable access. For small or rural communities, options might be rideshare/carshare programs or buses. For mid-sized cities options also include city buses, rideshare/car share, LRT, passenger rail stop. For large cities options include most or all of the above including multiple stops for LRT, Passenger rail, rapid transit."><i class="fas fa-info-circle"></i></a></th>
+                
+                <td>Checklist</td>
+                
+                <td><label for="trans_dem_mgmt_na">N/A for the community.<br><input id="trans_dem_mgmt_na" class="form-check-input na" type="checkbox" name="trans_dem_mgmt_na" value="9"></label></td>
+                
+                <td><label for="trans_dem_mgmt_0">There currently is no actions for transportation demand management.<br>[0 points]<br><input id="trans_dem_mgmt_0" class="form-check-input app zero" type="checkbox" name="trans_dem_mgmt_0" value="0"></label></td>
+
+                <td><label for="trans_dem_mgmt_1">The community has basic infrastructure to support active transportation, including: (Note:  For small communities this may also include: sidewalks, slow speed limits.)<br>[4 points maximum]<br>
+                  <input id="trans_dem_mgmt_1_max" class="form-check-input app sub-check-max" type="checkbox" value="4" hidden>
+                  <input id="trans_dem_mgmt_1_on" class="form-check-input app on-off" type="checkbox" name="trans_dem_mgmt_1_on" value="0">
+                  <a href="#" data-toggle="tooltip" data-placement="right" data-animation="true" title="If you get stuck, deselect here and select again to start over."><i class="fas fa-info-circle"></i></a>
+                  <br><br>
+                  <label for="trans_dem_mgmt_1_ped">Pedestrian-friendly sidewalks (expansion, streetscaping, shade tree planting)</label><br>
+                    <label for="trans_dem_mgmt_1_ped_half"><input id="trans_dem_mgmt_1_ped_half" class="form-check-input app sub-check on-off-sub" type="radio" name="trans_dem_mgmt_1_ped" value="0.5" disabled> Assessed [0.5 points]</label><br>
+                    <label for="trans_dem_mgmt_1_ped_1"><input id="trans_dem_mgmt_1_ped_1" class="form-check-input app sub-check on-off-sub" type="radio" name="trans_dem_mgmt_1_ped" value="1" disabled> Implemented [1 point]</label><br><br>
+                  <label for="trans_dem_mgmt_1_bikepark">Bike parking facilities or Bike racks</label><br>
+                    <label for="trans_dem_mgmt_1_bikepark_half"><input id="trans_dem_mgmt_1_bikepark_half" class="form-check-input app sub-check on-off-sub" type="radio" name="trans_dem_mgmt_1_bikepark" value="0.5" disabled> Assessed [0.5 points]</label><br>
+                    <label for="trans_dem_mgmt_1_bikepark_1"><input id="trans_dem_mgmt_1_bikepark_1" class="form-check-input app sub-check on-off-sub" type="radio" name="trans_dem_mgmt_1_bikepark" value="1" disabled> Implemented [1 point]</label><br><br>
+                  <label for="trans_dem_mgmt_1_bikelane">Bike lanes (painted bike lanes, cycle tracks [spatial or physical separation], “shared roadways”/sharrows, contraflow bike lanes)</label><br>
+                    <label for="trans_dem_mgmt_1_bikelane_half"><input id="trans_dem_mgmt_1_bikelane_half" class="form-check-input app sub-check on-off-sub" type="radio" name="trans_dem_mgmt_1_bikelane" value="0.5" disabled> Assessed [0.5 points]</label><br>
+                    <label for="trans_dem_mgmt_1_bikelane_1"><input id="trans_dem_mgmt_1_bikelane_1" class="form-check-input app sub-check on-off-sub" type="radio" name="trans_dem_mgmt_1_bikelane" value="1" disabled> Implemented [1 point]</label><br><br>
+                  <label for="trans_dem_mgmt_1_bikeshare">Bike share programs</label><br>
+                    <label for="trans_dem_mgmt_1_bikeshare_half"><input id="trans_dem_mgmt_1_bikeshare_half" class="form-check-input app sub-check on-off-sub" type="radio" name="trans_dem_mgmt_1_bikeshare" value="0.5" disabled> Assessed [0.5 points]</label><br>
+                    <label for="trans_dem_mgmt_1_bikeshare_1"><input id="trans_dem_mgmt_1_bikeshare_1" class="form-check-input app sub-check on-off-sub" type="radio" name="trans_dem_mgmt_1_bikeshare" value="1" disabled> Implemented [1 point]</label><br><br>
+                  <label for="trans_dem_mgmt_1_biketire">Public Bike tire pumps</label><br>
+                    <label for="trans_dem_mgmt_1_biketire_half"><input id="trans_dem_mgmt_1_biketire_half" class="form-check-input app sub-check on-off-sub" type="radio" name="trans_dem_mgmt_1_biketire" value="0.5" disabled> Assessed [0.5 points]</label><br>
+                    <label for="trans_dem_mgmt_1_biketire_1"><input id="trans_dem_mgmt_1_biketire_1" class="form-check-input app sub-check on-off-sub" type="radio" name="trans_dem_mgmt_1_biketire" value="1" disabled> Implemented [1 point]</label><br><br>
+                  <label for="trans_dem_mgmt_1_multi">Multi-use trails</label><br>
+                    <label for="trans_dem_mgmt_1_multi_half"><input id="trans_dem_mgmt_1_multi_half" class="form-check-input app sub-check on-off-sub" type="radio" name="trans_dem_mgmt_1_multi" value="0.5" disabled> Assessed [0.5 points]</label><br>
+                    <label for="trans_dem_mgmt_1_multi_1"><input id="trans_dem_mgmt_1_multi_1" class="form-check-input app sub-check on-off-sub" type="radio" name="trans_dem_mgmt_1_multi" value="1" disabled> Implemented [1 point]</label><br>
+                </label></td>
+
+                <td><label for="trans_dem_mgmt_2">The community has alternative car-transportation programs to reduce single-occupancy vehicle travel, including:<br>[1 point maximum]
+                  <input id="trans_dem_mgmt_2_max" class="form-check-input app sub-check-max" type="checkbox" value="1" hidden>
+                  <input id="trans_dem_mgmt_2_on" class="form-check-input app on-off" type="checkbox" name="trans_dem_mgmt_2_on" value="0">
+                  <a href="#" data-toggle="tooltip" data-placement="right" data-animation="true" title="If you get stuck, deselect here and select again to start over."><i class="fas fa-info-circle"></i></a>                  
+                  <br><br>
+                  <label for="trans_dem_mgmt_2_carshare">Carsharing programs</label><br>
+                    <label for="trans_dem_mgmt_2_carshare_half"><input id="trans_dem_mgmt_2_carshare_half" class="form-check-input app sub-check on-off-sub" type="radio" name="trans_dem_mgmt_2_carshare" value="0.5" disabled> Assessed [0.5 points]</label><br>
+                    <label for="trans_dem_mgmt_2_carshare_1"><input id="trans_dem_mgmt_2_carshare_1" class="form-check-input app sub-check on-off-sub" type="radio" name="trans_dem_mgmt_2_carshare" value="1" disabled> Implemented [1 point]</label><br><br>
+                  <label for="trans_dem_mgmt_2_carpool">Carpooling programs/lots</label><br>
+                    <label for="trans_dem_mgmt_2_carpool_half"><input id="trans_dem_mgmt_2_carpool_half" class="form-check-input app sub-check on-off-sub" type="radio" name="trans_dem_mgmt_2_carpool" value="0.5" disabled> Assessed [0.5 points]</label><br>
+                    <label for="trans_dem_mgmt_2_carpool_1"><input id="trans_dem_mgmt_2_carpool_1" class="form-check-input app sub-check on-off-sub" type="radio" name="trans_dem_mgmt_2_carpool" value="1" disabled> Implemented [1 point]</label><br><br>
+                  <label for="trans_dem_mgmt_2_rideshare">Ride Sharing programs</label><br>
+                    <label for="trans_dem_mgmt_2_rideshare_half"><input id="trans_dem_mgmt_2_rideshare_half" class="form-check-input app sub-check on-off-sub" type="radio" name="trans_dem_mgmt_2_rideshare" value="0.5" disabled> Assessed [0.5 points]</label><br>
+                    <label for="trans_dem_mgmt_2_rideshare_1"><input id="trans_dem_mgmt_2_rideshare_1" class="form-check-input app sub-check on-off-sub" type="radio" name="trans_dem_mgmt_2_rideshare" value="1" disabled> Implemented [1 point]</label><br>
+                </label></td>
+                
+                <td><label for="trans_dem_mgmt_3">The community has public transit options available, including:<br>*may only be appropriate to mid-large communities<br>**may only be appropriate to large communities<br>[N/A for communities below 10,000]<br>[1 point maximum for communities above 10,000]<br> [3 points maximum for communities above 100,000]<br><br>
+                  <input id="trans_dem_mgmt_3_max" class="form-check-input app sub-check-max"  type="checkbox" value="3" hidden>
+                  <label for="trans_dem_mgmt_3_buses"><input id="trans_dem_mgmt_3_buses" class="form-check-input app sub-check pot-na-pop" type="checkbox" name="trans_dem_mgmt_3_buses" value="1"> Buses* [1 point]</label><br>
+                  <label for="trans_dem_mgmt_3_brt"><input id="trans_dem_mgmt_3_brt" class="form-check-input app sub-check pot-na-pop" type="checkbox" name="trans_dem_mgmt_3_brt" value="1"> Bus rapid transit* [1 point]</label><br>
+                  <label for="trans_dem_mgmt_3_strrail"><input id="trans_dem_mgmt_3_strrail" class="form-check-input app sub-check pot-na-pop" type="checkbox" name="trans_dem_mgmt_3_strrail" value="1"> Street rail** [1 point]</label><br>
+                  <label for="trans_dem_mgmt_3_lrt"><input id="trans_dem_mgmt_3_lrt" class="form-check-input app sub-check pot-na-pop" type="checkbox" name="trans_dem_mgmt_3_lrt" value="1"> Light rail** [1 point]</label><br>
+                  <label for="trans_dem_mgmt_3_subway"><input id="trans_dem_mgmt_3_subway" class="form-check-input app sub-check pot-na-pop" type="checkbox" name="trans_dem_mgmt_3_subway" value="1"> Subway** [1 point]</label><br>
+                </label></td>
+                
+                <td><label for="trans_dem_mgmt_4">Available public transit systems make efforts towards continuous improvement such as increasing: <br>[N/A for communities with no public transit system]<br>[1 point maximum]<br><br>
+                  <input id="trans_dem_mgmt_4_max" class="form-check-input app sub-check-max pot-na-transit"  type="checkbox" value="1" hidden>
+                  <label for="trans_dem_mgmt_4_freq"><input id="trans_dem_mgmt_4_freq" class="form-check-input app sub-check pot-na-transit" type="checkbox" name="trans_dem_mgmt_4_freq" value="0.5"> Frequency of routes [0.5 points]</label><br>
+                  <label for="trans_dem_mgmt_4_access"><input id="trans_dem_mgmt_4_access" class="form-check-input app sub-check pot-na-transit" type="checkbox" name="trans_dem_mgmt_4_access" value="0.5"> Accessibility (e.g. kneeling Buses) [0.5 points]</label><br>
+                  <label for="trans_dem_mgmt_4_low"><input id="trans_dem_mgmt_4_low" class="form-check-input app sub-check pot-na-transit" type="checkbox" name="trans_dem_mgmt_4_low" value="0.5"> Service to low-income housing [0.5 points]</label><br>
+                  <label for="trans_dem_mgmt_4_inter"><input id="trans_dem_mgmt_4_inter" class="form-check-input app sub-check pot-na-transit" type="checkbox" name="trans_dem_mgmt_4_inter" value="0.5"> Interconnectedness ('last mile' / multimodal integration e.g. bike parking, regional transit connection) [0.5 points]</label><br>
+                </label></td>
+
+                <td></td>
+
+                <td>
+                  <input id="trans_dem_mgmt_pts" class="text-center row-points" name="trans_dem_mgmt_pts" value="" hidden></input>
+                  <output>0 points</output>
+                </td>
+                
+                <td><textarea class="form-control" id="trans_dem_mgmt_notes" name="trans_dem_mgmt_notes" placeholder="Enter relevant notes, references, or links..." rows="8" style="font-size: 12px"></textarea></td>
+
+                <input class="row-complete" value="false" type="hidden">
+              </tr>
+
+              <tr>
+                <th scope="row">2.4.4. Alternative energy sources of public transit systems <a href="#" data-toggle="tooltip" data-placement="right" data-animation="true" title="Public transit systems have considered and incorporated alternative energy sources to diesel/gasoline (ex. electrification, CNG, hydrogen, propane, biofuels). For small communities, this may refer to taxi systems."><i class="fas fa-info-circle"></i></a></th>
+                
+                <td>Scale</td>
+                
+                <td><label for="alt_ener_trans_na">N/A for the community.<br>[N/A for communities with no public transit system]<br><input id="alt_ener_trans_na" class="form-check-input na pot-na-transit" type="checkbox" name="alt_ener_trans_na" value="3"></label></td>
+                
+                <td><label for="alt_ener_trans_0">There currently are no alternative energy sources used, or planned for, in public transit systems.<br>[0 points]<br><input id="alt_ener_trans_0" class="form-check-input app pot-na-transit" type="radio" name="alt_ener_trans" value="0"></label></td>
+                
+                <td><label for="alt_ener_trans_1">Scoping (opportunities identified, feasibility assessments) for alternative fuels in public transit systems has been completed.<br>[1 point]<br><input id="alt_ener_trans_1" class="form-check-input app pot-na-transit" type="radio" name="alt_ener_trans" value="1"></label></td>
+                
+                <td><label for="alt_ener_trans_2">An alternative fuel transit fleet vehicle pilot project has been developed.<br>[2 points]<br>
+                  <input id="alt_ener_trans_2" class="form-check-input app pot-na-transit" type="radio" name="alt_ener_trans" value="2"><br><br>
+                  <label for="alt_ener_trans_2_infeas"><input id="alt_ener_trans_2_infeas" class="form-check-input app infeas pot-na-transit" type="checkbox" name="alt_ener_trans_2_infeas" value="0"> N/A since infeasible.</label>
+                </label></td>
+                
+                <td><label for="alt_ener_trans_3">A procurement policy for alternative fuel transit fleet vehicles has been adopted.<br>[3 points]<br>
+                  <input id="alt_ener_trans_3" class="form-check-input app pot-na-transit" type="radio" name="alt_ener_trans" value="3"><br><br>
+                  <label for="alt_ener_trans_3_infeas"><input id="alt_ener_trans_3_infeas" class="form-check-input app infeas pot-na-transit" type="checkbox" name="alt_ener_trans_3_infeas" value="0"> N/A since infeasible.</label>
+                </label></td>
+
+                <td></td>
+
+                <td></td>
+                                
+                <td>
+                  <input id="alt_ener_trans_pts" class="text-center row-points" name="alt_ener_trans_pts" value="" hidden></input>
+                  <output>0 points</output>
+                </td>
+                
+                <td><textarea class="form-control" id="alt_ener_trans_notes" name="alt_ener_trans_notes" placeholder="Enter relevant notes, references, or links..." rows="8" style="font-size: 12px"></textarea></td>
+
+                <input class="row-complete" value="false" type="hidden">
+              </tr> 
+
+
+
+
+
+
+
+
+              <tr>
+                <th scope="row">2.3.3. Waste reduction <a href="#" data-toggle="tooltip" data-placement="right" data-animation="true" title="The community has waste management programs to reduce non recyclable, inorganic residential landfill waste as a means to reduce the total embedded energy in discarded products. This may include garbage bag tags, plastic bag bans, re-use programs (ex. community swap days), etc. The community has waste management programs to divert waste that results from industrial, commercial and institutional (ICI) sectors, as well as construction, renovation and demolition (CRD). The community has programs to collect and recycle residential materials such as glass, plastic, metals and electronic waste as a means to reduce the embedded energy in products that use recycled materials."><i class="fas fa-info-circle"></i></a></th>
+                
+                <td>Checklist</td>
+                
+                <td><label for="waste_reduct_na">N/A for the community.<br><input id="waste_reduct_na" class="form-check-input na" type="checkbox" name="waste_reduct_na" value="8"></label></td>
+                                
+                <td><label for="waste_reduct_0">There are currently no programs for waste reduction.<br>[0 points]<br><input id="waste_reduct_0" class="form-check-input app zero" type="checkbox" name="waste_reduct_0" value="0"></label></td>
+                
+                <td><label for="waste_reduct_1">Landfill diversion programs run by the local government or other community organization(s) are in place for reducing landfill waste including:<br>[2 points maximum]<br><br>
+                  <input id="waste_reduct_1_max" class="form-check-input app sub-check-max"  type="checkbox" value="2" hidden>
+                  <label for="waste_reduct_1_garb"><input id="waste_reduct_1_garb" class="form-check-input app sub-check" type="checkbox" name="waste_reduct_1_garb" value="1"> Garbage bag collection tags/limits or tipping fee [1 point]</label><br>
+                  <label for="waste_reduct_1_plast"><input id="waste_reduct_1_plast" class="form-check-input app sub-check" type="checkbox" name="waste_reduct_1_plast" value="1"> Plastic bag bans [1 point]</label><br>
+                  <label for="waste_reduct_1_reuse"><input id="waste_reduct_1_reuse" class="form-check-input app sub-check" type="checkbox" name="waste_reduct_1_reuse" value="1"> Re-use or community swap days [1 point]</label><br>
+                </label></td>
+
+                <td><label for="waste_reduct_2">Landfill diversion programs are in place for hazardous/special waste.<br>[0.5 points]<br><input id="waste_reduct_2" class="form-check-input app" type="checkbox" name="waste_reduct_2" value="0.5"></label></td>
+                
+                <td><label for="waste_reduct_3">Programs run by the local government or other community organization(s) are in place for improving non-residential waste diversion such as:<br>[N/A for communities with no significant commercial / mixed-use building stock]<br><br>
+                  <input id="waste_reduct_3_max" class="form-check-input app pot-na-pop sub-check-max pot-na-comm" type="checkbox" value="2" hidden>
+                  <label for="waste_reduct_3_recog"><input id="waste_reduct_3_recog" class="form-check-input app pot-na-pop sub-check pot-na-comm" type="checkbox" name="waste_reduct_3_recog" value="1"> Recognition for high performers [1 point]</label><br>
+                  <label for="waste_reduct_3_recyc"><input id="waste_reduct_3_recyc" class="form-check-input app pot-na-pop sub-check pot-na-comm" type="checkbox" name="waste_reduct_3_recyc" value="1"> Expanding recycling or organic waste programs to include eligible ICI or CRD waste [1 point]</label><br>
+                </label></td>
+                
+                <td><label for="waste_reduct_4">Programs run by the local government or other community organization(s) are in place for collecting and recycling:<br>[3 points maximum]<br><br>
+                  <input id="waste_reduct_4_max" class="form-check-input app sub-check-max"  type="checkbox" value="3" hidden>
+                  <label for="waste_reduct_4_glass"><input id="waste_reduct_4_glass" class="form-check-input app sub-check" type="checkbox" name="waste_reduct_4_glass" value="1"> Glass [1 point]</label><br>
+                  <label for="waste_reduct_4_paper"><input id="waste_reduct_4_paper" class="form-check-input app sub-check" type="checkbox" name="waste_reduct_4_paper" value="1"> Paper [1 point]</label><br>
+                  <label for="waste_reduct_4_plast"><input id="waste_reduct_4_plast" class="form-check-input app sub-check" type="checkbox" name="waste_reduct_4_plast" value="1"> Plastics [1 point]</label><br>
+                  <label for="waste_reduct_4_metal"><input id="waste_reduct_4_metal" class="form-check-input app sub-check" type="checkbox" name="waste_reduct_4_metal" value="1"> Metals [1 point]</label><br>
+                  <label for="waste_reduct_4_elec"><input id="waste_reduct_4_elec" class="form-check-input app sub-check" type="checkbox" name="waste_reduct_4_elec" value="1"> Electronic waste [1 point]</label><br>
+                  <label for="waste_reduct_4_text"><input id="waste_reduct_4_text" class="form-check-input app sub-check" type="checkbox" name="waste_reduct_4_text" value="1"> Textiles [1 point]</label><br>
+                </label></td>
+
+                <td><label for="waste_reduct_5">Integration and reporting into community energy planning process.<br>[0.5 points]<br><input id="waste_reduct_5" class="form-check-input app" type="checkbox" name="waste_reduct_5" value="0.5"></label></td>
+
+                <td>
+                  <input id="waste_reduct_pts" class="text-center row-points" name="waste_reduct_pts" value="" hidden></input>
+                  <output>0 points</output>
+                </td>
+                
+                <td><textarea class="form-control" id="waste_reduct_notes" name="waste_reduct_notes" placeholder="Enter relevant notes, references, or links..." rows="8" style="font-size: 12px"></textarea></td>
+
+                <input class="row-complete" value="false" type="hidden">
+              </tr>
+
+              <tr>
+                <th scope="row">2.3.4. Water and wastewater programs <a href="#" data-toggle="tooltip" data-placement="right" data-animation="true" title="The community has on-going programs to optimize water and wastewater systems to reduce energy consumed in pumping and treatment of water. This includes water conservation and reuse, evaluation of linear infrastructure to prevent and repair water leaks, and improving efficiency of water and wastewater treatment equipment."><i class="fas fa-info-circle"></i></a></th>
+                
+                <td>Checklist</td>
+                
+                <td><label for="water_waste_prog_na">N/A for the community.<br><input id="water_waste_prog_na" class="form-check-input na" type="checkbox" name="water_waste_prog_na" value="3.5"></label></td>
+                                
+                <td><label for="water_waste_prog_0">There are currently no water and wastewater programs.<br>[0 points]<br><input id="water_waste_prog_0" class="form-check-input app zero" type="checkbox" name="water_waste_prog_0" value="0"></label></td>
+                
+                <td><label for="water_waste_prog_1">The community has water infrastructure initiatives, such as:<br>[N/A for communities with no centralized water systems]<br>[1.5 points maximum]<br><br>
+                  <input id="water_waste_prog_1_max" class="form-check-input app sub-check-max" type="checkbox" value="1.5" hidden>
+                  <label for="water_waste_prog_1_leak"><input id="water_waste_prog_1_leak" class="form-check-input app sub-check pot-na-water" type="checkbox" name="water_waste_prog_1_leak" value="0.5"> Leak detection and repair [0.5 points]</label><br>
+                  <label for="water_waste_prog_1_water"><input id="water_waste_prog_1_water" class="form-check-input app sub-check pot-na-water" type="checkbox" name="water_waste_prog_1_water" value="0.5"> Water meters/Water-use monitoring [0.5 points]</label><br>
+                  <label for="water_waste_prog_1_pressure"><input id="water_waste_prog_1_pressure" class="form-check-input app sub-check pot-na-water" type="checkbox" name="water_waste_prog_1_pressure" value="0.5"> Pressure reducing valves [0.5 points]</label><br>
+                  <label for="water_waste_prog_1_eff"><input id="water_waste_prog_1_eff" class="form-check-input app sub-check pot-na-water" type="checkbox" name="water_waste_prog_1_eff" value="0.5"> Efficiency upgrades to wastewater treatment equipment [0.5 points]</label><br>
+                </label></td>
+                
+                <td><label for="water_waste_prog_1">The community has retrofit programs to conserve water, such as targeting:<br>[1.5 points maximum]<br><br>
+                  <input id="water_waste_prog_2_max" class="form-check-input app sub-check-max" type="checkbox" value="1.5" hidden>
+                  <label for="water_waste_prog_2_toilet"><input id="water_waste_prog_2_toilet" class="form-check-input app sub-check" type="checkbox" name="water_waste_prog_2_toilet" value="0.5"> Toilet dams [0.5 points]</label><br>
+                  <label for="water_waste_prog_2_lowflow"><input id="water_waste_prog_2_lowflow" class="form-check-input app sub-check" type="checkbox" name="water_waste_prog_2_lowflow" value="0.5"> Low-flow showerheads [0.5 points]</label><br>
+                  <label for="water_waste_prog_2_aerate"><input id="water_waste_prog_2_aerate" class="form-check-input app sub-check" type="checkbox" name="water_waste_prog_2_aerate" value="0.5"> Faucet aerators or washers [0.5 points]</label><br>
+                  <label for="water_waste_prog_2_rain"><input id="water_waste_prog_2_rain" class="form-check-input app sub-check" type="checkbox" name="water_waste_prog_2_rain" value="0.5"> Rainwater collection [0.5 points]</label><br>
+                </label></td>
+                
+                <td><label for="water_waste_prog_3">The community has a program in place to promote potable or non-potable water reuse.<br>[0.5 points]<br><input id="water_waste_prog_3" class="form-check-input app" type="checkbox" name="water_waste_prog_3" value="0.5"></label></td>
+
+                <td></td>
+
+                <td></td>
+
+                <td>
+                  <input id="water_waste_prog_pts" class="text-center row-points" name="water_waste_prog_pts" value="" hidden></input>
+                  <output>0 points</output>
+                </td>
+                
+                <td><textarea class="form-control" id="water_waste_prog_notes" name="water_waste_prog_notes" placeholder="Enter relevant notes, references, or links..." rows="8" style="font-size: 12px"></textarea></td>
+
+                <input class="row-complete" value="false" type="hidden">
+              </tr>
+
+              <tr>
+                <th scope="row">2.3.5. Low impact development and resilient storm water management <a href="#" data-toggle="tooltip" data-placement="right" data-animation="true" title="This could include infrastructure innovations to reduce peak flow, such as stormwater retention ponds/tanks, greening roofs, bioswales, permeable pavement, etc. Also considering and preparing for changing weather patterns related to climate change that may impact infrastructure."><i class="fas fa-info-circle"></i></a></th>
+                
+                <td>Checklist</td>
+                
+                <td><label for="low_imp_dev_na">N/A for the community.<br>[N/A for non-flood prone communities]<br><input id="low_imp_dev_na" class="form-check-input na pot-na-flood" type="checkbox" name="low_imp_dev_na" value="3"></label></td>
+                                
+                <td><label for="low_imp_dev_0">There is currently no management for low impact developments and resilient storm water management.<br>[0 points]<br><input id="low_imp_dev_0" class="form-check-input app zero pot-na-flood" type="checkbox" name="low_imp_dev_0" value="0"></label></td>
+                
+                <td><label for="low_imp_dev_1">The community has programs to manage stormwater and reduce peak flow, such as:<br>[2 points maximum]<br>
+                  <input id="low_imp_dev_1_max" class="form-check-input app sub-check-max" type="checkbox" value="2" hidden>
+                  <input id="low_imp_dev_1_on" class="form-check-input app on-off pot-na-flood" type="checkbox" name="low_imp_dev_1_on" value="0"><br><br>
+                  <label for="low_imp_dev_1_storm">Stormwater retention ponds/tanks</label><br>
+                    <label for="low_imp_dev_1_storm_pilot"><input id="low_imp_dev_1_storm_pilot" class="form-check-input app sub-check on-off-sub pot-na-flood" type="radio" name="low_imp_dev_1_storm" value="0.5" disabled> Initiative is piloted [0.5 points]</label><br>
+                    <label for="low_imp_dev_1_storm_init"><input id="low_imp_dev_1_storm_init" class="form-check-input app sub-check on-off-sub pot-na-flood" type="radio" name="low_imp_dev_1_storm" value="1" disabled> Initiative is active [1 point]</label><br><br>
+                  <label for="low_imp_dev_1_bio">Bioswales</label><br>
+                    <label for="low_imp_dev_1_bio_pilot"><input id="low_imp_dev_1_bio_pilot" class="form-check-input app sub-check on-off-sub pot-na-flood" type="radio" name="low_imp_dev_1_bio" value="0.5" disabled> Initiative is piloted [0.5 points]</label><br>
+                    <label for="low_imp_dev_1_bio_init"><input id="low_imp_dev_1_bio_init" class="form-check-input app sub-check on-off-sub pot-na-flood" type="radio" name="low_imp_dev_1_bio" value="1" disabled> Initiative is active [1 point]</label><br><br>
+                  <label for="low_imp_dev_1_rain">Rain gardens</label><br>
+                    <label for="low_imp_dev_1_rain_pilot"><input id="low_imp_dev_1_rain_pilot" class="form-check-input app sub-check on-off-sub pot-na-flood" type="radio" name="low_imp_dev_1_rain" value="0.5" disabled> Initiative is piloted [0.5 points]</label><br>
+                    <label for="low_imp_dev_1_rain_init"><input id="low_imp_dev_1_rain_init" class="form-check-input app sub-check on-off-sub pot-na-flood" type="radio" name="low_imp_dev_1_rain" value="1" disabled> Initiative is active [1 point]</label><br><br>
+                  <label for="low_imp_dev_1_perm">Permeable pavement</label><br>
+                    <label for="low_imp_dev_1_perm_pilot"><input id="low_imp_dev_1_perm_pilot" class="form-check-input app sub-check on-off-sub pot-na-flood" type="radio" name="low_imp_dev_1_perm" value="0.5" disabled> Initiative is piloted [0.5 points]</label><br>
+                    <label for="low_imp_dev_1_perm_init"><input id="low_imp_dev_1_perm_init" class="form-check-input app sub-check on-off-sub pot-na-flood" type="radio" name="low_imp_dev_1_perm" value="1" disabled> Initiative is active [1 point]</label><br>
+                </label></td>
+                
+                <td><label for="low_imp_dev_2">Storm water management initiative(s) consider future climate risks.<br>[0.5 points]<br><input id="low_imp_dev_2" class="form-check-input app pot-na-flood" type="checkbox" name="low_imp_dev_2" value="0.5"></label></td>
+                
+                <td><label for="low_imp_dev_3">Integration and reporting into community energy planning process.<br>[0.5 points]<br><input id="low_imp_dev_3" class="form-check-input app pot-na-flood" type="checkbox" name="low_imp_dev_3" value="0.5"></label></td>
+
+                <td></td>
+
+                <td></td>
+                
+                <td>
+                  <input id="low_imp_dev_pts" class="text-center row-points" name="low_imp_dev_pts" value="" hidden></input>
+                  <output>0 points</output>
+                </td>
+                
+                <td><textarea class="form-control" id="low_imp_dev_notes" name="low_imp_dev_notes" placeholder="Enter relevant notes, references, or links..." rows="8" style="font-size: 12px"></textarea></td>
+
+                <input class="row-complete" value="false" type="hidden">
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        
+        <input id="form-submit" class="btn btn-primary" type="submit" value="Save">
+
+      </form><br>
+              
+      <div id="navigation">
+        <a href="/waste_water" id="previous" class="btn btn-primary" role="button">Previous (Waste & Water)</a>
+        <a href="/logout" id="logout" class="btn btn-primary" role="button">Logout</a>
+        <a href="/buildings" id="next" class="btn btn-primary" role="button">Next (Buildings)</input></a>
+      </div><br>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/0f567e20d5.js" crossorigin="anonymous"></script>
+    <script src="../public/client.js" type="module"></script>
+  </body>
+</html>

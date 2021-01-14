@@ -481,6 +481,7 @@ module.exports = function(app, myDataBase) {
             "scenarios.$[element].financials.retro_exist_single_na": Number(req.body.retro_exist_single_na),
             "scenarios.$[element].financials.retro_exist_single_0": Number(req.body.retro_exist_single_0),
             "scenarios.$[element].financials.retro_exist_single_1": Number(req.body.retro_exist_single_1),
+            "scenarios.$[element].financials.retro_exist_single_2_on": Number(req.body.retro_exist_single_2_on),
             "scenarios.$[element].financials.retro_exist_single_2": Number(req.body.retro_exist_single_2),
             "scenarios.$[element].financials.retro_exist_single_3": Number(req.body.retro_exist_single_3),
             "scenarios.$[element].financials.retro_exist_single_4": Number(req.body.retro_exist_single_4),
@@ -490,6 +491,7 @@ module.exports = function(app, myDataBase) {
             "scenarios.$[element].financials.retro_exist_murb_na": Number(req.body.retro_exist_murb_na),
             "scenarios.$[element].financials.retro_exist_murb_0": Number(req.body.retro_exist_murb_0),
             "scenarios.$[element].financials.retro_exist_murb_1": Number(req.body.retro_exist_murb_1),
+            "scenarios.$[element].financials.retro_exist_murb_2_on": Number(req.body.retro_exist_murb_2_on),
             "scenarios.$[element].financials.retro_exist_murb_2": Number(req.body.retro_exist_murb_2),
             "scenarios.$[element].financials.retro_exist_murb_3": Number(req.body.retro_exist_murb_3),
             "scenarios.$[element].financials.retro_exist_murb_4": Number(req.body.retro_exist_murb_4),
@@ -499,6 +501,7 @@ module.exports = function(app, myDataBase) {
             "scenarios.$[element].financials.retro_exist_comm_na": Number(req.body.retro_exist_comm_na),
             "scenarios.$[element].financials.retro_exist_comm_0": Number(req.body.retro_exist_comm_0),
             "scenarios.$[element].financials.retro_exist_comm_1": Number(req.body.retro_exist_comm_1),
+            "scenarios.$[element].financials.retro_exist_comm_2_on": Number(req.body.retro_exist_comm_2_on),
             "scenarios.$[element].financials.retro_exist_comm_2": Number(req.body.retro_exist_comm_2),
             "scenarios.$[element].financials.retro_exist_comm_3": Number(req.body.retro_exist_comm_3),
             "scenarios.$[element].financials.retro_exist_comm_4": Number(req.body.retro_exist_comm_4),
@@ -631,8 +634,10 @@ module.exports = function(app, myDataBase) {
 
             "scenarios.$[element].land_use.eff_perf_newdev_na": Number(req.body.eff_perf_newdev_na),
             "scenarios.$[element].land_use.eff_perf_newdev_0": Number(req.body.eff_perf_newdev_0),
+            "scenarios.$[element].land_use.eff_perf_newdev_1_on": Number(req.body.eff_perf_newdev_1_on),
             "scenarios.$[element].land_use.eff_perf_newdev_1": Number(req.body.eff_perf_newdev_1),
-            "scenarios.$[element].land_use.eff_perf_newdev_2": Number(req.body.eff_perf_newdev_1),
+            "scenarios.$[element].land_use.eff_perf_newdev_2_on": Number(req.body.eff_perf_newdev_2_on),
+            "scenarios.$[element].land_use.eff_perf_newdev_2": Number(req.body.eff_perf_newdev_2),
             "scenarios.$[element].land_use.eff_perf_newdev_pts": Number(req.body.eff_perf_newdev_pts),
             "scenarios.$[element].land_use.eff_perf_newdev_notes": req.body.eff_perf_newdev_notes,
 
@@ -719,20 +724,27 @@ module.exports = function(app, myDataBase) {
 
             "scenarios.$[element].energy_net.gas_infra_stor_na": Number(req.body.gas_infra_stor_na),
             "scenarios.$[element].energy_net.gas_infra_stor": Number(req.body.gas_infra_stor),
+            "scenarios.$[element].energy_net.gas_infra_stor_2_infeas": Number(req.body.gas_infra_stor_2_infeas),
             "scenarios.$[element].energy_net.gas_infra_stor_pts": Number(req.body.gas_infra_stor_pts),
             "scenarios.$[element].energy_net.gas_infra_stor_notes": req.body.gas_infra_stor_notes,
 
             "scenarios.$[element].energy_net.thermal_local_res_na": Number(req.body.thermal_local_res_na),
             "scenarios.$[element].energy_net.thermal_local_res": Number(req.body.thermal_local_res),
+            "scenarios.$[element].energy_net.thermal_local_res_2_infeas": Number(req.body.thermal_local_res_2_infeas),
+            "scenarios.$[element].energy_net.thermal_local_res_2_infeas": Number(req.body.thermal_local_res_3_infeas),
             "scenarios.$[element].energy_net.thermal_local_res_pts": Number(req.body.thermal_local_res_pts),
             "scenarios.$[element].energy_net.thermal_local_res_notes": req.body.thermal_local_res_notes,
 
             "scenarios.$[element].energy_net.infra_alt_veh_na": Number(req.body.infra_alt_veh_na),
             "scenarios.$[element].energy_net.infra_alt_veh_0": Number(req.body.infra_alt_veh_0),
+            "scenarios.$[element].energy_net.infra_alt_veh_1_on": Number(req.body.infra_alt_veh_1_on),
             "scenarios.$[element].energy_net.infra_alt_veh_1": Number(req.body.infra_alt_veh_1),
             "scenarios.$[element].energy_net.infra_alt_veh_2": Number(req.body.infra_alt_veh_2),
+            "scenarios.$[element].energy_net.infra_alt_veh_2_infeas": Number(req.body.infra_alt_veh_2_infeas),
             "scenarios.$[element].energy_net.infra_alt_veh_3": Number(req.body.infra_alt_veh_3),
+            "scenarios.$[element].energy_net.infra_alt_veh_3_infeas": Number(req.body.infra_alt_veh_3_infeas),
             "scenarios.$[element].energy_net.infra_alt_veh_4": Number(req.body.infra_alt_veh_4),
+            "scenarios.$[element].energy_net.infra_alt_veh_4_infeas": Number(req.body.infra_alt_veh_4_infeas),
             "scenarios.$[element].energy_net.infra_alt_veh_pts": Number(req.body.infra_alt_veh_pts),
             "scenarios.$[element].energy_net.infra_alt_veh_notes": req.body.infra_alt_veh_notes,
 
@@ -787,21 +799,23 @@ module.exports = function(app, myDataBase) {
             "scenarios.$[element].waste_water.public_edu_waste_0": Number(req.body.public_edu_waste_0),
             "scenarios.$[element].waste_water.public_edu_waste_1": Number(req.body.public_edu_waste_1),
             "scenarios.$[element].waste_water.public_edu_waste_2": Number(req.body.public_edu_waste_2),
-            "scenarios.$[element].waste_water.public_edu_waste_3": Number(req.body.public_edu_waste_3),
             "scenarios.$[element].waste_water.public_edu_waste_pts": Number(req.body.public_edu_waste_pts),
             "scenarios.$[element].waste_water.public_edu_waste_notes": req.body.public_edu_waste_notes,
 
             "scenarios.$[element].waste_water.recov_waste_na": Number(req.body.recov_waste_na),
             "scenarios.$[element].waste_water.recov_waste_0": Number(req.body.recov_waste_0),
+            "scenarios.$[element].waste_water.recov_waste_1_on": Number(req.body.recov_waste_1_on),
             "scenarios.$[element].waste_water.recov_waste_1_inc": Number(req.body.recov_waste_1_inc),
             "scenarios.$[element].waste_water.recov_waste_1_gasif": Number(req.body.recov_waste_1_gasif),
             "scenarios.$[element].waste_water.recov_waste_1_depoly": Number(req.body.recov_waste_1_depoly),
+            "scenarios.$[element].waste_water.recov_waste_2_on": Number(req.body.recov_waste_2_on),
             "scenarios.$[element].waste_water.recov_waste_2_inc": Number(req.body.recov_waste_2_inc),
             "scenarios.$[element].waste_water.recov_waste_2_gasif": Number(req.body.recov_waste_2_gasif),
             "scenarios.$[element].waste_water.recov_waste_2_depoly": Number(req.body.recov_waste_2_depoly),
             "scenarios.$[element].waste_water.recov_waste_2_aner": Number(req.body.recov_waste_2_aner),
             "scenarios.$[element].waste_water.recov_waste_2_pyrol": Number(req.body.recov_waste_2_pyrol),
             "scenarios.$[element].waste_water.recov_waste_2_fermen": Number(req.body.recov_waste_2_fermen),
+            "scenarios.$[element].waste_water.recov_waste_3_on": Number(req.body.recov_waste_3_on),
             "scenarios.$[element].waste_water.recov_waste_3_gasif": Number(req.body.recov_waste_3_gasif),
             "scenarios.$[element].waste_water.recov_waste_3_aner": Number(req.body.recov_waste_3_aner),
             "scenarios.$[element].waste_water.recov_waste_3_fermen": Number(req.body.recov_waste_3_fermen),
@@ -826,6 +840,32 @@ module.exports = function(app, myDataBase) {
             "scenarios.$[element].waste_water.waste_reduct_pts": Number(req.body.waste_reduct_pts),
             "scenarios.$[element].waste_water.waste_reduct_notes": req.body.waste_reduct_notes,
 
+            "scenarios.$[element].waste_water.water_waste_prog_na": Number(req.body.water_waste_prog_na),
+            "scenarios.$[element].waste_water.water_waste_prog_0": Number(req.body.water_waste_prog_0),
+            "scenarios.$[element].waste_water.water_waste_prog_1_leak": Number(req.body.water_waste_prog_1_leak),
+            "scenarios.$[element].waste_water.water_waste_prog_1_water": Number(req.body.water_waste_prog_1_water),
+            "scenarios.$[element].waste_water.water_waste_prog_1_pressure": Number(req.body.water_waste_prog_1_pressure),
+            "scenarios.$[element].waste_water.water_waste_prog_1_eff": Number(req.body.water_waste_prog_1_eff),
+            "scenarios.$[element].waste_water.water_waste_prog_2_toilet": Number(req.body.water_waste_prog_2_toilet),
+            "scenarios.$[element].waste_water.water_waste_prog_2_lowflow": Number(req.body.water_waste_prog_2_lowflow),
+            "scenarios.$[element].waste_water.water_waste_prog_2_aerate": Number(req.body.water_waste_prog_2_aerate),
+            "scenarios.$[element].waste_water.water_waste_prog_2_rain": Number(req.body.water_waste_prog_2_rain),
+            "scenarios.$[element].waste_water.water_waste_prog_3": Number(req.body.water_waste_prog_3),
+            "scenarios.$[element].waste_water.water_waste_prog_pts": Number(req.body.water_waste_prog_pts),
+            "scenarios.$[element].waste_water.water_waste_prog_notes": req.body.water_waste_prog_notes,
+
+            "scenarios.$[element].waste_water.low_imp_dev_na": Number(req.body.low_imp_dev_na),
+            "scenarios.$[element].waste_water.low_imp_dev_0": Number(req.body.low_imp_dev_0),
+            "scenarios.$[element].waste_water.low_imp_dev_1_on": Number(req.body.low_imp_dev_1_on),
+            "scenarios.$[element].waste_water.low_imp_dev_1_storm": Number(req.body.low_imp_dev_1_storm),
+            "scenarios.$[element].waste_water.low_imp_dev_1_bio": Number(req.body.low_imp_dev_1_bio),
+            "scenarios.$[element].waste_water.low_imp_dev_1_rain": Number(req.body.low_imp_dev_1_rain),
+            "scenarios.$[element].waste_water.low_imp_dev_1_perm": Number(req.body.low_imp_dev_1_perm),
+            "scenarios.$[element].waste_water.low_imp_dev_2": Number(req.body.low_imp_dev_2),
+            "scenarios.$[element].waste_water.low_imp_dev_3": Number(req.body.low_imp_dev_3),
+            "scenarios.$[element].waste_water.low_imp_dev_pts": Number(req.body.low_imp_dev_pts),
+            "scenarios.$[element].waste_water.low_imp_dev_notes": req.body.low_imp_dev_notes,
+
             "scenarios.$[element].waste_water.z_app_pts_total": Number(req.body.z_app_pts_total),
             "scenarios.$[element].waste_water.z_na_pts_total": Number(req.body.z_na_pts_total),
             "scenarios.$[element].waste_water.z_sect_complete": req.body.z_sect_complete,       
@@ -841,6 +881,132 @@ module.exports = function(app, myDataBase) {
           } else {
             let result = doc.value.scenarios.find((elm) => elm.scen_name === doc.value.currentScen);
             console.log(result.waste_water);
+            res.send('Save successful.');
+          }
+        }
+      );
+    });
+
+  app.route("/db/data/transport")
+    .post((req, res, next) => {
+      myDataBase.findOneAndUpdate(
+        { username: req.user.username },
+        {
+          $set: {
+            "scenarios.$[element].last_update": new Date(),
+
+            "scenarios.$[element].transport.public_eng_edu_na": Number(req.body.public_eng_edu_na),
+            "scenarios.$[element].transport.public_eng_edu_0": Number(req.body.public_eng_edu_0),
+            "scenarios.$[element].transport.public_eng_edu_1": Number(req.body.public_eng_edu_1),
+            "scenarios.$[element].transport.public_eng_edu_2": Number(req.body.public_eng_edu_2),
+            "scenarios.$[element].transport.public_eng_edu_3": Number(req.body.public_eng_edu_3),
+            "scenarios.$[element].transport.public_eng_edu_pts": Number(req.body.public_eng_edu_pts),
+            "scenarios.$[element].transport.public_eng_edu_notes": req.body.public_eng_edu_notes,
+
+            "scenarios.$[element].transport.act_trans_tmp_na": Number(req.body.act_trans_tmp_na),
+            "scenarios.$[element].transport.act_trans_tmp_0": Number(req.body.act_trans_tmp_0),
+            "scenarios.$[element].transport.act_trans_tmp_1": Number(req.body.act_trans_tmp_1),
+            "scenarios.$[element].transport.act_trans_tmp_2": Number(req.body.act_trans_tmp_2),
+            "scenarios.$[element].transport.act_trans_tmp_3": Number(req.body.act_trans_tmp_3),
+            "scenarios.$[element].transport.act_trans_tmp_pts": Number(req.body.act_trans_tmp_pts),
+            "scenarios.$[element].transport.act_trans_tmp_notes": req.body.act_trans_tmp_notes,
+
+            "scenarios.$[element].transport.trans_dem_mgmt_na": Number(req.body.trans_dem_mgmt_na),
+            "scenarios.$[element].transport.trans_dem_mgmt_0": Number(req.body.trans_dem_mgmt_0),
+            "scenarios.$[element].transport.trans_dem_mgmt_1_on": Number(req.body.trans_dem_mgmt_1_on),
+            "scenarios.$[element].transport.trans_dem_mgmt_1_ped": Number(req.body.trans_dem_mgmt_1_ped),
+            "scenarios.$[element].transport.trans_dem_mgmt_1_bikepark": Number(req.body.trans_dem_mgmt_1_bikepark),
+            "scenarios.$[element].transport.trans_dem_mgmt_1_bikelane": Number(req.body.trans_dem_mgmt_1_bikelane),
+            "scenarios.$[element].transport.trans_dem_mgmt_1_bikeshare": Number(req.body.trans_dem_mgmt_1_bikeshare),
+            "scenarios.$[element].transport.trans_dem_mgmt_1_biketire": Number(req.body.trans_dem_mgmt_1_biketire),
+            "scenarios.$[element].transport.trans_dem_mgmt_1_multi": Number(req.body.trans_dem_mgmt_1_multi),
+            "scenarios.$[element].transport.trans_dem_mgmt_2_on": Number(req.body.trans_dem_mgmt_2_on),
+            "scenarios.$[element].transport.trans_dem_mgmt_2_carshare": Number(req.body.trans_dem_mgmt_2_carshare),
+            "scenarios.$[element].transport.trans_dem_mgmt_2_carpool": Number(req.body.trans_dem_mgmt_2_carpool),
+            "scenarios.$[element].transport.trans_dem_mgmt_2_rideshare": Number(req.body.trans_dem_mgmt_2_rideshare),
+            "scenarios.$[element].transport.trans_dem_mgmt_3_buses": Number(req.body.trans_dem_mgmt_3_buses),
+            "scenarios.$[element].transport.trans_dem_mgmt_3_brt": Number(req.body.trans_dem_mgmt_3_brt),
+            "scenarios.$[element].transport.trans_dem_mgmt_3_strrail": Number(req.body.trans_dem_mgmt_3_strrail),
+            "scenarios.$[element].transport.trans_dem_mgmt_3_lrt": Number(req.body.trans_dem_mgmt_3_lrt),
+            "scenarios.$[element].transport.trans_dem_mgmt_3_subway": Number(req.body.trans_dem_mgmt_3_subway),
+            "scenarios.$[element].transport.trans_dem_mgmt_4_freq": Number(req.body.trans_dem_mgmt_4_freq),
+            "scenarios.$[element].transport.trans_dem_mgmt_4_access": Number(req.body.trans_dem_mgmt_4_access),
+            "scenarios.$[element].transport.trans_dem_mgmt_4_low": Number(req.body.trans_dem_mgmt_4_low),
+            "scenarios.$[element].transport.trans_dem_mgmt_4_inter": Number(req.body.trans_dem_mgmt_4_inter),
+            "scenarios.$[element].transport.trans_dem_mgmt_pts": Number(req.body.trans_dem_mgmt_pts),
+            "scenarios.$[element].transport.trans_dem_mgmt_notes": req.body.trans_dem_mgmt_notes,
+
+            "scenarios.$[element].transport.alt_ener_trans_na": Number(req.body.alt_ener_trans_na),
+            "scenarios.$[element].transport.alt_ener_trans": Number(req.body.alt_ener_trans),
+            "scenarios.$[element].transport.alt_ener_trans_2_infeas": Number(req.body.alt_ener_trans_2_infeas),
+            "scenarios.$[element].transport.alt_ener_trans_3_infeas": Number(req.body.alt_ener_trans_3_infeas),
+            "scenarios.$[element].transport.alt_ener_trans_pts": Number(req.body.alt_ener_trans_pts),
+            "scenarios.$[element].transport.alt_ener_trans_notes": req.body.alt_ener_trans_notes,
+
+
+
+
+
+
+
+            "scenarios.$[element].transport.waste_reduct_na": Number(req.body.waste_reduct_na),
+            "scenarios.$[element].transport.waste_reduct_0": Number(req.body.waste_reduct_0),
+            "scenarios.$[element].transport.waste_reduct_1_garb": Number(req.body.waste_reduct_1_garb),
+            "scenarios.$[element].transport.waste_reduct_1_plast": Number(req.body.waste_reduct_1_plast),
+            "scenarios.$[element].transport.waste_reduct_1_reuse": Number(req.body.waste_reduct_1_reuse),
+            "scenarios.$[element].transport.waste_reduct_2": Number(req.body.waste_reduct_2),
+            "scenarios.$[element].transport.waste_reduct_3_recog": Number(req.body.waste_reduct_3_recog),
+            "scenarios.$[element].transport.waste_reduct_3_recyc": Number(req.body.waste_reduct_3_recyc),
+            "scenarios.$[element].transport.waste_reduct_4_glass": Number(req.body.waste_reduct_4_glass),
+            "scenarios.$[element].transport.waste_reduct_4_paper": Number(req.body.waste_reduct_4_paper),
+            "scenarios.$[element].transport.waste_reduct_4_plast": Number(req.body.waste_reduct_4_plast),
+            "scenarios.$[element].transport.waste_reduct_4_metal": Number(req.body.waste_reduct_4_metal),
+            "scenarios.$[element].transport.waste_reduct_4_elec": Number(req.body.waste_reduct_4_elec),
+            "scenarios.$[element].transport.waste_reduct_4_text": Number(req.body.waste_reduct_4_text),
+            "scenarios.$[element].transport.waste_reduct_5": Number(req.body.waste_reduct_5),
+            "scenarios.$[element].transport.waste_reduct_pts": Number(req.body.waste_reduct_pts),
+            "scenarios.$[element].transport.waste_reduct_notes": req.body.waste_reduct_notes,
+
+            "scenarios.$[element].transport.water_waste_prog_na": Number(req.body.water_waste_prog_na),
+            "scenarios.$[element].transport.water_waste_prog_0": Number(req.body.water_waste_prog_0),
+            "scenarios.$[element].transport.water_waste_prog_1_leak": Number(req.body.water_waste_prog_1_leak),
+            "scenarios.$[element].transport.water_waste_prog_1_water": Number(req.body.water_waste_prog_1_water),
+            "scenarios.$[element].transport.water_waste_prog_1_pressure": Number(req.body.water_waste_prog_1_pressure),
+            "scenarios.$[element].transport.water_waste_prog_1_eff": Number(req.body.water_waste_prog_1_eff),
+            "scenarios.$[element].transport.water_waste_prog_2_toilet": Number(req.body.water_waste_prog_2_toilet),
+            "scenarios.$[element].transport.water_waste_prog_2_lowflow": Number(req.body.water_waste_prog_2_lowflow),
+            "scenarios.$[element].transport.water_waste_prog_2_aerate": Number(req.body.water_waste_prog_2_aerate),
+            "scenarios.$[element].transport.water_waste_prog_2_rain": Number(req.body.water_waste_prog_2_rain),
+            "scenarios.$[element].transport.water_waste_prog_3": Number(req.body.water_waste_prog_3),
+            "scenarios.$[element].transport.water_waste_prog_pts": Number(req.body.water_waste_prog_pts),
+            "scenarios.$[element].transport.water_waste_prog_notes": req.body.water_waste_prog_notes,
+
+            "scenarios.$[element].transport.low_imp_dev_na": Number(req.body.low_imp_dev_na),
+            "scenarios.$[element].transport.low_imp_dev_0": Number(req.body.low_imp_dev_0),
+            "scenarios.$[element].transport.low_imp_dev_1_storm": Number(req.body.low_imp_dev_1_storm),
+            "scenarios.$[element].transport.low_imp_dev_1_bio": Number(req.body.low_imp_dev_1_bio),
+            "scenarios.$[element].transport.low_imp_dev_1_rain": Number(req.body.low_imp_dev_1_rain),
+            "scenarios.$[element].transport.low_imp_dev_1_perm": Number(req.body.low_imp_dev_1_perm),
+            "scenarios.$[element].transport.low_imp_dev_2": Number(req.body.low_imp_dev_2),
+            "scenarios.$[element].transport.low_imp_dev_3": Number(req.body.low_imp_dev_3),
+            "scenarios.$[element].transport.low_imp_dev_pts": Number(req.body.low_imp_dev_pts),
+            "scenarios.$[element].transport.low_imp_dev_notes": req.body.low_imp_dev_notes,
+
+            "scenarios.$[element].transport.z_app_pts_total": Number(req.body.z_app_pts_total),
+            "scenarios.$[element].transport.z_na_pts_total": Number(req.body.z_na_pts_total),
+            "scenarios.$[element].transport.z_sect_complete": req.body.z_sect_complete,       
+          },
+        },
+        { arrayFilters: [ { "element.scen_name": { $eq: req.body.scen_carry } } ],
+          returnOriginal: false
+        },
+        (err, doc) => {
+          if (err) {
+            console.log(err);
+            res.send("Save error.");
+          } else {
+            let result = doc.value.scenarios.find((elm) => elm.scen_name === doc.value.currentScen);
+            console.log(result.transport);
             res.send('Save successful.');
           }
         }
