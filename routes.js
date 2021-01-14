@@ -282,6 +282,11 @@ module.exports = function(app, myDataBase) {
             "scenarios.$[element].staff.gas_res_init_pts": Number(req.body.gas_res_init_pts),
             "scenarios.$[element].staff.gas_res_init_notes": req.body.gas_res_init_notes,
 
+            "scenarios.$[element].staff.local_supp_edu_na": Number(req.body.local_supp_edu_na),
+            "scenarios.$[element].staff.local_supp_edu": Number(req.body.local_supp_edu),
+            "scenarios.$[element].staff.local_supp_edu_pts": Number(req.body.local_supp_edu_pts),
+            "scenarios.$[element].staff.local_supp_edu_notes": req.body.local_supp_edu_notes,
+
             "scenarios.$[element].staff.bld_insp_edu_na": Number(req.body.bld_insp_edu_na),
             "scenarios.$[element].staff.bld_insp_edu_0": Number(req.body.bld_insp_edu_0),
             "scenarios.$[element].staff.bld_insp_edu_1": Number(req.body.bld_insp_edu_1),
@@ -943,54 +948,49 @@ module.exports = function(app, myDataBase) {
             "scenarios.$[element].transport.alt_ener_trans_pts": Number(req.body.alt_ener_trans_pts),
             "scenarios.$[element].transport.alt_ener_trans_notes": req.body.alt_ener_trans_notes,
 
+            "scenarios.$[element].transport.anti_idle_poli_na": Number(req.body.anti_idle_poli_na),
+            "scenarios.$[element].transport.anti_idle_poli_0": Number(req.body.anti_idle_poli_0),
+            "scenarios.$[element].transport.anti_idle_poli_1": Number(req.body.anti_idle_poli_1),
+            "scenarios.$[element].transport.anti_idle_poli_pts": Number(req.body.anti_idle_poli_pts),
+            "scenarios.$[element].transport.anti_idle_poli_notes": req.body.anti_idle_poli_notes,
 
+            "scenarios.$[element].transport.local_lead_exam_na": Number(req.body.local_lead_exam_na),
+            "scenarios.$[element].transport.local_lead_exam_0": Number(req.body.local_lead_exam_0),
+            "scenarios.$[element].transport.local_lead_exam_1_bike": Number(req.body.local_lead_exam_1_bike),
+            "scenarios.$[element].transport.local_lead_exam_1_tire": Number(req.body.local_lead_exam_1_tire),
+            "scenarios.$[element].transport.local_lead_exam_1_shower": Number(req.body.local_lead_exam_1_shower),
+            "scenarios.$[element].transport.local_lead_exam_1_trans": Number(req.body.local_lead_exam_1_trans),
+            "scenarios.$[element].transport.local_lead_exam_1_carpool": Number(req.body.local_lead_exam_1_carpool),
+            "scenarios.$[element].transport.local_lead_exam_1_flex": Number(req.body.local_lead_exam_1_flex),
+            "scenarios.$[element].transport.local_lead_exam_1_evse": Number(req.body.local_lead_exam_1_evse),
+            "scenarios.$[element].transport.local_lead_exam_pts": Number(req.body.local_lead_exam_pts),
+            "scenarios.$[element].transport.local_lead_exam_notes": req.body.local_lead_exam_notes,
 
+            "scenarios.$[element].transport.public_lead_exam_na": Number(req.body.public_lead_exam_na),
+            "scenarios.$[element].transport.public_lead_exam": Number(req.body.public_lead_exam),
+            "scenarios.$[element].transport.public_lead_exam_pts": Number(req.body.public_lead_exam_pts),
+            "scenarios.$[element].transport.public_lead_exam_notes": req.body.public_lead_exam_notes,
 
+            "scenarios.$[element].transport.local_fleet_green_na": Number(req.body.local_fleet_green_na),
+            "scenarios.$[element].transport.local_fleet_green": Number(req.body.local_fleet_green),
+            "scenarios.$[element].transport.local_fleet_green_2_infeas": Number(req.body.local_fleet_green_2_infeas),
+            "scenarios.$[element].transport.local_fleet_green_3_infeas": Number(req.body.local_fleet_green_3_infeas),
+            "scenarios.$[element].transport.local_fleet_green_pts": Number(req.body.local_fleet_green_pts),
+            "scenarios.$[element].transport.local_fleet_green_notes": req.body.local_fleet_green_notes,
 
+            "scenarios.$[element].transport.elec_lead_fleet_na": Number(req.body.elec_lead_fleet_na),
+            "scenarios.$[element].transport.elec_lead_fleet": Number(req.body.elec_lead_fleet),
+            "scenarios.$[element].transport.elec_lead_fleet_2_infeas": Number(req.body.elec_lead_fleet_2_infeas),
+            "scenarios.$[element].transport.elec_lead_fleet_3": Number(req.body.elec_lead_fleet_3_infeas),
+            "scenarios.$[element].transport.elec_lead_fleet_pts": Number(req.body.elec_lead_fleet_pts),
+            "scenarios.$[element].transport.elec_lead_fleet_notes": req.body.elec_lead_fleet_notes,
 
-
-            "scenarios.$[element].transport.waste_reduct_na": Number(req.body.waste_reduct_na),
-            "scenarios.$[element].transport.waste_reduct_0": Number(req.body.waste_reduct_0),
-            "scenarios.$[element].transport.waste_reduct_1_garb": Number(req.body.waste_reduct_1_garb),
-            "scenarios.$[element].transport.waste_reduct_1_plast": Number(req.body.waste_reduct_1_plast),
-            "scenarios.$[element].transport.waste_reduct_1_reuse": Number(req.body.waste_reduct_1_reuse),
-            "scenarios.$[element].transport.waste_reduct_2": Number(req.body.waste_reduct_2),
-            "scenarios.$[element].transport.waste_reduct_3_recog": Number(req.body.waste_reduct_3_recog),
-            "scenarios.$[element].transport.waste_reduct_3_recyc": Number(req.body.waste_reduct_3_recyc),
-            "scenarios.$[element].transport.waste_reduct_4_glass": Number(req.body.waste_reduct_4_glass),
-            "scenarios.$[element].transport.waste_reduct_4_paper": Number(req.body.waste_reduct_4_paper),
-            "scenarios.$[element].transport.waste_reduct_4_plast": Number(req.body.waste_reduct_4_plast),
-            "scenarios.$[element].transport.waste_reduct_4_metal": Number(req.body.waste_reduct_4_metal),
-            "scenarios.$[element].transport.waste_reduct_4_elec": Number(req.body.waste_reduct_4_elec),
-            "scenarios.$[element].transport.waste_reduct_4_text": Number(req.body.waste_reduct_4_text),
-            "scenarios.$[element].transport.waste_reduct_5": Number(req.body.waste_reduct_5),
-            "scenarios.$[element].transport.waste_reduct_pts": Number(req.body.waste_reduct_pts),
-            "scenarios.$[element].transport.waste_reduct_notes": req.body.waste_reduct_notes,
-
-            "scenarios.$[element].transport.water_waste_prog_na": Number(req.body.water_waste_prog_na),
-            "scenarios.$[element].transport.water_waste_prog_0": Number(req.body.water_waste_prog_0),
-            "scenarios.$[element].transport.water_waste_prog_1_leak": Number(req.body.water_waste_prog_1_leak),
-            "scenarios.$[element].transport.water_waste_prog_1_water": Number(req.body.water_waste_prog_1_water),
-            "scenarios.$[element].transport.water_waste_prog_1_pressure": Number(req.body.water_waste_prog_1_pressure),
-            "scenarios.$[element].transport.water_waste_prog_1_eff": Number(req.body.water_waste_prog_1_eff),
-            "scenarios.$[element].transport.water_waste_prog_2_toilet": Number(req.body.water_waste_prog_2_toilet),
-            "scenarios.$[element].transport.water_waste_prog_2_lowflow": Number(req.body.water_waste_prog_2_lowflow),
-            "scenarios.$[element].transport.water_waste_prog_2_aerate": Number(req.body.water_waste_prog_2_aerate),
-            "scenarios.$[element].transport.water_waste_prog_2_rain": Number(req.body.water_waste_prog_2_rain),
-            "scenarios.$[element].transport.water_waste_prog_3": Number(req.body.water_waste_prog_3),
-            "scenarios.$[element].transport.water_waste_prog_pts": Number(req.body.water_waste_prog_pts),
-            "scenarios.$[element].transport.water_waste_prog_notes": req.body.water_waste_prog_notes,
-
-            "scenarios.$[element].transport.low_imp_dev_na": Number(req.body.low_imp_dev_na),
-            "scenarios.$[element].transport.low_imp_dev_0": Number(req.body.low_imp_dev_0),
-            "scenarios.$[element].transport.low_imp_dev_1_storm": Number(req.body.low_imp_dev_1_storm),
-            "scenarios.$[element].transport.low_imp_dev_1_bio": Number(req.body.low_imp_dev_1_bio),
-            "scenarios.$[element].transport.low_imp_dev_1_rain": Number(req.body.low_imp_dev_1_rain),
-            "scenarios.$[element].transport.low_imp_dev_1_perm": Number(req.body.low_imp_dev_1_perm),
-            "scenarios.$[element].transport.low_imp_dev_2": Number(req.body.low_imp_dev_2),
-            "scenarios.$[element].transport.low_imp_dev_3": Number(req.body.low_imp_dev_3),
-            "scenarios.$[element].transport.low_imp_dev_pts": Number(req.body.low_imp_dev_pts),
-            "scenarios.$[element].transport.low_imp_dev_notes": req.body.low_imp_dev_notes,
+            "scenarios.$[element].transport.gas_lead_fleet_na": Number(req.body.gas_lead_fleet_na),
+            "scenarios.$[element].transport.gas_lead_fleet": Number(req.body.gas_lead_fleet),
+            "scenarios.$[element].transport.gas_lead_fleet_2_infeas": Number(req.body.gas_lead_fleet_2_infeas),
+            "scenarios.$[element].transport.gas_lead_fleet_3_infeas": Number(req.body.gas_lead_fleet_3_infeas),
+            "scenarios.$[element].transport.gas_lead_fleet_pts": Number(req.body.gas_lead_fleet_pts),
+            "scenarios.$[element].transport.gas_lead_fleet_notes": req.body.gas_lead_fleet_notes,
 
             "scenarios.$[element].transport.z_app_pts_total": Number(req.body.z_app_pts_total),
             "scenarios.$[element].transport.z_na_pts_total": Number(req.body.z_na_pts_total),
@@ -1007,6 +1007,102 @@ module.exports = function(app, myDataBase) {
           } else {
             let result = doc.value.scenarios.find((elm) => elm.scen_name === doc.value.currentScen);
             console.log(result.transport);
+            res.send('Save successful.');
+          }
+        }
+      );
+    });
+
+  app.route("/db/data/buildings")
+    .post((req, res, next) => {
+      myDataBase.findOneAndUpdate(
+        { username: req.user.username },
+        {
+          $set: {
+            "scenarios.$[element].last_update": new Date(),
+
+            "scenarios.$[element].buildings.public_eng_single_na": Number(req.body.public_eng_single_na),
+            "scenarios.$[element].buildings.public_eng_single_0": Number(req.body.public_eng_single_0),
+            "scenarios.$[element].buildings.public_eng_single_1": Number(req.body.public_eng_single_1),
+            "scenarios.$[element].buildings.public_eng_single_2": Number(req.body.public_eng_single_2),
+            "scenarios.$[element].buildings.public_eng_single_3": Number(req.body.public_eng_single_3),
+            "scenarios.$[element].buildings.public_eng_single_pts": Number(req.body.public_eng_single_pts),
+            "scenarios.$[element].buildings.public_eng_single_notes": req.body.public_eng_single_notes,
+
+            "scenarios.$[element].buildings.public_eng_other_na": Number(req.body.public_eng_other_na),
+            "scenarios.$[element].buildings.public_eng_other_0": Number(req.body.public_eng_other_0),
+            "scenarios.$[element].buildings.public_eng_other_1": Number(req.body.public_eng_other_1),
+            "scenarios.$[element].buildings.public_eng_other_2": Number(req.body.public_eng_other_2),
+            "scenarios.$[element].buildings.public_eng_other_3": Number(req.body.public_eng_other_3),
+            "scenarios.$[element].buildings.public_eng_other_pts": Number(req.body.public_eng_other_pts),
+            "scenarios.$[element].buildings.public_eng_other_notes": req.body.public_eng_other_notes,
+
+            "scenarios.$[element].buildings.local_lead_exam_na": Number(req.body.local_lead_exam_na),
+            "scenarios.$[element].buildings.local_lead_exam_0": Number(req.body.local_lead_exam_0),
+            "scenarios.$[element].buildings.local_lead_exam_1": Number(req.body.local_lead_exam_1),
+            "scenarios.$[element].buildings.local_lead_exam_2": Number(req.body.local_lead_exam_2),
+            "scenarios.$[element].buildings.local_lead_exam_3": Number(req.body.local_lead_exam_3),
+            "scenarios.$[element].buildings.local_lead_exam_4": Number(req.body.local_lead_exam_4),
+            "scenarios.$[element].buildings.local_lead_exam_pts": Number(req.body.local_lead_exam_pts),
+            "scenarios.$[element].buildings.local_lead_exam_notes": req.body.local_lead_exam_notes,
+
+            "scenarios.$[element].buildings.elec_lead_exam_na": Number(req.body.elec_lead_exam_na),
+            "scenarios.$[element].buildings.elec_lead_exam_0": Number(req.body.elec_lead_exam_0),
+            "scenarios.$[element].buildings.elec_lead_exam_1": Number(req.body.elec_lead_exam_1),
+            "scenarios.$[element].buildings.elec_lead_exam_2": Number(req.body.elec_lead_exam_2),
+            "scenarios.$[element].buildings.elec_lead_exam_3": Number(req.body.elec_lead_exam_3),
+            "scenarios.$[element].buildings.elec_lead_exam_pts": Number(req.body.elec_lead_exam_pts),
+            "scenarios.$[element].buildings.elec_lead_exam_notes": req.body.elec_lead_exam_notes,
+
+            "scenarios.$[element].buildings.gas_lead_exam_na": Number(req.body.gas_lead_exam_na),
+            "scenarios.$[element].buildings.gas_lead_exam_0": Number(req.body.gas_lead_exam_0),
+            "scenarios.$[element].buildings.gas_lead_exam_1": Number(req.body.gas_lead_exam_1),
+            "scenarios.$[element].buildings.gas_lead_exam_2": Number(req.body.gas_lead_exam_2),
+            "scenarios.$[element].buildings.gas_lead_exam_3": Number(req.body.gas_lead_exam_3),
+            "scenarios.$[element].buildings.gas_lead_exam_pts": Number(req.body.gas_lead_exam_pts),
+            "scenarios.$[element].buildings.gas_lead_exam_notes": req.body.gas_lead_exam_notes,
+
+            "scenarios.$[element].buildings.public_lead_exam_na": Number(req.body.public_lead_exam_na),
+            "scenarios.$[element].buildings.public_lead_exam_0": Number(req.body.public_lead_exam_0),
+            "scenarios.$[element].buildings.public_lead_exam_1_on": Number(req.body.public_lead_exam_1_on),
+            "scenarios.$[element].buildings.public_lead_exam_1": Number(req.body.public_lead_exam_1),
+            "scenarios.$[element].buildings.public_lead_exam_2_on": Number(req.body.public_lead_exam_2_on),
+            "scenarios.$[element].buildings.public_lead_exam_2": Number(req.body.public_lead_exam_2),
+            "scenarios.$[element].buildings.public_lead_exam_3_on": Number(req.body.public_lead_exam_3_on),
+            "scenarios.$[element].buildings.public_lead_exam_3": Number(req.body.public_lead_exam_3),
+            "scenarios.$[element].buildings.public_lead_exam_4_on": Number(req.body.public_lead_exam_4_on),
+            "scenarios.$[element].buildings.public_lead_exam_4": Number(req.body.public_lead_exam_4),
+            "scenarios.$[element].buildings.public_lead_exam_pts": Number(req.body.public_lead_exam_pts),
+            "scenarios.$[element].buildings.public_lead_exam_notes": req.body.public_lead_exam_notes,
+
+            "scenarios.$[element].buildings.priv_lead_eff_na": Number(req.body.priv_lead_eff_na),
+            "scenarios.$[element].buildings.priv_lead_eff_0": Number(req.body.priv_lead_eff_0),
+            "scenarios.$[element].buildings.priv_lead_eff_1_on": Number(req.body.priv_lead_eff_1_on),
+            "scenarios.$[element].buildings.priv_lead_eff_1": Number(req.body.priv_lead_eff_1),
+            "scenarios.$[element].buildings.priv_lead_eff_2_on": Number(req.body.priv_lead_eff_2_on),
+            "scenarios.$[element].buildings.priv_lead_eff_2": Number(req.body.priv_lead_eff_2),
+            "scenarios.$[element].buildings.priv_lead_eff_3_on": Number(req.body.priv_lead_eff_3_on),
+            "scenarios.$[element].buildings.priv_lead_eff_3": Number(req.body.priv_lead_eff_3),
+            "scenarios.$[element].buildings.priv_lead_eff_4_on": Number(req.body.priv_lead_eff_4_on),
+            "scenarios.$[element].buildings.priv_lead_eff_4": Number(req.body.priv_lead_eff_4),
+            "scenarios.$[element].buildings.priv_lead_eff_pts": Number(req.body.priv_lead_eff_pts),
+            "scenarios.$[element].buildings.priv_lead_eff_notes": req.body.priv_lead_eff_notes,
+
+            "scenarios.$[element].buildings.z_app_pts_total": Number(req.body.z_app_pts_total),
+            "scenarios.$[element].buildings.z_na_pts_total": Number(req.body.z_na_pts_total),
+            "scenarios.$[element].buildings.z_sect_complete": req.body.z_sect_complete,
+          },
+        },
+        { arrayFilters: [ { "element.scen_name": { $eq: req.body.scen_carry } } ],
+          returnOriginal: false
+        },
+        (err, doc) => {
+          if (err) {
+            console.log(err);
+            res.send("Save error.");
+          } else {
+            let result = doc.value.scenarios.find((elm) => elm.scen_name === doc.value.currentScen);
+            console.log(result.buildings);
             res.send('Save successful.');
           }
         }

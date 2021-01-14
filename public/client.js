@@ -56,6 +56,7 @@ $(document).ready(function(){
           $("#" + key).prop("checked", true).trigger("handleChange");  // Checkboxes
           $("#" + key + "_" + subResult[key]).prop("checked", true).trigger("handleChange");  // Radios general
           $("#" + key + "_half").prop("checked", true).trigger("handleChange");  //  0.5 pt on-off-sub radios (jQuery won't search for 0.5)
+          $("#" + key + "_oneAndHalf").prop("checked", true).trigger("handleChange");  //  1.5 pt on-off-sub radios (jQuery won't search for 1.5)
         };
       }
 
@@ -70,6 +71,9 @@ $(document).ready(function(){
       if (result.waste_cont === "no") { $(".pot-na-waste").addClass("pot-na-true").prop("checked", false).trigger("handleNa") };
       if (result.prov_terr === "Yukon" || result.prov_terr === "Northwest Territories" || result.prov_terr === "Nunavut") { $(".pot-na-prov-north").addClass("pot-na-true").prop("checked", false).trigger("handleNa") };
       if (result.flood_prone === "no") { $(".pot-na-flood").addClass("pot-na-true").prop("checked", false).trigger("handleNa") };
+      if (result.pub_sect_orgs === "no") { $(".pot-na-public").addClass("pot-na-true").prop("checked", false).trigger("handleNa") };
+      if (result.priv_sect_oper === "no") { $(".pot-na-private").addClass("pot-na-true").prop("checked", false).trigger("handleNa") };
+      
 
       /* Check N/As where global applicables apply to entire row */
       $(".na.pot-na-true").prop("checked", true).trigger("handleNa");

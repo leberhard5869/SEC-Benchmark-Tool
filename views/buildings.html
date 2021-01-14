@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>SEC Benchmark Tool - Buildings</title>
+    <meta name="description" content="Buildings" />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/public/style.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  </head>
+
+  <body>
+    <div class="container-fluid">
+      <img src="../assets/Buildings-Icon.png" alt="Buildings logo" class="img-fluid" style="width: 100px">
+
+      <div class="row">
+        <div class="col-lg-10"><h1 class="">Buildings</h1></div>
+        <div id="navbar" class="col-lg-2"></div>
+      </div>
+
+      <h4 id="scenario">Current Scenario:</h4>
+
+      <form id="form-data">
+
+        <input id="scen_carry" name="scen_carry" value="" type="hidden">
+        <input id="z_app_pts_total" name="z_app_pts_total" value="" type="hidden">
+        <input id="z_na_pts_total" name="z_na_pts_total" value="" type="hidden">
+        <input id="z_sect_complete" name="z_sect_complete" value="false" type="hidden">
+
+        <div class="table-responsive">
+          <table class="table table-bordered align-middle">
+            <thead>
+              <tr style="background-color: #00b3b3">
+                <th class="col-lg text-center align-middle" scope="col">Measures</th>
+                <th class="col-lg text-center align-middle" scope="col">Scoring Method</th>
+                <th class="col-lg-8 text-center align-middle" scope="col" colspan="6">Scoring</th>
+                <th class="col-lg text-center align-middle" scope="col">Community Score</th>
+                <th class="col-lg-2 text-center align-middle" scope="col">Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">2.5.1a. Public engagement and education on energy in single family residential buildings <a href="#" data-toggle="tooltip" data-placement="right" data-animation="true" title="The community has informational resources and activities to engage and educate the public on single family residential building energy uses, and practices to improve home energy performance (such as energy efficiency tips or use of distributed energy resources). This may range from basic methods such as website or newsletter updates, to innovative methods such as interactive web-based tools or workshops, and may be integrated with broader community energy engagement and education activities. These activities may come from any actors, including the real estate sector, builders, developers, utilities, institutions, the local government, Indigenous groups or other local organizations, or ideally any combination of actors working together."><img src="../assets/info-circle-solid.svg" style="width: 14px" alt="info icon" class="img-fluid"></a></th>
+                
+                <td>Checklist</td>
+                
+                <td><label for="public_eng_single_na">N/A for the community.<br><input id="public_eng_single_na" class="form-check-input na" type="checkbox" name="public_eng_single_na" value="2"></label></td>
+                
+                <td><label for="public_eng_single_0">There currently is no public engagement and education on energy in single family residential buildings.<br>[0 points]<br><input id="public_eng_single_0" class="form-check-input app zero" type="checkbox" name="public_eng_single_0" value="0"></label></td>
+                
+                <td><label for="public_eng_single_1">Members of the public are informed of initiatives and educated on single family home energy use through basic methods, such as:<br>-Website updates<br>-Newsletters<br>-Print materials (such as brochures, fact sheets, information packages)<br>-Social media updates<br>-Webinars or conference calls<br>-Open houses<br>[0.5 points]<br><input id="public_eng_single_1" class="form-check-input app" type="checkbox" name="public_eng_single_1" value="0.5"></label></td>
+                
+                <td><label for="public_eng_single_2">Members of the public are engaged on single family home energy use through innovative methods, such as:<br>- Highly creative or interactive web-based reporting<br>- Highly creative or interactive open houses or participation at community events<br>- Advanced social media/networking<br>- Embedded videos<br>- Innovative stakeholder feedback mechanisms<br>- Interactive workshops<br>-Tables/participation at community events<br>-School promotion<br>[1 point]<br><input id="public_eng_single_2" class="form-check-input app" type="checkbox" name="public_eng_single_2" value="1"></label></td>
+                
+                <td><label for="public_eng_single_3">Public engagement and educational activities are developed/delivered collaboratively between multiple stakeholders.<br>[0.5 point]<br><input id="public_eng_single_3" class="form-check-input app" type="checkbox" name="public_eng_single_3" value="0.5"></label></td>                
+                <td></td>
+                
+                <td>
+                  <input id="public_eng_single_pts" class="text-center row-points" name="public_eng_single_pts" value="" hidden></input>
+                  <output>0 points</output>
+                </td>
+                
+                <td><textarea class="form-control" id="public_eng_single_notes" name="public_eng_single_notes" placeholder="Enter relevant notes, references, or links..." rows="8" style="font-size: 12px"></textarea></td>
+
+                <input class="row-complete" value="false" type="hidden">
+              </tr>
+
+              <tr>
+                <th scope="row">2.5.1b. Public engagement and education on energy in other buildings <a href="#" data-toggle="tooltip" data-placement="right" data-animation="true" title="The community has informational resources and activities to engage and educate the public on non-single family residential (such as multi-family, commercial or institutional) building energy uses, and practices to improve building energy performance (such as energy efficiency measures or use of distributed energy resources). This may range from basic methods such as website or newsletter updates, to innovative methods such as interactive web-based tools or workshops, and may be integrated with broader community energy engagement and education activities. These activities may come from any actors, including the real estate sector, builders, developers, utilities, institutions, the local government, Indigenous groups or other local organizations, or ideally any combination of actors working together."><img src="../assets/info-circle-solid.svg" style="width: 14px" alt="info icon" class="img-fluid"></a></th>
+                
+                <td>Checklist</td>
+                
+                <td><label for="public_eng_other_na">N/A for the community.<br><input id="public_eng_other_na" class="form-check-input na" type="checkbox" name="public_eng_other_na" value="2"></label></td>
+                
+                <td><label for="public_eng_other_0">There currently is no public engagement and education on energy in other buildings.<br>[0 points]<br><input id="public_eng_other_0" class="form-check-input app zero" type="checkbox" name="public_eng_other_0" value="0"></label></td>
+                
+                <td><label for="public_eng_other_1">Members of the public are informed of initiatives and educated on multi-unit residential, commercial, or other building energy use through basic methods, such as:<br>-Website updates<br>-Newsletters<br>-Print materials (such as brochures, fact sheets, information packages)<br>-Social media updates<br>-Webinars or conference calls<br>-Open houses<br>[0.5 points]<br><input id="public_eng_other_1" class="form-check-input app" type="checkbox" name="public_eng_other_1" value="0.5"></label></td>
+                
+                <td><label for="public_eng_other_2">Members of the public are engaged on multi-unit residential, commercial, or other building energy use through innovative methods, such as:<br>- Highly creative or interactive web-based reporting<br>- Highly creative or interactive open houses or participation at community events<br>- Advanced social media/networking<br>- Embedded videos<br>- Innovative stakeholder feedback mechanisms<br>- Interactive workshops<br>-Tables/participation at community events<br>-School promotion<br>[1 point]<br><input id="public_eng_other_2" class="form-check-input app" type="checkbox" name="public_eng_other_2" value="1"></label></td>
+
+                <td><label for="public_eng_other_3">Public engagement and educational activities are developed/delivered collaboratively between multiple stakeholders.<br>[0.5 points]<br><input id="public_eng_other_3" class="form-check-input app" type="checkbox" name="public_eng_other_3" value="0.5"></label></td>                
+
+                <td></td>
+                                                
+                <td>
+                  <input id="public_eng_other_pts" class="text-center row-points" name="public_eng_other_pts" value="" hidden></input>
+                  <output>0 points</output>
+                </td>
+                
+                <td><textarea class="form-control" id="public_eng_other_notes" name="public_eng_other_notes" placeholder="Enter relevant notes, references, or links..." rows="8" style="font-size: 12px"></textarea></td>
+
+                <input class="row-complete" value="false" type="hidden">
+              </tr>
+
+              <tr>
+                <th scope="row">2.5.2a. Local government leadership by example in corporate-owned facilities <a href="#" data-toggle="tooltip" data-placement="right" data-animation="true" title="The local government is leading by example with their corporate-owned and operated facilities through: (1) Incorporating energy standards or certifications into retrofits, and scheduling regular recommissioning, of existing facilities; (2) Incorporating energy standards or certifications into construction of new facilities; (3) Integrating local energy options, such as solar, wind, district energy and combined heat and power (CHP) where possible; and, (4) Adopting energy benchmarking. Energy standards or certifications may include LEED, Passive House, ENERGY STAR, BOMA Best, Green Globes, Net Zero (Emissions or Energy), etc. Recommissioning refers to the process of improving how building equipment and systems function together and optimizing operation."><img src="../assets/info-circle-solid.svg" style="width: 14px" alt="info icon" class="img-fluid"></a></th>
+                
+                <td>Checklist</td>
+                
+                <td><label for="local_lead_exam_na">N/A for the community.<br><input id="local_lead_exam_na" class="form-check-input na" type="checkbox" name="local_lead_exam_na" value="2"></label></td>
+                
+                <td><label for="local_lead_exam_0">Natural gas utility is currently not leading by example in owned facilities.<br>[0 points]<br><input id="local_lead_exam_0" class="form-check-input app zero" type="checkbox" name="local_lead_exam_0" value="0"></label></td>
+                
+                <td><label for="local_lead_exam_1">Corporate process is in place to improve energy efficiency, including through energy standards/certifications and a schedule for regular recommissioning, in existing corporate facilities.<br>[0.5 points]<br><input id="local_lead_exam_1" class="form-check-input app" type="checkbox" name="local_lead_exam_1" value="0.5"></label></td>
+                
+                <td><label for="local_lead_exam_2">Corporate process is in place to improve energy efficiency, including through energy standards or certifications, in new corporate facilities.<br>[N/A for small or no-growth communities]<br>[0.5 points]<br><input id="local_lead_exam_2" class="form-check-input app pot-na-pop pot-na-growth" type="checkbox" name="local_lead_exam_2" value="0.5"></label></td>
+
+                <td><label for="local_lead_exam_3">A process is in place to procure local/renewable heat/electricity for corporate facilities.<br>[0.5 points]<br><input id="local_lead_exam_3" class="form-check-input app" type="checkbox" name="local_lead_exam_3" value="0.5"></label></td>                
+
+                <td><label for="local_lead_exam_4">A process exists to use a benchmarking, labelling and disclosure system for corporate-owned facilities.<br>[0.5 points]<br><input id="local_lead_exam_4" class="form-check-input app" type="checkbox" name="local_lead_exam_4" value="0.5"></label></td>                
+                                                
+                <td>
+                  <input id="local_lead_exam_pts" class="text-center row-points" name="local_lead_exam_pts" value="" hidden></input>
+                  <output>0 points</output>
+                </td>
+                
+                <td><textarea class="form-control" id="local_lead_exam_notes" name="local_lead_exam_notes" placeholder="Enter relevant notes, references, or links..." rows="8" style="font-size: 12px"></textarea></td>
+
+                <input class="row-complete" value="false" type="hidden">
+              </tr>
+
+              <tr>
+                <th scope="row">2.5.2b. Electric utility leadership by example in owned facilities <a href="#" data-toggle="tooltip" data-placement="right" data-animation="true" title="The electric utility sees energy performance of owned facilities as a strategic priority and is leading by example through high performance new, or retrofitting of existing, facilities. Energy standards or certifications that may demonstrate leadership in energy performance include LEED, Passive House, ENERGY STAR, BOMA Best, Green Globes, or Net Zero (Emissions or Energy)."><img src="../assets/info-circle-solid.svg" style="width: 14px" alt="info icon" class="img-fluid"></a></th>
+                
+                <td>Checklist</td>
+                
+                <td><label for="elec_lead_exam_na">N/A for the community.<br><input id="elec_lead_exam_na" class="form-check-input na" type="checkbox" name="elec_lead_exam_na" value="2"></label></td>
+                
+                <td><label for="elec_lead_exam_0">The electric utility is currently not demonstrating leadership by example in owned facilities.<br>[0 points]<br><input id="elec_lead_exam_0" class="form-check-input app zero" type="checkbox" name="elec_lead_exam_0" value="0"></label></td>
+                
+                <td><label for="elec_lead_exam_1">The electric utility has developed a new high performance utility-owned facility, or retrofitted an existing facility, that demonstrates leadership in energy efficiency and/or the use of local/renewable energy sources.<br>[0.5 points]<br><input id="elec_lead_exam_1" class="form-check-input app" type="checkbox" name="elec_lead_exam_1" value="0.5"></label></td>
+                
+                <td><label for="elec_lead_exam_2">The electric utility uses a benchmarking, labelling and disclosure system for all owned facilities.<br>[0.5 points]<br><input id="elec_lead_exam_2" class="form-check-input app" type="checkbox" name="elec_lead_exam_2" value="0.5"></label></td>
+
+                <td><label for="elec_lead_exam_3">Energy performance of utility-owned facilities is seen as a strategic priority for the electric utility.<br>[1 point]<br><input id="elec_lead_exam_3" class="form-check-input app" type="checkbox" name="elec_lead_exam_3" value="1"></label></td>                
+
+                <td></td>
+                                                
+                <td>
+                  <input id="elec_lead_exam_pts" class="text-center row-points" name="elec_lead_exam_pts" value="" hidden></input>
+                  <output>0 points</output>
+                </td>
+                
+                <td><textarea class="form-control" id="elec_lead_exam_notes" name="elec_lead_exam_notes" placeholder="Enter relevant notes, references, or links..." rows="8" style="font-size: 12px"></textarea></td>
+
+                <input class="row-complete" value="false" type="hidden">
+              </tr>
+
+              <tr>
+                <th scope="row">2.5.2c. Natural gas utility leadership by example in owned facilities <a href="#" data-toggle="tooltip" data-placement="right" data-animation="true" title="The natural gas utility sees energy performance of owned facilities as a strategic priority and is leading by example through high performance new, or retrofitting of existing, facilities. Energy standards or certifications that may demonstrate leadership in energy performance include LEED, Passive House, ENERGY STAR, BOMA Best, Green Globes, or Net Zero (Emissions or Energy)."><img src="../assets/info-circle-solid.svg" style="width: 14px" alt="info icon" class="img-fluid"></a></th>
+                
+                <td>Checklist</td>
+                
+                <td><label for="gas_lead_exam_na">N/A for the community.<br><input id="gas_lead_exam_na" class="form-check-input na" type="checkbox" name="gas_lead_exam_na" value="2"></label></td>
+                
+                <td><label for="gas_lead_exam_0">Natural gas utility is currently not leading by example in owned facilities.<br>[0 points]<br><input id="gas_lead_exam_0" class="form-check-input app zero" type="checkbox" name="gas_lead_exam_0" value="0"></label></td>
+                
+                <td><label for="gas_lead_exam_1">The natural gas utility has developed a new high performance utility-owned facility, or retrofitted an existing facility, that demonstrates leadership in energy efficiency and/or the use of local/renewable energy sources.<br>[0.5 points]<br><input id="gas_lead_exam_1" class="form-check-input app" type="checkbox" name="gas_lead_exam_1" value="0.5"></label></td>
+                
+                <td><label for="gas_lead_exam_2">The natural gas utility uses a benchmarking, labelling and disclosure system for all owned facilities.<br>[0.5 points]<br><input id="gas_lead_exam_2" class="form-check-input app" type="checkbox" name="gas_lead_exam_2" value="0.5"></label></td>
+
+                <td><label for="gas_lead_exam_3">Energy performance of utility-owned facilities is seen as a strategic priority for the natural gas utility.<br>[1 point]<br><input id="gas_lead_exam_3" class="form-check-input app" type="checkbox" name="gas_lead_exam_3" value="1"></label></td>                
+
+                <td></td>
+                                                
+                <td>
+                  <input id="gas_lead_exam_pts" class="text-center row-points" name="gas_lead_exam_pts" value="" hidden></input>
+                  <output>0 points</output>
+                </td>
+                
+                <td><textarea class="form-control" id="gas_lead_exam_notes" name="gas_lead_exam_notes" placeholder="Enter relevant notes, references, or links..." rows="8" style="font-size: 12px"></textarea></td>
+
+                <input class="row-complete" value="false" type="hidden">
+              </tr>
+
+              <tr>
+                <th scope="row">2.5.2d. Public sector organization leadership by example in local facilities <a href="#" data-toggle="tooltip" data-placement="right" data-animation="true" title="Public sector organizations are leading by example with their local facilities through demonstrations of: (1) Improving performance of existing buildings; (2) Creating high performance in new building construction; (3) Using local energy options, such as solar, wind, district energy and combined heat and power (CHP) where possible; and, (4) Adopting energy benchmarking. This includes buildings for school districts, hospitals, universities and colleges, or facilities of upper levels of government."><img src="../assets/info-circle-solid.svg" style="width: 14px" alt="info icon" class="img-fluid"></a></th>
+                
+                <td>Checklist</td>
+                
+                <td><label for="public_lead_exam_na">N/A for the community.<br>[N/A for communities with no public sector organizations]<br><input id="public_lead_exam_na" class="form-check-input na pot-na-public" type="checkbox" name="public_lead_exam_na" value="6"></label></td>
+                
+                <td><label for="public_lead_exam_0">Public sector organizations are currently not leading by example in local facilities.<br>[0 points]<br><input id="public_lead_exam_0" class="form-check-input app zero pot-na-public" type="checkbox" name="public_lead_exam_0" value="0"></label></td>
+                
+                <td><label for="public_lead_exam_1">Energy efficiency retrofits of existing buildings, including certification of previously uncertified buildings, have been demonstrated in at least one public sector organization in the past three years.<br>
+                  <input id="public_lead_exam_1_on" class="form-check-input app on-off pot-na-public" type="checkbox" name="public_lead_exam_1_on" value="0"><br><br>
+                  <label for="public_lead_exam_1_half"><input id="public_lead_exam_1_half" class="form-check-input app on-off-sub pot-na-public" type="radio" name="public_lead_exam_1" value="0.5" disabled> One building [0.5 points]</label><br>
+                  <label for="public_lead_exam_1_1"><input id="public_lead_exam_1_1" class="form-check-input app on-off-sub pot-na-public" type="radio" name="public_lead_exam_1" value="1" disabled> Some buildings [1 point]</label><br>
+                  <label for="public_lead_exam_1_oneAndHalf"><input id="public_lead_exam_1_oneAndHalf" class="form-check-input app on-off-sub pot-na-public" type="radio" name="public_lead_exam_1" value="1.5" disabled> All buildings [1.5 points]</label><br>
+                </label></td>
+                
+                <td><label for="public_lead_exam_2">High performance of new buildings has been demonstrated in at least one public sector organization building constructed in the past ten years.<br>
+                  <input id="public_lead_exam_2_on" class="form-check-input app on-off pot-na-public" type="checkbox" name="public_lead_exam_2_on" value="0"><br><br>
+                  <label for="public_lead_exam_2_half"><input id="public_lead_exam_2_half" class="form-check-input app on-off-sub pot-na-public" type="radio" name="public_lead_exam_2" value="0.5" disabled> One building [0.5 points]</label><br>
+                  <label for="public_lead_exam_2_1"><input id="public_lead_exam_2_1" class="form-check-input app on-off-sub pot-na-public" type="radio" name="public_lead_exam_2" value="1" disabled> Some buildings [1 point]</label><br>
+                  <label for="public_lead_exam_2_oneAndHalf"><input id="public_lead_exam_2_oneAndHalf" class="form-check-input app on-off-sub pot-na-public" type="radio" name="public_lead_exam_2" value="1.5" disabled> All buildings [1.5 points]</label><br>
+                </label></td>
+
+                <td><label for="public_lead_exam_3">Use of local/renewable heat/electricity has been demonstrated in at least one public sector organization in the past three years.<br>
+                  <input id="public_lead_exam_3_on" class="form-check-input app on-off pot-na-public" type="checkbox" name="public_lead_exam_3_on" value="0"><br><br>
+                  <label for="public_lead_exam_3_half"><input id="public_lead_exam_3_half" class="form-check-input app on-off-sub pot-na-public" type="radio" name="public_lead_exam_3" value="0.5" disabled> One building [0.5 points]</label><br>
+                  <label for="public_lead_exam_3_1"><input id="public_lead_exam_3_1" class="form-check-input app on-off-sub pot-na-public" type="radio" name="public_lead_exam_1" value="1" disabled> Some buildings [1 point]</label><br>
+                  <label for="public_lead_exam_3_oneAndHalf"><input id="public_lead_exam_3_oneAndHalf" class="form-check-input app on-off-sub pot-na-public" type="radio" name="public_lead_exam_3" value="1.5" disabled> All buildings [1.5 points]</label><br>
+                </label></td>
+
+                <td><label for="public_lead_exam_4">Benchmarking and public disclosure of performance of buildings has been demonstrated in at least one public sector organization.<br>
+                  <input id="public_lead_exam_4_on" class="form-check-input app on-off pot-na-public" type="checkbox" name="public_lead_exam_4_on" value="0"><br><br>
+                  <label for="public_lead_exam_4_half"><input id="public_lead_exam_4_half" class="form-check-input app on-off-sub pot-na-public" type="radio" name="public_lead_exam_4" value="0.5" disabled> One building [0.5 points]</label><br>
+                  <label for="public_lead_exam_4_1"><input id="public_lead_exam_4_1" class="form-check-input app on-off-sub pot-na-public" type="radio" name="public_lead_exam_4" value="1" disabled> Some buildings [1 point]</label><br>
+                  <label for="public_lead_exam_4_oneAndHalf"><input id="public_lead_exam_4_oneAndHalf" class="form-check-input app on-off-sub pot-na-public" type="radio" name="public_lead_exam_4" value="1.5" disabled> All buildings [1.5 points]</label><br>
+                </label></td>
+                
+                <td>
+                  <input id="public_lead_exam_pts" class="text-center row-points" name="public_lead_exam_pts" value="" hidden></input>
+                  <output>0 points</output>
+                </td>
+                
+                <td><textarea class="form-control" id="public_lead_exam_notes" name="public_lead_exam_notes" placeholder="Enter relevant notes, references, or links..." rows="8" style="font-size: 12px"></textarea></td>
+
+                <input class="row-complete" value="false" type="hidden">
+              </tr>
+
+              <tr>
+                <th scope="row">2.5.2e. Community-wide private sector leadership in incorporating energy efficiency and distributed energy resources, and energy labelling or standards into buildings <a href="#" data-toggle="tooltip" data-placement="right" data-animation="true" title="There is private real estate sector leadership in buildings within the community through demonstrations of: (1) Improving performance of existing buildings; (2) Creating high performance in new building construction; (3) Using local energy options, such as solar, wind, district energy and combined heat and power (CHP) where possible; and, (4) Adopting energy benchmarking. This includes real estate developers, builders, and building owners and operators of all building typologies (single family and multi-unit residential and commercial)."><img src="../assets/info-circle-solid.svg" style="width: 14px" alt="info icon" class="img-fluid"></a></th>
+                
+                <td>Checklist</td>
+                
+                <td><label for="priv_lead_eff_na">N/A for the community.<br>[N/A for no prominent private sector developers, building owners/operators]<br><input id="priv_lead_eff_na" class="form-check-input na pot-na-private" type="checkbox" name="priv_lead_eff_na" value="6"></label></td>
+                
+                <td><label for="priv_lead_eff_0">There is currently no community-wide private sector leadership in local buildings.<br>[0 points]<br><input id="priv_lead_eff_0" class="form-check-input app zero pot-na-private" type="checkbox" name="priv_lead_eff_0" value="0"></label></td>
+                
+                <td><label for="priv_lead_eff_1">Energy efficiency retrofits of existing buildings, including certification of previously uncertified buildings, have been demonstrated by at least one private sector building owner/operator in the past three years.<br>
+                  <input id="priv_lead_eff_1_on" class="form-check-input app on-off pot-na-private" type="checkbox" name="priv_lead_eff_1_on" value="0"><br><br>
+                  <label for="priv_lead_eff_1_1"><input id="priv_lead_eff_1_1" class="form-check-input app on-off-sub pot-na-private" type="radio" name="priv_lead_eff_1" value="1" disabled> One building [1 point]</label><br>
+                  <label for="priv_lead_eff_1_2"><input id="priv_lead_eff_1_2" class="form-check-input app on-off-sub pot-na-private" type="radio" name="priv_lead_eff_1" value="2" disabled> Multiple buildings [2 points]</label><br>
+                </label></td>
+                
+                <td><label for="priv_lead_eff_2">High performance of new buildings has been demonstrated by at least one private sector developer building constructed in the past ten years.<br>
+                  <input id="priv_lead_eff_2_on" class="form-check-input app on-off pot-na-private" type="checkbox" name="priv_lead_eff_2_on" value="0"><br><br>
+                  <label for="priv_lead_eff_2_1"><input id="priv_lead_eff_2_1" class="form-check-input app on-off-sub pot-na-private" type="radio" name="priv_lead_eff_1" value="1" disabled> One building [1 point]</label><br>
+                  <label for="priv_lead_eff_2_2"><input id="priv_lead_eff_2_2" class="form-check-input app on-off-sub pot-na-private" type="radio" name="priv_lead_eff_2" value="2" disabled> Multiple buildings [2 points]</label><br>
+                </label></td>
+
+                <td><label for="priv_lead_eff_3">Use of local/renewable heat/electricity has been demonstrated in at least one privately owned/operated or developed building in the past three years.<br>
+                  <input id="priv_lead_eff_3_on" class="form-check-input app on-off pot-na-private" type="checkbox" name="priv_lead_eff_3_on" value="0"><br><br>
+                  <label for="priv_lead_eff_3_1"><input id="priv_lead_eff_3_1" class="form-check-input app on-off-sub pot-na-private" type="radio" name="priv_lead_eff_3" value="1" disabled> One building [1 point]</label><br>
+                  <label for="priv_lead_eff_3_2"><input id="priv_lead_eff_3_2" class="form-check-input app on-off-sub pot-na-private" type="radio" name="priv_lead_eff_1" value="2" disabled> Multiple buildings [2 points]</label><br>
+                </label></td>
+
+                <td><label for="priv_lead_eff_4">Benchmarking and public disclosure of performance has been demonstrated by at least one private sector building owner/operator.<br>
+                  <input id="priv_lead_eff_4_on" class="form-check-input app on-off pot-na-private" type="checkbox" name="priv_lead_eff_4_on" value="0"><br><br>
+                  <label for="priv_lead_eff_4_1"><input id="priv_lead_eff_4_1" class="form-check-input app on-off-sub pot-na-private" type="radio" name="priv_lead_eff_4" value="1" disabled> One building [1 point]</label><br>
+                  <label for="priv_lead_eff_4_2"><input id="priv_lead_eff_4_2" class="form-check-input app on-off-sub pot-na-private" type="radio" name="priv_lead_eff_4" value="2" disabled> Multiple buildings [2 points]</label><br>
+                </label></td>
+                
+                <td>
+                  <input id="priv_lead_eff_pts" class="text-center row-points" name="priv_lead_eff_pts" value="" hidden></input>
+                  <output>0 points</output>
+                </td>
+                
+                <td><textarea class="form-control" id="priv_lead_eff_notes" name="priv_lead_eff_notes" placeholder="Enter relevant notes, references, or links..." rows="8" style="font-size: 12px"></textarea></td>
+
+                <input class="row-complete" value="false" type="hidden">
+              </tr>              
+            </tbody>
+          </table>
+        </div>
+        
+        <input id="form-submit" class="btn btn-primary" type="submit" value="Save">
+
+      </form><br>
+              
+      <div id="navigation">
+        <a href="/transport" id="previous" class="btn btn-primary" role="button">Previous (Transportation)</a>
+        <a href="/logout" id="logout" class="btn btn-primary" role="button">Logout</a>
+        <a href="/outputs" id="next" class="btn btn-primary" role="button">Next (Outputs)</input></a>
+      </div><br>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/0f567e20d5.js" crossorigin="anonymous"></script>
+    <script src="../public/client.js" type="module"></script>
+  </body>
+</html>
