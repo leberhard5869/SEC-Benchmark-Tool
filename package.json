@@ -1,11 +1,8 @@
 {
-  "//1": "describes your app and its dependencies",
-  "//2": "https://docs.npmjs.com/files/package.json",
-  "//3": "updating this file will download and update your packages",
-  "name": "fcc-advanced-node-and-express",
-  "author": "http://github.com/JosephLivengood",
+  "name": "smart-energy-communities-benchmark-tool",
+  "author": "http://github.com/leberhard5869/",
   "version": "0.0.1",
-  "description": "What am I about?",
+  "description": "Smart Energy Communities Benchmark Tool",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
@@ -30,7 +27,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://glitch.com/#!/project/welcome-project"
+    "url": "https://github.com/leberhard5869/SEC-Benchmark-Tool"
   },
   "keywords": [
     "node",
@@ -39,7 +36,10 @@
     "passport",
     "socketio"
   ],
-  "license": "MIT",
+  "license": [
+    "MIT",
+    "CC BY 4.0 International"
+  ],
   "devDependencies": {
     "nodemon": "^2.0.4"
   }
