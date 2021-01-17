@@ -49,100 +49,99 @@
 
       <h4 id="scenario">Current Scenario:</h4>
 
-      <div class="row">
-        <div class="table-responsive col-lg-4">
-          <table class="table table-bordered align-middle w-auto">
-            <thead>
-              <tr style="background-color: #00b3b3">
-                <th class="col-lg text-center align-middle" scope="col">Component</th>
-                <th class="col-lg text-center align-middle" scope="col">Complete?</th>
-                <th class="col-lg text-center align-middle" scope="col">Score</th>
-                <th class="col-lg text-center align-middle" scope="col">Total Possible Score <a href="#" data-toggle="tooltip" data-placement="right" data-animation="true" title="Does not include potential points deemed as not applicable."><img src="../assets/info-circle-solid.svg" style="width: 14px" alt="info icon" class="img-fluid"></a></th>
-                <th class="col-lg text-center align-middle" scope="col">Percent Score</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th class="text-left align-middle" scope="row">Governance</th>
-                <td class="text-center align-middle"><img id="governance-comp" style="width: 15px" class="img-fluid"></td>
-                <td class="text-center align-middle" id="governance-score"></td>
-                <td class="text-center align-middle" id="governance-total"></td>
-                <td class="text-center align-middle" id="governance-perc"></td>
-              </tr>
-              <tr>
-                <th class="text-left align-middle" scope="row">Staff</th>
-                <td class="text-center align-middle"><img id="staff-comp" style="width: 15px" class="img-fluid"></td>
-                <td class="text-center align-middle" id="staff-score"></td>
-                <td class="text-center align-middle" id="staff-total"></td>
-                <td class="text-center align-middle" id="staff-perc"></td>
-              </tr>
-              <tr>
-                <th class="text-left align-middle" scope="row">Data</th>
-                <td class="text-center align-middle"><img id="data-comp" style="width: 15px" class="img-fluid"></td>
-                <td class="text-center align-middle" id="data-score"></td>
-                <td class="text-center align-middle" id="data-total"></td>
-                <td class="text-center align-middle" id="data-perc"></td>
-              </tr>
-              <tr>
-                <th class="text-left align-middle" scope="row">Financials</th>
-                <td class="text-center align-middle"><img id="financials-comp" style="width: 15px" class="img-fluid"></td>
-                <td class="text-center align-middle" id="financials-score"></td>
-                <td class="text-center align-middle" id="financials-total"></td>
-                <td class="text-center align-middle" id="financials-perc"></td>
-              </tr>            
-              <tr>
-                <th class="text-left align-middle" scope="row">Strategy</th>
-                <td class="text-center align-middle"><img id="strategy-comp" style="width: 15px" class="img-fluid"></td>
-                <td class="text-center align-middle" id="strategy-score"></td>
-                <td class="text-center align-middle" id="strategy-total"></td>
-                <td class="text-center align-middle" id="strategy-perc"></td>
-              </tr>
-              <tr>
-                <th class="text-left align-middle" scope="row">Land Use</th>
-                <td class="text-center align-middle"><img id="land_use-comp" style="width: 15px" class="img-fluid"></td>
-                <td class="text-center align-middle" id="land_use-score"></td>
-                <td class="text-center align-middle" id="land_use-total"></td>
-                <td class="text-center align-middle" id="land_use-perc"></td>
-              </tr>
-              <tr>
-                <th class="text-left align-middle" scope="row">Energy Networks</th>
-                <td class="text-center align-middle"><img id="energy_net-comp" style="width: 15px" class="img-fluid"></td>
-                <td class="text-center align-middle" id="energy_net-score"></td>
-                <td class="text-center align-middle" id="energy_net-total"></td>
-                <td class="text-center align-middle" id="energy_net-perc"></td>
-              </tr>
-              <tr>
-                <th class="text-left align-middle" scope="row">Waste & Water</th>
-                <td class="text-center align-middle"><img id="waste_water-comp" style="width: 15px" class="img-fluid"></td>
-                <td class="text-center align-middle" id="waste_water-score"></td>
-                <td class="text-center align-middle" id="waste_water-total"></td>
-                <td class="text-center align-middle" id="waste_water-perc"></td>
-              </tr>
-              <tr>
-                <th class="text-left align-middle" scope="row">Transportation</th>
-                <td class="text-center align-middle"><img id="transport-comp" style="width: 15px" class="img-fluid"></td>
-                <td class="text-center align-middle" id="transport-score"></td>
-                <td class="text-center align-middle" id="transport-total"></td>
-                <td class="text-center align-middle" id="transport-perc"></td>
-              </tr>            
-              <tr>
-                <th class="text-left align-middle" scope="row">Buildings</th>
-                <td class="text-center align-middle"><img id="buildings-comp" style="width: 15px" class="img-fluid"></td>
-                <td class="text-center align-middle" id="buildings-score"></td>
-                <td class="text-center align-middle" id="buildings-total"></td>
-                <td class="text-center align-middle" id="buildings-perc"></td>
-              </tr>
-              <tr>
-                <th class="text-left align-middle" scope="row">Total</th>
-                <td class="text-center align-middle"><img id="total-comp" style="width: 15px" class="img-fluid"></td>
-                <td class="text-center align-middle" id="total-score"></td>
-                <td class="text-center align-middle" id="total-total"></td>
-                <td class="text-center align-middle" id="total-perc"></td>
-              </tr>            
-            </tbody>
-          </table>
-        </div>
-        <div id="graph-container" class="img-fluid col-lg-6"></div>
+      <div class="table-responsive">
+        <table class="table table-bordered align-middle w-auto">
+          <thead>
+            <tr style="background-color: #00b3b3">
+              <th class="col-lg text-center align-middle" scope="col" colspan="2">Component</th>
+              <th class="col-lg text-center align-middle" scope="col">Complete?</th>
+              <th class="col-lg text-center align-middle" scope="col">Score</th>
+              <th class="col-lg text-center align-middle" scope="col">Total Possible Score <a href="#" data-toggle="tooltip" data-placement="right" data-animation="true" title="Does not include potential points deemed as not applicable."><img src="../assets/info-circle-solid.svg" style="width: 14px" alt="info icon" class="img-fluid"></a></th>
+              <th class="col-lg text-center align-middle" scope="col">Percent Score</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th class="text-left align-middle" scope="row" rowspan="5">COMMUNITY CAPACITY & RESOURCES</th>
+              <th class="text-left align-middle" style="color: #00b3b3" style="color: #00b3b3"><img src="../assets/Governance-Icon.png" style="width: 40px" class="img-fluid">Governance</th>
+              <td class="text-center align-middle"><img id="governance-comp" style="width: 15px" class="img-fluid"></td>
+              <td class="text-center align-middle" id="governance-score"></td>
+              <td class="text-center align-middle" id="governance-total"></td>
+              <td class="text-left align-middle" id="governance-perc"><svg height="25"><rect id="governance-perc-bar" /></svg></td>
+            </tr>
+            <tr>
+              <th class="text-left align-middle" scope="row" style="color: #00b3b3"><img src="../assets/Staff-Icon.png" style="width: 40px" class="img-fluid">Staff</th>
+              <td class="text-center align-middle"><img id="staff-comp" style="width: 15px" class="img-fluid"></td>
+              <td class="text-center align-middle" id="staff-score"></td>
+              <td class="text-center align-middle" id="staff-total"></td>
+              <td class="text-left align-middle" id="staff-perc"><svg height="25"><rect id="staff-perc-bar" /></svg></td>
+            </tr>
+            <tr>
+              <th class="text-left align-middle" scope="row" style="color: #00b3b3"><img src="../assets/Data-Icon.png" style="width: 40px" class="img-fluid">Data</th>
+              <td class="text-center align-middle"><img id="data-comp" style="width: 15px" class="img-fluid"></td>
+              <td class="text-center align-middle" id="data-score"></td>
+              <td class="text-center align-middle" id="data-total"></td>
+              <td class="text-left align-middle" id="data-perc"><svg height="25"><rect id="data-perc-bar" /></svg></td>
+            </tr>
+            <tr>
+              <th class="text-left align-middle" scope="row" style="color: #00b3b3"><img src="../assets/Financials-Icon.png" style="width: 40px" class="img-fluid">Financials</th>
+              <td class="text-center align-middle"><img id="financials-comp" style="width: 15px" class="img-fluid"></td>
+              <td class="text-center align-middle" id="financials-score"></td>
+              <td class="text-center align-middle" id="financials-total"></td>
+              <td class="text-left align-middle" id="financials-perc"><svg height="25"><rect id="financials-perc-bar" /></svg></td>
+            </tr>            
+            <tr>
+              <th class="text-left align-middle" scope="row" style="color: #00b3b3"><img src="../assets/Strategy-Icon.png" style="width: 40px" class="img-fluid">Strategy</th>
+              <td class="text-center align-middle"><img id="strategy-comp" style="width: 15px" class="img-fluid"></td>
+              <td class="text-center align-middle" id="strategy-score"></td>
+              <td class="text-center align-middle" id="strategy-total"></td>
+              <td class="text-left align-middle" id="strategy-perc"><svg height="25"><rect id="strategy-perc-bar" /></svg></td>
+            </tr>
+            <tr>
+              <th class="text-left align-middle" scope="row" rowspan="5">COMMUNITY ENERGY SYSTEMS & PROCESS</th>
+              <th class="text-left align-middle" scope="row" style="color: #00b3b3"><img src="../assets/Land-Use-Icon.png" style="width: 40px" class="img-fluid">Land Use</th>
+              <td class="text-center align-middle"><img id="land_use-comp" style="width: 15px" class="img-fluid"></td>
+              <td class="text-center align-middle" id="land_use-score"></td>
+              <td class="text-center align-middle" id="land_use-total"></td>
+              <td class="text-left align-middle" id="land_use-perc"><svg height="25"><rect id="land_use-perc-bar" /></svg></td>
+            </tr>
+            <tr>
+              <th class="text-left align-middle" scope="row" style="color: #00b3b3"><img src="../assets/Energy-Networks-Icon.png" style="width: 40px" class="img-fluid">Energy Networks</th>
+              <td class="text-center align-middle"><img id="energy_net-comp" style="width: 15px" class="img-fluid"></td>
+              <td class="text-center align-middle" id="energy_net-score"></td>
+              <td class="text-center align-middle" id="energy_net-total"></td>
+              <td class="text-left align-middle" id="energy_net-perc"><svg height="25"><rect id="energy_net-perc-bar" /></svg></td>
+            </tr>
+            <tr>
+              <th class="text-left align-middle" scope="row" style="color: #00b3b3"><img src="../assets/Water-Waste-Icon.png" style="width: 40px" class="img-fluid">Waste & Water</th>
+              <td class="text-center align-middle"><img id="waste_water-comp" style="width: 15px" class="img-fluid"></td>
+              <td class="text-center align-middle" id="waste_water-score"></td>
+              <td class="text-center align-middle" id="waste_water-total"></td>
+              <td class="text-left align-middle" id="waste_water-perc"><svg height="25"><rect id="waste_water-perc-bar" /></svg></td>
+            </tr>
+            <tr>
+              <th class="text-left align-middle" scope="row" style="color: #00b3b3"><img src="../assets/Transportation-Icon.png" style="width: 40px" class="img-fluid">Transportation</th>
+              <td class="text-center align-middle"><img id="transport-comp" style="width: 15px" class="img-fluid"></td>
+              <td class="text-center align-middle" id="transport-score"></td>
+              <td class="text-center align-middle" id="transport-total"></td>
+              <td class="text-left align-middle" id="transport-perc"><svg height="25"><rect id="transport-perc-bar" /></svg></td>
+            </tr>            
+            <tr>
+              <th class="text-left align-middle" scope="row" style="color: #00b3b3"><img src="../assets/Buildings-Icon.png" style="width: 40px" class="img-fluid">Buildings</th>
+              <td class="text-center align-middle"><img id="buildings-comp" style="width: 15px" class="img-fluid"></td>
+              <td class="text-center align-middle" id="buildings-score"></td>
+              <td class="text-center align-middle" id="buildings-total"></td>
+              <td class="text-left align-middle" id="buildings-perc"><svg height="25"><rect id="buildings-perc-bar" /></svg></td>
+            </tr>
+            <tr>
+              <th class="text-left align-middle" scope="row" colspan="2">Total</th>
+              <td class="text-center align-middle"><img id="total-comp" style="width: 15px" class="img-fluid"></td>
+              <td class="text-center align-middle" id="total-score"></td>
+              <td class="text-center align-middle" id="total-total"></td>
+              <td class="text-left align-middle" id="total-perc"><svg height="25"><rect id="total-perc-bar" /></svg></td>
+            </tr>            
+          </tbody>
+        </table>
       </div>
 
       <div id="navigation">
@@ -167,7 +166,7 @@
           url: "/db/data",
           success: function(data) {
             /* Insert results into table */
-            if (data.scen_name) { $("#scenario").text("Current Scenario:  " + data.scen_name) };
+            data ? $("#scenario").append(data.scen_name) : $("#scenario").append("None defined");
 
             let maxScores = {
               governance: 14.5,
@@ -182,12 +181,11 @@
               buildings: 24,
             };
 
+            let percent = 0;
             let compMark = 0;
             let ptsTotal = 0;
             let appPtsTotal = 0;
             let naPtsTotal = 0;
-            let percent = 0;
-            let graphData = [];
             
             for (let comp in maxScores) {
               if (data[comp].z_sect_complete === "true") {
@@ -195,10 +193,11 @@
                 $("#" + comp + "-score").text(data[comp].z_app_pts_total);
                 $("#" + comp + "-total").text(maxScores[comp] - data[comp].z_na_pts_total);
                 percent = data[comp].z_app_pts_total / (maxScores[comp] - data[comp].z_na_pts_total) * 100;
-                $("#" + comp + "-perc").text(percent.toFixed(1) + "%");
+                $("#" + comp + "-perc-bar").attr({"width": percent * 3, "height": "25", "style": "fill: #00b3b3"}).parent().attr("width", percent * 3);
+                $("#" + comp + "-perc").append("  " + percent.toFixed(1) + "%");
                 compMark++;
               } else {
-                $("#" + comp + "-comp").attr({"src" : "../assets/times-solid.svg", "alt" : "no"});
+                $("#" + comp + "-comp").attr({"src": "../assets/times-solid.svg", "alt": "no"});
                 $("#" + comp + "-score").text("n/a");
                 $("#" + comp + "-total").text("n/a");
                 $("#" + comp + "-perc").text("n/a");
@@ -206,66 +205,20 @@
               ptsTotal += maxScores[comp];
               appPtsTotal += data[comp].z_app_pts_total;
               naPtsTotal += data[comp].z_na_pts_total;
-              percent ? graphData.push([ comp, percent ]) : graphData.push([ comp, 0 ]);
             };
 
             if (compMark === 10) {
               $("#total-comp").attr({"src" : "../assets/check-solid.svg", "alt" : "yes"});
-              $("#total-score").text(appPtsTotal);
-              $("#total-total").text(ptsTotal - naPtsTotal);
-              $("#total-perc").text((appPtsTotal / (ptsTotal - naPtsTotal) * 100).toFixed(1) + "%");
+              $("#total-score").html("<strong>" + appPtsTotal + "</strong>");
+              $("#total-total").html("<strong>" + (ptsTotal - naPtsTotal) + "</strong>");
+              $("#total-perc-bar").attr({"width": (appPtsTotal / (ptsTotal - naPtsTotal) * 300), "height": "25", "style": "fill: #00b3b3"}).parent().attr("width", (appPtsTotal / (ptsTotal - naPtsTotal) * 300));
+              $("#total-perc").append("<strong>  " + ((appPtsTotal / (ptsTotal - naPtsTotal) * 100).toFixed(1)) + "%</strong>");
             } else {
               $("#total-comp").attr({"src" : "../assets/times-solid.svg", "alt" : "no"});
-              $("#total-score").text("n/a");
-              $("#total-total").text("n/a");
-              $("#total-perc").text("n/a");
+              $("#total-score").html("<strong>n/a</strong>");
+              $("#total-total").html("<strong>n/a</strong>");
+              $("#total-perc").html("<strong>n/a</strong>");
             }
-            graphData.push(["total", appPtsTotal / (ptsTotal - naPtsTotal) * 100]);
-            console.log(graphData);
-
-            /* Plot percentage bar graphs */
-            const w = 500;
-            const h = 420;
-            const bottomPad = 25;
-            const topPad = 35;
-            const svg = d3
-              .select("#graph-container")
-              .append("svg")
-              .attr("width", w)
-              .attr("height", h);
-
-            // Set scales
-            const xScale = d3
-              .scaleLinear()
-              .domain([0, 100])
-              .range([0, w]);
-            const yScale = d3
-              .scaleBand()
-              .domain(graphData.map((d) => d[0]))
-              .range([h - topPad, 0]);
-
-            // Plot data
-            svg
-              .selectAll("rect")
-              .data(graphData)
-              .enter()
-              .append("rect")
-              .attr("data-comp", (d, i) => d[0])
-              .attr("data-perc", (d, i) => d[1])
-              .attr("x", 0)
-              .attr("y", (d, i) => h - bottomPad - yScale(d[0]))
-              .attr("width", (d) => xScale(d[1]) - bottomPad)
-              .attr("height", 15)
-              .attr("fill", "#00b3b3")
-
-            /* Add labels */
-    /*        svg.selectAll("text")
-              .data(graphData)
-              .enter()
-              .append("text")
-              .text((d) => d[1].toFixed(1) + "%")
-              .attr("x", (d) => xScale(d[1]))
-              .attr("y", (d, i) => h - padding - yScale(d[0])); */
           }
         });
       });

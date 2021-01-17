@@ -47,6 +47,9 @@ $(document).ready(function(){
       $("#scenario").text("Current Scenario:  " + result.scen_name);
       $("#scen_carry").val(result.scen_name);
 
+      /* Enable save button if scenario exists */
+      if (result.scen_name) $("#form-submit").prop("disabled", false);
+
       /* Insert scenario data into form */
       let subResult = result[window.location.pathname.substring(1)];
       let halfSub = "";
