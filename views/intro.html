@@ -71,7 +71,7 @@
         <input id="form-scen-submit" class="btn btn-primary" type="submit" value="Select" disabled>
       </form><br>
 
-      <h4 id="scenario">Current Scenario:</h4>
+      <h4 id="scenario">Current Scenario: </h4>
       
       <form id="form-data">
 
@@ -252,13 +252,11 @@
         
         <div>
           <input id="form-data-submit" class="btn btn-primary" type="submit" value="Save Scenario" disabled>
-          <!-- Button trigger modal -->
           <button id="scen-delete" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#deleteModal" disabled>Delete Scenario</button>
           <br>
         </div>
       </form><br>
 
-      <!-- Modal -->
       <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
@@ -381,32 +379,33 @@
           url: "/db/data",
           success: function(data) {
             /* Insert scenario name as title/Enable delete button if current scenario is not n/a */
-            if (data.scen_name) { 
-              $("#scenario").text("Current Scenario:  " + data.scen_name);
+            if (typeof(data) === "string") {
+              $("#scenario").append(data);
+            } else {            
+              $("#scenario").append(data.scen_name);
               $("#scen-delete").prop("disabled", false);
               $("#form-data-submit").prop("disabled", false);
+
+              /* Insert scenario data into form */
+              $("#scen_carry").val(data.scen_name);
+              $("#scen_delete").val(data.scen_name);
+              
+              $("#org_type").find("input").prop("checked", false);
+              if (data.org_type) { $("#" + data.org_type).prop("checked", true) };
+              data.comm_name ? $("#comm_name").val(data.comm_name) : $("#comm_name").val("");
+              data.cent_water ? $("#cent_water").val(data.cent_water) : $("#cent_water").children().first().prop("selected", true);
+              data.flood_prone ? $("#flood_prone").val(data.flood_prone) : $("#flood_prone").children().first().prop("selected", true);
+              data.gas_conx ? $("#gas_conx").val(data.gas_conx) : $("#gas_conx").children().first().prop("selected", true);
+              data.pop_growth ? $("#pop_growth").val(data.pop_growth) : $("#pop_growth").children().first().prop("selected", true);
+              data.pop_size ? $("#pop_size").val(data.pop_size) : $("#pop_size").children().first().prop("selected", true);
+              data.priv_sect_oper ? $("#priv_sect_oper").val(data.priv_sect_oper) : $("#priv_sect_oper").children().first().prop("selected", true);
+              data.prov_terr ? $("#prov_terr").val(data.prov_terr) : $("#prov_terr").children().first().prop("selected", true);
+              data.pub_sect_orgs ? $("#pub_sect_orgs").val(data.pub_sect_orgs) : $("#pub_sect_orgs").children().first().prop("selected", true);
+              data.public_tran ? $("#public_tran").val(data.public_tran) : $("#public_tran").children().first().prop("selected", true);
+              data.sig_comm_stock ? $("#sig_comm_stock").val(data.sig_comm_stock) : $("#sig_comm_stock").children().first().prop("selected", true);
+              data.sig_murb_stock ? $("#sig_murb_stock").val(data.sig_murb_stock) : $("#sig_murb_stock").children().first().prop("selected", true);
+              data.waste_cont ? $("#waste_cont").val(data.waste_cont) : $("#waste_cont").children().first().prop("selected", true);
             };
-
-            /* Insert scenario data into form */
-            $("#scen_carry").val(data.scen_name);
-            $("#scen_delete").val(data.scen_name);
-            
-            $("#org_type").find("input").prop("checked", false);
-            if (data.org_type) { $("#" + data.org_type).prop("checked", true) };
-            data.comm_name ? $("#comm_name").val(data.comm_name) : $("#comm_name").val("");
-            data.cent_water ? $("#cent_water").val(data.cent_water) : $("#cent_water").children().first().prop("selected", true);
-            data.flood_prone ? $("#flood_prone").val(data.flood_prone) : $("#flood_prone").children().first().prop("selected", true);
-            data.gas_conx ? $("#gas_conx").val(data.gas_conx) : $("#gas_conx").children().first().prop("selected", true);
-            data.pop_growth ? $("#pop_growth").val(data.pop_growth) : $("#pop_growth").children().first().prop("selected", true);
-            data.pop_size ? $("#pop_size").val(data.pop_size) : $("#pop_size").children().first().prop("selected", true);
-            data.priv_sect_oper ? $("#priv_sect_oper").val(data.priv_sect_oper) : $("#priv_sect_oper").children().first().prop("selected", true);
-            data.prov_terr ? $("#prov_terr").val(data.prov_terr) : $("#prov_terr").children().first().prop("selected", true);
-            data.pub_sect_orgs ? $("#pub_sect_orgs").val(data.pub_sect_orgs) : $("#pub_sect_orgs").children().first().prop("selected", true);
-            data.public_tran ? $("#public_tran").val(data.public_tran) : $("#public_tran").children().first().prop("selected", true);
-            data.sig_comm_stock ? $("#sig_comm_stock").val(data.sig_comm_stock) : $("#sig_comm_stock").children().first().prop("selected", true);
-            data.sig_murb_stock ? $("#sig_murb_stock").val(data.sig_murb_stock) : $("#sig_murb_stock").children().first().prop("selected", true);
-            data.waste_cont ? $("#waste_cont").val(data.waste_cont) : $("#waste_cont").children().first().prop("selected", true);
-
           }
         });
 

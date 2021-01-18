@@ -146,7 +146,7 @@ module.exports = function(app, myDataBase) {
         if (err) { console.log(err) }
         else {
           let result = doc.scenarios.find((elm) => elm.scen_name === doc.currentScen);
-          res.json(result);
+          result ? res.json(result) : res.send("None defined");
         };
       });
     });

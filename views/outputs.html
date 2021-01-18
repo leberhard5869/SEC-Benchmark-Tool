@@ -47,7 +47,7 @@
         </div>
       </div>
 
-      <h4 id="scenario">Current Scenario:</h4>
+      <h4 id="scenario">Current Scenario: </h4>
 
       <div class="table-responsive">
         <table class="table table-bordered align-middle w-auto">
@@ -166,59 +166,65 @@
           url: "/db/data",
           success: function(data) {
             /* Insert results into table */
-            data ? $("#scenario").append(data.scen_name) : $("#scenario").append("None defined");
-
-            let maxScores = {
-              governance: 14.5,
-              staff: 25,
-              data: 34,
-              financials: 32,
-              strategy: 17,
-              land_use: 22.5,
-              energy_net: 31,
-              waste_water: 30,
-              transport: 31.5,
-              buildings: 24,
-            };
-
-            let percent = 0;
-            let compMark = 0;
-            let ptsTotal = 0;
-            let appPtsTotal = 0;
-            let naPtsTotal = 0;
-            
-            for (let comp in maxScores) {
-              if (data[comp].z_sect_complete === "true") {
-                $("#" + comp + "-comp").attr({"src" : "../assets/check-solid.svg", "alt" : "yes"});
-                $("#" + comp + "-score").text(data[comp].z_app_pts_total);
-                $("#" + comp + "-total").text(maxScores[comp] - data[comp].z_na_pts_total);
-                percent = data[comp].z_app_pts_total / (maxScores[comp] - data[comp].z_na_pts_total) * 100;
-                $("#" + comp + "-perc-bar").attr({"width": percent * 3, "height": "25", "style": "fill: #00b3b3"}).parent().attr("width", percent * 3);
-                $("#" + comp + "-perc").append("  " + percent.toFixed(1) + "%");
-                compMark++;
-              } else {
-                $("#" + comp + "-comp").attr({"src": "../assets/times-solid.svg", "alt": "no"});
-                $("#" + comp + "-score").text("n/a");
-                $("#" + comp + "-total").text("n/a");
-                $("#" + comp + "-perc").text("n/a");
-              };
-              ptsTotal += maxScores[comp];
-              appPtsTotal += data[comp].z_app_pts_total;
-              naPtsTotal += data[comp].z_na_pts_total;
-            };
-
-            if (compMark === 10) {
-              $("#total-comp").attr({"src" : "../assets/check-solid.svg", "alt" : "yes"});
-              $("#total-score").html("<strong>" + appPtsTotal + "</strong>");
-              $("#total-total").html("<strong>" + (ptsTotal - naPtsTotal) + "</strong>");
-              $("#total-perc-bar").attr({"width": (appPtsTotal / (ptsTotal - naPtsTotal) * 300), "height": "25", "style": "fill: #00b3b3"}).parent().attr("width", (appPtsTotal / (ptsTotal - naPtsTotal) * 300));
-              $("#total-perc").append("<strong>  " + ((appPtsTotal / (ptsTotal - naPtsTotal) * 100).toFixed(1)) + "%</strong>");
+            if (typeof(data) === "string") {
+              $("#scenario").append(data);
             } else {
-              $("#total-comp").attr({"src" : "../assets/times-solid.svg", "alt" : "no"});
-              $("#total-score").html("<strong>n/a</strong>");
-              $("#total-total").html("<strong>n/a</strong>");
-              $("#total-perc").html("<strong>n/a</strong>");
-            }
+              $("#scenario").append(data.scen_name);
+
+              let maxScores = {
+                governance: 14.5,
+                staff: 25,
+                data: 34,
+                financials: 32,
+                strategy: 17,
+                land_use: 22.5,
+                energy_net: 31,
+                waste_water: 30,
+                transport: 31.5,
+                buildings: 24,
+              };
+
+              let percent = 0;
+              let compMark = 0;
+              let ptsTotal = 0;
+              let appPtsTotal = 0;
+              let naPtsTotal = 0;
+              let barMult = 3;
+              let barSpeed = 1500;
+              
+              for (let comp in maxScores) {
+                if (data[comp] === undefined || data[comp].z_sect_complete === "false") {
+                  $("#" + comp + "-comp").attr({"src": "../assets/times-solid.svg", "alt": "no"});
+                  $("#" + comp + "-score").text("n/a");
+                  $("#" + comp + "-total").text("n/a");
+                  $("#" + comp + "-perc").text("n/a");
+                } else if (data[comp].z_sect_complete === "true") {
+                  $("#" + comp + "-comp").attr({"src" : "../assets/check-solid.svg", "alt" : "yes", "style" : "width: 20px"});
+                  $("#" + comp + "-score").text(data[comp].z_app_pts_total);
+                  $("#" + comp + "-total").text(maxScores[comp] - data[comp].z_na_pts_total);
+                  percent = data[comp].z_app_pts_total / (maxScores[comp] - data[comp].z_na_pts_total) * 100;
+                  $("#" + comp + "-perc-bar").attr({"width": 0, "height": "25", "style": "fill: #00b3b3"}).animate({"width": percent * barMult}, barSpeed).parent().attr("width", 0).animate({"width": percent * barMult}, barSpeed);
+                  $("#" + comp + "-perc").append("  " + percent.toFixed(1) + "%");
+                  compMark++;
+                  ptsTotal += maxScores[comp];
+                  appPtsTotal += data[comp].z_app_pts_total;
+                  naPtsTotal += data[comp].z_na_pts_total;
+                };
+              };
+
+              if (compMark === 10) {
+                $("#total-comp").attr({"src" : "../assets/check-solid.svg", "alt" : "yes", "style" : "width: 20px"});
+                $("#total-score").html("<strong>" + appPtsTotal + "</strong>");
+                $("#total-total").html("<strong>" + (ptsTotal - naPtsTotal) + "</strong>");
+                $("#total-perc-bar").attr({"width": 0, "height": "25", "style": "fill: #00b3b3"}).animate({"width": (appPtsTotal / (ptsTotal - naPtsTotal) * 100 * barMult)}, barSpeed).parent().attr("width", 0).animate({"width": (appPtsTotal / (ptsTotal - naPtsTotal) * 100 * barMult)}, barSpeed);
+                $("#total-perc").append("<strong>  " + ((appPtsTotal / (ptsTotal - naPtsTotal) * 100).toFixed(1)) + "%</strong>");
+              } else {
+                $("#total-comp").attr({"src" : "../assets/times-solid.svg", "alt" : "no"});
+                $("#total-score").html("<strong>n/a</strong>");
+                $("#total-total").html("<strong>n/a</strong>");
+                $("#total-perc").html("<strong>n/a</strong>");
+              }
+            };
           }
         });
       });

@@ -44,48 +44,52 @@ $(document).ready(function(){
     url: "/db/data",
     success: function(result) {
       /* Insert scenario info */
-      $("#scenario").text("Current Scenario:  " + result.scen_name);
-      $("#scen_carry").val(result.scen_name);
+      if (typeof(result) === "string") {
+        $("#scenario").append(result);
+      } else {
+        $("#scenario").append(result.scen_name);
+        $("#scen_carry").val(result.scen_name);
 
-      /* Enable save button if scenario exists */
-      if (result.scen_name) $("#form-submit").prop("disabled", false);
+        /* Enable save button if scenario exists */
+        if (result.scen_name) $("#form-submit").prop("disabled", false);
 
-      /* Insert scenario data into form */
-      let subResult = result[window.location.pathname.substring(1)];
-      let halfSub = "";
-      for (let key in subResult) {
-        if (typeof(subResult[key]) === "string") { $("#" + key).val(subResult[key]) }  // Notes
-        else if (typeof(subResult[key]) === "number") {
-          $("#" + key).prop("checked", true).trigger("handleChange");  // Checkboxes
-          $("#" + key + "_" + subResult[key]).prop("checked", true).trigger("handleChange");  // Radios general
-          $("#" + key + "_half").prop("checked", true).trigger("handleChange");  //  0.5 pt on-off-sub radios (jQuery won't search for 0.5)
-          $("#" + key + "_oneAndHalf").prop("checked", true).trigger("handleChange");  //  1.5 pt on-off-sub radios (jQuery won't search for 1.5)
-        };
-      }
+        /* Insert scenario data into form */
+        let subResult = result[window.location.pathname.substring(1)];
+        let halfSub = "";
+        for (let key in subResult) {
+          if (typeof(subResult[key]) === "string") { $("#" + key).val(subResult[key]) }  // Notes
+          else if (typeof(subResult[key]) === "number") {
+            $("#" + key).prop("checked", true).trigger("handleChange");  // Checkboxes
+            $("#" + key + "_" + subResult[key]).prop("checked", true).trigger("handleChange");  // Radios general
+            $("#" + key + "_half").prop("checked", true).trigger("handleChange");  // 0.5 pt on-off-sub radios (jQuery won't search for 0.5)
+            $("#" + key + "_oneAndHalf").prop("checked", true).trigger("handleChange"); //  1.5 pt on-off-sub radios (jQuery won't search for 1.5)
+          };
+        }
 
-      /*  Add pot-na-true class to global not applicables */
-      if (result.pop_size === "1000 - 9999" || result.pop_size === "<1000") { $(".pot-na-pop").addClass("pot-na-true").prop("checked", false).trigger("handleNa") };
-      if (result.pop_growth === "stable/shrinking") { $(".pot-na-growth").addClass("pot-na-true").prop("checked", false).trigger("handleNa") };
-      if (result.sig_murb_stock === "no") { $(".pot-na-murb").addClass("pot-na-true").prop("checked", false).trigger("handleNa") };
-      if (result.sig_comm_stock === "no") { $(".pot-na-comm").addClass("pot-na-true").prop("checked", false).trigger("handleNa") };
-      if (result.cent_water === "no") { $(".pot-na-water").addClass("pot-na-true").prop("checked", false).trigger("handleNa") };
-      if (result.public_tran === "no") { $(".pot-na-transit").addClass("pot-na-true").prop("checked", false).trigger("handleNa") };
-      if (result.gas_conx === "no") { $(".pot-na-gas").addClass("pot-na-true").prop("checked", false).trigger("handleNa") };
-      if (result.waste_cont === "no") { $(".pot-na-waste").addClass("pot-na-true").prop("checked", false).trigger("handleNa") };
-      if (result.prov_terr === "Yukon" || result.prov_terr === "Northwest Territories" || result.prov_terr === "Nunavut") { $(".pot-na-prov-north").addClass("pot-na-true").prop("checked", false).trigger("handleNa") };
-      if (result.flood_prone === "no") { $(".pot-na-flood").addClass("pot-na-true").prop("checked", false).trigger("handleNa") };
-      if (result.pub_sect_orgs === "no") { $(".pot-na-public").addClass("pot-na-true").prop("checked", false).trigger("handleNa") };
-      if (result.priv_sect_oper === "no") { $(".pot-na-private").addClass("pot-na-true").prop("checked", false).trigger("handleNa") };
-      
+        /*  Add pot-na-true class to global not applicables */
+        if (result.pop_size === "1000 - 9999" || result.pop_size === "<1000") { $(".pot-na-pop").addClass("pot-na-true").prop("checked", false).trigger("handleNa") };
+        if (result.pop_growth === "stable/shrinking") { $(".pot-na-growth").addClass("pot-na-true").prop("checked", false).trigger("handleNa") };
+        if (result.sig_murb_stock === "no") { $(".pot-na-murb").addClass("pot-na-true").prop("checked", false).trigger("handleNa") };
+        if (result.sig_comm_stock === "no") { $(".pot-na-comm").addClass("pot-na-true").prop("checked", false).trigger("handleNa") };
+        if (result.cent_water === "no") { $(".pot-na-water").addClass("pot-na-true").prop("checked", false).trigger("handleNa") };
+        if (result.public_tran === "no") { $(".pot-na-transit").addClass("pot-na-true").prop("checked", false).trigger("handleNa") };
+        if (result.gas_conx === "no") { $(".pot-na-gas").addClass("pot-na-true").prop("checked", false).trigger("handleNa") };
+        if (result.waste_cont === "no") { $(".pot-na-waste").addClass("pot-na-true").prop("checked", false).trigger("handleNa") };
+        if (result.prov_terr === "Yukon" || result.prov_terr === "Northwest Territories" || result.prov_terr === "Nunavut") { $(".pot-na-prov-north").addClass("pot-na-true").prop("checked", false).trigger("handleNa") };
+        if (result.flood_prone === "no") { $(".pot-na-flood").addClass("pot-na-true").prop("checked", false).trigger("handleNa") };
+        if (result.pub_sect_orgs === "no") { $(".pot-na-public").addClass("pot-na-true").prop("checked", false).trigger("handleNa") };
+        if (result.priv_sect_oper === "no") { $(".pot-na-private").addClass("pot-na-true").prop("checked", false).trigger("handleNa") };
+        
 
-      /* Check N/As where global applicables apply to entire row */
-      $(".na.pot-na-true").prop("checked", true).trigger("handleNa");
+        /* Check N/As where global applicables apply to entire row */
+        $(".na.pot-na-true").prop("checked", true).trigger("handleNa");
 
-      /* Change max points for 2.4.3 if pop between 10,000 and 100,000 */
-      if (result.pop_size === "10000 - 29999" || result.pop_size === "30000 - 99999") { $("#trans_dem_mgmt_3_max").val("1") };
-      
-      /* Alert if global not applicables (from Intro) have changed results requiring a save */
-      if (subResult) { if (subResult.z_app_pts_total.toString() != $("#z_app_pts_total").val() || subResult.z_na_pts_total.toString() != $("#z_na_pts_total").val() || subResult.z_sect_complete != $("#z_sect_complete").val()) { alert("Changes to the base scenario information in the Introduction have changed results here, requiring that you perform a Save.") } };
+        /* Change max points for 2.4.3 if pop between 10,000 and 100,000 */
+        if (result.pop_size === "10000 - 29999" || result.pop_size === "30000 - 99999") { $("#trans_dem_mgmt_3_max").val("1") };
+        
+        /* Alert if global not applicables (from Intro) have changed results requiring a save */
+        if (subResult) { if (subResult.z_app_pts_total.toString() != $("#z_app_pts_total").val() || subResult.z_na_pts_total.toString() != $("#z_na_pts_total").val() || subResult.z_sect_complete != $("#z_sect_complete").val()) { alert("Changes to the base scenario information in the Introduction have changed results here, requiring that you perform a Save.") } };
+      };
     }
   });
   
