@@ -129,15 +129,6 @@ $(document).ready(function(){
       $(this).parents("td").css("background-color", "#ffcd05");
     };
 
-    /* Handle local energy mapping & model not applicables */
-    if (this.id === "energy_mapping_0" || this.id === "scenario_model_0") {
-      if (this.checked) {
-        $(this).parents("tr").find("input:eq(3),input:eq(4),input:eq(5)").addClass("pot-na-local-true").prop("checked", false).prop("disabled", true).parents("td").css("background-color", "lightgrey");
-      } else if (!this.checked) {
-        $(this).parents("tr").find("input:eq(3):not(.pot-na-true),input:eq(4):not(.pot-na-true),input:eq(5):not(.pot-na-true)").removeClass("pot-na-local-true").prop("disabled", false).parents("td").css("background-color", "#ffffff");
-      };
-    };
-
     /* Handle sub radio button on/off */
     if (this.classList.contains("on-off")) {
       if (this.checked) { $(this).siblings().children().prop("disabled", false) }
@@ -168,7 +159,7 @@ $(document).ready(function(){
     $("td:empty").css("background-color", "lightgrey");
 
     /* Re-disable global and local not applicables */
-    $(".pot-na-true,.pot-na-local-true").prop("disabled", true).parents("td").css("background-color", "lightgrey");
+    $(".pot-na-true,.pot-na-local-true").parents("td").css("background-color", "lightgrey");
 
     /* Trigger handlePoints */
     $(this).trigger("handlePoints");
@@ -177,7 +168,7 @@ $(document).ready(function(){
   /* handleNa function (handles global (i.e. from Intro) not applicables only */
   $(".form-check-input").on("handleNa", function(event) {    
     /* Disable global not applicables */
-    $(".pot-na-true").prop("disabled", true).parents("td").css("background-color", "lightgrey");
+    $(".pot-na-true").parents("td").css("background-color", "lightgrey");
 
     /* Trigger handlePoints */
     $(this).trigger("handlePoints");
