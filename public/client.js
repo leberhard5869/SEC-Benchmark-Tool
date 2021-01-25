@@ -28,7 +28,7 @@ $(document).ready(function(){
   $("#navbar").append(navbar);
 
   /* Enable info circle hover document-wide */
-  $('[data-toggle="tooltip"]').tooltip();
+  $('[data-bs-toggle="tooltip"]').tooltip();
 
   /* Grey out unused table cells */
   $("td:empty").css("background-color", "lightgrey");
@@ -61,8 +61,8 @@ $(document).ready(function(){
           else if (typeof(subResult[key]) === "number") {
             $("#" + key).prop("checked", true).trigger("handleChange");  // Checkboxes
             $("#" + key + "_" + subResult[key]).prop("checked", true).trigger("handleChange");  // Radios general
-            $("#" + key + "_half").prop("checked", true).trigger("handleChange");  // 0.5 pt on-off-sub radios (jQuery won't search for 0.5)
-            $("#" + key + "_oneAndHalf").prop("checked", true).trigger("handleChange"); //  1.5 pt on-off-sub radios (jQuery won't search for 1.5)
+            if (subResult[key] === 0.5) { $("#" + key + "_half").prop("checked", true).trigger("handleChange") };  // 0.5 pt on-off-sub radios (jQuery won't search for 0.5)
+            if (subResult[key] === 1.5) { $("#" + key + "_oneAndHalf").prop("checked", true).trigger("handleChange") }; //  1.5 pt on-off-sub radios (jQuery won't search for 1.5)
           };
         }
 
