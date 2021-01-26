@@ -53,6 +53,9 @@ $(document).ready(function(){
         /* Enable save button if scenario exists */
         if (result.scen_name) $("#form-submit").prop("disabled", false);
 
+        /* Change max points for 2.4.3 if pop between 10,000 and 100,000 */
+        if (result.pop_size === "10000 - 29999" || result.pop_size === "30000 - 99999") { $("#trans_dem_mgmt_3_max").val("1") };        
+
         /* Insert scenario data into form */
         let subResult = result[window.location.pathname.substring(1)];
         let halfSub = "";
@@ -80,13 +83,9 @@ $(document).ready(function(){
         if (result.pub_sect_orgs === "no") { $(".pot-na-public").addClass("pot-na-true").prop("checked", false).trigger("handleNa") };
         if (result.priv_sect_oper === "no") { $(".pot-na-private").addClass("pot-na-true").prop("checked", false).trigger("handleNa") };
         
-
         /* Check N/As where global applicables apply to entire row */
         $(".na.pot-na-true").prop("checked", true).trigger("handleNa");
 
-        /* Change max points for 2.4.3 if pop between 10,000 and 100,000 */
-        if (result.pop_size === "10000 - 29999" || result.pop_size === "30000 - 99999") { $("#trans_dem_mgmt_3_max").val("1") };
-        
         /* Alert if global not applicables (from Intro) have changed results requiring a save */
         if (subResult) { if (subResult.z_app_pts_total.toString() != $("#z_app_pts_total").val() || subResult.z_na_pts_total.toString() != $("#z_na_pts_total").val() || subResult.z_sect_complete != $("#z_sect_complete").val()) { alert("Changes to the base scenario information in the Introduction have changed results here, requiring that you perform a Save.") } };
       };
@@ -135,22 +134,36 @@ $(document).ready(function(){
       else if (!this.checked) { $(this).siblings().children().prop("disabled", true).prop("checked", false) };
     };
 
-    /* Handle sub checkbox maximums and de-highlighting */
-    let arr = [], i = 0, sum = 0;
+    /* Handle sub checkbox maximums and de-highlighting */    
     if (this.classList.contains("sub-check")) {
-      arr = $(this).parents("td").find(".sub-check:checked");
-      for (i = 0; i < arr.length; i++) {
-        if (arr[i].checked) { sum += Number(arr[i].value) };
+      let sum = 0;
+      if (!$(this).data("store")) {
+        $(this).parents("td").find(".sub-check").each(function() {
+          $(this).data("store", $(this).val());
+        });
+      } else {
+        $(this).parents("td").find(".sub-check").each(function() {
+          $(this).val($(this).data("store"));
+        });
       };
-        if (sum > $(this).parents("td").find(".sub-check-max").val()) { this.checked = false }
-        else if (sum === 0) { $(this).parents("td").css("background-color", "#ffffff") };
+      $(this).parents("td").find(".sub-check:checked").each(function() {
+        sum += Number($(this).val());
+        if (sum > $(this).parents("td").find(".sub-check-max").val()) {
+          if (sum - $(this).parents("td").find(".sub-check-max").val() < $(this).val()) {
+            $(this).val(sum - $(this).parents("td").find(".sub-check-max").val());
+          } else {
+            $(this).val("0");
+          };
+        };
+      });
+      if (sum === 0) { $(this).parents("td").css("background-color", "#ffffff") };
     };
 
     /* Handle infeasible options */
     if (this.classList.contains("infeas")) {
       if (this.checked) {
         $(this).parents("td").css("background-color", "lightgrey").find("input:first").addClass("pot-na-local-true").prop("checked", false).prop("disabled", true);
-    } else if (!this.checked) {
+      } else if (!this.checked) {
         $(this).parents("td").css("background-color", "#ffffff").find("input:first").removeClass("pot-na-local-true").prop("disabled", false);
       };
     };
@@ -159,7 +172,7 @@ $(document).ready(function(){
     $("td:empty").css("background-color", "lightgrey");
 
     /* Re-disable global and local not applicables */
-    $(".pot-na-true,.pot-na-local-true").parents("td").css("background-color", "lightgrey");
+    $(".pot-na-true,.pot-na-local-true").prop("disabled", true).parents("td").css("background-color", "lightgrey");
 
     /* Trigger handlePoints */
     $(this).trigger("handlePoints");
@@ -168,7 +181,7 @@ $(document).ready(function(){
   /* handleNa function (handles global (i.e. from Intro) not applicables only */
   $(".form-check-input").on("handleNa", function(event) {    
     /* Disable global not applicables */
-    $(".pot-na-true").parents("td").css("background-color", "lightgrey");
+    $(".pot-na-true").prop("disabled", true).parents("td").css("background-color", "lightgrey");
 
     /* Trigger handlePoints */
     $(this).trigger("handlePoints");
