@@ -56,9 +56,14 @@ $(document).ready(function(){
         /* Change max points for 2.4.3 if pop below 100,000 */
         if (result.pop_size === "<1000" || result.pop_size === "1000 - 9999" || result.pop_size === "10000 - 29999" || result.pop_size === "30000 - 99999") { $("#trans_dem_mgmt_3_max").val("1") };        
 
+        /* Attach deficit data to all td elements that contain sub-checks */
+        $(".sub-check").each(function() {
+          $(this).parents("td").data("deficit", "0");
+        });
+        
         /* Insert scenario data into form */
         let subResult = result[window.location.pathname.substring(1)];
-        let halfSub = "";
+
         for (let key in subResult) {
           if (typeof(subResult[key]) === "string") { $("#" + key).val(subResult[key]) }  // Notes
           else if (typeof(subResult[key]) === "number") {
@@ -72,51 +77,51 @@ $(document).ready(function(){
         /*  Add pot-na-true class to checked global not applicables */
         if (result.pop_size === "1000 - 9999" || result.pop_size === "<1000") {
           $(".pot-na-pop").data("pot-na", "true").parents("td").css("background-color", "lightgrey");
-          $(".pot-na-pop.app:not(.sub-check,:checked)").parents("td").find(".app").addClass("pot-na-true").trigger("handlePoints");
+          $(".pot-na-pop.app:not(.sub-check,.on-off-sub,.infeas,:checked)").parents("td").find(".app").addClass("pot-na-true").trigger("handlePoints");
         };
         if (result.pop_growth === "stable/shrinking") {
           $(".pot-na-growth").data("pot-na", "true").parents("td").css("background-color", "lightgrey");
-          $(".pot-na-growth.app:not(.sub-check,:checked)").parents("td").find(".app").addClass("pot-na-true").trigger("handlePoints");
+          $(".pot-na-growth.app:not(.sub-check,.on-off-sub,.infeas,:checked)").parents("td").find(".app").addClass("pot-na-true").trigger("handlePoints");
         };
         if (result.sig_murb_stock === "no") {
           $(".pot-na-murb").data("pot-na", "true").parents("td").css("background-color", "lightgrey");
-          $(".pot-na-murb.app:not(.sub-check,:checked)").parents("td").find(".app").addClass("pot-na-true").trigger("handlePoints");
+          $(".pot-na-murb.app:not(.sub-check,.on-off-sub,.infeas,:checked)").parents("td").find(".app").addClass("pot-na-true").trigger("handlePoints");
         };
         if (result.sig_comm_stock === "no") {
           $(".pot-na-comm").data("pot-na", "true").parents("td").css("background-color", "lightgrey");
-          $(".pot-na-comm.app:not(.sub-check,:checked)").parents("td").find(".app").addClass("pot-na-true").trigger("handlePoints");
+          $(".pot-na-comm.app:not(.sub-check,.on-off-sub,.infeas,:checked)").parents("td").find(".app").addClass("pot-na-true").trigger("handlePoints");
         };
         if (result.cent_water === "no") {
           $(".pot-na-water").data("pot-na", "true").parents("td").css("background-color", "lightgrey");
-          $(".pot-na-water.app:not(.sub-check,:checked)").parents("td").find(".app").addClass("pot-na-true").trigger("handlePoints");
+          $(".pot-na-water.app:not(.sub-check,.on-off-sub,.infeas,:checked)").parents("td").find(".app").addClass("pot-na-true").trigger("handlePoints");
         };
         if (result.public_tran === "no") {
           $(".pot-na-transit").data("pot-na", "true").parents("td").css("background-color", "lightgrey");
-          $(".pot-na-transit.app:not(.sub-check,:checked)").parents("td").find(".app").addClass("pot-na-true").trigger("handlePoints");
+          $(".pot-na-transit.app:not(.sub-check,.on-off-sub,.infeas,:checked)").parents("td").find(".app").addClass("pot-na-true").trigger("handlePoints");
         };
         if (result.gas_conx === "no") {
           $(".pot-na-gas").data("pot-na", "true").parents("td").css("background-color", "lightgrey");
-          $(".pot-na-gas.app:not(.sub-check,:checked)").parents("td").find(".app").addClass("pot-na-true").trigger("handlePoints");
+          $(".pot-na-gas.app:not(.sub-check,.on-off-sub,.infeas,:checked)").parents("td").find(".app").addClass("pot-na-true").trigger("handlePoints");
         };
         if (result.waste_cont === "no") {
           $(".pot-na-waste").data("pot-na", "true").parents("td").css("background-color", "lightgrey");
-          $(".pot-na-waste.app:not(.sub-check,:checked)").parents("td").find(".app").addClass("pot-na-true").trigger("handlePoints");
+          $(".pot-na-waste.app:not(.sub-check,.on-off-sub,.infeas,:checked)").parents("td").find(".app").addClass("pot-na-true").trigger("handlePoints");
         };
         if (result.prov_terr === "Yukon" || result.prov_terr === "Northwest Territories" || result.prov_terr === "Nunavut") {
           $(".pot-na-north").data("pot-na", "true").parents("td").css("background-color", "lightgrey");
-          $(".pot-na-north.app:not(.sub-check,:checked)").parents("td").find(".app").addClass("pot-na-true").trigger("handlePoints");
+          $(".pot-na-north.app:not(.sub-check,.on-off-sub,.infeas,:checked)").parents("td").find(".app").addClass("pot-na-true").trigger("handlePoints");
         };
         if (result.flood_prone === "no") {
           $(".pot-na-flood").data("pot-na", "true").parents("td").css("background-color", "lightgrey");
-          $(".pot-na-flood.app:not(.sub-check,:checked)").parents("td").find(".app").addClass("pot-na-true").trigger("handlePoints");
+          $(".pot-na-flood.app:not(.sub-check,.on-off-sub,.infeas,:checked)").parents("td").find(".app").addClass("pot-na-true").trigger("handlePoints");
         };
         if (result.pub_sect_orgs === "no") {
           $(".pot-na-public").data("pot-na", "true").parents("td").css("background-color", "lightgrey");
-          $(".pot-na-public.app:not(.sub-check,:checked)").parents("td").find(".app").addClass("pot-na-true").trigger("handlePoints");
+          $(".pot-na-public.app:not(.sub-check,.on-off-sub,.infeas,:checked)").parents("td").find(".app").addClass("pot-na-true").trigger("handlePoints");
         };
         if (result.priv_sect_oper === "no") {
           $(".pot-na-private").data("pot-na", "true").parents("td").css("background-color", "lightgrey");
-          $(".pot-na-private.app:not(.sub-check,:checked)").parents("td").find(".app").addClass("pot-na-true").trigger("handlePoints");
+          $(".pot-na-private.app:not(.sub-check,.on-off-sub,.infeas,:checked)").parents("td").find(".app").addClass("pot-na-true").trigger("handlePoints");
         };
 
         /* Check N/As where global applicables apply to entire row */
@@ -176,27 +181,16 @@ $(document).ready(function(){
     };
 
     /* Handle sub checkbox maximums */    
-    if (this.classList.contains("sub-check")) {
-      let sum = 0;
-      if (!$(this).data("store")) {
-        $(this).parents("td").find(".sub-check").each(function() {
-          $(this).data("store", $(this).val());
-        });
-      } else {
-        $(this).parents("td").find(".sub-check").each(function() {
-          $(this).val($(this).data("store"));
-        });
-      };
+    if (this.classList.contains("sub-check") || this.classList.contains("on-off")) {
+      let sum = 0, def = 0;
+
       $(this).parents("td").find(".sub-check:checked").each(function() {
         sum += Number($(this).val());
-        if (sum > $(this).parents("td").find(".sub-check-max").val()) {
-          if (sum - $(this).parents("td").find(".sub-check-max").val() < $(this).val()) {
-            $(this).val(sum - $(this).parents("td").find(".sub-check-max").val());
-          } else {
-            $(this).val("0");
-          };
-        };
       });
+      if (sum >= $(this).parents("td").find(".sub-check-max").val()) {
+        def = Number($(this).parents("td").find(".sub-check-max").val()) - sum;
+      };
+      $(this).parents("td").data("deficit", def);
       if (sum === 0) { $(this).parents("td").css("background-color", "#ffffff") };
     };
 
@@ -210,7 +204,7 @@ $(document).ready(function(){
     };
 
     /* Add or remove pot-na-true class */
-    $(".app:not(.sub-check)").each(function() {
+    $(".app:not(.sub-check,.on-off-sub,.infeas)").each(function() {
       if ($(this).data("pot-na") === "true") {
         if (this.checked) {
           $(this).parents("td").find(".app").removeClass("pot-na-true");
@@ -235,48 +229,48 @@ $(document).ready(function(){
 
   /* handlePoints function */
   $(".form-check-input").on("handlePoints", function(event) {    
-    let arr = [], i = 0, sum = 0;
+    let sum = 0, defSum = 0;
 
     /* Row applicable points addition */
-    arr = $(this).parents("tr").find(".app");
-    for (i = 0; i < arr.length; i++) {
-      if (arr[i].checked) { sum += Number(arr[i].value) };
-    };
+    $(this).parents("tr").find(".app").each(function() {
+      if (this.checked) { sum += Number(this.value) };
+    });
+    $(this).parents("tr").find(".sub-check").parents("td").each(function() {
+      defSum += Number($(this).data("deficit"));
+    });
+    sum += defSum;
     $(this).parents("tr").find(".row-points").val(sum);
     sum = sum.toString() + " points";
     $(this).parents("tr").find("output").html(sum);
 
     /* Total applicable points addition */
     sum = 0;
-    arr = $(".row-points");
-    for (i = 0; i < arr.length; i++) {
-      sum += Number(arr[i].value);
-    };
+    $(".row-points").each(function() {
+      sum += Number(this.value);
+    });
     $("#z_app_pts_total").val(sum);
 
     /* Total not applicable points addition */
     sum = 0;
-    arr = $(".na:checked");
-    for (i = 0; i < arr.length; i++) { sum += Number(arr[i].value) };
-    arr = $(".na:not(:checked)").parents("tr").find(".pot-na-true:not(.sub-check,[value='0']),.pot-na-local-true:not(.sub-check,[value='0'])");
-    for (i = 0; i < arr.length; i++) {
-      if (arr[i].type === "checkbox") { sum += Number(arr[i].value) }
-      else if (arr[i].type === "radio") { sum++ };
-    };
+    $(".na:checked").each(function() {
+      sum += Number(this.value);
+    });
+    $(".na:not(:checked)").parents("tr").find(".pot-na-true:not(.sub-check,[value='0']),.pot-na-local-true:not(.sub-check,[value='0'])").each(function() {
+      if (this.type === "checkbox") { sum += Number(this.value) }
+      else if (this.type === "radio") { sum++ };
+    });
     $("#z_na_pts_total").val(sum);
 
     /* Determination of complete form */
     sum = 0;
-    arr = $(this).parents("tr").find(".form-check-input");
-    for (i = 0; i < arr.length; i++) {
-      if (arr[i].checked) { sum++ };
-    };
+    $(this).parents("tr").find(".form-check-input").each(function() {
+      if (this.checked) { sum++ };
+    });
     sum > 0 ? $(this).parents("tr").find(".row-complete").val("true") : $(this).parents("tr").find(".row-complete").val("false");
-    arr = $(".row-complete");
     $("#z_sect_complete").val("true");
-    for (i = 0; i < arr.length; i++) {
-      if (arr[i].value === "false") { $("#z_sect_complete").val("false") };
-    };
+    $(".row-complete").each(function() {
+      if (this.value === "false") { $("#z_sect_complete").val("false") };
+    });
   });
 
 });
