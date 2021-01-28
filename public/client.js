@@ -161,8 +161,9 @@ $(document).ready(function(){
       $(this).parents("tr").find(".app,.na").parents("td").css("background-color", "#ffffff");
       $(this).parents("tr").find(".app:not(.on-off-sub)").prop("disabled", false);
     } else if (this.checked && this.classList.contains("zero")) {
-      $(this).parents("tr").find(".app:not(.zero)").prop("checked", false).prop("disabled", true);
+      $(this).parents("tr").find(".app:not(.zero)").prop("checked", false).prop("disabled", true).parents("td").css("background-color", "#ffffff");
     } else if (!this.checked && this.classList.contains("zero")) {
+      $(this).parents("tr").find(".app").parents("td").css("background-color", "#ffffff");      
       $(this).parents("tr").find(".app:not(.on-off-sub)").prop("disabled", false);      
     } else if (!this.checked && this.type === "checkbox" && !this.classList.contains("sub-check")) {
       $(this).parents("td").css("background-color", "#ffffff");
@@ -268,8 +269,7 @@ $(document).ready(function(){
       sum += Number(this.value);
     });
     $(".na:not(:checked)").parents("tr").find(".pot-na-true:not(.sub-check),.pot-na-local-true").each(function() {
-      if (this.type === "checkbox") { sum += Number(this.value) }
-      else if (this.type === "radio" && this.value != "0") { sum++ };
+      sum += Number(this.value);
     });
     $("#z_na_pts_total").val(sum);
 
